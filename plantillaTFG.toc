@@ -1,0 +1,57 @@
+\select@language {spanish}
+\contentsline {chapter}{English Abstract}{1}{chapter*.2}
+\select@language {english}
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Los enunciados}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Teoremas y demostraciones}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Otros enunciados}{5}{subsection.1.1.1}
+\contentsline {chapter}{MQTT}{7}{chapter*.4}
+\contentsline {section}{\numberline {1.2}MQTT}{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Requisitos}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Escalabilidad}{8}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Seguridad}{9}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Disponibilidad}{9}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Confiabilidad}{10}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Tiempo real}{11}{subsection.1.3.5}
+\contentsline {subsection}{\numberline {1.3.6}Control de datos}{11}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.7}Descubrimiento de recursos}{12}{subsection.1.3.7}
+\contentsline {subsection}{\numberline {1.3.8}Documentaci\IeC {\'o}n e interoperabilidad}{12}{subsection.1.3.8}
+\contentsline {chapter}{MQTT-SN}{13}{chapter*.5}
+\contentsline {section}{\numberline {1.4}Redes de sensores inal\IeC {\'a}mbricas}{13}{section.1.4}
+\contentsline {section}{\numberline {1.5}MQTT-SN}{14}{section.1.5}
+\contentsline {section}{\numberline {1.6}Arquitectura MQTT-SN}{14}{section.1.6}
+\contentsline {section}{\numberline {1.7}Funcionamiento}{15}{section.1.7}
+\contentsline {section}{\numberline {1.8}MQTT y MQTT-SN}{15}{section.1.8}
+\contentsline {chapter}{OpenIoT}{17}{chapter*.6}
+\contentsline {section}{\numberline {1.9}Introducci\IeC {\'o}n}{17}{section.1.9}
+\contentsline {section}{\numberline {1.10}Plataforma}{17}{section.1.10}
+\contentsline {subsection}{\numberline {1.10.1}Arquitectura}{17}{subsection.1.10.1}
+\contentsline {subsubsection}{Scheduler}{20}{subsubsection*.7}
+\contentsline {subsubsection}{Service delivery \& Utility Manager}{21}{subsubsection*.8}
+\contentsline {subsection}{\numberline {1.10.2}Funcionalidades}{21}{subsection.1.10.2}
+\contentsline {subsubsection}{Integraci\IeC {\'o}n de datos enlazados}{21}{subsubsection*.9}
+\contentsline {subsubsection}{Mobile broker}{23}{subsubsection*.10}
+\contentsline {subsubsection}{Descubrimiento y registro de recursos}{24}{subsubsection*.11}
+\contentsline {subsubsection}{Autenticaci\IeC {\'o}n y acceso a los recursos}{24}{subsubsection*.12}
+\contentsline {section}{\numberline {1.11}Proyectos}{25}{section.1.11}
+\contentsline {chapter}{OpenIoT}{27}{chapter*.13}
+\contentsline {section}{\numberline {1.12}Introducci\IeC {\'o}n}{27}{section.1.12}
+\contentsline {section}{\numberline {1.13}Plataforma}{28}{section.1.13}
+\contentsline {subsection}{\numberline {1.13.1}Arquitectura}{28}{subsection.1.13.1}
+\contentsline {subsection}{\numberline {1.13.2}Flujo de datos}{35}{subsection.1.13.2}
+\contentsline {subsection}{\numberline {1.13.3}Uso de la plataforma}{37}{subsection.1.13.3}
+\contentsline {subsection}{\numberline {1.13.4}Requisitos}{39}{subsection.1.13.4}
+\contentsline {subsection}{\numberline {1.13.5}Caso pr\IeC {\'a}ctico}{42}{subsection.1.13.5}
+\contentsline {subsection}{\numberline {1.13.6}Casos de \IeC {\'e}xito con la plataforma}{42}{subsection.1.13.6}
+\contentsline {subsubsection}{OpenIoT en la industria}{42}{subsubsection*.14}
+\contentsline {subsubsection}{OpenIoT en la agricultura}{43}{subsubsection*.15}
+\contentsline {chapter}{KAA}{45}{chapter*.16}
+\contentsline {section}{\numberline {1.14}Arquitectura}{45}{section.1.14}
+\contentsline {section}{\numberline {1.15}Funcionamiento}{48}{section.1.15}
+\contentsline {subsection}{\numberline {1.15.1}Qu\IeC {\'e} ofrece Kaa}{50}{subsection.1.15.1}
+\contentsline {section}{\numberline {1.16}Uso de la plataforma}{56}{section.1.16}
+\contentsline {subsection}{\numberline {1.16.1}Instalaci\IeC {\'o}n}{56}{subsection.1.16.1}
+\contentsline {subsection}{\numberline {1.16.2}Partes de la plataforma}{56}{subsection.1.16.2}
+\contentsline {section}{\numberline {1.17}Casos pr\IeC {\'a}cticos}{60}{section.1.17}
+\contentsline {subsection}{\numberline {1.17.1}Encender un LED en la raspberry usando Kaa}{60}{subsection.1.17.1}
+\contentsline {section}{\numberline {1.18}Problemas encontrados}{60}{section.1.18}
