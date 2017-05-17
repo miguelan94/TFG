@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.20)  10 MAY 2017 17:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.20)  17 MAY 2017 16:03
 entering extended mode
 **./plantillaTFG.tex
 (plantillaTFG.tex
@@ -1264,19 +1264,19 @@ Package: thm-amsthm 2014/04/21 v66
 Package thmtools Info: Key `numberwithin' (with value `chapter')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=importante' on input line 128.
+(thmtools)             that uses `style=importante' on input line 130.
 Package thmtools Info: Key `numberwithin' (with value `chapter')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=normal' on input line 140.
+(thmtools)             that uses `style=normal' on input line 142.
 Package thmtools Info: Key `numbered' (with value `no')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=demostracion' on input line 153.
+(thmtools)             that uses `style=demostracion' on input line 155.
 Package thmtools Info: Key `qed' (with value `\color {USred}\marcador ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=demostracion' on input line 153.
+(thmtools)             that uses `style=demostracion' on input line 155.
 \c@remark=\count139
 \c@corollary=\count140
 \c@proposition=\count141
@@ -1459,104 +1459,49 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip67
-) (plantillaTFG.aux
-LaTeX Info: Redefining \. on input line 19.
-LaTeX Info: Redefining \% on input line 19.
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
-
-
-LaTeX Warning: Label `L401' multiply defined.
-
-
-LaTeX Warning: Label `L402' multiply defined.
-
-
-LaTeX Warning: Label `L403' multiply defined.
-
-
-LaTeX Warning: Label `L404' multiply defined.
-
-
-LaTeX Warning: Label `L405' multiply defined.
-
-
-LaTeX Warning: Label `L406' multiply defined.
-
-
-LaTeX Warning: Label `L407' multiply defined.
-
-
-LaTeX Warning: Label `L408' multiply defined.
-
-
-LaTeX Warning: Label `L409' multiply defined.
-
-
-LaTeX Warning: Label `L0421' multiply defined.
-
-
-LaTeX Warning: Label `L0421' multiply defined.
-
-
-LaTeX Warning: Label `L410' multiply defined.
-
-
-LaTeX Warning: Label `L411' multiply defined.
-
-
-LaTeX Warning: Label `L501' multiply defined.
-
-
-LaTeX Warning: Label `L505' multiply defined.
-
-
-LaTeX Warning: Label `L505' multiply defined.
-
-
-LaTeX Warning: Label `L507' multiply defined.
-
 )
+No file plantillaTFG.aux.
 \openout1 = `plantillaTFG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 232.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 232.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 234.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 234.
 
- ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 232.
-LaTeX Font Info:    Try loading font information for LS1+stix on input line 232
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 234.
+LaTeX Font Info:    Try loading font information for LS1+stix on input line 234
 .
+
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stix.fd"
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 232.
-LaTeX Font Info:    Try loading font information for LS2+stix on input line 232
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 234.
+LaTeX Font Info:    Try loading font information for LS2+stix on input line 234
 .
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls2stix.fd"
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 232.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 232.
-LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 232.
+input line 234.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\t1linuxl
 ibertinet-tlf.fd"
@@ -1564,9 +1509,9 @@ File: T1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 232.
-LaTeX Info: Redefining \. on input line 232.
-LaTeX Info: Redefining \% on input line 232.
+(Font)              scaled to size 12.0pt on input line 234.
+LaTeX Info: Redefining \. on input line 234.
+LaTeX Info: Redefining \% on input line 234.
 \c@mv@tabular=\count158
 \c@mv@boldtabular=\count159
 
@@ -1637,7 +1582,7 @@ G,.JBIG2,.JB2,.eps]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box46
-Package hyperref Info: Link coloring ON on input line 232.
+Package hyperref Info: Link coloring ON on input line 234.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1649,69 +1594,67 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count167
 )
-LaTeX Info: Redefining \ref on input line 232.
-LaTeX Info: Redefining \pageref on input line 232.
-LaTeX Info: Redefining \nameref on input line 232.
- (plantillaTFG.out) (plantillaTFG.out)
+LaTeX Info: Redefining \ref on input line 234.
+LaTeX Info: Redefining \pageref on input line 234.
+LaTeX Info: Redefining \nameref on input line 234.
 \@outlinefile=\write4
 \openout4 = `plantillaTFG.out'.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 236.
+(Font)              scaled to size 24.88pt on input line 238.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 236.
-
-<sello.png, id=190, 256.96pt x 256.96pt>
+(Font)              scaled to size 24.88pt on input line 238.
+ <sello.png, id=6, 256.96pt x 256.96pt>
 File: sello.png Graphic file (type png)
  <use sello.png>
-Package pdftex.def Info: sello.png used on input line 236.
+Package pdftex.def Info: sello.png used on input line 238.
 (pdftex.def)             Requested size: 170.7194pt x 170.71652pt.
  [1
 
 
 {C:/Users/migue/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./sello.png
->] [2
+>]
+[2
 
 ]
 File: sello.png Graphic file (type png)
-
-<use sello.png>
-Package pdftex.def Info: sello.png used on input line 236.
+ <use sello.png>
+Package pdftex.def Info: sello.png used on input line 238.
 (pdftex.def)             Requested size: 128.03662pt x 128.0374pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 236.
+(Font)              scaled to size 17.28pt on input line 238.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 236.
+(Font)              scaled to size 17.28pt on input line 238.
 LaTeX Font Info:    Try loading font information for LS1+stixscr on input line 
-236.
+238.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stixscr.fd
 "
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Try loading font information for LS2+stixex on input line 2
-36.
+38.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls2stixex.fd"
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS1+stixfrak on input line
- 236.
+ 238.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stixfrak.f
 d"
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Try loading font information for LS1+stixbb on input line 2
-36.
+38.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stixbb.fd"
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS2+stixcal on input line 
-236.
+238.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls2stixcal.fd
 "
@@ -1719,20 +1662,20 @@ File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Try loading font information for LS1+stixsf on input line 2
-36.
+38.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stixsf.fd"
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS2+stixtt on input line 2
-36.
+38.
  ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls2stixtt.fd
 "
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Underfull \hbox (badness 10000) in alignment at lines 236--236
+Underfull \hbox (badness 10000) in alignment at lines 238--238
 [] 
  []
 
@@ -1740,17 +1683,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.236 
+l.238 
        [1]pdfTeX warning (ext4): destination with the same identifier (name{pag
 e.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.237 \frontmatter
+l.239 \frontmatter
                    [2
 
 ]
 LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
-nput line 238.
+nput line 240.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\t1linuxb
 iolinumt-tlf.fd"
@@ -1758,66 +1701,35 @@ File: T1LinuxBiolinumT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Lin
 uxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 238.
+(Font)              scaled to size 24.88pt on input line 240.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <24.88> not
  available
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 238.
+ut line 240.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 238.
- (plantillaTFG.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
- [1
-
-]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/sc' will be
-(Font)              scaled to size 12.0pt on input line 50.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 50.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 50.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[2])
+(Font)              scaled to size 24.88pt on input line 240.
 \tf@toc=\write5
 \openout5 = `plantillaTFG.toc'.
 
-LaTeX Info: Redefining \. on input line 240.
-LaTeX Info: Redefining \% on input line 240.
+ [1
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3] [4
+] [2
 
 ]
-LaTeX Info: Redefining \. on input line 251.
-LaTeX Info: Redefining \% on input line 251.
+LaTeX Info: Redefining \. on input line 253.
+LaTeX Info: Redefining \% on input line 253.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.253 \chapter
+l.255 \chapter
               *{Agradecimientos} [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.253 \chapter
+l.255 \chapter
               *{Agradecimientos} [2
 
 ] [3] [4
@@ -1825,75 +1737,97 @@ l.253 \chapter
 ]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 256.
+(Font)              scaled to size 17.28pt on input line 258.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <17.28> not
  available
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 256.
+ut line 258.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 256.
+(Font)              scaled to size 17.28pt on input line 258.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 259.
+(Font)              scaled to size 12.0pt on input line 261.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 261.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 259.
+t line 261.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 264.
+line 266.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 268.
+nput line 270.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 273.
+(Font)              scaled to size 14.4pt on input line 275.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 273.
+(Font)              scaled to size 14.4pt on input line 275.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 277.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 282.
+ line 279.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 284.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 290.
+put line 292.
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 294.
+input line 296.
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 298.
+line 300.
 
 [5] [6
 
-] <images/topologia.png, id=320, 632.3625pt x 447.6725pt>
+]
+
+LaTeX Warning: Citation `surv' on page 7 undefined on input line 313.
+
+<images/requisitos.png, id=83, 761.244pt x 211.992pt>
+File: images/requisitos.png Graphic file (type png)
+
+<use images/requisitos.png>
+Package pdftex.def Info: images/requisitos.png used on input line 316.
+(pdftex.def)             Requested size: 380.62106pt x 105.99573pt.
+ [7
+
+ <./images/requisitos.png>] [8
+
+]
+<images/topologia.png, id=96, 632.3625pt x 447.6725pt>
 File: images/topologia.png Graphic file (type png)
 
 <use images/topologia.png>
-Package pdftex.def Info: images/topologia.png used on input line 317.
+Package pdftex.def Info: images/topologia.png used on input line 327.
 (pdftex.def)             Requested size: 189.7102pt x 134.30278pt.
- [7
+ [9 <./images/topologia.png>]
 
- <./images/topologia.png>]
-<images/jerarquia.png, id=328, 833.1125pt x 451.6875pt>
+LaTeX Warning: Reference `L402' on page 10 undefined on input line 332.
+
+<images/jerarquia.png, id=105, 833.1125pt x 451.6875pt>
 File: images/jerarquia.png Graphic file (type png)
 
 <use images/jerarquia.png>
-Package pdftex.def Info: images/jerarquia.png used on input line 325.
+Package pdftex.def Info: images/jerarquia.png used on input line 335.
 (pdftex.def)             Requested size: 249.93568pt x 135.5073pt.
 
-<images/figure3.png, id=329, 551.1792pt x 361.8318pt>
+<images/figure3.png, id=106, 551.1792pt x 361.8318pt>
 File: images/figure3.png Graphic file (type png)
  <use images/figure3.png>
-Package pdftex.def Info: images/figure3.png used on input line 336.
+Package pdftex.def Info: images/figure3.png used on input line 346.
 (pdftex.def)             Requested size: 165.35503pt x 108.55037pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/mqtt_ssl.jpg, id=330, 640.3925pt x 480.79625pt>
+<images/mqtt_ssl.jpg, id=107, 640.3925pt x 480.79625pt>
 File: images/mqtt_ssl.jpg Graphic file (type jpg)
 
 <use images/mqtt_ssl.jpg>
-Package pdftex.def Info: images/mqtt_ssl.jpg used on input line 343.
+Package pdftex.def Info: images/mqtt_ssl.jpg used on input line 353.
 (pdftex.def)             Requested size: 192.11923pt x 144.23997pt.
 
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 356.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 356.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1901,28 +1835,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./images/jerarquia.png>]
-<images/mqtt_availability.png, id=338, 353.32pt x 441.65pt>
+[10 <./images/jerarquia.png>]
+<images/mqtt_availability.png, id=117, 353.32pt x 441.65pt>
 File: images/mqtt_availability.png Graphic file (type png)
 
 <use images/mqtt_availability.png>
-Package pdftex.def Info: images/mqtt_availability.png used on input line 350.
+Package pdftex.def Info: images/mqtt_availability.png used on input line 360.
 (pdftex.def)             Requested size: 105.99681pt x 132.49602pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Info: Redefining \. on input line 356.
-LaTeX Info: Redefining \% on input line 356.
+LaTeX Info: Redefining \. on input line 366.
+LaTeX Info: Redefining \% on input line 366.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./images/figure3.png> <./images/mqtt_ssl.jpg>]
+[11 <./images/figure3.png> <./images/mqtt_ssl.jpg>]
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 356.
+ input line 366.
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\ts1linux
 libertinet-tlf.fd"
@@ -1930,24 +1864,24 @@ File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 356.
- <images/qos0.png, id=346, 479.99326pt x 163.20975pt>
+(Font)              scaled to size 12.0pt on input line 366.
+ <images/qos0.png, id=127, 479.99326pt x 163.20975pt>
 File: images/qos0.png Graphic file (type png)
 
 <use images/qos0.png>
-Package pdftex.def Info: images/qos0.png used on input line 360.
+Package pdftex.def Info: images/qos0.png used on input line 370.
 (pdftex.def)             Requested size: 143.99908pt x 48.96329pt.
- <images/qos1.png, id=347, 458.31226pt x 160.80075pt>
+ <images/qos1.png, id=128, 458.31226pt x 160.80075pt>
 File: images/qos1.png Graphic file (type png)
 
 <use images/qos1.png>
-Package pdftex.def Info: images/qos1.png used on input line 367.
+Package pdftex.def Info: images/qos1.png used on input line 377.
 (pdftex.def)             Requested size: 137.49474pt x 48.24059pt.
- <images/qos2.png, id=348, 431.211pt x 176.45924pt>
+ <images/qos2.png, id=129, 431.211pt x 176.45924pt>
 File: images/qos2.png Graphic file (type png)
 
 <use images/qos2.png>
-Package pdftex.def Info: images/qos2.png used on input line 374.
+Package pdftex.def Info: images/qos2.png used on input line 384.
 (pdftex.def)             Requested size: 129.36429pt x 52.93817pt.
 
 
@@ -1956,15 +1890,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 <./images/mqtt_availability.png (PNG copy)> <./images/qos0.png> <./images/q
-os1.png>] <images/figure4.png, id=359, 366.168pt x 102.98476pt>
+[12 <./images/mqtt_availability.png (PNG copy)> <./images/qos0.png> <./images/q
+os1.png>] <images/figure4.png, id=141, 366.168pt x 102.98476pt>
 File: images/figure4.png Graphic file (type png)
 
 <use images/figure4.png>
-Package pdftex.def Info: images/figure4.png used on input line 386.
+Package pdftex.def Info: images/figure4.png used on input line 396.
 (pdftex.def)             Requested size: 183.08354pt x 51.49223pt.
-LaTeX Info: Redefining \. on input line 390.
-LaTeX Info: Redefining \% on input line 390.
+LaTeX Info: Redefining \. on input line 400.
+LaTeX Info: Redefining \% on input line 400.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1972,11 +1906,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11 <./images/qos2.png> <./images/figure4.png>]
-<images/figure5.png, id=369, 340.8735pt x 87.32625pt>
+[13 <./images/qos2.png> <./images/figure4.png>]
+<images/figure5.png, id=153, 340.8735pt x 87.32625pt>
 File: images/figure5.png Graphic file (type png)
  <use images/figure5.png>
-Package pdftex.def Info: images/figure5.png used on input line 393.
+Package pdftex.def Info: images/figure5.png used on input line 403.
 (pdftex.def)             Requested size: 170.43633pt x 43.66301pt.
 
 
@@ -1985,47 +1919,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 <./images/figure5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
-
- []
-
-<images/wsn.png, id=378, 691.58376pt x 230.8625pt>
-File: images/wsn.png Graphic file (type png)
- <use images/wsn.png>
-Package pdftex.def Info: images/wsn.png used on input line 430.
-(pdftex.def)             Requested size: 345.79103pt x 115.43095pt.
-
-Underfull \vbox (badness 1867) has occurred while \output is active []
-
- [13
-
-]
-<images/mqttsn.png, id=385, 362.5545pt x 231.86626pt>
-File: images/mqttsn.png Graphic file (type png)
- <use images/mqttsn.png>
-Package pdftex.def Info: images/mqttsn.png used on input line 441.
-(pdftex.def)             Requested size: 181.27681pt x 115.93283pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14 <./images/wsn.png (PNG copy)> <./images/mqttsn.png>]
-LaTeX Info: Redefining \. on input line 450.
-LaTeX Info: Redefining \% on input line 450.
+[14 <./images/figure5.png>]
+LaTeX Info: Redefining \. on input line 429.
+LaTeX Info: Redefining \% on input line 429.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2035,22 +1931,80 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [15] [16
 
-] <images/openiot_platform1.png, id=402, 803.0pt x 709.65125pt>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+LaTeX Warning: Reference `L411' on page 17 undefined on input line 438.
+
+<images/wsn.png, id=172, 691.58376pt x 230.8625pt>
+File: images/wsn.png Graphic file (type png)
+ <use images/wsn.png>
+Package pdftex.def Info: images/wsn.png used on input line 441.
+(pdftex.def)             Requested size: 345.79103pt x 115.43095pt.
+
+Underfull \vbox (badness 1867) has occurred while \output is active []
+
+ [17]
+
+LaTeX Warning: Reference `L412' on page 18 undefined on input line 449.
+
+<images/mqttsn.png, id=179, 362.5545pt x 231.86626pt>
+File: images/mqttsn.png Graphic file (type png)
+ <use images/mqttsn.png>
+Package pdftex.def Info: images/mqttsn.png used on input line 452.
+(pdftex.def)             Requested size: 181.27681pt x 115.93283pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18 <./images/wsn.png (PNG copy)> <./images/mqttsn.png>]
+LaTeX Info: Redefining \. on input line 461.
+LaTeX Info: Redefining \% on input line 461.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19] [20
+
+]
+
+LaTeX Warning: Reference `L301' on page 21 undefined on input line 471.
+
+<images/openiot_platform1.png, id=200, 803.0pt x 709.65125pt>
 File: images/openiot_platform1.png Graphic file (type png)
 
 <use images/openiot_platform1.png>
-Package pdftex.def Info: images/openiot_platform1.png used on input line 463.
+Package pdftex.def Info: images/openiot_platform1.png used on input line 474.
 (pdftex.def)             Requested size: 321.1943pt x 283.85547pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+ [21]
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--483
+Underfull \hbox (badness 10000) in paragraph at lines 491--494
 
  []
 
@@ -2060,22 +2014,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18 <./images/openiot_platform1.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 483--485
+[22 <./images/openiot_platform1.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
 
  []
 
-<images/blocks_openiot.png, id=414, 467.94826pt x 269.20575pt>
+
+LaTeX Warning: Reference `L302' on page 23 undefined on input line 508.
+
+<images/blocks_openiot.png, id=214, 467.94826pt x 269.20575pt>
 File: images/blocks_openiot.png Graphic file (type png)
 
 <use images/blocks_openiot.png>
-Package pdftex.def Info: images/blocks_openiot.png used on input line 501.
+Package pdftex.def Info: images/blocks_openiot.png used on input line 512.
 (pdftex.def)             Requested size: 327.56154pt x 188.44272pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 504.
-LaTeX Info: Redefining \% on input line 504.
+LaTeX Info: Redefining \. on input line 515.
+LaTeX Info: Redefining \% on input line 515.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2083,55 +2040,61 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19]
+[23]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20 <./images/blocks_openiot.png>]
-<images/linked_data.png, id=426, 1486.55376pt x 967.615pt>
+[24 <./images/blocks_openiot.png>]
+<images/linked_data.png, id=226, 1486.55376pt x 967.615pt>
 File: images/linked_data.png Graphic file (type png)
 
 <use images/linked_data.png>
-Package pdftex.def Info: images/linked_data.png used on input line 533.
+Package pdftex.def Info: images/linked_data.png used on input line 544.
 (pdftex.def)             Requested size: 297.30548pt x 193.51958pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
-LaTeX Info: Redefining \. on input line 538.
-LaTeX Info: Redefining \% on input line 538.
+LaTeX Info: Redefining \. on input line 549.
+LaTeX Info: Redefining \% on input line 549.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21 <./images/linked_data.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
+[25 <./images/linked_data.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 550--552
 
  []
 
-<images/semantica_xgsn.png, id=436, 510.10574pt x 281.853pt>
+
+LaTeX Warning: Reference `L304' on page 26 undefined on input line 553.
+
+<images/semantica_xgsn.png, id=237, 510.10574pt x 281.853pt>
 File: images/semantica_xgsn.png Graphic file (type png)
 
 <use images/semantica_xgsn.png>
-Package pdftex.def Info: images/semantica_xgsn.png used on input line 545.
+Package pdftex.def Info: images/semantica_xgsn.png used on input line 556.
 (pdftex.def)             Requested size: 306.0658pt x 169.1131pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--547
+Underfull \hbox (badness 10000) in paragraph at lines 553--558
 
  []
 
-<images/registration_sensor_xgsm.png, id=438, 392.667pt x 125.87025pt>
+
+LaTeX Warning: Reference `L305' on page 26 undefined on input line 560.
+
+<images/registration_sensor_xgsm.png, id=238, 392.667pt x 125.87025pt>
 File: images/registration_sensor_xgsm.png Graphic file (type png)
 
 <use images/registration_sensor_xgsm.png>
 Package pdftex.def Info: images/registration_sensor_xgsm.png used on input line
- 553.
+ 564.
 (pdftex.def)             Requested size: 235.60202pt x 75.52272pt.
 
 
@@ -2140,28 +2103,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22 <./images/semantica_xgsn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 557--560
+[26 <./images/semantica_xgsn.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 568--571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
-<images/mobilebroker_openiot.png, id=446, 256.5585pt x 181.27725pt>
+<images/mobilebroker_openiot.png, id=245, 256.5585pt x 181.27725pt>
 File: images/mobilebroker_openiot.png Graphic file (type png)
 
 <use images/mobilebroker_openiot.png>
-Package pdftex.def Info: images/mobilebroker_openiot.png used on input line 568
+Package pdftex.def Info: images/mobilebroker_openiot.png used on input line 579
 .
 (pdftex.def)             Requested size: 205.24707pt x 145.02199pt.
 
 Underfull \vbox (badness 4254) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 571.
-LaTeX Info: Redefining \% on input line 571.
+LaTeX Info: Redefining \. on input line 582.
+LaTeX Info: Redefining \% on input line 582.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2169,8 +2132,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23 <./images/registration_sensor_xgsm.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
+[27 <./images/registration_sensor_xgsm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 
  []
 
@@ -2184,15 +2147,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24 <./images/mobilebroker_openiot.png>]
-<images/crowd_sensing.png, id=463, 337.26pt x 280.6485pt>
+[28 <./images/mobilebroker_openiot.png>]
+
+LaTeX Warning: Reference `L307' on page 29 undefined on input line 593.
+
+<images/crowd_sensing.png, id=261, 337.26pt x 280.6485pt>
 File: images/crowd_sensing.png Graphic file (type png)
 
 <use images/crowd_sensing.png>
-Package pdftex.def Info: images/crowd_sensing.png used on input line 585.
+Package pdftex.def Info: images/crowd_sensing.png used on input line 596.
 (pdftex.def)             Requested size: 134.9016pt x 112.2574pt.
-LaTeX Info: Redefining \. on input line 598.
-LaTeX Info: Redefining \% on input line 598.
+LaTeX Info: Redefining \. on input line 609.
+LaTeX Info: Redefining \% on input line 609.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2200,41 +2166,47 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25 <./images/crowd_sensing.png>]
+[29 <./images/crowd_sensing.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 613--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--605
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
+
+
+LaTeX Warning: Reference `L400' on page 31 undefined on input line 620.
 
 File: images/openiot_platform1.png Graphic file (type png)
 <use images/openiot_platform1.png>
-Package pdftex.def Info: images/openiot_platform1.png used on input line 612.
+Package pdftex.def Info: images/openiot_platform1.png used on input line 623.
 (pdftex.def)             Requested size: 321.1943pt x 283.85547pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27
+ [31
 
 ]
-<images/ssn_capture.png, id=480, 522.753pt x 266.79675pt>
+
+LaTeX Warning: Reference `L401' on page 32 undefined on input line 627.
+
+<images/ssn_capture.png, id=280, 522.753pt x 266.79675pt>
 File: images/ssn_capture.png Graphic file (type png)
 
 <use images/ssn_capture.png>
-Package pdftex.def Info: images/ssn_capture.png used on input line 619.
+Package pdftex.def Info: images/ssn_capture.png used on input line 630.
 (pdftex.def)             Requested size: 209.09749pt x 106.7168pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--621
+Underfull \hbox (badness 10000) in paragraph at lines 627--632
 
  []
 
@@ -2244,26 +2216,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28] <images/metadata_capture.png, id=488, 481.19775pt x 201.75375pt>
+[32]
+
+LaTeX Warning: Reference `L404' on page 33 undefined on input line 633.
+
+
+LaTeX Warning: Reference `L402' on page 33 undefined on input line 634.
+
+<images/metadata_capture.png, id=288, 481.19775pt x 201.75375pt>
 File: images/metadata_capture.png Graphic file (type png)
 
 <use images/metadata_capture.png>
-Package pdftex.def Info: images/metadata_capture.png used on input line 626.
+Package pdftex.def Info: images/metadata_capture.png used on input line 637.
 (pdftex.def)             Requested size: 192.4757pt x 80.70006pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--631
+Underfull \hbox (badness 10000) in paragraph at lines 640--642
 
  []
 
-<images/registration_capture.png, id=491, 404.712pt x 148.75575pt>
+
+LaTeX Warning: Reference `L403' on page 33 undefined on input line 643.
+
+
+LaTeX Warning: Reference `L404' on page 33 undefined on input line 643.
+
+<images/registration_capture.png, id=289, 404.712pt x 148.75575pt>
 File: images/registration_capture.png Graphic file (type png)
 
 <use images/registration_capture.png>
-Package pdftex.def Info: images/registration_capture.png used on input line 635
+Package pdftex.def Info: images/registration_capture.png used on input line 646
 .
 (pdftex.def)             Requested size: 161.88193pt x 59.50124pt.
-LaTeX Info: Redefining \. on input line 637.
-LaTeX Info: Redefining \% on input line 637.
+LaTeX Info: Redefining \. on input line 648.
+LaTeX Info: Redefining \% on input line 648.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2271,16 +2256,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29 <./images/ssn_capture.png> <./images/metadata_capture.png>]
-<images/configuration_capture.png, id=501, 576.35326pt x 370.986pt>
+[33 <./images/ssn_capture.png> <./images/metadata_capture.png>]
+<images/configuration_capture.png, id=298, 576.35326pt x 370.986pt>
 File: images/configuration_capture.png Graphic file (type png)
 
 <use images/configuration_capture.png>
-Package pdftex.def Info: images/configuration_capture.png used on input line 64
-0.
+Package pdftex.def Info: images/configuration_capture.png used on input line 65
+1.
 (pdftex.def)             Requested size: 288.17592pt x 185.49254pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--646
+Underfull \hbox (badness 10000) in paragraph at lines 654--657
 
  []
 
@@ -2290,49 +2275,56 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30 <./images/registration_capture.png> <./images/configuration_capture.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+[34 <./images/registration_capture.png> <./images/configuration_capture.png>]
+
+LaTeX Warning: Reference `L405' on page 35 undefined on input line 658.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
 
  []
 
 File: images/mobilebroker_openiot.png Graphic file (type png)
 <use images/mobilebroker_openiot.png>
-Package pdftex.def Info: images/mobilebroker_openiot.png used on input line 653
+Package pdftex.def Info: images/mobilebroker_openiot.png used on input line 664
 .
 (pdftex.def)             Requested size: 230.90051pt x 163.14801pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--660
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
-LaTeX Info: Redefining \. on input line 660.
-LaTeX Info: Redefining \% on input line 660.
+LaTeX Info: Redefining \. on input line 671.
+LaTeX Info: Redefining \% on input line 671.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+LaTeX Warning: Reference `L406' on page 36 undefined on input line 674.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
-<images/cloud_capture.png, id=516, 563.706pt x 369.17924pt>
+<images/cloud_capture.png, id=312, 563.706pt x 369.17924pt>
 File: images/cloud_capture.png Graphic file (type png)
 
 <use images/cloud_capture.png>
-Package pdftex.def Info: images/cloud_capture.png used on input line 669.
+Package pdftex.def Info: images/cloud_capture.png used on input line 680.
 (pdftex.def)             Requested size: 225.4784pt x 147.66908pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2344,22 +2336,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32] <images/requestDefinition.png, id=523, 1505.625pt x 906.38625pt>
+[36]
+
+LaTeX Warning: Reference `L407' on page 37 undefined on input line 685.
+
+<images/requestDefinition.png, id=317, 1505.625pt x 906.38625pt>
 File: images/requestDefinition.png Graphic file (type png)
 
 <use images/requestDefinition.png>
-Package pdftex.def Info: images/requestDefinition.png used on input line 678.
+Package pdftex.def Info: images/requestDefinition.png used on input line 689.
 (pdftex.def)             Requested size: 451.691pt x 271.91797pt.
 
-Overfull \hbox (38.45857pt too wide) in paragraph at lines 678--679
+Overfull \hbox (38.45857pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 681.
-LaTeX Info: Redefining \% on input line 681.
+LaTeX Info: Redefining \. on input line 692.
+LaTeX Info: Redefining \% on input line 692.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2367,28 +2363,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33 <./images/cloud_capture.png>]
-<images/temperature_definition.png, id=532, 704.6325pt x 348.30125pt>
+[37 <./images/cloud_capture.png>]
+
+LaTeX Warning: Reference `L408' on page 38 undefined on input line 693.
+
+
+LaTeX Warning: Reference `L409' on page 38 undefined on input line 693.
+
+<images/temperature_definition.png, id=325, 704.6325pt x 348.30125pt>
 File: images/temperature_definition.png Graphic file (type png)
 
 <use images/temperature_definition.png>
 Package pdftex.def Info: images/temperature_definition.png used on input line 6
-87.
+98.
 (pdftex.def)             Requested size: 190.0pt x 93.91504pt.
 
-Overfull \hbox (4.04668pt too wide) in paragraph at lines 687--688
+Overfull \hbox (4.04668pt too wide) in paragraph at lines 698--699
  [] 
  []
 
-<images/temperature_presentation.png, id=533, 622.325pt x 468.75125pt>
+<images/temperature_presentation.png, id=326, 622.325pt x 468.75125pt>
 File: images/temperature_presentation.png Graphic file (type png)
 
 <use images/temperature_presentation.png>
 Package pdftex.def Info: images/temperature_presentation.png used on input line
- 695.
+ 706.
 (pdftex.def)             Requested size: 190.0pt x 143.10838pt.
 
-Overfull \hbox (4.04668pt too wide) in paragraph at lines 695--696
+Overfull \hbox (4.04668pt too wide) in paragraph at lines 706--707
  [] 
  []
 
@@ -2402,29 +2404,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34 <./images/requestDefinition.png>]
-LaTeX Info: Redefining \. on input line 721.
-LaTeX Info: Redefining \% on input line 721.
+[38 <./images/requestDefinition.png>]
 
+LaTeX Warning: Reference `L301' on page 39 undefined on input line 718.
+
+
+LaTeX Warning: Reference `L0420' on page 39 undefined on input line 718.
+
+
+LaTeX Warning: Reference `L0421' on page 39 undefined on input line 723.
+
+
+LaTeX Warning: Reference `L0422' on page 39 undefined on input line 731.
+
+LaTeX Info: Redefining \. on input line 732.
+LaTeX Info: Redefining \% on input line 732.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35 <./images/temperature_definition.png> <./images/temperature_presentation.pn
-g>] <images/dataFlow_capture.png, id=554, 545.03625pt x 419.166pt>
+[39 <./images/temperature_definition.png> <./images/temperature_presentation.pn
+g>] <images/dataFlow_capture.png, id=342, 545.03625pt x 419.166pt>
 File: images/dataFlow_capture.png Graphic file (type png)
 
 <use images/dataFlow_capture.png>
-Package pdftex.def Info: images/dataFlow_capture.png used on input line 724.
+Package pdftex.def Info: images/dataFlow_capture.png used on input line 735.
 (pdftex.def)             Requested size: 272.51746pt x 209.58249pt.
 
-<images/osd_sdum.png, id=555, 655.85025pt x 408.92775pt>
+<images/osd_sdum.png, id=343, 655.85025pt x 408.92775pt>
 File: images/osd_sdum.png Graphic file (type png)
 
 <use images/osd_sdum.png>
-Package pdftex.def Info: images/osd_sdum.png used on input line 730.
+Package pdftex.def Info: images/osd_sdum.png used on input line 741.
 (pdftex.def)             Requested size: 327.92432pt x 204.46336pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2436,57 +2449,60 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36 <./images/dataFlow_capture.png>]
-<images/sdum_service.png, id=562, 663.6795pt x 261.3765pt>
+[40 <./images/dataFlow_capture.png>]
+<images/sdum_service.png, id=350, 663.6795pt x 261.3765pt>
 File: images/sdum_service.png Graphic file (type png)
 
 <use images/sdum_service.png>
-Package pdftex.def Info: images/sdum_service.png used on input line 736.
+Package pdftex.def Info: images/sdum_service.png used on input line 747.
 (pdftex.def)             Requested size: 331.83894pt x 130.68791pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
+Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
 
-LaTeX Info: Redefining \. on input line 743.
-LaTeX Info: Redefining \% on input line 743.
+LaTeX Info: Redefining \. on input line 754.
+LaTeX Info: Redefining \% on input line 754.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37 <./images/osd_sdum.png> <./images/sdum_service.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
+[41 <./images/osd_sdum.png> <./images/sdum_service.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+LaTeX Warning: Reference `L0421' on page 42 undefined on input line 759.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
-<images/idecore_figure.png, id=571, 1156.32pt x 566.71725pt>
+<images/idecore_figure.png, id=360, 1156.32pt x 566.71725pt>
 File: images/idecore_figure.png Graphic file (type png)
 
 <use images/idecore_figure.png>
-Package pdftex.def Info: images/idecore_figure.png used on input line 753.
+Package pdftex.def Info: images/idecore_figure.png used on input line 764.
 (pdftex.def)             Requested size: 346.89868pt x 170.01648pt.
 
-<images/idecoretools_capture.png, id=572, 760.64175pt x 467.346pt>
+<images/idecoretools_capture.png, id=361, 760.64175pt x 467.346pt>
 File: images/idecoretools_capture.png Graphic file (type png)
 
 <use images/idecoretools_capture.png>
-Package pdftex.def Info: images/idecoretools_capture.png used on input line 759
+Package pdftex.def Info: images/idecoretools_capture.png used on input line 770
 .
 (pdftex.def)             Requested size: 418.35425pt x 257.04109pt.
 
-Overfull \hbox (5.12183pt too wide) in paragraph at lines 759--760
+Overfull \hbox (5.12183pt too wide) in paragraph at lines 770--771
  [][] 
  []
 
@@ -2496,11 +2512,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38 <./images/idecore_figure.png>]
+[42 <./images/idecore_figure.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 771.
-LaTeX Info: Redefining \% on input line 771.
+LaTeX Info: Redefining \. on input line 782.
+LaTeX Info: Redefining \% on input line 782.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2508,16 +2524,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 <./images/idecoretools_capture.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 772--773
+[43 <./images/idecoretools_capture.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
 
  []
 
-<images/login_capture.png, id=584, 582.37575pt x 261.3765pt>
+<images/login_capture.png, id=376, 582.37575pt x 261.3765pt>
 File: images/login_capture.png Graphic file (type png)
 
 <use images/login_capture.png>
-Package pdftex.def Info: images/login_capture.png used on input line 777.
+Package pdftex.def Info: images/login_capture.png used on input line 788.
 (pdftex.def)             Requested size: 291.18715pt x 130.68791pt.
 
 
@@ -2526,11 +2542,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40 <./images/login_capture.png>]
+[44 <./images/login_capture.png>]
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 802.
-LaTeX Info: Redefining \% on input line 802.
+LaTeX Info: Redefining \. on input line 813.
+LaTeX Info: Redefining \% on input line 813.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2538,13 +2554,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 809--811
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 820--822
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--818
+Underfull \hbox (badness 10000) in paragraph at lines 828--829
 
  []
 
@@ -2554,19 +2570,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 819--821
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 830--832
 
  []
 
-<images/phenonet_capture.png, id=602, 425.79076pt x 236.68425pt>
+
+LaTeX Warning: Reference `L411' on page 47 undefined on input line 839.
+
+<images/phenonet_capture.png, id=394, 425.79076pt x 236.68425pt>
 File: images/phenonet_capture.png Graphic file (type png)
 
 <use images/phenonet_capture.png>
-Package pdftex.def Info: images/phenonet_capture.png used on input line 831.
+Package pdftex.def Info: images/phenonet_capture.png used on input line 842.
 (pdftex.def)             Requested size: 170.31328pt x 94.67201pt.
-LaTeX Info: Redefining \. on input line 837.
-LaTeX Info: Redefining \% on input line 837.
+LaTeX Info: Redefining \. on input line 848.
+LaTeX Info: Redefining \% on input line 848.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2574,30 +2593,42 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[43 <./images/phenonet_capture.png>]
+[47 <./images/phenonet_capture.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44] <images/kaa_platform.png, id=615, 259.56975pt x 386.04225pt>
+[48]
+
+LaTeX Warning: Reference `L501' on page 49 undefined on input line 858.
+
+
+LaTeX Warning: Reference `L502' on page 49 undefined on input line 859.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
+
+ []
+
+<images/kaa_platform.png, id=408, 259.56975pt x 386.04225pt>
 File: images/kaa_platform.png Graphic file (type png)
 
 <use images/kaa_platform.png>
-Package pdftex.def Info: images/kaa_platform.png used on input line 855.
+Package pdftex.def Info: images/kaa_platform.png used on input line 870.
 (pdftex.def)             Requested size: 129.78455pt x 193.02065pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45
+ [49
 
 ]
-<images/arquitectura_kaa.png, id=622, 483.0045pt x 457.10776pt>
+<images/arquitectura_kaa.png, id=416, 483.0045pt x 457.10776pt>
 File: images/arquitectura_kaa.png Graphic file (type png)
 
 <use images/arquitectura_kaa.png>
-Package pdftex.def Info: images/arquitectura_kaa.png used on input line 861.
+Package pdftex.def Info: images/arquitectura_kaa.png used on input line 876.
 (pdftex.def)             Requested size: 289.80493pt x 274.26675pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2609,24 +2640,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46 <./images/kaa_platform.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 866--867
+[50 <./images/kaa_platform.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 867--868
+Underfull \hbox (badness 10000) in paragraph at lines 882--883
 
  []
 
-<images/kaa_platform1.png, id=630, 640.3925pt x 360.34625pt>
+
+LaTeX Warning: Reference `L502' on page 51 undefined on input line 889.
+
+<images/kaa_platform1.png, id=423, 640.3925pt x 360.34625pt>
 File: images/kaa_platform1.png Graphic file (type png)
 
 <use images/kaa_platform1.png>
-Package pdftex.def Info: images/kaa_platform1.png used on input line 879.
-(pdftex.def)             Requested size: 320.19547pt x 180.17268pt.
-LaTeX Info: Redefining \. on input line 881.
-LaTeX Info: Redefining \% on input line 881.
+Package pdftex.def Info: images/kaa_platform1.png used on input line 894.
+(pdftex.def)             Requested size: 256.15245pt x 144.13594pt.
+LaTeX Info: Redefining \. on input line 896.
+LaTeX Info: Redefining \% on input line 896.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2634,43 +2668,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47 <./images/arquitectura_kaa.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 883--884
+[51 <./images/arquitectura_kaa.png>]
+
+LaTeX Warning: Reference `L504' on page 52 undefined on input line 898.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
 
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[48 <./images/kaa_platform1.png>]
-<images/log_schema.png, id=643, 296.307pt x 386.04225pt>
-File: images/log_schema.png Graphic file (type png)
-
-<use images/log_schema.png>
-Package pdftex.def Info: images/log_schema.png used on input line 889.
-(pdftex.def)             Requested size: 118.52069pt x 154.41415pt.
-
-<images/log_schema_example.png, id=644, 389.65575pt x 423.984pt>
+<images/log_schema_example.png, id=430, 389.65575pt x 423.984pt>
 File: images/log_schema_example.png Graphic file (type png)
 
 <use images/log_schema_example.png>
-Package pdftex.def Info: images/log_schema_example.png used on input line 896.
+Package pdftex.def Info: images/log_schema_example.png used on input line 903.
 (pdftex.def)             Requested size: 194.8274pt x 211.99147pt.
-
-<images/requisitos.png, id=646, 761.244pt x 211.992pt>
-File: images/requisitos.png Graphic file (type png)
-
-<use images/requisitos.png>
-Package pdftex.def Info: images/requisitos.png used on input line 903.
-(pdftex.def)             Requested size: 380.62106pt x 105.99573pt.
-
-Underfull \vbox (badness 6927) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 905.
-LaTeX Info: Redefining \% on input line 905.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2678,22 +2690,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49 <./images/log_schema.png> <./images/log_schema_example.png>]
-<images/events_schema.png, id=654, 890.1255pt x 262.581pt>
+[52 <./images/kaa_platform1.png>]
+
+LaTeX Warning: Reference `L105' on page 53 undefined on input line 907.
+
+<images/events_schema.png, id=437, 890.1255pt x 262.581pt>
 File: images/events_schema.png Graphic file (type png)
 
 <use images/events_schema.png>
-Package pdftex.def Info: images/events_schema.png used on input line 911.
+Package pdftex.def Info: images/events_schema.png used on input line 914.
 (pdftex.def)             Requested size: 445.06166pt x 131.29016pt.
 
-Overfull \hbox (31.82924pt too wide) in paragraph at lines 911--912
+Overfull \hbox (31.82924pt too wide) in paragraph at lines 914--915
  [][] 
  []
 
 
-Overfull \hbox (24.59286pt too wide) in paragraph at lines 915--916
-\T1/LinuxLibertineT-TLF/m/n/12 se usan gru-pos y per-fi-les end-points.////////
-///////////////////////////////////////////////////////////// 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 917.
+LaTeX Info: Redefining \% on input line 917.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53 <./images/log_schema_example.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
+
  []
 
 
@@ -2702,19 +2728,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50 <./images/requisitos.png> <./images/events_schema.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 927--928
+[54 <./images/events_schema.png>]
 
- []
+LaTeX Warning: Reference `L507' on page 55 undefined on input line 931.
 
-<images/esquema_apache.png, id=664, 544.434pt x 164.41425pt>
+<images/esquema_apache.png, id=451, 544.434pt x 164.41425pt>
 File: images/esquema_apache.png Graphic file (type png)
 
 <use images/esquema_apache.png>
-Package pdftex.def Info: images/esquema_apache.png used on input line 935.
+Package pdftex.def Info: images/esquema_apache.png used on input line 934.
 (pdftex.def)             Requested size: 326.66292pt x 98.64929pt.
-LaTeX Info: Redefining \. on input line 937.
-LaTeX Info: Redefining \% on input line 937.
+
+<images/endpoint_group.png, id=452, 373.395pt x 237.2865pt>
+File: images/endpoint_group.png Graphic file (type png)
+
+<use images/endpoint_group.png>
+Package pdftex.def Info: images/endpoint_group.png used on input line 942.
+(pdftex.def)             Requested size: 224.03873pt x 142.37299pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 945.
+LaTeX Info: Redefining \% on input line 945.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2722,32 +2757,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51] <images/disponibilidad_captura.png, id=669, 388.45125pt x 322.806pt>
+[55 <./images/esquema_apache.png>]
+<images/disponibilidad_captura.png, id=460, 388.45125pt x 322.806pt>
 File: images/disponibilidad_captura.png Graphic file (type png)
 
 <use images/disponibilidad_captura.png>
 Package pdftex.def Info: images/disponibilidad_captura.png used on input line 9
-51.
+54.
 (pdftex.def)             Requested size: 194.22514pt x 161.4026pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[52 <./images/esquema_apache.png>]
-<images/security_capture.png, id=675, 637.1805pt x 396.88275pt>
-File: images/security_capture.png Graphic file (type png)
-
-<use images/security_capture.png>
-Package pdftex.def Info: images/security_capture.png used on input line 959.
-(pdftex.def)             Requested size: 318.58946pt x 198.44089pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 962.
-LaTeX Info: Redefining \% on input line 962.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2755,25 +2775,49 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53 <./images/disponibilidad_captura.png>]
+[56 <./images/endpoint_group.png>]
+<images/security_capture.png, id=467, 637.1805pt x 396.88275pt>
+File: images/security_capture.png Graphic file (type png)
+
+<use images/security_capture.png>
+Package pdftex.def Info: images/security_capture.png used on input line 962.
+(pdftex.def)             Requested size: 318.58946pt x 198.44089pt.
+
+Underfull \vbox (badness 2384) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 967.
+LaTeX Info: Redefining \% on input line 967.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54 <./images/security_capture.png>]
-LaTeX Info: Redefining \. on input line 1007.
-LaTeX Info: Redefining \% on input line 1007.
-
+[57 <./images/disponibilidad_captura.png> <./images/security_capture.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[55]
-Underfull \hbox (badness 10000) in paragraph at lines 1026--1027
+[58]
+
+LaTeX Warning: Reference `L505' on page 59 undefined on input line 1006.
+
+LaTeX Info: Redefining \. on input line 1008.
+LaTeX Info: Redefining \% on input line 1008.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1008.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
 
  []
 
@@ -2783,25 +2827,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56]
-LaTeX Info: Redefining \. on input line 1055.
-LaTeX Info: Redefining \% on input line 1055.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[57] <images/notifications.png, id=738, 422.17725pt x 391.4625pt>
+[60] <images/notifications.png, id=516, 422.17725pt x 391.4625pt>
 File: images/notifications.png Graphic file (type png)
 
 <use images/notifications.png>
-Package pdftex.def Info: images/notifications.png used on input line 1076.
+Package pdftex.def Info: images/notifications.png used on input line 1072.
 (pdftex.def)             Requested size: 211.0881pt x 195.73076pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Info: Redefining \. on input line 1074.
+LaTeX Info: Redefining \% on input line 1074.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2809,22 +2845,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58] <images/kaa_stack.png, id=757, 1090.0725pt x 612.78937pt>
+[61] <images/kaa_stack.png, id=547, 1090.0725pt x 612.78937pt>
 File: images/kaa_stack.png Graphic file (type png)
 
 <use images/kaa_stack.png>
-Package pdftex.def Info: images/kaa_stack.png used on input line 1085.
+Package pdftex.def Info: images/kaa_stack.png used on input line 1081.
 (pdftex.def)             Requested size: 436.02127pt x 245.1114pt.
 
-Overfull \hbox (22.78885pt too wide) in paragraph at lines 1085--1086
+Overfull \hbox (22.78885pt too wide) in paragraph at lines 1081--1082
  [][] 
  []
 
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[62 <./images/notifications.png>]
+LaTeX Info: Redefining \. on input line 1092.
+LaTeX Info: Redefining \% on input line 1092.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[63 <./images/kaa_stack.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1088.
-LaTeX Info: Redefining \% on input line 1088.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2832,62 +2882,133 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[59 <./images/notifications.png>]
+[64]
+LaTeX Info: Redefining \. on input line 1159.
+LaTeX Info: Redefining \% on input line 1159.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60 <./images/kaa_stack.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1095.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1095.
+[65]
+Underfull \vbox (badness 7151) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66]
+
+LaTeX Warning: Citation `wsj' on page 67 undefined on input line 1221.
+
+<images/fog_computing.png, id=658, 349.305pt x 248.127pt>
+File: images/fog_computing.png Graphic file (type png)
+
+<use images/fog_computing.png>
+Package pdftex.def Info: images/fog_computing.png used on input line 1225.
+(pdftex.def)             Requested size: 209.58461pt x 148.87733pt.
+LaTeX Info: Redefining \. on input line 1227.
+LaTeX Info: Redefining \% on input line 1227.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[67]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[68 <./images/fog_computing.png>]
+LaTeX Info: Redefining \. on input line 1240.
+LaTeX Info: Redefining \% on input line 1240.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[69] [70
+
+] [71pdfTeX warning (ext4): destination with the same identifier (name{cite.}) 
+has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1251 \end{document}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1251 \end{document}
+                     ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1251.
  (plantillaTFG.aux
 LaTeX Info: Redefining \. on input line 19.
 LaTeX Info: Redefining \% on input line 19.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1095.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1095.
-
-Package rerunfilecheck Info: File `plantillaTFG.out' has not changed.
-(rerunfilecheck)             Checksum: CCE5CD6F0A3B5ACA7DEFBE9DBA2B5ACE;3047.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1251.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1251.
 
 
-LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1095.
+Package rerunfilecheck Warning: File `plantillaTFG.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `plantillaTFG.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  00B4D7DC963547EDB43C282E303D01AF;3449.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1251.
  ) 
 Here is how much of TeX's memory you used:
- 24592 strings out of 493333
- 434605 string characters out of 3130143
- 484747 words of memory out of 3000000
- 27344 multiletter control sequences out of 15000+200000
- 109359 words of font info for 90 fonts, out of 3000000 for 9000
+ 24654 strings out of 493333
+ 435331 string characters out of 3130143
+ 492750 words of memory out of 3000000
+ 27309 multiletter control sequences out of 15000+200000
+ 110531 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,54p,975b,1919s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,13n,54p,975b,1967s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/l
-btn_naooyc.enc} <C:\Users\migue\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
-en\ec\dpi600\ectt1200.pk>{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/font
-s/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/migue/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/migue/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{C:/Users/migue
-/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_tlukpt.enc}{C
+btn_naooyc.enc}{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/libertine/lbtn_ncsllp.enc} <C:\Users\migue\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ectt1200.pk>{C:/Users/migue/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/migue/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/migue
+/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{C
 :/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_
-76gpa5.enc}{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/li
-bertine/lbtn_nh77jq.enc}<C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/libertine/LinBiolinumT.pfb><C:/Users/migue/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/migue/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C
-:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/Li
-nLibertineTB.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/libertine/LinLibertineTI.pfb><C:/Users/migue/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/migue/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/stix/stix-mathrm.pfb>
-Output written on plantillaTFG.pdf (68 pages, 6444696 bytes).
+nh77jq.enc}<C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/libertine/LinBiolinumT.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/migue/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/migue
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTB.
+pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libert
+ine/LinLibertineTI.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/stix/stix-mathit.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/stix/stix-mathrm.pfb>
+Output written on plantillaTFG.pdf (77 pages, 6330068 bytes).
 PDF statistics:
- 883 PDF objects out of 1000 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
- 616 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 823 PDF objects out of 1000 (max. 8388607)
+ 336 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

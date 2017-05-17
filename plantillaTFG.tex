@@ -10,6 +10,8 @@
 \usepackage{float}
 \usepackage{epsfig}
 \usepackage{listings}
+\lstset{basicstyle=\footnotesize}
+
 
 % =====================
 % = Datos importantes =
@@ -240,7 +242,7 @@
 \mainmatter
 
 
-\chapter*{English Abstract}
+\chapter*{Abstract}
 \addcontentsline{toc}{chapter}{English Abstract}
 \markright{English Abstract}
 
@@ -305,7 +307,15 @@
 \bibliographystyle{acm}
 % \biliography{miarchivo} % -> lee miarchivo.bib
 
-
+\chapter{Introducción}
+Planteamos el siguiente escenario para obtener la automatización de una finca agrícola. Para tal propósito disponemos de Raspberry y Arduino.
+////////////////Foto//////////
+En este trabajo se han analizado una serie de middleware IoT para dar solución al problema que se plantea. En ellos se analizan sus ventajas e inconvenientes buscando siempre nuestro propósito inicial. El análisis de cada uno de los middleware IoT, se hará siguiendo los requisitos presentes en la siguiente figura. Esta tabla de requisitos está presente en un artículo de 2016 \cite{surv} en el que se analizan diferentes middleware para IoT.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/requisitos}
+\caption{Requisitos de un middleware IoT.}\label{L105}
+\end{figure}
 \chapter{MQTT}
 
 \section{MQTT}
@@ -412,7 +422,8 @@ MQTT es un middleware de código abierto perfectamente documentado en\\
 MQTT es un protocolo heterogéneo en cuanto a dispositivos y tecnologías se refiere. Puede funcionar prácticamente en cualquier dispositivo ya que es un protocolo muy sencillo que requiere poco procesamiento. Puede funcionar en un dispositivo móvil, PC, Raspberry… 
 
 
-
+\section{Problemas}
+MQTT es un middleware muy simple que puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero se queda corto como solución completa que buscamos. MQTT tan solo es un middleware para el envío de datos y nosotros buscamos algo más, como análisis y visualización de datos, almacenamiento en la nube.... Por ello hemos optado por buscar más plataformas para analizar sus ventajas e inconvenientes. Siempre buscando que sean Open Source.
 
 
 \chapter{MQTT-SN}
@@ -840,6 +851,8 @@ En el campo ('field') se sitúan los sensores para medir temperatura, humedad o 
 \item[•] Request Definition y Presentation: Estas herramientas se usan para el diseño. 
 \end{itemize}
 
+\subsection{Problemas}
+Tras un tiempo intentando desplegar sin éxito la plataforma, se ha optado por descartarla. OpenIoT es una plataforma reciente y con un potencial alto pero inexplicablemente no tiene ningún tipo de soporte. Han sido muchos los problemas que se han dado a la hora de la instalación sin llegar en ningún momento a hacerla funcionar correctamente, y navegando por la red, nos damos cuenta que son problemas comunes que no tienen solución. Esto nos ha llevado a descartar la plataforma y buscar otra solución completa para el problema que planteamos.
 \chapter{KAA}
 \section{Arquitectura}
 Kaa es un middleware de código abierto que, al igual que OpenIoT, busca un control e integración de las aplicaciones IoT. Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un entorno IoT. Kaa soporta múltiples plataformas en el lado del cliente, mediante puntos finales (SDKs), en diferentes lenguajes de programación. El SDK es una librería 'empotrada' en el dispositivo conectado. Esto, junto con un lenguaje de definición de datos ("data schema"), hace que Kaa sea una plataforma muy rápida y flexible. Kaa ha sido diseñada como una plataforma robusta y fácil de usar.\\ En la figura \ref{L501} se puede ver su arquitectura.\\
@@ -849,7 +862,9 @@ Un cluster Kaa representa un número de nodos (Kaa server) interconectados. La f
 
 \textbf{Nota: La versión de la plataforma analizada en este documento ha sido la 0.10, la última hasta la fecha.}
 
-/////////////////Palabras clave: CLUSTER,SDK,NODE,SCHEMA,LOG////////////
+/////////////////Palabras clave: CLUSTER,SDK,NODE,SCHEMA,LOG////////////\\
+
+Hay empresas como \MYhref{https://www.kaaiot.io/solutions}{Kaaiot} que se dedican a crear soluciones haciendo uso de Kaa. Todas ellas son soluciones muy completas y con un grado de dificultad bastante alto.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/kaa_platform}
@@ -871,25 +886,17 @@ Un nodo en un cluster está ejecutando una combinación de servicios de control,
 
 
 \section{Funcionamiento}
-La figura \ref{L502} muestra un flujo de datos en Kaa. Los sensores recogen datos y, a través del SDK, los envían al servidor. El SDK dependerá de la plataforma y del lenguaje de programación. El envío de datos al servidor se realiza en un formato común, previamente definido en el Servidor mediante los "Log Schema". \\
-Como plataforma Cloud-IoT que es, se almacenan esos datos para que puedan ser procesados y analizados posteriormente. Kaa no ofrece un análisis de los datos como sí ofrecía OpenIoT, si no que tan solo ofrece una persistencia de los datos. Kaa ofrece tanto bases de datos relacionales como no-relacionales para el almacenamiento. MariaDB y MongoDB respectivamente, son las bases de datos por defecto usadas por Kaa.\\
+La figura \ref{L502} muestra un flujo de datos en Kaa. Los sensores recogen datos y, a través del SDK, se envían al servidor. El SDK dependerá de la plataforma y del lenguaje de programación. El envío de datos al servidor desde el SDK se realiza en un formato común, previamente definido en el Servidor mediante los "Log Schemas". \\
+Como plataforma Cloud-IoT que es, almacena esos datos para que puedan ser procesados y analizados posteriormente. Kaa no ofrece un análisis de los datos como sí ofrecía OpenIoT, si no que tan solo ofrece una persistencia de los datos. Kaa ofrece tanto bases de datos relacionales como no-relacionales para el almacenamiento. MariaDB y MongoDB , relacional y no-relacional respectivamente, son las bases de datos por defecto usadas por Kaa.\\
 La plataforma se organiza en cluster conectados entre sí, siendo cada cluster un nodo o servidor. Por defecto, está formada por un único cluster. 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{images/kaa_platform1}
+\includegraphics[scale=0.4]{images/kaa_platform1}
 \caption{Flujo de datos en Kaa}\label{L502}
 \end{figure} 
 \subsection*{Esquemas de datos}
-Los datos se recolectan desde los endpoints y se envían al servidor en el formato definido por el 'log schema', previamente creado por el desarrollador para la aplicación en concreto. En la figura \ref{L503} se muestra una arquitectura de los datos. Log Schema usa un formato compatible con Apache Avro. El desarrollador define cómo quiere que se envíe y almacenen los datos mediante estos esquemas, lo que hace a la plataforma muy flexible, facilitando la integración entre los diferentes servicios.\\
-
-Entre el servidor y los endpoints se pueden usar diferentes tecnologías o protocolos, como TCP, HTTP, XMPP, CoAP o MQTT. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{images/log_schema}
-\caption{Arquitectura de los esquemas de datos}\label{L503}
-\end{figure} 
-
+Los datos se recolectan desde los endpoints y se envían al servidor en el formato definido por el 'log schema', previamente creado por el desarrollador para la aplicación en concreto. Log Schema usa un formato compatible con Apache Avro. En la figura \ref{L504} se muestra un ejemplo de un esquema de datos. El desarrollador define cómo quiere que se envíe y almacenen los datos mediante estos esquemas, lo que hace a la plataforma muy flexible, facilitando la integración entre los diferentes servicios.\\
+ 
 
 \begin{figure}[H]
 \centering
@@ -897,59 +904,55 @@ Entre el servidor y los endpoints se pueden usar diferentes tecnologías o proto
 \caption{Ejemplo de Log Schema}\label{L504}
 \end{figure} 
 \subsection{Qué ofrece Kaa}
-Evaluando a Kaa como middleware IoT, se puede decir que cumple con una gran cantidad de requisitos esenciales. ////////Se va a evaluar como el resto de middleware analizados, es decir, mediante la evaluación de los requisitos presentes en la tabla de la figura \ref{L505} ////////
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{images/requisitos}
-\caption{Requisitos de un middleware IoT.}\label{L505}
-\end{figure} 
+Evaluando a Kaa como middleware IoT, se puede decir que cumple con una gran cantidad de requisitos esenciales. Se va a evaluar como el resto de middleware analizados, es decir, mediante la evaluación de los requisitos presentes en la tabla de la figura \ref{L105} 
+ 
 
 \subsubsection*{Descubrimiento de recursos}
-Kaa ofrece un sistema de eventos que permite enviarlos tanto a los diferentes endpoints como al servidor. Al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Estos eventos se pueden usar para avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
+Kaa ofrece un sistema de eventos que permite enviarlos a los diferentes endpoints. Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/events_schema}
-\caption{Diagrama de eventos en Kaa}\label{L505}
+\caption{Diagrama de eventos en Kaa}\label{L506}
 \end{figure} 
 
- ///////////////////////////////////////////////////////////////notificaciones basado en tópicos, entregando los mensajes a los endpoints subscritos. Al igual que el almacenamiento de datos, las notificaciones se definen mediante esquemas. Para el envío de mensajes se usan grupos y perfiles endpoints./////////////////////////////////////////////////////////////////////
 
 \subsubsection*{Control de recursos}
-En IoT se busca que los recursos puedan ser controlados para que, por ejemplo, se pueda reaccionar ante un fallo de éstos. Kaa no ofrece un control de recursos como tal, pero haciendo uso de los eventos y notificaciones se puede conseguir tal propósito. Por ejemplo, una solución sencilla podria ser que un endpoint guarde cada 5/10 min un valor característico, como su timestamp y, mediante un sistema de análisis, analizar los datos y, en caso de fallo, enviar un evento o notificación a un endpoint en concreto, que será el encargado de reaccionar ante tal efecto. Por ejemplo, avisando a un nodo de monitorización para que intente restablecer el endpoint caído.\\
+En IoT se busca que los recursos puedan ser controlados para que, por ejemplo, se pueda reaccionar ante un fallo de éstos. Kaa no ofrece un control de recursos como tal, pero haciendo uso de los eventos y notificaciones se puede conseguir tal propósito. Por ejemplo, una solución sencilla podría ser que un endpoint guarde cada 5/10 min un valor característico, como su timestamp y, mediante un sistema de análisis, analizar los datos y, en caso de fallo, enviar un evento o notificación a un endpoint en concreto, que será el encargado de reaccionar ante tal efecto.\\
 Otro ejemplo podría ser implementar en un SDK una función 'ping' a la que, haciendo uso del sistema de eventos de kaa, tengan que responder todos los endpoints en un determinado tiempo, si no lo hacen se podría considerar como endpoint caído y actuar ante tal efecto.\\
-Por tanto, el sistema de eventos y notificaciones es un sistema muy completo con el que se pueden realizar muchas funciones. Toda funcionalidad tendrá que ser implementada en los endpoints, donde podrán ser conectados a servidores para realizar funciones mas complejas. El motivo por el cual se usa Kaa es, sin duda, su robustez y heterogeneidad con distintas plataformas así como su facilidad de uso. 
+Por tanto, el sistema de eventos y notificaciones es un sistema completo con el que se pueden realizar muchas funciones. Toda funcionalidad tendrá que ser implementada en los endpoints, donde podrán ser conectados a servidores para realizar funciones más complejas. El motivo por el cual se usa Kaa es, sin duda, su robustez y heterogeneidad con distintas plataformas así como su facilidad de uso. 
 
-
-
-...(en un proyecto de kaa en la salud habla de control y configuración de los dispositivos de forma remota. Se podría conseguir mediante eventos???)
 
 \subsubsection*{Control de datos}
 Los datos son la principal característica de las aplicaciones IoT, cuando se habla de datos se hace referencia principalmente a los recopilados por los sensores. Un procesamiento, almacenamiento así como una monitorización o filtrado de datos es fundamental para poder desarrollar una aplicación IoT. \\ 
 
 Kaa, a diferencia de otras plataformas comerciales, no ofrece un procesamiento o visualización de datos. En kaa tan solo se almacenan los datos provenientes de sensores. A pesar de que no ofrezca herramientas de análisis de datos como tal, se pueden usar herramientas externas. \\
-Con estas herramientas se recopilan los datos almacenados en Kaa de manera que sean estas herramientas las que gestionen los datos. Para comunicarse con los EndPoints se usan las notificaciones Kaa mediante su API.
-Más adelante se verá un ejemplo práctico sobre esto, en el que se ha usado Apache Zeppelin como herramienta para el análisis de datos y Cassandra como base de datos de Kaa. Una vez analizados, si supera un cierto umbral, se envía una notificación a Kaa para que encienda un LED en la raspberry.
-En la figura ---- se puede ver un esquema de uso con Apache Storm.
+Con estas herramientas se recopilan los datos almacenados en Kaa de manera que sean estas herramientas las que gestionen y analicen los datos. Para comunicarse con los EndPoints se usan las notificaciones Kaa mediante su API.
+Más adelante se verá un ejemplo práctico sobre ésto, en el que se ha usado Apache Zeppelin como herramienta para el análisis de datos y Cassandra como base de datos de Kaa. Una vez analizados, si supera un cierto umbral, se envía una notificación a Kaa para que encienda un LED en la raspberry.
+En la figura \ref{L507} se puede ver un esquema de uso con Apache Storm.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{images/esquema_apache}
-\caption{Esquema de uso para la monitorización de datos con Apache Storm}\label{L505}
+\caption{Esquema de uso para la monitorización de datos con Apache Storm}\label{L507}
 \end{figure} 
 
 \subsubsection*{Escalabilidad}
 La plataforma Kaa ha sido diseñada para ser escalable horizontalmente. Se pueden añadir miles de endpoints al mismo nivel, es decir no puede haber varios niveles en la jerarquía. Para poder agrupar distintos endpoints se puede hacer uso de los grupos de endpoints (endpoint group).
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/endpoint_group.png}
+\caption{Grupos de Endpoints}\label{L508}
+\end{figure}
 
 \subsubsection*{Tiempo real}
-///////////////////Kaa está diseñado para que soporte virtualmente cualquier protocolo de transporte, por ello permite a los desarrolladores usar diferentes protocolos de transporte de datos para diferentes acciones, en el mismo Endpoint. Por defecto se usa HTTP sobre TCP para la comunicación SDK y cluster./////////////////////////\\
-Kaa es un sistema en tiempo real, entendiendo tiempo real como unos ms de retraso. Kaa usa HTTP sobre TCP para la comunicación entre SDK y Cluster, por tanto, por definición es un servicio con retardos, aunque despreciables para el escenario que se plantea.
+Kaa es un sistema en tiempo real, entendiendo tiempo real como unos ms de retraso. Ya que Kaa usa HTTP sobre TCP para la comunicación entre SDK y Cluster, por tanto, por definición, es un servicio con retardos, aunque despreciables para el escenario que se plantea.
 
 
 \subsubsection*{Disponibilidad}
-Kaa es un sistema con una alta disponibilidad. Está formado por clusters, donde cada cluster representa un servidor. Estos clusters están interconectados mejorando así la disponibilidad en caso de fallo de alguno de ellos. Para la coordinación entre los diferentes nodos Kaa usa Apache Zooekeeper. Además, los datos de los endpoints se almacenan en bases de datos tolerantes a fallos.
+Kaa es un sistema con una alta disponibilidad. Está formado por clusters, donde cada cluster representa un servidor. Estos clusters están interconectados mejorando así la disponibilidad en caso de fallo de alguno de ellos. Para la coordinación entre los diferentes nodos, Kaa usa Apache Zooekeeper. Además, los datos de los endpoints se almacenan en bases de datos tolerantes a fallos.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/disponibilidad_captura}
-\caption{Esquema Zooekpeer en Kaa}\label{L506}
+\caption{Esquema Zooekpeer en Kaa}\label{L509}
 \end{figure} 
 
 \subsubsection*{Seguridad y privacidad}
@@ -957,18 +960,15 @@ Por defecto, en la comunicación entre Kaa y el SDK se usa una encriptación con
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/security_capture}
-\caption{Seguridad en Kaa}\label{L507}
+\caption{Seguridad en Kaa}\label{L510}
 \end{figure} 
-
-
-
 \subsubsection*{Popularidad}
 Kaa es un middleware reciente y con mucho soporte y documentación, lo que facilita su despliegue.
 \subsubsection*{Facilidad para su despliegue} 
 Kaa es un middleware que ofrece facilidades para su desarrollo. Dispone de una versión en una maquina virtual ya preconfigurada con aplicaciones y ejemplos de uso de la plataforma. El uso de SDKs facilita la interoperabilidad de diferentes plataformas sin la intervención del usuario. Con Kaa se consigue que el desarrollador se 'olvide' de la parte del servidor. 
 
 \subsubsection*{Interoperabilidad}
-La interoperabilidad de distintas plataformas es una de las características de Kaa, en la que una misma aplicación puede ser desarrollada para diferentes plataformas, tan solo descargando el SDK generado por Kaa. Esto hace que sea una plataforma totalmente heterogénea en cuanto a plataformas se refiere. Un endpoint puede ser ejecutado en distintos dispositivos, desde un teléfono móvil a una raspberry o arduino.
+La interoperabilidad de distintas plataformas es una de las características de Kaa, en la que una misma aplicación puede ser desarrollada para diferentes plataformas, tan solo descargando el SDK generado por el servidor. Esto hace que sea una plataforma totalmente heterogénea en cuanto a plataformas se refiere. Un endpoint puede ser ejecutado en distintos dispositivos, desde un teléfono móvil a una raspberry o arduino.
 
 
 \subsubsection*{Distribuido}
@@ -978,18 +978,14 @@ Kaa es una plataforma distribuida, que se organiza en clusters donde cada uno de
 
 
 \subsubsection*{Abstracción de la programación}
-Kaa proporciona una interfaz al desarrollador, posibilitando una sencillez a la hora de crear las aplicaciones. El desarrollador tan solo tiene que crear los esquemas de datos, pues la plataforma se encarga de generar el código. Además de la interfaz, Kaa proporciona una API que permite realizar todas las funciones que se pueden llevar a cabo a través de la interfaz, mediante llamadas a la misma. Esto es muy útil a la hora de quien tenga que realizar las funciones sea el endpoint automáticamente, lo que hace que Kaa sea una plataforma autónoma.
-
-
-
+Kaa proporciona una interfaz al desarrollador, posibilitando una sencillez a la hora de crear las aplicaciones. El desarrollador tan solo tiene que crear los esquemas de datos, pues la plataforma se encarga de generar el código. Además de la interfaz, Kaa proporciona una API que permite realizar, mediante llamadas a la misma, todas las funciones que se pueden llevar a cabo a través de la interfaz y así, pueden ser los endpoints quienes realicen una determinada tarea.
 \subsubsection*{Basado en servicio}
 -----
 
-
-
 \subsubsection*{Adaptativo}
+----
 Kaa soporta virtualmente cualquier protocolo de red, endpoint o almacenamiento de datos, lo que hace a la plataforma tolerante a cambios.
-
+---
 
 
 \subsubsection*{Control de eventos}
@@ -1088,9 +1084,168 @@ Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transpor
 \section{Casos prácticos}
 
 \subsection{Encender un LED en la raspberry usando Kaa}
-\subsubsection*{Enviar datos desde la raspberry a Kaa}
+\subsubsection*{Creación de los esquemas y la aplicación}
+Todos las pruebas se han hecho en la versión virtual que ya viene preconfigurada.\\ 
+Para crear una nueva aplicación, el usuario tiene que tener el rol de Tenant Administrador, por ello hay que logearse como admin/admin123. Una vez que se asigna un nombre a la aplicación, hay que logearse de nuevo pero esta vez con el rol de desarrollador (devuser/devuser123). \\
+El funcionamiento de la aplicación será enviar datos a la raspberry cada cierto tiempo, tiempo definido por el desarrollador en los esquemas de datos. 
+El esquema de configuración queda así:
+\begin{lstlisting}
+{
+     "type": "record",
+     "name": "Configuration",
+     "namespace": "org.kaaproject.kaa.schema.sample",
+     "fields": [
+         {
+             "name": "samplePeriod",
+             "type": "int",
+             "by_default": 1
+         }
+     ]
+ }
+ 
+\end{lstlisting}
+En él se crea el periodo de tiempo en el que se suben los datos, que por defecto es 1.
+El esquema de datos indica los datos que se envían a Kaa para que sean almacenados en la base de datos:
+\begin{lstlisting}
+{
+     "type": "record",
+     "name": "DataCollection",
+     "namespace": "org.kaaproject.kaa.schema.sample",
+     "fields": [
+         {
+             "name": "temperature",
+             "type": "int"
+         }
+     ]
+ }
+ 
+\end{lstlisting}
+Se va a usar Cassandra como base de datos. Para el almacenamiento en las bases de datos hay que definir el esquema 'log appender'. Se definen los metadatos que se añadirán al valor de la temperatura y /////las columnas están relacionadas con los metadatos???? (probar)/////// 
+
+subsubsection*{Enviar datos desde la raspberry a Kaa}
+Una vez configurado el lado del servidor y generado el SDK, se necesita programar el endpoint.
 \subsubsection*{Analizar datos con Apache Zeppelin}
+
 \subsubsection*{Envío de notificaciones a la Raspberry para encender un LED}
 
+\section{Ejemplos prácticos}
+Además de los escenarios planteados, se va a probar los ejemplos tanto los presentes en la versión virtual preconfigurada, como los presentes en el \MYhref{https://github.com/kaaproject/sample-apps}{GIT} de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa así como a comprobar varios de los requisitos planteados en este documento para un middleware IoT. 
+
+\subsection{Perfiles y grupos}
+En este ejemplo se muestra cómo funciona Kaa con la agrupación de diferentes endpoints en grupos así como los distintos filtros entre los endpoints.
+Para este caso he usado Java como plataforma. En este ejemplo hay 3 instancias de un cliente Kaa y cada una de ellas tiene un perfil endpoint (EP). LA estructura de datos de un EP se define mediante un esquema. En este ejemplo se usa el siguiente esquema en el lado del cliente:
+\begin{lstlisting}
+{
+ 	"type" : "record",
+ 	"name" : "PagerClientProfile",
+	"namespace" : "org.kaaproject.examples.pager",
+	"fields" : [ {
+		"name" : "audioSupport",
+		"type" : "boolean"
+  	}, {
+		"name" : "videoSupport",
+		"type" : "boolean"
+	}, {
+		"name" : "vibroSupport",
+		"type" : "boolean"
+	}],
+		 "displayName":"org.kaaproject.examples.
+		 	pager.PagerClientProfile"
+}
+\end{lstlisting}
+Para el lado del servidor se usa el siguiente esquema:
+\begin{lstlisting}
+{
+	"type" : "record",
+	"name" : "PagerServerProfile",
+	"namespace" : "org.kaaproject.examples.pager",
+	"fields" : [ {
+		"name" : "audioSubscription",
+		"type" : "boolean"
+	}, {
+		"name" : "videoSubscription",
+		"type" : "boolean"
+	}, {
+		"name" : "vibroSubscription",
+		"type" : "boolean"
+	} ],
+		"displayName" : "org.kaaproject.examples.
+		   pager.PagerServerProfile"
+}
+\end{lstlisting}
+
+Y como esquema de configuración se usa:
+\begin{lstlisting}
+     {
+	  "type" : "record",
+	  "name" : "PagerConfiguration",
+	  "namespace" : "org.kaaproject.examples.pager",
+	  "fields" : [ {
+		"name" : "audioSubscriptionActive",
+		"type" : "boolean",
+		"by_default" : false
+	  }, {
+		"name" : "videoSubscriptionActive",
+		"type" : "boolean",
+		"by_default" : false
+	  }, {
+		"name" : "vibroSubscriptionActive",
+		"type" : "boolean",
+		"by_default" : true
+	  } ],
+	  "displayName" : "org.kaaproject.examples.
+	      pager.PagerConfiguration"
+     }
+\end{lstlisting}
+
+Hay 4 grupos de endpoints: \textbf{Audio y vibración}, \textbf{Solo vibración}, \textbf{Todas los servicios soportados}, \textbf{Desactivar vibración si hay soporte para audio y vídeo}. 
+
+\subsection{Chat mediante eventos}
+En este caso se ha usado Android como plataforma.
+
+
+
+
+\
+
+
+
+\subsubsection*{Eventos en Kaa}
+\subsubsection*{Descubrimiento de recursos en Kaa haciendo uso de los eventos}
+
+\subsubsection*{Edge analytics}
+\subsubsection*{Fog-Computing y Edge-Computing}
+Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su "motor" de procesamiento está en la nube. Los Endpoint, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
+Pero desde la proliferación del Internet de las cosas, cada vez hay más dispositivos conectados a Internet, y según algunas predicciones, se estima que para 2030, la cantidad de datos disponibles en Internet crecerá a 1 Yottabyte (1 seguido de 24 ceros) con un tráfico diario de 2GB por usuario. Seguramente IoT sea uno de los promotores de este crecimiento. \\
+El uso de miles de millones de dispositivos enviando gran cantidad de datos, hace que aparezca el problema de ancho de banda. Por eso se está investigando en redes 5G, que proporcionaría una transmisión máxima de datos de 10Gbps, pero cuanto más se pone a disposición de los usuarios más se consume, por lo que pronto entrará en un cuello de botella. A la vista de esto el uso de Cloud-Computing no parece muy eficiente. 'De la nube a la niebla'\\
+Uno de los primeros artículos sobre este problema fue publicado por Wall Street Journal, titulado Forget 'the Cloud'; 'the Fog' Is Tech's Future. En él aparecen los conceptos de 'Fog Computing' y 'Edge Computing' \cite{wsj}, que hacen referencia al lugar donde se sitúa el procesamiento de datos.\\
+El concepto de Edge/Fog Computing reducirá el ancho de banda, puesto que el procesamiento de datos se realiza en el punto de generación y tan solo se envía la información resumen al siguiente nivel. Incluso se propone enviar solamente alarmas en muchos casos. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/fog_computing}
+\caption{Fog Computing}\label{L509}
+\end{figure}
+
+El concepto Edge/Fog aunque es parecido hay una diferencia y está en que Fog deja el procesamiento en manos de un nodo o servidor dentro de la red, mientras que Edge hace que cada dispositivo en la red juegue su propio papel de procesamiento, donde cada dispositivo de manera independiente elige qué información guardar y cuál subir a la nube. Edge tiene la ventaja de que hay menos puntos de fallo en la red, mientras que Fog es más escalable al tener un servidor centralizado.
+
+\subsubsection*{Edge Computing en Kaa}
+Este concepto que está siendo cada vez más usado, ha hecho que los creadores de Kaa hablen de ello (\MYhref{https://www.kaaproject.org/edge-analytics-kaa/}{vídeo}). ////Parece que en versiones posteriores se añadirá alguna herramienta de análisis de datos provenientes de los endpoints dentro de Kaa. Ya que no hay ninguna herramienta como Spark para análisis de datos procedentes de los sensores.////////// Lo que se puede hacer ahora mismo es realizar tu análisis propio y subir a Kaa tan solo lo necesario o únicamente alarmas.//////////////
+\subsubsection*{Tareas a realizar}
+- Hacer funcionar eventos y documentarlo
+- Una vez que funcionen los eventos (mirar ejemplos) comprobar que se cumplen los requisitos.
+- Resolver preguntas sobre Cassandra
 \section{Problemas encontrados}
+
+
+\begin{thebibliography}{X}
+\bibitem{surv} {Middleware for Internet of Things, VOL.3, No.1, February 2016.}
+\bibitem{wsj} {Forget 'the Cloud'; 'the Fog' Is Tech's Future, Christopher Mims, 2014.}
+\bibitem{kaa}{Kaa Official Website: https://www.kaaproject.org}
+\bibitem{kaa_iot}{KaaIoT Website: https://www.kaaiot.io}
+\bibitem{code}{Source code: https://github.com/kaaproject}
+\bibitem{}
+\bibitem{}
+\bibitem{}
+\end{thebibliography}
+
 \end{document}
