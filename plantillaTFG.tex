@@ -9,8 +9,11 @@
 \usepackage[notext]{stix}
 \usepackage{float}
 \usepackage{epsfig}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
 \usepackage{listings}
-\lstset{basicstyle=\footnotesize}
+\lstset{basicstyle=\footnotesize
+,escapeinside={\%},commentstyle=\color{dkgreen}}
 
 
 % =====================
@@ -1063,7 +1066,7 @@ Los endpoints almacenan datos recopilados ("log") siguiendo una estructura prede
 }
 \end{lstlisting}
 La especificación de la base de datos se hace mediante log appenders usando la interfaz de usuario. 
-\subsubsection*{Perfiles y grupos}
+\subsubsection*{Perfiles y grupos}\label{sec:grouping}
 
 \subsubsection*{Notificaciones}
 Kaa dispone de un sistema de notificaciones para la entrega de mensajes desde el clúster Kaa hasta los endpoints. La estructura de los datos se define en el esquema de notificaciones, configurado en el servidor y desplegado dentro de los endpoints. Las notificaciones a tópicos de forma que para recibir una notificación, el endpoint tiene que subscribirse a uno o varios tópicos. También, se puede asignar un tópico a todo un grupo de enpoints. El envío de notificaciones se puede hacer mediante la interfaz de usuario o mediante una llamada a la API. 
@@ -1132,7 +1135,23 @@ Una vez configurado el lado del servidor y generado el SDK, se necesita programa
 Además de los escenarios planteados, se va a probar los ejemplos tanto los presentes en la versión virtual preconfigurada, como los presentes en el \MYhref{https://github.com/kaaproject/sample-apps}{GIT} de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa así como a comprobar varios de los requisitos planteados en este documento para un middleware IoT. 
 
 \subsection{Perfiles y grupos}
-En este ejemplo se muestra cómo funciona Kaa con la agrupación de diferentes endpoints en grupos así como los distintos filtros entre los endpoints.
+En este ejemplo se muestra cómo funciona Kaa con la agrupación de diferentes endpoints en grupos así como los distintos filtros entre los endpoints. \ref{sec:grouping} \\
+Kaa permite la agrupación de endpoints en grupos de endpoints. Estos grupos son independientes, para ello se usan filtros de perfiles (profile filter, en inglés) asignados a un determinado grupo. Los endpoints cuyos perfiles coincidan con los filtros de perfiles asociados al endpoint, se registrarán automáticamente como miembros del grupo. Los filtros son expresiones que definen algunas características de los miembros del grupo (endpoints).\\
+Cada grupo de endpoints dentro de una aplicación, se le asignan diferentes pesos. Este valor se usa para la prioridad de cada grupo, siendo el valor más grande el que mayor prioridad tiene. Por defecto, hay un grupo "all" cuyo peso es 0. Este grupo contiene todos los endpoints registrados en la aplicación. Los PF están basados en \MYhref{http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}{Spring Language}. Los filtros se evalúan usando 3 variables de contexto:
+\begin{itemize}
+\item[•] "cp" - Perfil de endpoint en el lado del cliente
+\item[•] "sp" - Perfil de endpoint en el lado del servidor
+\item[•] "ekh" - Hash del endpoint 
+\end{itemize}
+
+Los endpoints envían sus perfiles al servidor durante su registro. Una vez enviados, el servicio de operaciones de Kaa clasifica los endpoints dentro de grupos basados en los filtros de perfiles.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/filters}
+\caption{Uso de perfiles de grupos de endpoints en Kaa}\label{L508}
+\end{figure}
+
+
 Para este caso he usado Java como plataforma. En este ejemplo hay 3 instancias de un cliente Kaa y cada una de ellas tiene un perfil endpoint (EP). LA estructura de datos de un EP se define mediante un esquema. En este ejemplo se usa el siguiente esquema en el lado del cliente:
 \begin{lstlisting}
 {
@@ -1198,7 +1217,34 @@ Y como esquema de configuración se usa:
      }
 \end{lstlisting}
 
-Hay 4 grupos de endpoints: \textbf{Audio y vibración}, \textbf{Solo vibración}, \textbf{Todas los servicios soportados}, \textbf{Desactivar vibración si hay soporte para audio y vídeo}. 
+Hay 4 grupos de endpoints: \textbf{Audio y vibración}, \textbf{Solo vibración}, \textbf{Todos los servicios soportados}, \textbf{Desactivar vibración si hay soporte para audio y vídeo}. 
+
+/////Como se menciona en la sección de groupping, para agrupar a los endpoints en grupos se necesita definir filtros para esos grupos. En este caso se han definido filtros asociados con los perfiles de EP en el lado del cliente: 
+\begin{lstlisting}[frame=shadowbox,basicstyle=\footnotesize , breaklines=true]
+% Filtros para el grupo de "Audio y Vibracion"
+#cp.audioSupport == true && #cp.videoSupport == false && #cp.vibroSupport == true
+		
+// "Solo vibracion"
+#cp.audioSupport == false && #cp.videoSupport == false &&
+     #cp.vibroSupport == true
+		
+// "Todos los servicios soportados"
+#cp.audioSupport == true && #cp.videoSupport == true && 
+     #cp.vibroSupport == true
+		
+// "Desactivar vibracion si hay soporte para audio y video"
+#cp.audioSupport == true && #cp.videoSupport == true && 
+     #cp.vibroSupport == true
+\end{lstlisting}
+Kaa obtiene la lista de los grupos de endpoints de la aplicación y comprueba los filtros de los perfiles de los endpoints tanto del lado del ciente como del lado del servidor. Esta comprobación se hace empezando por el grupo de menor peso (el grupo por defecto 'all') hasta el de mayor peso. Si los perfiles de los EP (definidos mediante los esquemas de client-side y server-side), cumplen las condiciones de los filtros, Kaa asigna el endpoint al grupo. Como resultado, el servidor aplica la configuración del grupo, presente en los esquemas. \\
+
+Para este ejemplo, la configuración por defecto en el lado del servidor para cada endpoint es tener audio y video desactivado y vibración activada. El endpoint 2, en el lado del cliente (código) se le asigna audioSupport=true, videoSupport=true y vibrationSupport=true. Como para este ejemplo, los filtros tan solo actúan en el lado del cliente, el endpoint \#2 pertenecerá por defecto al grupo "Todos los servicios habilitados".  Por ello, al iniciar la aplicación, se muestra la siguiente consola:  \////////////////////////poner ejemplo de consola en elcipse//////////////////////////
+En la que se ve como el endpoint 2 (que en realidad es una instancia de un cliente Kaa) pertenece al grupo "Todos los servicios habilitados". \\
+Cambiando desde la interfaz el filtro en el grupo "Desactivar vibración si hay soporte para audio y vídeo", a la misma configuración que el grupo "Todos los servicios soportados", la consola muestra el mensaje:  ///////////////////////////////poner cuando muestra "Endpoint configuration was updated."///////////////////////////////
+El endpoint 2 cambia su configuración al nuevo grupo ya que, aunque tenga la misma configuración, el grupo tiene un mayor peso. 
+
+///////Si hay tiempo poner la otra parte en la que usa filtros en el lado del servidor///////
+ 
 
 \subsection{Chat mediante eventos}
 En este caso se ha usado Android como plataforma.
@@ -1206,13 +1252,13 @@ En este caso se ha usado Android como plataforma.
 
 
 
-\
+
 
 
 
 \subsubsection*{Eventos en Kaa}
 \subsubsection*{Descubrimiento de recursos en Kaa haciendo uso de los eventos}
-
+Aprovechando el ejemplo anterior, se va a demostrar que Kaa cumple con el requisito de descubrimiento de recursos. Cuando se inicie la aplicación, es decir cuando el endpoint (teléfono móvil en este caso) tenga preparado el SDK y se inicie, enviará un evento al chat de la misma forma que en el ejemplo. Aunque se use como ejemplo el chat, esto se podría extrapolar a cualquier plataforma, con tan solo enviar un evento al resto de endpoints al iniciar el dispositivo. Y así,  éstos lo tengan en cuenta y puedan aplicar diferentes funcionalidades.
 \subsubsection*{Edge analytics}
 \subsubsection*{Fog-Computing y Edge-Computing}
 Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su "motor" de procesamiento está en la nube. Los Endpoint, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
@@ -1243,7 +1289,7 @@ Este concepto que está siendo cada vez más usado, ha hecho que los creadores d
 \bibitem{kaa}{Kaa Official Website: https://www.kaaproject.org}
 \bibitem{kaa_iot}{KaaIoT Website: https://www.kaaiot.io}
 \bibitem{code}{Source code: https://github.com/kaaproject}
-\bibitem{}
+\bibitem{doc}{Kaa documentation: http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}
 \bibitem{}
 \bibitem{}
 \end{thebibliography}
