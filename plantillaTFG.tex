@@ -1,20 +1,34 @@
 %!TEX TS-program = pdflatex
 %!TEX encoding = utf8
 \documentclass[12pt, twoside]{book} 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, spanish, es-noshorthands]{babel}
-%% FONTS: libertine+biolinum+stix
-\usepackage[mono=false]{libertine}
-\usepackage[notext]{stix}
-\usepackage{float}
-\usepackage{epsfig}
-\usepackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\usepackage{listings}
-\lstset{basicstyle=\footnotesize
-,escapeinside={\%},commentstyle=\color{dkgreen}}
 
+\input{preambulo.tex}
+
+
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english, spanish, es-noshorthands]{babel}
+%\usepackage[mono=false]{libertine}
+%\usepackage[notext]{stix}
+%\usepackage{float}
+%\usepackage{epsfig}
+%\usepackage{color}
+%\definecolor{dkgreen}{rgb}{0,0.6,0}
+%\usepackage{listings}
+%\usepackage[table,xcdraw]{xcolor}
+%\lstset{basicstyle=\footnotesize
+%,escapeinside={\%},commentstyle=\color{dkgreen}}
+
+%%%%AÑADIR a preambulo
+%\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+%\usepackage{pifont}% http://ctan.org/pkg/pifont
+%\newcommand{\cmark}{\ding{51}}%
+%\newcommand{\xmark}{\ding{55}}%
+
+
+
+
+%%%%hasta aquí el añadido
 
 % =====================
 % = Datos importantes =
@@ -248,12 +262,10 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{English Abstract}
 \markright{English Abstract}
+En este trabajo se han analizado diferentes soluciones de middleware open-source para el Internet de las Cosas (IoT). Se plantea un escenario teleo-reactivo y se pretende dar respuesta a qué middleware open-source es el más idóneo. El análisis se ha realizado comprobando si satisface determinados requisitos y dando respuesta a cómo suplirlos en caso de que no cumpla alguno de ellos.\\
 
+\textbf{Keywords:} Internet de las cosas (IoT); MQTT; OpenIoT; Kaa
 
-
-\begin{otherlanguage}{english}
-    According to the guidelines, every dissertation should include a short english abstract at the beginning. In the abstract, you describe in general terms what is your dissertation about, the main points you want to make, and any important consequences that may arise.
-\end{otherlanguage}
 
 \chapter*{Agradecimientos}
 \chapter{Los enunciados}
@@ -313,17 +325,16 @@
 \chapter{Introducción}
 Planteamos el siguiente escenario para obtener la automatización de una finca agrícola. Para tal propósito disponemos de Raspberry y Arduino.
 ////////////////Foto//////////
-En este trabajo se han analizado una serie de middleware IoT para dar solución al problema que se plantea. En ellos se analizan sus ventajas e inconvenientes buscando siempre nuestro propósito inicial. El análisis de cada uno de los middleware IoT, se hará siguiendo los requisitos presentes en la siguiente figura. Esta tabla de requisitos está presente en un artículo de 2016 \cite{surv} en el que se analizan diferentes middleware para IoT.
+El análisis de cada uno de los middleware IoT, se hará siguiendo los requisitos presentes en la siguiente figura. Esta tabla de requisitos está presente en un artículo de 2016 \cite{surv} en el que se analizan diferentes middleware para IoT.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/requisitos}
 \caption{Requisitos de un middleware IoT.}\label{L105}
 \end{figure}
 \chapter{MQTT}
-
 \section{MQTT}
-MQTT(Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda. Se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
-Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación publish/subscribe necesita de un "broker" o servidor para transmitir los paquetes.
+MQTT(Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda además de que no requiere de mucho software para implementar un cliente, lo cual es perfecto para dispositivos como Arduino. MQTT se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
+Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación publish/subscribe hace uso "broker" o servidor centralizado para la gestión de los paquetes.
 
 \begin{figure}[h!]
 \centering
@@ -332,65 +343,130 @@ Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación 
 \end{figure}
 \newpage
 %\vspace*{1.8cm}
-La comunicación se basa en "topics" (temas) que el cliente que publica el mensaje envía y los nodos que desean recibirlo deben subscribirse a él. Un topic se representa mediante una cadena de caracteres separada por "/". De esta forma se pueden crear jerarquías como se puede ver en la figura \ref{L402} \\ 
+La comunicación se basa en "topics" (temas) que el cliente que publica el mensaje envía y los nodos que desean recibirlo deben subscribirse a él. Un topic se representa mediante una cadena de caracteres separada por "/". De esta forma se pueden crear jerarquías como se puede ver en la figura \ref{L402} \
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/jerarquia.png}
 \caption{Jerarquía Topics.}\label{L402}
 \end{figure}
-
-\section{Requisitos}
-MQTT como middleware IoT, necesita cumplir una serie de requisitos. En el escenario que se plantea hay algunos que no son indispensables y otro que sí lo son, como pueda ser la seguridad. Aquí se definen algunos de los requisitos.
-\subsection{Escalabilidad}
-MQTT tiene, en general, una alta escalabilidad, que va a depender en gran medida de la calidad de los nodos y de la topología que se use. La existencia de uno o más brokers dota al sistema de gran escalabilidad ya que la solución puede crecer solo con aumentar recursos en un único elemento.
-Para añadir un nuevo cliente, tan solo es necesario suscribirse a un topic.
-\begin{figure}[h!]
+\section{Protocolo}
+MQTT funciona sobre TCP y, como cualquier protocolo, tiene un esquema definido para el envío y recepción de paquetes. El código y tipo de paquete se definen en la siguiente tabla.
+\begin{table}[H]
 \centering
-\includegraphics[scale=0.3]{images/figure3.png}
-\caption{Escalabilidad MQTT}\label{L403}
-\end{figure}
-\subsection{Seguridad}
-La seguridad es vital en un entorno IoT y para ello MQTT usa TLS junto con una autenticación de usuario/contraseña. Usa una autenticación usuario/contraseña a nivel de aplicación para establecer la conexión entre cliente y broker. Si TLS se resuelve correctamente, entra en juego dicha autenticación. Además, también existen políticas de autorización para denegar un determinado topic o para permitir una operación
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{images/mqtt_ssl}
-\caption{Autenticación MQTT}\label{L404}
-\end{figure}
-\subsection{Disponibilidad}
-MQTT no tiene una gran disponibilidad, aunque con herramientas como balanceadores de carga, o el uso de los brokers en modo “bridge” se puede conseguir una buena disponibilidad. La disponibilidad permitirá poder seguir usando la red en caso de fallo en alguno de sus nodos.
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{images/mqtt_availability.png}
-\caption{Balanceador de carga en MQTT}\label{L405}
-\end{figure}
-\subsection{Confiabilidad}
-MQTT proporciona 3 grados de QoS para la entrega de los paquetes:
-\begin{itemize}
-\item[•]\textbf{QoS 0: Como mucho una vez}\\
-El mensaje PUBLISH se envía y el broker no manda ningún reconocimiento. El mensaje llega al broker una vez o ninguna y si llega, llegará a los subscriptores una vez o ninguna.
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{images/qos0}
-\caption{QoS 0}\label{L406}
-\end{figure}
-\item[•]\textbf{QoS 1: Al menos una vez}\\
-Este nivel de calidad de servicio asegura que llega al broker al menos una vez. El broker tiene que reconocer la recepción con un paquete PUBACK. Si no recibe un acuse de recibo se vuelve a enviar de nuevo el mensaje PUBLISH con otro identificador distinto hasta que se reciba el reconocimiento. En este nivel no se garantiza que los paquetes no lleguen duplicados.
+\begin{tabular}{lcl}
+\rowcolor[HTML]{00D2CB} 
+Paquete     & Enumeración & Descripción                                        \\
+Reservado   & 0           & Reservado                                          \\
+CONNECT     & 1           & Cliente solicita conectarse al servidor            \\
+CONNACK     & 2           & Confirmación del mensaje CONNECT                   \\
+PUBLISH     & 3           & Mensaje PUBLISH                                    \\
+PUBACK      & 4           & Confirmación del paquete PUBLISH                   \\
+PUBREC      & 5           & PUBLISH recibido ()                                \\
+PUBREL      & 6           & PUBLISH release ()                                 \\
+PUBCOMP     & 7           & Publish completado                                 \\
+SUBSCRIBE   & 8           & Petición del cliente para subscribirse a un tópico \\
+SUBACK      & B           & Confirmación del paquete SUBSCRIBE                 \\
+UNSUBSCRIBE & 10          & Petición del cliente para desuscribirse            \\
+UNSUBACK    & 11          & Confirmación de UNSUBSCRIBE                        \\
+PINGREQ     & 12          & PING                                               \\
+PINGRESP    & 13          & Respuesta PING                                     \\
+DISCONNECT  & 14          & Cliente se va a desconectar                        \\
+Reservado   & 15          & Reservado                                         
+\end{tabular}
+\caption{Enumeración de paquetes}
+\label{table:package}
+\end{table}
+Una vez realizada la conexión a nivel de red entre cliente y broker mediante el envío de los paquetes CONNECT y CONNACK, el cliente se subscribe a un topic. El flujo de datos es el que se muestra en la figura \ref{L403}. El cliente envía un paquete "SUBSCRIBE" con el que el cliente le dice a qué topics quiere subscribirse. Cada suscripción será confirmada por el broker mediante el envío de un paquete "SUBPACK". El broker envía en el paquete un código de respuesta por cada topic al que el cliente se ha suscrito, en el mismo orden que el cliente lo envió. El código de respuestas se puede ver en la tabla \ref{table:return_code}. Una vez recibida la confirmación, el cliente puede empezar a enviar mensajes.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{images/qos1}
-\caption{QoS 1}\label{L407}
+\includegraphics[scale=0.5]{images/flujo_tipico.png}
+\caption{Envío de paquetes en MQTT.}\label{L403}
 \end{figure}
-\item[•] \textbf{QoS 2: Exactamente una vez}\\
-Este nivel de calidad asegura que el paquete llega una y solo una vez. Para ello se deben enviar además los paquetes PUBREC y PUBREL.
-\begin{figure}[h!]
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Return Code & Return Code response \\
+\hline \hline
+0 & Success – Maximum QoS 0 \\ \hline
+1 & Success – Maximum QoS 1 \\ \hline
+2 & Success – Maximum QoS 2 \\ \hline
+128 & Failure
+\end{tabular}
+\caption{Código de respuesta}
+\label{table:return_code}
+\end{center}
+\end{table}
+
+
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{images/qos2}
-\caption{QoS 2}\label{L408}
+\includegraphics[scale=0.3]{images/subscribe_packet.png}
+\caption{Paquete SUBSCRIBE.}\label{L404}
 \end{figure}
-\end{itemize}
-\subsection{Tiempo real}
-Si tiempo real lo definimos en microsegundos, MQTT no cumple este requisito ya que una de las principales características de MQTT es que funciona sobre TCP. En el escenario que se plantea, estos microsegundos no son necesarios por lo que no es un requisito indispensable.
-\subsection{Control de datos}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/suback_packet.png}
+\caption{Paquete SUBACK.}\label{L405}
+\end{figure}
+
+Por otro lado, si el cliente quiere desuscribirse a un topic deberá enviar un paquete "UNSUBSCRIBE" y esperar la confirmación por parte del broker mediante el paquete "UNSUBACK"
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/flujo_desuscribir.png}
+\caption{Envío de paquetes para desuscribirse de un topic.}\label{L406}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/unsubscribe_packet.png}
+\caption{Paquete UNSUBSCRIBE.}\label{L407}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/unsuback_packet.png}
+\caption{Paquete UNSUBACK.}\label{L408}
+\end{figure}
+\subsection*{Brokers}
+Son los encargados de transmitir los mensajes. El broker recibe los mensajes por parte de los clientes y se encarga de procesar y enviar el mensaje a los subscriptores de ese topic. La gestión de la red es otra de las funcionalidades del broker. Los clientes envían periódicamente un paquete (PINGREQ) y esperan la respuesta del broker (PINGRESP) para mantener activo el canal.\\
+Existen varias empresas como HiveMQ \cite{hive}\cite{hive_doc} que comercializan un broker MQTT diseñado por ellos mismos. Otro broker comercial es CloudMQTT \cite{cloud_mqtt}, propiedad de Amazon.
+
+En este trabajo se trabajará con el broker Mosquitto \cite{mosqtt}, el cual es de código abierto y es uno de los más usados y completos que existen.
+
+En la siguiente tabla se muestra una comparación entre alguno de los brokers más usados.
+\begin{table}[H]
+\centering
+
+\begin{tabular}{lcccccccc}
+\cellcolor[HTML]{00D2CB}Broker    & \cellcolor[HTML]{00D2CB}QoS0 & \cellcolor[HTML]{00D2CB}QoS1 & \cellcolor[HTML]{00D2CB}QoS2 & \cellcolor[HTML]{00D2CB}Autenticación & \cellcolor[HTML]{00D2CB}Bridge & \cellcolor[HTML]{00D2CB}SSL & \cellcolor[HTML]{00D2CB}Clustering & \cellcolor[HTML]{00D2CB}WebSocket \\
+Mosquitto & \cmark                       & \cmark                       & \cmark                       & \cmark                                & \cmark                         & \cmark                      & \xmark                             & \cmark                                \\
+Mosca     & \cmark                       & \cmark                       & \xmark                       & \cmark                                & \xmark                         & \cmark                      & \xmark                             & \cmark                                \\
+HiveMQ    & \cmark                       & \cmark                       & \cmark                       & \cmark                                & \cmark                         & \cmark                      & \cmark                             & \cmark                                \\
+ActiveMQ  & \cmark                       & \cmark                       & \cmark                       & \cmark                                & \xmark                         & \cmark                      & \cmark                             & \cmark                                \\
+VerneMQ   & \cmark                       & \cmark                       & \cmark                       & \cmark                                & \cmark                         & \cmark                      & \cmark                             & \cmark                                \\
+JoramMQ   & \cmark                       & \cmark                       & \cmark                       & \cmark                                & \cmark                         & \cmark                      & \cmark                             & \cmark                               
+\end{tabular}
+\caption{Comparación entre brokers MQTT}
+\label{broker_comparasion}
+\end{table}
+MQTT Websocket surge para usar MQTT sobre HTTPy poder usar un cliente MQTT en un navegador. Esto es útil cuando se quiera enviar los datos a dispositivos situados en el exterior de la red, como por ejemplo servidores. Estos dispositivos tendrán que tener un nivel de procesamiento más elevado que los de la red interna, pues HTTP necesita de dispositivos más potentes. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/mqtt_over_websockets}
+\caption{MQTT sobre WebSockets}\label{L409}
+\end{figure}
+\subsection*{Clientes}
+Se encargan de enviar al broker la información recibida, normalmente por parte de sensores. Los clientes también reciben mensajes de los topics subscritos.
+Al igual que los brokers, hay muchos tipos de clientes MQTT. El cliente Open-Source más usado es Eclipse Paho Java Client \cite{paho}
+\section{Requisitos}
+MQTT como middleware IoT, necesita cumplir una serie de requisitos. En el escenario que se plantea hay algunos que no son indispensables y otro que sí lo son, como pueda ser la seguridad. Aquí se definen algunos de los requisitos.
+\subsection{Requisitos funcionales}
+\subsubsection*{Descubrimiento de recursos}
+En MQTT no hay un mecanismo para el descubrimiento de recursos. El cliente se tiene que conectar al broker para su comunicación. Con MQTT-SN, una extensión de MQTT para redes de sensores, sí que hay un mecanismo de descubrimiento de nuevos dispositivos.
+\subsubsection*{Control de recursos}
+MQTT realiza un control básico a nivel de red. Si el broker percibe (mediante el temporizador "keep alive" en el envío de PINGREQ) una desconexión inesperada del cliente, el broker publica un mensaje "Last Will and Testament" (LWT) a todos los subscriptores de ese topic. Los clientes cuando se conectan al broker, tienen la opción de definir este mensaje y  pedir al broker que lo almacene.\\
+/////////////////////////////////////////////////
+Existen herramientas que realizan un control y monitorización más avanzados como por ejemplo MQTTSpy. MQTTSpy se ejecuta sobre Java y proporciona estadísticas . Esta herramienta se conectaría con el broker MQTT ////////////////////////////////////////////////////////////////////
+\subsubsection*{Control de datos}
 MQTT proporciona un control de datos como son el almacenamiento o el filtrado. De todo ello se encarga el broker. El broker puede almacenar los paquetes de un tópico mientras el cliente, subscrito a dicho tópico, esté offline. El broker también puede aplicar un filtrado en los tópicos, para que se aplique a un nivel o a todos los niveles de ese tópico:
 \begin{itemize}
 \item[•]\textbf{Single level : +} \\
@@ -415,18 +491,100 @@ Los tópicos que empiecen por el símbolo \$ están reservados para las estadís
 \item[•]\$SYS/broker/messages/sent
 \end{itemize}
 \end{itemize}
-\subsection{Descubrimiento de recursos}
-En MQTT no hay un mecanismo para el descubrimiento de recursos. El cliente se tiene que conectar al broker para su comunicación. Con MQTT-SN, una extensión de MQTT para redes de sensores, sí que hay un mecanismo de descubrimiento de nuevos dispositivos.
-\subsection{Documentación e interoperabilidad}
-MQTT es un middleware de código abierto perfectamente documentado en\\
-%\MYhref{ http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html}{Google}
-\url{ http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html}
+\subsubsection*{Control de eventos}
 
-MQTT es un protocolo heterogéneo en cuanto a dispositivos y tecnologías se refiere. Puede funcionar prácticamente en cualquier dispositivo ya que es un protocolo muy sencillo que requiere poco procesamiento. Puede funcionar en un dispositivo móvil, PC, Raspberry… 
+\subsubsection*{Control de código}
 
+\subsection{Requisitos no funcionales}
+\subsubsection*{Escalabilidad}
+MQTT tiene, en general, una alta escalabilidad, que va a depender en gran medida de la calidad de los nodos y de la topología que se use. La existencia de uno o más brokers dota al sistema de gran escalabilidad ya que la solución puede crecer solo con aumentar recursos en un único elemento.
+Para añadir un nuevo cliente, tan solo es necesario suscribirse a un topic.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/figure3.png}
+\caption{Escalabilidad MQTT}\label{L403}
+\end{figure}
+\subsubsection*{Seguridad y privacidad}
+La seguridad es vital en un entorno IoT y para ello MQTT usa TLS junto con una autenticación de usuario/contraseña. Usa una autenticación usuario/contraseña a nivel de aplicación para establecer la conexión entre cliente y broker. Si TLS se resuelve correctamente, entra en juego dicha autenticación. Además, también existen políticas de autorización para denegar un determinado topic o para permitir una operación
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/mqtt_ssl}
+\caption{Autenticación MQTT}\label{L404}
+\end{figure}
+\subsubsection*{Disponibilidad}
+Debido a su arquitectura ///"brokerizada"///, los sistemas MQTT tiene un único punto de fallo: el broker. La disponibilidad del sistema es baja al basarse únicamente en la disponibilidad del broker. \\
+Con herramientas como balanceadores de carga, o el uso de los brokers en modo “bridge” se puede conseguir una buena disponibilidad. La disponibilidad permitirá poder seguir usando la red en caso de fallo en alguno de sus nodos. 
+
+Con el denominado MQTT clustering se incrementa la disponibilidad. MQTT clustering consiste en usar varios brokers (cluster) MQTT como si de uno solo se tratase. Esto se consigue usando brokers en diferentes dispositivos físicos y conectándolos a nivel de red. A vista del cliente MQTT, estos brokers se comportan como un único broker. Se usan balanceadores de carga para tener un único punto de entrada y mejorar así el consumo en la red. En la siguiente imagen se puede ver un ejemplo de clustering con el broker comercial HiveMQ.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/mqtt_clustering.png}
+\caption{MQTT Clustering.}\label{L406}
+\end{figure}
+
+Mosquitto no tiene esta característica pero se podría mejorar la disponibilidad utilizando el broker en modo "bridge". Con el modo "bridge" configurado, se puede enviar información entre los brokers y así eliminar un único punto de fallo, mejorando la disponibilidad. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/mqtt_availability.png}
+\caption{MQTT en modo bridge.}\label{L405}
+\end{figure}
+\subsubsection*{Confiabilidad}
+MQTT proporciona 3 grados de QoS para la entrega de los paquetes:
+\begin{itemize}
+\item[•]\textbf{QoS 0: Como mucho una vez}\\
+El mensaje PUBLISH se envía y el broker no manda ningún reconocimiento. El mensaje llega al broker una vez o ninguna y si llega, llegará a los subscriptores una vez o ninguna.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/qos0}
+\caption{QoS 0}\label{L406}
+\end{figure}
+\item[•]\textbf{QoS 1: Al menos una vez}\\
+Este nivel de calidad de servicio asegura que llega al broker al menos una vez. El broker tiene que reconocer la recepción con un paquete PUBACK. Si no recibe un acuse de recibo se vuelve a enviar de nuevo el mensaje PUBLISH con otro identificador distinto hasta que se reciba el reconocimiento. En este nivel no se garantiza que los paquetes no lleguen duplicados.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/qos1}
+\caption{QoS 1}\label{L407}
+\end{figure}
+\item[•] \textbf{QoS 2: Exactamente una vez}\\
+Este nivel de calidad asegura que el paquete llega una y solo una vez. Para ello se deben enviar además los paquetes PUBREC y PUBREL.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/qos2}
+\caption{QoS 2}\label{L408}
+\end{figure}
+\end{itemize}
+\subsubsection*{Tiempo real}
+Si tiempo real lo definimos en microsegundos, MQTT no cumple este requisito ya que una de las principales características de MQTT es que funciona sobre TCP. En el escenario que se plantea, estos microsegundos no son necesarios por lo que no es un requisito indispensable.
+\subsection{Requisitos arquitectónicos}
+\subsubsection*{Abstracción de la programación}
+
+\subsubsection*{Interoperabilidad}
+MQTT es un protocolo heterogéneo en cuanto a dispositivos y tecnologías se refiere. Puede funcionar prácticamente en cualquier dispositivo ya que es un protocolo muy sencillo que requiere poco procesamiento. Puede funcionar en un dispositivo móvil, PC, Raspberry…
+\subsubsection*{Autónomo}
+
+\subsubsection*{Distribuido}
+Esta característica dependerá del broker a usar, algunos como HiveMQ o JoramMQ, pueden actuar como sistemas distribuidos, en los que se interpreta un cluster de brokers como un único broker.
+El broker Open-Source Mosquitto no cumple con este requisito.
+\subsubsection*{Orientado a servicio}
+
+\subsubsection*{Ligero}
+El bajo consumo de MQTT es una de las claves de su uso extendido. MQTT está diseñado para trabajar con dispositivos de bajo procesamiento como sensores o dispositivos móviles. Además, el consumo de ancho de banda que realiza en la red es mínimo. 
+
+\subsection{Documentación}
+MQTT es un middleware de código abierto perfectamente
+\MYhref{http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html}{documentado}. Es sencillo de usar y hay una gran cantidad de ejemplos para facilitar su despliegue.\\
+
+ 
+\section{Cloud Computing}
+En IoT se busca un procesamiento en la nube. MQTT nos ofrece el envío de datos y pequeños controles sobre los mismos pero para obtener una solución IoT completa se necesita de servidores y bases de datos. Algunos de los escenarios típicos con MQTT son el uso de herramientas como Node-RED\cite{nodered} junto con MongoDB\cite{mongo}. MQTT se encargaría del envío de datos (como se ha explicado más arriba) y éstos se enviarían al servidor, donde Node-RED recopilaría esos datos y los almacenaría en MongoDB. Se pueden usar herramientas como Google Chart para analizar los datos y poder llevar un control en tiempo real sobre los mismos. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/cloud_mqtt1}
+\caption{Cloud Computing haciendo uso de MQTT}\label{L408}
+\end{figure}
 
 \section{Problemas}
-MQTT es un middleware muy simple que puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero se queda corto como solución completa que buscamos. MQTT tan solo es un middleware para el envío de datos y nosotros buscamos algo más, como análisis y visualización de datos, almacenamiento en la nube.... Por ello hemos optado por buscar más plataformas para analizar sus ventajas e inconvenientes. Siempre buscando que sean Open Source.
+MQTT como middleware IoT, puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero no nos ofrece una solución completa. Por ello hemos optado por buscar más plataformas Open-Source que nos ofrezca una solución más completa.Es decir, un middleware que unifique almacenamiento en la nube, procesamiento y análisis de datos...
 
 
 \chapter{MQTT-SN}
@@ -438,7 +596,7 @@ Las redes de sensores o Wireless Sensor Networks (WSN) en inglés, se han increm
 \item[•]Ausencia de infraestructura de red\\
 \item[•]Bajo consumo
 \end{itemize} 
-A diferencia de las redes convencionales, los nodos no tienen conocimiento de la topología de la red, por lo que el enrutamiento cambia con respecto a éstas. Aquí es el nodo es el que se informa de sus nuevos nodos a su alcance y de la manera de encaminarse hacia ellos. En la figura \ref{L411} se puede ver la estructura de una red de este tipo.
+A diferencia de las redes convencionales, los nodos no tienen conocimiento de la topología de la red, por lo que el enrutamiento cambia con respecto a éstas. Aquí es el nodo el que se informa de los nuevos nodos a su alcance y de la manera de encaminarse hacia ellos. En la figura \ref{L411} se puede ver la estructura de una red de este tipo.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/wsn}
@@ -457,160 +615,10 @@ La arquitectura MQTT-SN se muestra en la figura \ref{L412}
 \end{figure}
 Hay 2 componentes: MQTT-SN clientes y MQTT-SN gateways. Los MQTT-SN clientes son los nodos en la red WSN. La comunicación entre clientes se hace a través del Gateway mediante el protocolo MQTT-SN. Los clientes realizan la comunicación pub/sub con un broker, localizado en una red tradicional, a través del Gateway. La comunicación entre el broker y el MQTT-Gateway se hace mediante el protocolo MQTT.
 \section{Funcionamiento}  
-
-\section{MQTT y MQTT-SN}
-
-
-\chapter{OpenIoT}
-
-\section{Introducción}
-Aunque existen muchas aplicaciones IoT, cada una hace uso de servicios diferentes debido a que no hay un modelo a seguir para integrar todos los servicios.\\
-En IoT no existe un estándar en cuanto a servicios se refiere, como sí existe en redes IP. OpenIoT surge como un proyecto europeo que busca la unificación de esas soluciones. \\
-OpenIoT es una plataforma de código abierto que proporciona una interoperabilidad entre los servicios IoT en la nube. 
-OpenIoT ofrece una infraestructura versátil para coleccionar datos de cualquier sensor disponible. Se hace uso también del concepto "datos enlazados", Linked Data en inglés. En el que los datos de los sensores se vinculan entre sí, para que puedan ser compartidos y entenderse entre ellos, ampliando así la información. Siempre buscando la principal característica en un entorno IoT, el Big Data. 
-
-\section{Plataforma}
-\subsection{Arquitectura}
-La arquitectura de OpenIoT está formada en 7 elementos principales divididos en 3 planos lógicos, tal y como se puede observar en la figura \ref{L301}. 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{images/openiot_platform1}
-\caption{Arquitectura OpenIoT}\label{L301}
-\end{figure}
-
-El plano físico, virtualizado y un plano de utilidad. 
-\begin{itemize}
-\item[] \textbf{Plano físico}
-\begin{itemize}
-\item[•] \textbf{The sensor middleware}\\
-Se encarga de filtrar, combinar y coleccionar los datos de los sensores. OpenIoT usa X-GSN como middleware, una versión extendida del middleware GSN. Además, se usa un middleware publish/subsribe para la integración de sensores móviles.
-\end{itemize}
-\end{itemize}
-\begin{itemize}
-\item[] \textbf{Plano virtual}
-\begin{itemize}
-\item[•] \textbf{The scheduler}\\
-El scheduler o planificador procesa peticiones de los servicios y asegura su correcto acceso a los recursos que solicitan. Entre sus principales tareas está la de descubrir sensores.  \\
-\item[•] \textbf{The cloud data storage}\\
-Actúa como una base de datos en la nube, almacenando los datos enviados por los sensores. En OpenIoT se almacena también los metadatos asociados a esos datos.
-OpenIoT usa Linked Stream Middleware Light (LSM-Light) \\
-\item[•] \textbf{The Service Delivery \& Utility Manager} \\
-Actúa, por un lado,combinando los flujos de datos para entregar el servicio solicitado. Hace uso de la descripción del servicio y de los recursos identificados por el Scheduler. Por otro lado, actúa como un servicio para realizar un seguimiento de las métricas de cada servicio (sensor). Como métricas se entiende la calidad, consumo, ancho de banda, volumen de datos...\\
-
-\end{itemize}
-\item[] \textbf{Plano de utilidad}
-\begin{itemize}
-\item[•] \textbf{The request definition} \\
-Este componente proporciona una interfaz web para la especificación de las peticiones de un servicio.
-\item[•] \textbf{The request presentation} \\
-Se encarga de la visualización de los servicios de salida (mostrar gráficas,flujos de datos...)
-\item[•] \textbf{The configuration and monitoring} \\
-Se encarga del control y configuración de los sensores y servicios incluidos en la plataforma OpenIoT.
-\end{itemize}
-\end{itemize}
-La figura \ref{L302} muestra la arquitectura de OpenIoT en bloques. Se pueden ver los diferentes servicios situados en cada plano. En el plano físico se muestra el middleware X-GSN y el middleware publish/subscribe para sensores móviles. Se muestra también, entre otros, el servicio de seguridad (CAS) o la plataforma de almacenamiento en la nube (LSM-Light), ambos pertenecientes al plano virtual. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{images/blocks_openiot}
-\caption{Bloques funcionales OpenIoT.}\label{L302}
-\end{figure}
-
-\subsubsection{Scheduler}
-El Scheduler analiza cada petición de servicio y, de acuerdo con esto, interactúa con el resto de la plataforma OpenIoT, a través de la base de datos en la nube (Cloud DB). El scheduler tiene las siguientes funcionalidades:
-\begin{itemize}
-\item[•] \textbf{Descubridor de recursos}\\
-Es capaz de descubrir los sensores virtuales disponibles a partir de la entidad "avaliableSensors" de su base de datos. Esta lista está basada en la sintaxis RDF cuando se envía a través de X-GSN.
-\item[•] \textbf{Control de servicios}\\
-El usuario puede llevar un control de los servicios. Para ello se usan comandos como "register", "suspend" , "unregister" o "update".
-\item[•] \textbf{Actualizar recursos}\\
-Un servicio que permite actualizar recursos
-\item[•] \textbf{Obtener servicios}
-Se usa para obtener la descripción de un determinado servicio ya registrado. 
-\end{itemize}
-Aunque el usuario pueda invocar a los distintos servicios, primero debe estar logueado correctamente dentro de la plataforma.
-\subsubsection{Service delivery \& Utility Manager}
-Las principales funciones de este servicio son:
-\begin{itemize}
-\item[•] Ejecutar y entregar los servicios pedidos.
-\item[•] Procesar los flujos de datos de la nube.
-\item[•] Seguimiento de los parámetros asociados al servicio. Por ejemplo, volumen de datos transmitidos o número de sensores usados.
-\item[•] 
-\end{itemize} 	
-\subsection{Funcionalidades}
-
-\subsubsection{Integración de datos enlazados}
-
-Los datos enlazados es la forma que tiene la Web Semántica de vincular los distintos datos que están distribuidos en la web, así se puede llegar a la información relacionada que se hace referencia desde otros datos. Es decir, se le da una cierta capacidad de "razonar" a la web.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{images/linked_data}
-\caption{Conjunto de datos vinculados entre sí en la web.}\label{L303}
-\end{figure}
-
-La principal funcionalidad de OpenIoT es el almacenamiento y procesado de datos, recopilados por sensores, en la nube. Y que estos datos puedan ser compartidos entre sí para poder ampliar la información. Es decir, hace uso del concepto de la web semántica. Para conseguir este concepto de datos enlazados ("Linked Data"), OpenIoT hace uso del middleware LSM.\\
-
-Para la integración y compartición de datos en la nube, es necesario enviar los datos de forma correcta a la nube. Es aquí donde entra en juego X-GSN, un middleware usado en el plano físico para la distribución de datos.
-La idea principal de X-GSN es el uso de sensores virtuales. Estos sensores virtuales pueden ser abstracciones lógicas de uno o más sensores reales, objetos o cualquier entidad que capture datos.\\
-
-Cada sensor virtual tiene una instancia almacenada en la nube en formato RDF (Resource description format), una sintaxis basada en SSN ontology. En la figura \ref{L304} se puede ver esta sintaxis. Estos metadatos de los sensores virtuales, se exponen como una representación "Linked Data" mediante el middleware LSM, así pueden ser descubiertos o adquiridos por componentes de las capas superiores en la plataforma OpenIoT. Esta representación en la que se exponen los datos es RDF.\\
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.6]{images/semantica_xgsn}
-\caption{Sintaxis usada por XGSN.}\label{L304}
-\end{figure}
-
-La figura \ref{L305} muestra un registro de un sensor virtual, en el que se almacena una instancia del sensor (metadatos) en la nube.  
-Mediante XGSN se envían esos metadatos y ,a través de LSM, se exponen como datos enlazados mediante la representación RDF, para que otros servicios puedan descubrirlo y obtener información.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.6]{images/registration_sensor_xgsm}
-\caption{Registro de un sensor virtual.}\label{L305}
-\end{figure}
-\subsubsection{Mobile broker}
-OpenIoT ofrece soporte para el descubrimiento y recoleccioón de datos por parte de sensores móviles tales como pulseras, gafas, relojes, en definitiva, sensores incluidos en dispositivos móviles. Todo esto se realiza a través de un middleware publish/subscribe para IoT llamado CUPUS (CloUd-based PUblish/Subscribe middleware). \\
-CUPUS tiene dos componentes principales: 1) un agente (mobile broker, de ahora en adelante) ejecutándose en un dispositivo móvil y 2) un motor de procesado en la nube basado en publish/subscribe (cloud broker, de ahora en adelante), que se encarga del procesamiento de los datos recopilados por los sensores. CUPUS soporta el contenido basado en publish/subscribe tanto en la nube como en los dispositivos móviles.\\
-En la arquitectura OpenIoT, los datos recopilados por los dispositivos móviles se anotan y almacenan en la nube, a través de X-GSN, de la misma forma que con los sensores estacionarios. \\
-
-El mobile broker puede controlar los sensores conectados localmente y realizar un preprocesamiento de los datos adquiridos por los sensores y enviarlos a la nube. Además, también puede recibir publicaciones de la nube y notificar a los clientes que estén subscritos. Como se puede observar en la siguiente figura, el mobile broker recibe los datos de los sensores a través de un mensaje publish y los envía al cloud broker. Pudiendo también conectarse o desconectarse del mismo.\\
-
-El cloud broker puede enviar una notificación al mobile broker. Por otro lado, el cloud broker envía una instancia de los datos del sensor ya procesados al almacenamiento RDF, a través de X-GSN, de la misma forma que en los sensores estacionarios, tal y como se ha visto anteriormente.
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.8]{images/mobilebroker_openiot}
-\caption{Arquitectura publish/subscribe}\label{L306}
-\end{figure}
-\subsubsection{Descubrimiento y registro de recursos}
-OpenIoT controla el registro y descubrimiento de sensores a través de X-GSN. Cada sensor se tiene que registrar en el LSM y así, otras aplicaciones y usuarios pueden descubrirlo y obtener acceso a sus datos. Los sensores se registran enviando la representación de sus metadatos a través de XGSN. Como se ha visto, XGSN se encarga de crear la sintaxis RDF y enviarla al repositorio. LSM se encarga de exponer esos datos como datos enlazados para que puedan ser compartidos entre sí.
-\subsubsection{Autenticación y acceso a los recursos}
-La diversidad de aplicaciones interactuando en un entorno IoT hace que la seguridad sea un punto clave para poder proteger los datos. OpenIoT deja la seguridad en manos del servicio CAS (Central authorization service), encargado de la seguridad en la web.\\
-
-La primera vez se redirecciona a los usuarios a la página de login para que se lleve a cabo una autenticación. Si esta autenticación es correcta, el CAS redirecciona al usuario a la pagina web original enviando un token. Este token se envía de un servicio a otro en cada petición y cada servicio se encarga de comprobar la validez del token.
-
-\section{Proyectos}
-Hay varios casos de éxito desarrollados mediante la plataforma OpenIoT. Algunos de ellos son Urban Crowdsensing, Phenonet o Silver Angel.
-\begin{itemize}
-\item[•]\textbf{Urban Crowdsensing}\\
-Este proyecto se aplica al medio ambiente. Realiza una monitorización del aire de entornos urbanos. En la figura \ref{L307} se muestra la plataforma OpenIoT sobre la que está construida esta aplicación
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{images/crowd_sensing}
-\caption{Arquitectura Crowd Sensing}\label{L307}
-\end{figure} 
-
-Cualquier dispositivo recoge datos del aire en el ambiente urbano, como por ejemplo, O$_{3}$ , O$_{2}$, CO$_{2}$. Estos datos son enviados a la nube OpenIoT para que sean procesados y filtrados y, posteriormente, reenviados a los smartphones, posibilitando así una monitrización en tiempo real del aire de una ciudad. Pudiendo así, por ejemplo, evitar salir a practicar un deporte en situaciones de alta polución.
-
-
-\item[•]\textbf{Phenonet}\\
-Se aplica en la agricultura. Permite procesar y visualizar datos del terreno en tiempo real. Esto ayuda a los científicos a identificar las plagas de cultivos y así, incrementar la eficiencia y rendimiento en la agricultura. 
-\item[•]\textbf{Silver Angel}\\
-Tiene una aplicación en la vida diaria de las personas. Está pensada para ayudar a la vida independiente de las personas mayores y, además, para facilitar el encuentro con amigos. Silver Angel permite reunir información de la cantidad de gente que hay en un determinado lugar, que hagan uso de Silver Angel, también reúne información del ruido ambiente o de los niveles de polen del medio ambiente. Así, permite a las personas reunirse dependiendo de sus preferencias; muchas o pocas personas, un alto o bajo ruido...
-\\
-Silver Angel emite alarmas para ayudar en la vida diaria de personas mayores. Cualquier objeto alrededor de la casa podría avisar de cualquier problema que se haya detectado. Por ejemplo, puede avisar cuando la puerta esté abierta o cerrada o cuando la temperatura de la casa esté por encima o por debajo de un umbral. Si detecta el problema, se envía una alarma a los usuarios que se hayan predefinido.
-\end{itemize}
-
+\section{MQTT vs MQTT-SN}
+MQTT-SN se diferencia en MQTT en varios aspectos. A nivel de red, no funciona sobre TCP pero por contra necesita de Gateways para...... //////////.
+MQTT-SN soporta ID de topics en lugar de nombres, siempre es menos costoso enviar el ID en cada mensaje que no el nombre completo ("home/livingroom/socket2/meter"). \\
+El descubrimineto es una de las mayores ventajas de MQTT-SN. Los clientes no necesitan saber la dirección IP o DNS del broker. El anunciamiento ayudará a descubrir los nodos. Los gateways de la red envían paquetes cada cierto periodo de tiempo advirtiendo de su presencia. Los clientes tienen que guardar una lista de los gateways activos junto con su dirección de red. Esta lista se forma a partir de los paquetes ADVERTISE y GWINFO enviados por los gateways. El cliente puede usar esta lista para conocer la disponibilidad de los gateways. Por ejemplo, si no recibe el mensaje ADVERTISE durante un tiempo determinado puede considerar que está caído y actualizar la lista. Conociendo la dirección de red del gateway el cliente puede conectarse mediante el envío de paquetes, como se hace en MQTT, aunque en este caso el paquete CONNECT, se divide en varios paquetes.
 \chapter{OpenIoT}
 \section{Introducción}
 A pesar de la expansión de las aplicaciones IoT en la nube, la ausencia de una semántica que proporcione una interoperabilidad entre las diferentes aplicaciones es una de las principales limitaciones de IoT. Esta ausencia de una unificación se refleja en los diferentes vocabularios y formas para describir las cosas/objetos físicos. No existe un modelo a seguir para integrar todos los servicios, como sí existe en redes IP. \\
@@ -750,8 +758,7 @@ El resultado se envía al SD\&UM (paso 15) en formato SparqlResultsDoc\\El SD\&U
 \includegraphics[scale=0.5]{images/sdum_service}
 \caption{Grafo de un objeto SdumServiceResultSet.}\label{L0422}
 \end{figure}
-\subsection{Uso de la plataforma}
-...
+
 \subsubsection*{Ventajas}
 En IoT cualquier cosa u objeto (TV,Smartphone...) genera una gran cantidad de eventos. Cada uno de estos objetos usa tecnologías diferentes y, desarrollar aplicaciones y servicios para controlar todo esto puede llegar a ser una tarea muy complicada. Por ello, se usan middlewares con el fin facilitar el desarrollo proporcionando una integración entre la comunicación y la computación de los dispositivos. Entre los middleware se encuentra MAPS, TinyDB o MQTT, mencionado anteriormente.\\
 
@@ -806,9 +813,9 @@ OpenIoT proporciona un servicio en tiempo real. El usuario a través de las inte
 \subsubsection*{Interoperabilidad}
 La interoperabilidad de los servicios IoT es la idea fundamental por la que surgió OpenIoT. Se buscaba unificar distintos servicios en una única plataforma. En OpenIoT se unifica todo lo relacionado con redes de sensores (Middleware...) y lo relacionado con el Cloud Computing (base de datos, herramientas de procesamiento...).
 \subsubsection*{Distribuido}
+ \cmark 
+\xmark
 
-
-\subsection{Caso práctico}
 
 \subsection{Casos de éxito con la plataforma}
 Entre quién ha desplegado la plataforma con éxito se encuentra:
@@ -854,16 +861,16 @@ En el campo ('field') se sitúan los sensores para medir temperatura, humedad o 
 \item[•] Request Definition y Presentation: Estas herramientas se usan para el diseño. 
 \end{itemize}
 
-\subsection{Problemas}
-Tras un tiempo intentando desplegar sin éxito la plataforma, se ha optado por descartarla. OpenIoT es una plataforma reciente y con un potencial alto pero inexplicablemente no tiene ningún tipo de soporte. Han sido muchos los problemas que se han dado a la hora de la instalación sin llegar en ningún momento a hacerla funcionar correctamente, y navegando por la red, nos damos cuenta que son problemas comunes que no tienen solución. Esto nos ha llevado a descartar la plataforma y buscar otra solución completa para el problema que planteamos.
+\section{Problemas}
+Tras un tiempo intentando desplegar sin éxito la plataforma, se ha optado por descartarla. OpenIoT es una plataforma reciente y con un potencial alto pero inexplicablemente no tiene ningún tipo de soporte. Han sido muchos los problemas que se han dado a la hora de la instalación sin llegar en ningún momento a hacerla funcionar correctamente y, navegando por la red, nos damos cuenta que son problemas comunes que no tienen solución. Esto nos ha llevado a descartar la plataforma y buscar otra solución para el problema que planteamos.
 \chapter{KAA}
 \section{Arquitectura}
-Kaa es un middleware de código abierto que, al igual que OpenIoT, busca un control e integración de las aplicaciones IoT. Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un entorno IoT. Kaa soporta múltiples plataformas en el lado del cliente, mediante puntos finales (SDKs), en diferentes lenguajes de programación. El SDK es una librería 'empotrada' en el dispositivo conectado. Esto, junto con un lenguaje de definición de datos ("data schema"), hace que Kaa sea una plataforma muy rápida y flexible. Kaa ha sido diseñada como una plataforma robusta y fácil de usar.\\ En la figura \ref{L501} se puede ver su arquitectura.\\
+Kaa \cite{kaa}\cite{kaa_iot}\cite{code}\cite{doc} es un middleware de código abierto que, al igual que OpenIoT, busca un control e integración de las aplicaciones IoT. Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un entorno IoT. Kaa soporta múltiples plataformas en el lado del cliente, mediante puntos finales (SDKs), en diferentes lenguajes de programación. El SDK es una librería 'empotrada' en el dispositivo conectado. Esto, junto con un lenguaje de definición de datos ("data schema"), hace que Kaa sea una plataforma muy rápida y flexible. Kaa ha sido diseñada como una plataforma robusta y fácil de usar.\\ En la figura \ref{L501} se puede ver su arquitectura.\\
 Un cluster Kaa representa un número de nodos (Kaa server) interconectados. La figura \ref{L502} muestra un flujo de datos común, donde se puede ver un cluster Kaa, formado por un kaa server.  
 
 
 
-\textbf{Nota: La versión de la plataforma analizada en este documento ha sido la 0.10, la última hasta la fecha.}
+\textbf{Nota: Se ha analizado la versión 0.10, la última hasta la fecha de publicación de este documento.}
 
 /////////////////Palabras clave: CLUSTER,SDK,NODE,SCHEMA,LOG////////////\\
 
@@ -906,9 +913,14 @@ Los datos se recolectan desde los endpoints y se envían al servidor en el forma
 \includegraphics[scale=0.5]{images/log_schema_example}
 \caption{Ejemplo de Log Schema}\label{L504}
 \end{figure} 
-\subsection{Qué ofrece Kaa}
+\section{Qué ofrece Kaa}
 Evaluando a Kaa como middleware IoT, se puede decir que cumple con una gran cantidad de requisitos esenciales. Se va a evaluar como el resto de middleware analizados, es decir, mediante la evaluación de los requisitos presentes en la tabla de la figura \ref{L105} 
  
+\subsection{Requisitos funcionales}
+
+\subsection{Requisitos no funcionales}
+
+\subsection{Requisitos arquitectónicos}
 
 \subsubsection*{Descubrimiento de recursos}
 Kaa ofrece un sistema de eventos que permite enviarlos a los diferentes endpoints. Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
@@ -1247,17 +1259,89 @@ El endpoint 2 cambia su configuración al nuevo grupo ya que, aunque tenga la mi
  
 
 \subsection{Chat mediante eventos}
-En este caso se ha usado Android como plataforma.
+En este caso se ha usado Android como plataforma. Este ejemplo consiste en emular un chat mediante los eventos de Kaa.
+
+Los eventos se definen mediante los esquemas de clases de eventos, Event Class Schema (EC), en inglés. A su vez, estas clases de eventos se agrupan en familias de clases de eventos,  Event Class Family (ECF), en inglés. 
+En ese ejemplo, se han creado dos esquemas de clases de eventos: ChatEvent y Message.\\
+Chat Event, envía un evento cuando el usuario quiere crear o eliminar un chat:
+\begin{lstlisting}
+  {
+   	"type": "record",
+   	"name": "ChatEvent",
+	"namespace": "org.kaaproject.kaa.examples.event",
+	"fields": [
+		{
+			"name": "ChatName",
+			"type": {
+			"type": "string",
+			"avro.java.string": "String"
+			}
+		},
+		{
+			"name": "EventType",
+			"type": {
+			"type": "enum",
+			"name": "ChatEventType",
+				"symbols": [
+				"CREATE",
+				"DELETE"
+			],
+			"classType": "object"
+			}
+		}
+	],
+	"description": "",
+	"classType": "event"
+  }
+\end{lstlisting}
+Message envía un evento con el nombre del chat y el mensaje.
+\begin{lstlisting}
+  {
+	"type": "record",
+	"name": "Message",
+	"namespace": "org.kaaproject.kaa.examples.event",
+	"fields": [
+		{
+			"name": "ChatName",
+			"type": {
+			"type": "string",
+			"avro.java.string": "String"
+		 	}
+		},
+		{
+			"name": "Message",
+			"type": {
+			  "type": "string",
+			  "avro.java.string": "String"
+			 }
+		}
+	],
+	"description": "",
+	"classType": "event"
+  }
+\end{lstlisting}
+
+Estos pasos previos se hacen desde la interfaz con el usuario con rol de administrador. Una vez creadas las familias de clases de eventos, se necesita asignarlas a la aplicación. Esto se hace mediante la opción "Event family mapping" de la interfaz, con rol de desarrollador. \\
+Por último, hay que añadir 	un verificador de usuario para comprobar los credenciales de los usuarios. Los endpoints pueden intercambiar mensajes entre aquellos que pertenezcan al mismo usuario. Por defecto, se usa un verificador de tipo 'Trustful', que acepta cualquier credencial de usuario. Se pueden añadir varios verificadores a la misma aplicación. Cuando se genera el SDK, se elige el verificador requerido. \\
+La app envía un mensaje como un evento Kaa, a todos los endpoints unidos al mismo chat.
 
 
 
-
-
-
-
-
-\subsubsection*{Eventos en Kaa}
 \subsubsection*{Descubrimiento de recursos en Kaa haciendo uso de los eventos}
+Haciendo uso del ejemplo anterior, se va a crear una aplicación sencilla para demostrar que Kaa cumple con el requisito de eventos. La interfaz de la aplicación se muestra en la figura \ref{L508}. Un botón para enviar eventos a todos los endpoints y además se envía un evento a todos los endpoints cuando cada uno de ellos inicie la aplicación, mostrando así su presencia al resto de endpoints. Esto podría ser capturado por los endpoints para realizar diferentes funcionalidades.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{images/screenshot.png}
+\caption{Vista de la aplicación}\label{L509}
+\end{figure}
+Al iniciar la aplicación, se envía un evento a todos los endpoints, mostrándose como una notificación en Android, tal y como se muestra en la siguiente figura.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{images/screenshot1.png}
+\caption{Recepción de evento}\label{L510}
+\end{figure}
+
+
 Aprovechando el ejemplo anterior, se va a demostrar que Kaa cumple con el requisito de descubrimiento de recursos. Cuando se inicie la aplicación, es decir cuando el endpoint (teléfono móvil en este caso) tenga preparado el SDK y se inicie, enviará un evento al chat de la misma forma que en el ejemplo. Aunque se use como ejemplo el chat, esto se podría extrapolar a cualquier plataforma, con tan solo enviar un evento al resto de endpoints al iniciar el dispositivo. Y así,  éstos lo tengan en cuenta y puedan aplicar diferentes funcionalidades.
 \subsubsection*{Edge analytics}
 \subsubsection*{Fog-Computing y Edge-Computing}
@@ -1275,23 +1359,31 @@ El concepto de Edge/Fog Computing reducirá el ancho de banda, puesto que el pro
 El concepto Edge/Fog aunque es parecido hay una diferencia y está en que Fog deja el procesamiento en manos de un nodo o servidor dentro de la red, mientras que Edge hace que cada dispositivo en la red juegue su propio papel de procesamiento, donde cada dispositivo de manera independiente elige qué información guardar y cuál subir a la nube. Edge tiene la ventaja de que hay menos puntos de fallo en la red, mientras que Fog es más escalable al tener un servidor centralizado.
 
 \subsubsection*{Edge Computing en Kaa}
-Este concepto que está siendo cada vez más usado, ha hecho que los creadores de Kaa hablen de ello (\MYhref{https://www.kaaproject.org/edge-analytics-kaa/}{vídeo}). ////Parece que en versiones posteriores se añadirá alguna herramienta de análisis de datos provenientes de los endpoints dentro de Kaa. Ya que no hay ninguna herramienta como Spark para análisis de datos procedentes de los sensores.////////// Lo que se puede hacer ahora mismo es realizar tu análisis propio y subir a Kaa tan solo lo necesario o únicamente alarmas.//////////////
+Este concepto que está siendo cada vez más usado, ha hecho que los creadores de Kaa hablen de ello (\MYhref{https://www.kaaproject.org/edge-analytics-kaa/}{vídeo}). El uso de Kaa en este caso es de tan solo almacenamiento de datos así como definición de esquemas. Kaa no dispone de una herramienta como Spark para el análisis de datos provenientes de los endpoint sin enviarlos al servidor. Los endpoints analizan los datos provenientes de los sensores y, mediante una definición de esquemas de datos y agrupación de endpoints, se enviarían esos datos ya analizados para su almacenamiento o únicamente alarmas, reduciendo así drásticamente el ancho de banda en la red. 
+Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis de datos provenientes de los endpoints para su posterior envío al servidor, añadiendo así un nivel de jerarquía en la estructura de Kaa.
+
+
+////Parece que en versiones posteriores se añadirá alguna herramienta de análisis de datos provenientes de los endpoints dentro de Kaa. Ya que no hay ninguna herramienta como Spark para análisis de datos procedentes de los sensores.////////// Lo que se puede hacer ahora mismo es realizar tu análisis propio y subir a Kaa tan solo lo necesario o únicamente alarmas.//////////////
 \subsubsection*{Tareas a realizar}
 - Hacer funcionar eventos y documentarlo
 - Una vez que funcionen los eventos (mirar ejemplos) comprobar que se cumplen los requisitos.
+- Almacenar tan solo alarmas o datos analizados para demostrar el uso de Edge Analytics
 - Resolver preguntas sobre Cassandra
 \section{Problemas encontrados}
-
-
 \begin{thebibliography}{X}
+\bibitem{hive} {http://www.hivemq.com/}
+\bibitem{hive_doc}{HiveMQ. MQTT doc:http://www.hivemq.com/mqtt/}
 \bibitem{surv} {Middleware for Internet of Things, VOL.3, No.1, February 2016.}
 \bibitem{wsj} {Forget 'the Cloud'; 'the Fog' Is Tech's Future, Christopher Mims, 2014.}
 \bibitem{kaa}{Kaa Official Website: https://www.kaaproject.org}
 \bibitem{kaa_iot}{KaaIoT Website: https://www.kaaiot.io}
 \bibitem{code}{Source code: https://github.com/kaaproject}
 \bibitem{doc}{Kaa documentation: http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}
-\bibitem{}
-\bibitem{}
+\bibitem{mosqtt}{https://mosquitto.org/}
+\bibitem{nodered}{https://nodered.org/}
+\bibitem{mongo}{https://www.mongodb.com}
+\bibitem{paho}{https://eclipse.org/paho/clients/java/}
+\bibitem{cloud_mqtt}{https://www.cloudmqtt.com/}
 \end{thebibliography}
 
 \end{document}
