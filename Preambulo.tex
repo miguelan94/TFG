@@ -1,13 +1,21 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english, spanish, es-noshorthands]{babel}
+\usepackage[english, spanish, es-noshorthands, es-tabla]{babel}
 \usepackage[mono=false]{libertine}
 \usepackage[notext]{stix}
 \usepackage{float}
 \usepackage{epsfig}
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
+%\definecolor{delim}{rgb}{0,0.6,0}
+\definecolor{punct}{RGB}{222,11,11}
+%\definecolor{punct}{}
+%\definecolor{numb}{}
+%\definecolor{numb}{rgb}{0,0.6,0.3}
+\definecolor{background}{RGB}{238,238,238}
+\definecolor{delim}{RGB}{20,105,176}
 \usepackage{listings}
+\usepackage{subcaption}
 \usepackage[table,xcdraw]{xcolor}
 \lstset{basicstyle=\footnotesize
 ,escapeinside={\%},commentstyle=\color{dkgreen}}
@@ -18,7 +26,21 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
-
+\lstdefinelanguage{json}{
+    basicstyle=\fontsize{9}{9}\ttfamily,
+    stepnumber=1,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+	backgroundcolor=\color{background},
+    literate=
+     *{:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 
 

@@ -902,8 +902,26 @@ La plataforma se organiza en cluster conectados entre sí, siendo cada cluster u
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/kaa_platform1}
-\caption{Flujo de datos en Kaa}\label{L502}
+\caption{Flujo de datos en Kaa}\label{deployment1}
 \end{figure} 
+La forma más común de despliegue de la plataforma se muestra en la siguiente figura:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/deployment1_kaa}
+\caption{Despliegue típico de Kaa}\label{deployment2}
+\end{figure} 
+En esta arquitectura cada uno de los endpoints tiene un SDK embebido y se comunican directamente con el servidor. Es la forma más "natural" para la que ha sido diseñada Kaa. Sin embargo, existe otro despliegue posible con la arquitectura y es el siguiente:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/deployment2}
+\caption{Otro despliegue con Kaa}\label{L502}
+\end{figure} 
+En esta arquitectura, uno o varios gateways o nodos centrales son los que tienen el SDK embebido. Los endpoints se comunican con el gateway a través de protocolos de transporte como Bluetooth, ZigBee o MQTT. Esta arquitectura es útil cuando no se puedan instalar el SDK en los endpoints por diferentes cuestiones (compatibilidad,bajas prestaciones...) o también cuando se quiere usar un protocolo específico de transporte. El gateway se presenta a la nube como una representación virtual del endpoint. Kaa no ofrece implementación para los gateways, como sí la ofrece para los endpoints, por tanto tiene que ser el desarrollador quien la implemente. Para versiones posteriores se plantea la inclusión de algún \MYhref{framework}{http://jira.kaaproject.org/browse/KAA-752} para simplificar la integración con Kaa en dispositivos en los que no se pueda ejecutar el SDK  o bien se busque este tipo de arquitectura ya que tiene algunos beneficios como se verá más adelante.
+
+
+
+
+
 \subsection*{Esquemas de datos}
 Los datos se recolectan desde los endpoints y se envían al servidor en el formato definido por el 'log schema', previamente creado por el desarrollador para la aplicación en concreto. Log Schema usa un formato compatible con Apache Avro. En la figura \ref{L504} se muestra un ejemplo de un esquema de datos. El desarrollador define cómo quiere que se envíe y almacenen los datos mediante estos esquemas, lo que hace a la plataforma muy flexible, facilitando la integración entre los diferentes servicios.\\
  
@@ -923,7 +941,11 @@ Evaluando a Kaa como middleware IoT, se puede decir que cumple con una gran cant
 \subsection{Requisitos arquitectónicos}
 
 \subsubsection*{Descubrimiento de recursos}
-Kaa ofrece un sistema de eventos que permite enviarlos a los diferentes endpoints. Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
+Kaa desplegada como la arquitectura mostrada en la figura ////figura del desplieuge 2//// permite un descubrimiento ¿automático? de nuevos dispositivos a través del Gateway. El Gateway es un dispositivo actuando como puente entre los endpoint y la nube, siendo el gateway quien tiene el SDK embebido. El Gateway se puede diseñar para que avise a Kaa cuando se conecte a él un nuevo dispositivo. 
+
+
+Kaa, con la arquitectura típica, no ofrece un descubrimiento de recursos como tal, pero mediante el sistema de eventos se puede conseguir tal propósito
+////Kaa ofrece un sistema de eventos que permite enviarlos a los diferentes endpoints.//// Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/events_schema}
@@ -984,6 +1006,20 @@ Kaa es un middleware que ofrece facilidades para su desarrollo. Dispone de una v
 
 \subsubsection*{Interoperabilidad}
 La interoperabilidad de distintas plataformas es una de las características de Kaa, en la que una misma aplicación puede ser desarrollada para diferentes plataformas, tan solo descargando el SDK generado por el servidor. Esto hace que sea una plataforma totalmente heterogénea en cuanto a plataformas se refiere. Un endpoint puede ser ejecutado en distintos dispositivos, desde un teléfono móvil a una raspberry o arduino.
+\begin{table}[H]
+\centering
+\caption{Compatibilidad entre SDKs y plataformas}
+\label{table:platform_supported}
+\begin{tabular}{l|c|c|c|c|}
+\cline{2-5}
+                                   & C      & C++    & Objetive - C & Java   \\ \hline
+\multicolumn{1}{|l|}{Linux}        & \cmark & \cmark &              & \cmark \\ \hline
+\multicolumn{1}{|l|}{Windows}      &        & \cmark &              & \cmark \\ \hline
+\multicolumn{1}{|l|}{Android}      &        &        &              & \cmark \\ \hline
+\multicolumn{1}{|l|}{iOS}          &        &        & \cmark       &        \\ \hline
+\multicolumn{1}{|l|}{Raspberry Pi} & \cmark & \cmark &              &        \\ \hline
+\end{tabular}
+\end{table}
 
 
 \subsubsection*{Distribuido}
@@ -1079,7 +1115,70 @@ Los endpoints almacenan datos recopilados ("log") siguiendo una estructura prede
 \end{lstlisting}
 La especificación de la base de datos se hace mediante log appenders usando la interfaz de usuario. 
 \subsubsection*{Perfiles y grupos}\label{sec:grouping}
+Kaa permite la agrupación de endpoints pertenecientes a la misma aplicación, en grupos de endpoints. Estos grupos se controlan de forma independiente, para ello se usan filtros de perfiles (profile filter (PF), en inglés) asignados a un determinado grupo. Los endpoints cuyos perfiles coincidan con los filtros de perfiles asociados al grupo, se registrarán automáticamente como miembros de ese grupo. Los filtros son expresiones que definen algunas características de los miembros del grupo. Se pueden asignar varios perfiles a un grupo.\\
+A cada grupo de endpoints dentro de una aplicación se le asignan diferentes pesos. Este valor se usa para la prioridad de cada grupo, siendo el valor más grande el que mayor prioridad tiene. Por defecto, hay un grupo "all" cuyo peso es 0. Este grupo contiene todos los endpoints registrados en la aplicación.  \\
 
+Los endpoints envían sus perfiles al servidor durante su registro.  Además de los perfiles enviados por los endpoints (lado del cliente), se pueden definir perfiles en el lado del servidor. Con todos estos datos, el servicio de operaciones de Kaa clasifica los endpoints dentro de grupos basados en los filtros. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/filters}
+\caption{Uso de perfiles de grupos de endpoints en Kaa}\label{L508}
+\end{figure}
+Los PF están basados en \MYhref{http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}{Spring Language}. Los filtros se evalúan usando 3 variables de contexto:
+\begin{itemize}
+\item[•] "cp" - Perfil de endpoint en el lado del cliente
+\item[•] "sp" - Perfil de endpoint en el lado del servidor
+\item[•] "ekh" - Hash del endpoint 
+\end{itemize}
+Al definir los filtros se le asignan los esquemas de perfiles de endpoints, tanto del lado del cliente como del servidor. Estos filtros estarán relacionados con dichos esquemas.\\
+
+Un ejemplo de esquema en el lado del cliente podría ser:
+\begin{lstlisting}[language=json,firstnumber=1]
+[  
+   {  
+      "name":"ClientSideEndpointProfileChild",
+      "namespace":"org.kaaproject.kaa.common.endpoint.gen",
+      "type":"record",
+      "fields":[  
+         {  
+            "name":"otherSimpleField",
+            "type":"int"
+         },
+         {  
+            "name":"stringField",
+            "type":"string"
+         }
+      ]
+   }
+]
+\end{lstlisting}
+Y en el lado del servidor:
+\begin{lstlisting}[language=json]
+[  
+   {  
+      "namespace":"org.kaaproject.kaa.common.endpoint.gen",
+      "type":"record",
+      "name":"ServerSideEndpointProfile",
+      "fields":[  
+         {  
+            "name":"simpleField",
+            "type":"string"
+         },
+         {  
+            "name":"arraySimpleField",
+            "type":{  
+               "type":"array",
+               "items":"string"
+            }
+         }
+      ]
+   }
+]
+\end{lstlisting}
+Un ejemplo de filtro asociado a dichos esquemas puede ser:\\
+
+\framebox{\parbox{\dimexpr\linewidth-4\fboxsep-4\fboxrule}{\itshape \#cp.recordField.otherSimpleField==123\\
+\#sp.arraySimpleField[0]=='SERVER\_SIDE\_VALUE\_1'}}
 \subsubsection*{Notificaciones}
 Kaa dispone de un sistema de notificaciones para la entrega de mensajes desde el clúster Kaa hasta los endpoints. La estructura de los datos se define en el esquema de notificaciones, configurado en el servidor y desplegado dentro de los endpoints. Las notificaciones a tópicos de forma que para recibir una notificación, el endpoint tiene que subscribirse a uno o varios tópicos. También, se puede asignar un tópico a todo un grupo de enpoints. El envío de notificaciones se puede hacer mediante la interfaz de usuario o mediante una llamada a la API. 
 \begin{figure}[H]
@@ -1096,76 +1195,75 @@ Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transpor
 \includegraphics[scale=0.4]{images/kaa_stack}
 \caption{Pila de protocolos de Kaa}\label{L508}
 \end{figure}
-\section{Casos prácticos}
 
-\subsection{Encender un LED en la raspberry usando Kaa}
-\subsubsection*{Creación de los esquemas y la aplicación}
-Todos las pruebas se han hecho en la versión virtual que ya viene preconfigurada.\\ 
-Para crear una nueva aplicación, el usuario tiene que tener el rol de Tenant Administrador, por ello hay que logearse como admin/admin123. Una vez que se asigna un nombre a la aplicación, hay que logearse de nuevo pero esta vez con el rol de desarrollador (devuser/devuser123). \\
-El funcionamiento de la aplicación será enviar datos a la raspberry cada cierto tiempo, tiempo definido por el desarrollador en los esquemas de datos. 
-El esquema de configuración queda así:
-\begin{lstlisting}
-{
-     "type": "record",
-     "name": "Configuration",
-     "namespace": "org.kaaproject.kaa.schema.sample",
-     "fields": [
-         {
-             "name": "samplePeriod",
-             "type": "int",
-             "by_default": 1
-         }
-     ]
- }
- 
-\end{lstlisting}
-En él se crea el periodo de tiempo en el que se suben los datos, que por defecto es 1.
-El esquema de datos indica los datos que se envían a Kaa para que sean almacenados en la base de datos:
-\begin{lstlisting}
-{
-     "type": "record",
-     "name": "DataCollection",
-     "namespace": "org.kaaproject.kaa.schema.sample",
-     "fields": [
-         {
-             "name": "temperature",
-             "type": "int"
-         }
-     ]
- }
- 
-\end{lstlisting}
-Se va a usar Cassandra como base de datos. Para el almacenamiento en las bases de datos hay que definir el esquema 'log appender'. Se definen los metadatos que se añadirán al valor de la temperatura y /////las columnas están relacionadas con los metadatos???? (probar)/////// 
-
-subsubsection*{Enviar datos desde la raspberry a Kaa}
-Una vez configurado el lado del servidor y generado el SDK, se necesita programar el endpoint.
-\subsubsection*{Analizar datos con Apache Zeppelin}
-
-\subsubsection*{Envío de notificaciones a la Raspberry para encender un LED}
 
 \section{Ejemplos prácticos}
-Además de los escenarios planteados, se va a probar los ejemplos tanto los presentes en la versión virtual preconfigurada, como los presentes en el \MYhref{https://github.com/kaaproject/sample-apps}{GIT} de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa así como a comprobar varios de los requisitos planteados en este documento para un middleware IoT. 
+Además de diferentes escenarios planteados, se van a probar los ejemplos  presentes en la versión de VirtualBox preconfigurada, así como los presentes en el \MYhref{https://github.com/kaaproject/sample-apps}{GIT} de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa en mayor profundidad, además de comprobar varios de los requisitos que se plantean en este documento para un middleware IoT. 
 
-\subsection{Perfiles y grupos}
-En este ejemplo se muestra cómo funciona Kaa con la agrupación de diferentes endpoints en grupos así como los distintos filtros entre los endpoints. \ref{sec:grouping} \\
-Kaa permite la agrupación de endpoints en grupos de endpoints. Estos grupos son independientes, para ello se usan filtros de perfiles (profile filter, en inglés) asignados a un determinado grupo. Los endpoints cuyos perfiles coincidan con los filtros de perfiles asociados al endpoint, se registrarán automáticamente como miembros del grupo. Los filtros son expresiones que definen algunas características de los miembros del grupo (endpoints).\\
-Cada grupo de endpoints dentro de una aplicación, se le asignan diferentes pesos. Este valor se usa para la prioridad de cada grupo, siendo el valor más grande el que mayor prioridad tiene. Por defecto, hay un grupo "all" cuyo peso es 0. Este grupo contiene todos los endpoints registrados en la aplicación. Los PF están basados en \MYhref{http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}{Spring Language}. Los filtros se evalúan usando 3 variables de contexto:
-\begin{itemize}
-\item[•] "cp" - Perfil de endpoint en el lado del cliente
-\item[•] "sp" - Perfil de endpoint en el lado del servidor
-\item[•] "ekh" - Hash del endpoint 
-\end{itemize}
+\subsection{Configuración de datos}
+En este ejemplo se muestra el funcionamiento de la configuración de datos en Kaa. El esquema de configuración para este ejemplo queda así:
+\begin{lstlisting}[language=json]
+{
+	"type": "record",
+	"name": "Configuration",
+	"namespace": "org.kaaproject.kaa.schema.sample",
+	"fields": [
+		{
+			"name": "samplingPeriod",
+			"type": "int",
+			"by_default": "1"
+		}
+	]
+}
+\end{lstlisting}
+En él hay un valor por defecto para el valor "samplingPeriod". Cuando el cliente Kaa se inicie, se conectará con el servidor y recibirá la información por defecto del grupo "All", grupo al que pertenecen todos los endpoints (al no haber ningún grupo más definido).\\
+Si se cambia la configuración del grupo "All", el endpoint recibirá automáticamente la nueva configuración y éste la usará para cambiar el periodo de muestreo.
 
-Los endpoints envían sus perfiles al servidor durante su registro. Una vez enviados, el servicio de operaciones de Kaa clasifica los endpoints dentro de grupos basados en los filtros de perfiles.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{images/filters}
-\caption{Uso de perfiles de grupos de endpoints en Kaa}\label{L508}
+\includegraphics[scale=0.3]{images/config_demo_4}
+\caption{Cambio de configuración por defecto}\label{L508}
 \end{figure}
+\framebox{\parbox{\dimexpr\linewidth-4\fboxsep-4\fboxrule}{\itshape [pool-4-thread-1] INFO  o.k.k.d.c.ConfigurationDemo - Configuration was updated
+[pool-2-thread-1] INFO  o.k.k.d.c.ConfigurationDemo - Sampling period is now set to 144 seconds}}
 
+Con la creación de grupos de endpoints, se podría cambiar la configuración para un grupo de endpoints en concreto, útil cuando se tengan endpoints realizando funciones diferentes. La creación de grupos se verá en los siguientes ejemplos.
+\subsection{Colección de datos}
+En este ejemplo se demostrará la colección de datos y el posterior almacenamiento en Kaa. En este caso se definen los esquemas de datos ("log schema"). Para esta aplicación se usa el siguiente esquema:
+\begin{lstlisting}[language=json]
+{
+	"type" : "record",
+	"name" : "DataCollection",
+	"namespace" : "org.kaaproject.kaa.schema.sample",
+	"fields" : [
+		{
+			"name" : "temperature",
+			"type" : "int"
+		},
+		{
+			"name" : "timeStamp",
+			"type" : "long"
+		}
+	],
+}
+\end{lstlisting}
+Los valores a almacenar son "temperature" y "timestamp". El esquema de configuración es parecido al del ejemplo anterior. El período de muestreo será usado para subir los datos a Kaa.\\
+
+Los datos se envían desde el  servicio de operaciones a  la base de datos. Para el almacenamiento en bases de datos, se necesita configurar \MYhref{http://kaaproject.github.io/kaa/docs/v0.10.0/Programming-guide/Key-platform-features/Data-collection/MongoDB-log-appender/}{log appender}.  En este ejemplo se usará MongoDB como base de datos, por lo que el esquema  tiene que estar basado en MongoDB. \\
+
+Una vez compilado y ejecutado el SDK en la Raspberry, se envían datos aleatorios simulando un sensor de temperatura. La frecuencia de subida la marca el campo "samplePeriod". Los datos se van almacenando en la base de datos MongoDB, acorde al esquema "log appender". 
+Para comprobar su correcto funcionamiento, nos conectamos a MongoDB y obtenemos los datos de la tabla definida en "Log appender":
+%\framebox{\parbox{\dimexpr\linewidth-4\fboxsep-4\fboxrule}{\itshape mongo kaa\\
+%db.logs\_\%data\_collection\_application\_token\%.find()}}
+
+%El resultado es el siguiente:
+[captura]
+%///////////captura mongo obteniendo datos del ejemplo en raspi//////
+\subsection{Perfiles y grupos}
+En este ejemplo se muestra cómo funciona Kaa con la agrupación de diferentes endpoints en grupos así como los distintos filtros entre los endpoints. \ref{sec:grouping} \\
 
 Para este caso he usado Java como plataforma. En este ejemplo hay 3 instancias de un cliente Kaa y cada una de ellas tiene un perfil endpoint (EP). LA estructura de datos de un EP se define mediante un esquema. En este ejemplo se usa el siguiente esquema en el lado del cliente:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
  	"type" : "record",
  	"name" : "PagerClientProfile",
@@ -1179,13 +1277,11 @@ Para este caso he usado Java como plataforma. En este ejemplo hay 3 instancias d
 	}, {
 		"name" : "vibroSupport",
 		"type" : "boolean"
-	}],
-		 "displayName":"org.kaaproject.examples.
-		 	pager.PagerClientProfile"
+	}]
 }
 \end{lstlisting}
 Para el lado del servidor se usa el siguiente esquema:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"type" : "record",
 	"name" : "PagerServerProfile",
@@ -1199,14 +1295,12 @@ Para el lado del servidor se usa el siguiente esquema:
 	}, {
 		"name" : "vibroSubscription",
 		"type" : "boolean"
-	} ],
-		"displayName" : "org.kaaproject.examples.
-		   pager.PagerServerProfile"
+	} ]
 }
 \end{lstlisting}
 
 Y como esquema de configuración se usa:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
      {
 	  "type" : "record",
 	  "name" : "PagerConfiguration",
@@ -1223,15 +1317,13 @@ Y como esquema de configuración se usa:
 		"name" : "vibroSubscriptionActive",
 		"type" : "boolean",
 		"by_default" : true
-	  } ],
-	  "displayName" : "org.kaaproject.examples.
-	      pager.PagerConfiguration"
+	  } ]
      }
 \end{lstlisting}
 
 Hay 4 grupos de endpoints: \textbf{Audio y vibración}, \textbf{Solo vibración}, \textbf{Todos los servicios soportados}, \textbf{Desactivar vibración si hay soporte para audio y vídeo}. 
 
-/////Como se menciona en la sección de groupping, para agrupar a los endpoints en grupos se necesita definir filtros para esos grupos. En este caso se han definido filtros asociados con los perfiles de EP en el lado del cliente: 
+Como se menciona en la sección \ref{sec:grouping}, para agrupar a los endpoints en grupos se necesita definir filtros para esos grupos. En este caso se han definido filtros asociados con los perfiles de EP en el lado del cliente: 
 \begin{lstlisting}[frame=shadowbox,basicstyle=\footnotesize , breaklines=true]
 % Filtros para el grupo de "Audio y Vibracion"
 #cp.audioSupport == true && #cp.videoSupport == false && #cp.vibroSupport == true
@@ -1250,12 +1342,13 @@ Hay 4 grupos de endpoints: \textbf{Audio y vibración}, \textbf{Solo vibración}
 \end{lstlisting}
 Kaa obtiene la lista de los grupos de endpoints de la aplicación y comprueba los filtros de los perfiles de los endpoints tanto del lado del ciente como del lado del servidor. Esta comprobación se hace empezando por el grupo de menor peso (el grupo por defecto 'all') hasta el de mayor peso. Si los perfiles de los EP (definidos mediante los esquemas de client-side y server-side), cumplen las condiciones de los filtros, Kaa asigna el endpoint al grupo. Como resultado, el servidor aplica la configuración del grupo, presente en los esquemas. \\
 
-Para este ejemplo, la configuración por defecto en el lado del servidor para cada endpoint es tener audio y video desactivado y vibración activada. El endpoint 2, en el lado del cliente (código) se le asigna audioSupport=true, videoSupport=true y vibrationSupport=true. Como para este ejemplo, los filtros tan solo actúan en el lado del cliente, el endpoint \#2 pertenecerá por defecto al grupo "Todos los servicios habilitados".  Por ello, al iniciar la aplicación, se muestra la siguiente consola:  \////////////////////////poner ejemplo de consola en elcipse//////////////////////////
+Para este ejemplo, la configuración por defecto en el lado del servidor para cada endpoint es tener audio y video desactivado y vibración activada. Al endpoint 2, en el lado del cliente se le asigna audioSupport=true, videoSupport=true y vibrationSupport=true. Como para este ejemplo, los filtros tan solo actúan en el lado del cliente, el endpoint \#2 pertenecerá por defecto al grupo "Todos los servicios habilitados".  Por ello, al iniciar la aplicación, se muestra la siguiente consola: \\
+(captura)\\
 En la que se ve como el endpoint 2 (que en realidad es una instancia de un cliente Kaa) pertenece al grupo "Todos los servicios habilitados". \\
-Cambiando desde la interfaz el filtro en el grupo "Desactivar vibración si hay soporte para audio y vídeo", a la misma configuración que el grupo "Todos los servicios soportados", la consola muestra el mensaje:  ///////////////////////////////poner cuando muestra "Endpoint configuration was updated."///////////////////////////////
+Cambiando desde la interfaz el filtro en el grupo "Desactivar vibración si hay soporte para audio y vídeo", a la misma configuración que el grupo "Todos los servicios soportados", la consola muestra el mensaje:\\  %poner cuando muestra "Endpoint configuration was updated."
+(captura)\\
 El endpoint 2 cambia su configuración al nuevo grupo ya que, aunque tenga la misma configuración, el grupo tiene un mayor peso. 
-
-///////Si hay tiempo poner la otra parte en la que usa filtros en el lado del servidor///////
+%Si hay tiempo poner la otra parte en la que usa filtros en el lado del servidor
  
 
 \subsection{Chat mediante eventos}
@@ -1264,7 +1357,7 @@ En este caso se ha usado Android como plataforma. Este ejemplo consiste en emula
 Los eventos se definen mediante los esquemas de clases de eventos, Event Class Schema (EC), en inglés. A su vez, estas clases de eventos se agrupan en familias de clases de eventos,  Event Class Family (ECF), en inglés. 
 En ese ejemplo, se han creado dos esquemas de clases de eventos: ChatEvent y Message.\\
 Chat Event, envía un evento cuando el usuario quiere crear o eliminar un chat:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
   {
    	"type": "record",
    	"name": "ChatEvent",
@@ -1295,7 +1388,7 @@ Chat Event, envía un evento cuando el usuario quiere crear o eliminar un chat:
   }
 \end{lstlisting}
 Message envía un evento con el nombre del chat y el mensaje.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
   {
 	"type": "record",
 	"name": "Message",
@@ -1321,55 +1414,186 @@ Message envía un evento con el nombre del chat y el mensaje.
   }
 \end{lstlisting}
 
-Estos pasos previos se hacen desde la interfaz con el usuario con rol de administrador. Una vez creadas las familias de clases de eventos, se necesita asignarlas a la aplicación. Esto se hace mediante la opción "Event family mapping" de la interfaz, con rol de desarrollador. \\
+Estos pasos previos se hacen desde la interfaz con el usuario con rol de administrador. Una vez creadas las familias de clases de eventos, se necesita asignarlas a la aplicación. Esto se hace mediante la opción "Event family mapping" de la interfaz (con rol de desarrollador). \\
 Por último, hay que añadir 	un verificador de usuario para comprobar los credenciales de los usuarios. Los endpoints pueden intercambiar mensajes entre aquellos que pertenezcan al mismo usuario. Por defecto, se usa un verificador de tipo 'Trustful', que acepta cualquier credencial de usuario. Se pueden añadir varios verificadores a la misma aplicación. Cuando se genera el SDK, se elige el verificador requerido. \\
-La app envía un mensaje como un evento Kaa, a todos los endpoints unidos al mismo chat.
-
+La app envía un mensaje, como un evento Kaa, a todos los endpoints unidos al mismo chat.
 
 
 \subsubsection*{Descubrimiento de recursos en Kaa haciendo uso de los eventos}
-Haciendo uso del ejemplo anterior, se va a crear una aplicación sencilla para demostrar que Kaa cumple con el requisito de eventos. La interfaz de la aplicación se muestra en la figura \ref{L508}. Un botón para enviar eventos a todos los endpoints y además se envía un evento a todos los endpoints cuando cada uno de ellos inicie la aplicación, mostrando así su presencia al resto de endpoints. Esto podría ser capturado por los endpoints para realizar diferentes funcionalidades.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{images/screenshot.png}
-\caption{Vista de la aplicación}\label{L509}
-\end{figure}
-Al iniciar la aplicación, se envía un evento a todos los endpoints, mostrándose como una notificación en Android, tal y como se muestra en la siguiente figura.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.2]{images/screenshot1.png}
-\caption{Recepción de evento}\label{L510}
-\end{figure}
+Haciendo uso del ejemplo anterior, se va a crear una sencilla aplicación para demostrar el requisito de descubrimiento de recursos en Kaa. En este escenario se envía un evento a todos los endpoints cuando cada uno de ellos inicie la aplicación, mostrando así su presencia al resto de endpoints.\\
+Al iniciar la aplicación, se envía un evento a todos los endpoints, mostrándose como una notificación en Android. Este mecanismo puede ser utilizado por los endpoints para enviar su configuración o información sobre qué servicios ofrecen y ser capturado por el resto de endpoints.\\
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.2]{images/capture_android.png}
+%\caption{Recepción de evento}\label{L510}
+%\end{figure}
 
 
-Aprovechando el ejemplo anterior, se va a demostrar que Kaa cumple con el requisito de descubrimiento de recursos. Cuando se inicie la aplicación, es decir cuando el endpoint (teléfono móvil en este caso) tenga preparado el SDK y se inicie, enviará un evento al chat de la misma forma que en el ejemplo. Aunque se use como ejemplo el chat, esto se podría extrapolar a cualquier plataforma, con tan solo enviar un evento al resto de endpoints al iniciar el dispositivo. Y así,  éstos lo tengan en cuenta y puedan aplicar diferentes funcionalidades.
-\subsubsection*{Edge analytics}
+\textbf{Requisitos comprobados: } Descubrimiento de recursos.
+
+\subsubsection*{Detección de la caída de un nodo haciendo uso de los eventos}
+Kaa puede cumplir con el requisito de control de recursos. Y es que Kaa  no implementa un sistema de control de recursos como tal, pero haciendo uso de su sistema de eventos y notificaciones se podría conseguir tal propósito.\\
+El desarrollador implementa toda la funcionalidad en los nodos. En este caso se ha implementado una función 'Ping' en uno de los endpoint y a la que, haciendo uso de los eventos, debe responder el resto de endpoints en un determinado tiempo. Si no lo hacen, se considera como endpoint caído y el nodo podría actuar ante tal propósito, por ejemplo enviando la información a un nodo, conectado a la misma red que el endpoint caído, y, mediante sistemas de control y monitorización, intentar solucionar el problema. \\
+En el escenario que se plantea se han usado dos SDK en Java, instalados en una Raspberry y en un PC, y un tercer SDK en Android, que recibirá la información en caso de fallo en alguno de ellos.\\
+
+\begin{itemize}
+\item[•] \textbf{Configuración en el lado del servidor: } Para este escenario tan solo es necesario configurar los eventos en el lado del servidor.  Se crean 2 clases de familias de eventos (ECF), una clase para el envío y recepción del ping y otra para el aviso de fallo en un endpoint. Esto último también se podría haber hecho usando notificaciones. Las clases Ping y Alarm se pueden ver en la figura...//// La clase de eventos Ping tiene un campo String para almacenar el Hash del Endpoint como identificador, un campo Long para almacenar el tiempo de envío y un campo String opcional para enviar si el Ping es de petición o respuesta. Por otra parte, la clase Alarm tan solo tiene un campo String que contendrá el mensaje.
+\item[•] \textbf{Configuración en el lado del cliente: } El endpoint principal, llamémosle A, implementa la función Ping y realiza la comprobación del tiempo enviado por cada endpoint. \\
+A esta función tienen que responder los endpoints pasándole su hash y el tiempo actual. 
+Si el endpoint A detecta una diferencia de tiempo entre el actual y el enviado, para cada endpoint, mayor a un umbral, enviará un evento notificando del mal funcionamiento al endpoint con el SDK en Android.
+
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{images/response_pig}
+  \caption{Código de recepción de respuesta}
+  \label{fig:sfig1}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.35]{images/capture_difference}
+  \caption{Código de evaluación del tiempo para cada endpoint}
+  \label{fig:sfig1}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.09]{images/capture_android_ping}
+  \caption{Recepción de evento en Android}
+  \label{fig:sfig2}
+\end{subfigure}
+\caption{Imágenes de configuración y visualización en el escenario planteado}
+\label{fig:fig}
+\end{figure}
+\textbf{Requisitos comprobados: } Control de recursos, interoperabilidad, escalabilidad.
+\end{itemize} 
+
+Desplegando Kaa como la arquitectura mostrada en la figura \ref{}, se podrían conseguir los requisitos de control y descubrimiento de recursos, desarrollando el gateway para tal propósito. Esto es especialmente útil cuando los endpoints sean dispositivos que no puedan ejecutar el SDK por distintos motivos o cuando hay cientos de miles de dispositivos conectados, ya que los sistemas antes comentados provocarían una mayor latencia en la red.
+\subsection{Encender un LED en la raspberry usando Kaa}
+Se plantea el siguiente escenario: Una Raspberry recibiendo información de un sensor de temperatura y enviando esos datos a Kaa para su almacenamiento. Una vez enviados esos datos, se usa Apache Zeppelin para analizar los datos y, si supera un umbral, se envía una notificación a la Raspberry haciendo uso de Kaa.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/raspberry_example}
+\caption{Escenario planteado en Kaa}\label{L508}
+\end{figure}
+
+\subsubsection*{Creación de los esquemas y la aplicación}
+Todos las pruebas se han hecho en la versión virtual que ya viene preconfigurada.\\ 
+Para crear una nueva aplicación, el usuario tiene que tener el rol de Tenant Administrador, por ello hay que 'logearse' como admin/admin123. Una vez que se asigna un nombre a la aplicación, hay que logearse de nuevo pero esta vez con el rol de desarrollador (devuser/devuser123). \\
+El funcionamiento de la aplicación será enviar datos a la raspberry cada cierto tiempo, tiempo definido por el desarrollador en los esquemas de datos. 
+El esquema de configuración queda así:
+\begin{lstlisting}[language=json]
+{
+     "type": "record",
+     "name": "Configuration",
+     "namespace": "org.kaaproject.kaa.schema.sample",
+     "fields": [
+         {
+             "name": "samplePeriod",
+             "type": "int",
+             "by_default": 1
+         }
+     ]
+ }
+ 
+\end{lstlisting}
+En él se crea el periodo de tiempo en el que se suben los datos, que por defecto es 1.
+El esquema de datos indica los datos que se envían a Kaa para que sean almacenados en la base de datos:
+\begin{lstlisting}[language=json]
+{
+     "type": "record",
+     "name": "DataCollection",
+     "namespace": "org.kaaproject.kaa.schema.sample",
+     "fields": [
+         {
+             "name": "temperature",
+             "type": "int"
+         }
+     ]
+ }
+ 
+\end{lstlisting}
+Se va a usar Cassandra como base de datos. Para el almacenamiento en las bases de datos hay que definir el esquema 'log appender'. Se definen los metadatos que se añadirán al valor de la temperatura. También hay que añadir el valor "keyspace" y el nombre de la tabla que serán usados por cassandra para el almacenamiento. El esquema 'Log Appender' queda como se muestra en la siguiente figura.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/mongodb}
+\caption{Esquema utilizado para el almacenamiento en MongoDB}\label{L508}
+\end{figure}
+
+Por otro lado, para el uso de las notificaciones se tienen que definir un esquema para tal fin. El esquema definido para este ejemplo es el siguiente:
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "ExampleNotification",
+  "namespace" : "org.kaaproject.kaa.schema.sample.notification",
+  "fields" : [ {
+    "name" : "message",
+    "type" : {
+      "type" : "string",
+      "avro.java.string" : "String"
+    }
+  } ],
+}
+ 
+\end{lstlisting}
+\subsubsection*{Enviar datos desde la raspberry a Kaa}
+Una vez configurado el lado del servidor y generado el SDK, se necesita programar el endpoint. El lenguaje del SDK generado será C, al ser un lenguaje compatible con la plataforma (Ver tabla \ref{table:platform_supported}).\\
+El endpoint se programa para crear el cliente SDK, cargar la configuración definida en el servidor y poder recibir notificaciones. También hay que añadir la parte de código para encender un Led en la Raspberry y recibir información de parte del sensor de temperatura. Esto último se ha realizado generando datos de forma aleatoria, simulando un sensor real. 
+\subsubsection*{Analizar datos con Apache Zeppelin}
+Una vez enviados los datos a la plataforma, se tienen que analizar de manera externa a ella con herramientas de análisis de datos. Para ello, se ha instalado Apache Zeppelin\cite{zeppelin} en el servidor ya preconfigurado. Zeppelin estará escuchando conexiones por uno de los puertos. Zeppelin está formado por diferentes intérpretes, cada uno de los cuales ejecutar el código en el lenguaje de dicho intérprete. MongoDB no es un intérprete por defecto de Zeppelin pero se puede añadir mediante un \MYhref{https://github.com/bbonnin/zeppelin-mongodb-interpreter}{plugin}. Una vez añadido el intérprete, se envía una petición a través de la cual se conecta y obtiene los datos almacenados.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{images/mongo_zeppelin}
+\caption{Obtención de datos de MongoDB}\label{L508}
+\end{figure}
+
+\subsubsection*{Envío de notificaciones a la Raspberry para encender un LED}
+Una vez analizados los datos, se envía una notificación a la Raspberry para encender un LED. Para tal propósito se usan las notificaciones en Kaa. La notificación se envía mediante una llamada a la API y, una vez recibida por Kaa, ésta la envía a la Raspberry, previemante subscrita al tópico, de acuerdo al esquema de notificaciones previamente configurado. La llamada a la API /sendNotification tiene el siguiente formato:
+\begin{lstlisting}[frame=shadowbox,basicstyle=\footnotesize , breaklines=true]
+curl -v -S -u devuser:devuser123 -F'notification={"applicationId":"32768","schemaId":"65536","topicId":"32769","type":"USER"};type=application/json' -F file=@notification.json 
+"http://192.168.0.107:8080/kaaAdmin/rest/api/sendNotification" | python -mjson.tool
+\end{lstlisting}
+Donde el archivo notification.json tiene los datos a enviar en la notificación.\\
+Una vez recibida en la Raspberry, ésta encenderá el LED. En este sencillo ejemplo se demuestra el uso de las notificaciones en Kaa, así como el almacenamiento y análisis de datos en herramientas externas.
+
+\textbf{Requisitos comprobados: } Control de datos, tiempo real, abstracción de la programación
+
+
+
+
+\subsection{Edge analytics}
 \subsubsection*{Fog-Computing y Edge-Computing}
 Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su "motor" de procesamiento está en la nube. Los Endpoint, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
 Pero desde la proliferación del Internet de las cosas, cada vez hay más dispositivos conectados a Internet, y según algunas predicciones, se estima que para 2030, la cantidad de datos disponibles en Internet crecerá a 1 Yottabyte (1 seguido de 24 ceros) con un tráfico diario de 2GB por usuario. Seguramente IoT sea uno de los promotores de este crecimiento. \\
-El uso de miles de millones de dispositivos enviando gran cantidad de datos, hace que aparezca el problema de ancho de banda. Por eso se está investigando en redes 5G, que proporcionaría una transmisión máxima de datos de 10Gbps, pero cuanto más se pone a disposición de los usuarios más se consume, por lo que pronto entrará en un cuello de botella. A la vista de esto el uso de Cloud-Computing no parece muy eficiente. 'De la nube a la niebla'\\
-Uno de los primeros artículos sobre este problema fue publicado por Wall Street Journal, titulado Forget 'the Cloud'; 'the Fog' Is Tech's Future. En él aparecen los conceptos de 'Fog Computing' y 'Edge Computing' \cite{wsj}, que hacen referencia al lugar donde se sitúa el procesamiento de datos.\\
+El uso de miles de millones de dispositivos enviando gran cantidad de datos, hace que aparezca problemas de latencia y ancho de banda de la red. A la vista de esto, el uso de Cloud-Computing no parece muy eficiente.\\ %'De la nube a la niebla'\\
+Uno de los primeros artículos sobre este problema fue publicado por Christopher Mims, titulado Forget 'the Cloud'; 'the Fog' Is Tech's Future\cite{wsj}. En él aparecen los conceptos de 'Fog Computing' y 'Edge Computing', que hacen referencia al lugar donde se sitúa el procesamiento de datos.\\
 El concepto de Edge/Fog Computing reducirá el ancho de banda, puesto que el procesamiento de datos se realiza en el punto de generación y tan solo se envía la información resumen al siguiente nivel. Incluso se propone enviar solamente alarmas en muchos casos. 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{images/fog_computing}
+\includegraphics[scale=0.5]{images/fog_computing}
 \caption{Fog Computing}\label{L509}
 \end{figure}
 
-El concepto Edge/Fog aunque es parecido hay una diferencia y está en que Fog deja el procesamiento en manos de un nodo o servidor dentro de la red, mientras que Edge hace que cada dispositivo en la red juegue su propio papel de procesamiento, donde cada dispositivo de manera independiente elige qué información guardar y cuál subir a la nube. Edge tiene la ventaja de que hay menos puntos de fallo en la red, mientras que Fog es más escalable al tener un servidor centralizado.
+El concepto Edge/Fog aunque es parecido, hay una diferencia y está en que Fog deja el procesamiento en manos de un nodo o servidor dentro de la red, mientras que Edge hace que cada dispositivo en la red juegue su propio papel de procesamiento, de forma que cada dispositivo de manera independiente elige qué información guardar y cuál subir a la nube. Edge tiene la ventaja de que hay menos puntos de fallo en la red, mientras que Fog es más escalable al tener un servidor centralizado.
 
 \subsubsection*{Edge Computing en Kaa}
-Este concepto que está siendo cada vez más usado, ha hecho que los creadores de Kaa hablen de ello (\MYhref{https://www.kaaproject.org/edge-analytics-kaa/}{vídeo}). El uso de Kaa en este caso es de tan solo almacenamiento de datos así como definición de esquemas. Kaa no dispone de una herramienta como Spark para el análisis de datos provenientes de los endpoint sin enviarlos al servidor. Los endpoints analizan los datos provenientes de los sensores y, mediante una definición de esquemas de datos y agrupación de endpoints, se enviarían esos datos ya analizados para su almacenamiento o únicamente alarmas, reduciendo así drásticamente el ancho de banda en la red. 
+Este concepto, cada vez más usado, también se ha trasladado a Kaa (\MYhref{https://www.kaaproject.org/edge-analytics-kaa/}{vídeo}).\\
+Desplegando Kaa como la arquitectura mostrada en la figura \ref{deployment1}, se puede implementar la funcionalidad del Edge Computing en los gateways. Estos gateways se encargan de realizar un procesamiento de datos antes de enviarlos a la nube. Es el desarrollador quien se encarga de implementar el procesamiento previo de los datos en los gateways, reduciendo así drásticamente el ancho de banda en la red. \\
+
+Con la forma más "natural" de despliegue de Kaa también se podría conseguir esta funcionalidad pero sería cada endpoint quien analice los datos y envíe a la nube. Esto implica una mayor latencia de red además de realizar un buen uso de los grupos de endpoints. De hecho, Kaa no habla de Edge Analytics con este despliegue (\MYhref{https://www.kaaproject.org/platform/\#gate}{enlace})\\
 Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis de datos provenientes de los endpoints para su posterior envío al servidor, añadiendo así un nivel de jerarquía en la estructura de Kaa.
 
 
-////Parece que en versiones posteriores se añadirá alguna herramienta de análisis de datos provenientes de los endpoints dentro de Kaa. Ya que no hay ninguna herramienta como Spark para análisis de datos procedentes de los sensores.////////// Lo que se puede hacer ahora mismo es realizar tu análisis propio y subir a Kaa tan solo lo necesario o únicamente alarmas.//////////////
 \subsubsection*{Tareas a realizar}
 - Hacer funcionar eventos y documentarlo
-- Una vez que funcionen los eventos (mirar ejemplos) comprobar que se cumplen los requisitos.
+- Comprobar el control de recursos. Crear una función Ping de forma que cada endpoint tenga que responder de forma periodica (Crear primero en Java) y si no responden, enviar notificación. 
 - Almacenar tan solo alarmas o datos analizados para demostrar el uso de Edge Analytics
-- Resolver preguntas sobre Cassandra
-\section{Problemas encontrados}
+
+
+-----> El HASH de la clave pública de un endpoint identifica al endpoint en el cluster Kaa. Por defecto Kaa genera una clave pública en cada endpoint registrado. Están presentes en el archivo public.key
+\section{Conclusiones}
+Kaa es una plataforma con una curva de aprendizaje bastante alta
+Con Kaa el programador se olvida de la parte del servidor
 \begin{thebibliography}{X}
 \bibitem{hive} {http://www.hivemq.com/}
 \bibitem{hive_doc}{HiveMQ. MQTT doc:http://www.hivemq.com/mqtt/}
@@ -1382,8 +1606,10 @@ Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis
 \bibitem{mosqtt}{https://mosquitto.org/}
 \bibitem{nodered}{https://nodered.org/}
 \bibitem{mongo}{https://www.mongodb.com}
+\bibitem{zeppelin}{https://zeppelin.apache.org/}
 \bibitem{paho}{https://eclipse.org/paho/clients/java/}
 \bibitem{cloud_mqtt}{https://www.cloudmqtt.com/}
+\bibitem{edge_kaa}{https://www.kaaproject.org/platform/\#gate}
 \end{thebibliography}
 
 \end{document}

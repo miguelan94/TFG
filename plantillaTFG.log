@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.20)  24 MAY 2017 09:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.20)  31 MAY 2017 13:10
 entering extended mode
 **./plantillaTFG.tex
 (plantillaTFG.tex
@@ -752,6 +752,33 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\subcaption
+.sty"
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.st
+y"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3.s
+ty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen112
+\captionmargin@=\dimen113
+\captionwidth=\dimen114
+\caption@tempdima=\dimen115
+\caption@indent=\dimen116
+\caption@parindent=\dimen117
+\caption@hangindent=\dimen118
+)
+\c@ContinuedFloat=\count101
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count102
+\c@subtable=\count103
+)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -767,8 +794,8 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen112
-\extrarowheight=\dimen113
+\col@sep=\dimen119
+\extrarowheight=\dimen120
 \NC@list=\toks22
 \extratabsurround=\skip43
 \backup@length=\skip44
@@ -777,7 +804,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \minrowclearance=\skip45
 )
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count101
+\rownum=\count104
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -823,8 +850,8 @@ cs.sty"
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
 futil-common.tex"
 \pgfutil@everybye=\toks25
-\pgfutil@tempdima=\dimen114
-\pgfutil@tempdimb=\dimen115
+\pgfutil@tempdima=\dimen121
+\pgfutil@tempdimb=\dimen122
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
 futil-common-lists.tex"))
@@ -858,20 +885,20 @@ fkeys.code.tex"
 fkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks28
 ))
-\pgf@x=\dimen116
-\pgf@y=\dimen117
-\pgf@xa=\dimen118
-\pgf@ya=\dimen119
-\pgf@xb=\dimen120
-\pgf@yb=\dimen121
-\pgf@xc=\dimen122
-\pgf@yc=\dimen123
+\pgf@x=\dimen123
+\pgf@y=\dimen124
+\pgf@xa=\dimen125
+\pgf@ya=\dimen126
+\pgf@xb=\dimen127
+\pgf@yb=\dimen128
+\pgf@xc=\dimen129
+\pgf@yc=\dimen130
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count102
-\c@pgf@countb=\count103
-\c@pgf@countc=\count104
-\c@pgf@countd=\count105
+\c@pgf@counta=\count105
+\c@pgf@countb=\count106
+\c@pgf@countc=\count107
+\c@pgf@countd=\count108
 \t@pgf@toka=\toks29
 \t@pgf@tokb=\toks30
 \t@pgf@tokc=\toks31
@@ -893,8 +920,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
 pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count106
-\pgfsyssoftpath@bigbuffer@items=\count107
+\pgfsyssoftpath@smallbuffer@items=\count109
+\pgfsyssoftpath@bigbuffer@items=\count110
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
 pgfsysprotocol.code.tex"
@@ -912,8 +939,8 @@ calc.code.tex"
 util.code.tex")
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
 parser.code.tex"
-\pgfmath@dimen=\dimen124
-\pgfmath@count=\count108
+\pgfmath@dimen=\dimen131
+\pgfmath@count=\count111
 \pgfmath@box=\box31
 \pgfmath@toks=\toks32
 \pgfmath@stack@operand=\toks33
@@ -939,37 +966,37 @@ functions.misc.code.tex")
 functions.integerarithmetics.code.tex")))
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
 float.code.tex"
-\c@pgfmathroundto@lastzeros=\count109
+\c@pgfmathroundto@lastzeros=\count112
 ))
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen125
-\pgf@picmaxx=\dimen126
-\pgf@picminy=\dimen127
-\pgf@picmaxy=\dimen128
-\pgf@pathminx=\dimen129
-\pgf@pathmaxx=\dimen130
-\pgf@pathminy=\dimen131
-\pgf@pathmaxy=\dimen132
-\pgf@xx=\dimen133
-\pgf@xy=\dimen134
-\pgf@yx=\dimen135
-\pgf@yy=\dimen136
-\pgf@zx=\dimen137
-\pgf@zy=\dimen138
+\pgf@picminx=\dimen132
+\pgf@picmaxx=\dimen133
+\pgf@picminy=\dimen134
+\pgf@picmaxy=\dimen135
+\pgf@pathminx=\dimen136
+\pgf@pathmaxx=\dimen137
+\pgf@pathminy=\dimen138
+\pgf@pathmaxy=\dimen139
+\pgf@xx=\dimen140
+\pgf@xy=\dimen141
+\pgf@yx=\dimen142
+\pgf@yy=\dimen143
+\pgf@zx=\dimen144
+\pgf@zy=\dimen145
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen139
-\pgf@path@lasty=\dimen140
+\pgf@path@lastx=\dimen146
+\pgf@path@lasty=\dimen147
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen141
-\pgf@shorten@start@additional=\dimen142
+\pgf@shorten@end@additional=\dimen148
+\pgf@shorten@start@additional=\dimen149
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorescopes.code.tex"
@@ -977,19 +1004,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box32
 \pgf@hbox=\box33
 \pgf@layerbox@main=\box34
-\pgf@picture@serial@count=\count110
+\pgf@picture@serial@count=\count113
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen143
+\pgflinewidth=\dimen150
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen144
-\pgf@pt@y=\dimen145
-\pgf@pt@temp=\dimen146
+\pgf@pt@x=\dimen151
+\pgf@pt@y=\dimen152
+\pgf@pt@temp=\dimen153
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorequick.code.tex"
@@ -1006,13 +1033,13 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen147
+\pgfarrowsep=\dimen154
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen148
-\pgf@sys@shading@range@num=\count111
+\pgf@max=\dimen155
+\pgf@sys@shading@range@num=\count114
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
 gfcoreimage.code.tex"
@@ -1047,8 +1074,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility\
 pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen149
-\pgf@nodesepend=\dimen150
+\pgf@nodesepstart=\dimen156
+\pgf@nodesepend=\dimen157
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility\
 pgfcomp-version-1-18.sty"
@@ -1070,8 +1097,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
 .code.tex")
-\pgffor@iter=\dimen151
-\pgffor@skip=\dimen152
+\pgffor@iter=\dimen158
+\pgffor@skip=\dimen159
 \pgffor@stack=\toks35
 \pgffor@toks=\toks36
 ))
@@ -1082,32 +1109,32 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
 flibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count112
-\pgfplotmarksize=\dimen153
+\pgf@plot@mark@count=\count115
+\pgfplotmarksize=\dimen160
 )
-\tikz@lastx=\dimen154
-\tikz@lasty=\dimen155
-\tikz@lastxsaved=\dimen156
-\tikz@lastysaved=\dimen157
-\tikzleveldistance=\dimen158
-\tikzsiblingdistance=\dimen159
+\tikz@lastx=\dimen161
+\tikz@lasty=\dimen162
+\tikz@lastxsaved=\dimen163
+\tikz@lastysaved=\dimen164
+\tikzleveldistance=\dimen165
+\tikzsiblingdistance=\dimen166
 \tikz@figbox=\box37
 \tikz@figbox@bg=\box38
 \tikz@tempbox=\box39
 \tikz@tempbox@bg=\box40
-\tikztreelevel=\count113
-\tikznumberofchildren=\count114
-\tikznumberofcurrentchild=\count115
-\tikz@fig@count=\count116
+\tikztreelevel=\count116
+\tikznumberofchildren=\count117
+\tikznumberofcurrentchild=\count118
+\tikz@fig@count=\count119
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
 odulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count117
-\pgfmatrixcurrentcolumn=\count118
-\pgf@matrix@numberofcolumns=\count119
+\pgfmatrixcurrentrow=\count120
+\pgfmatrixcurrentcolumn=\count121
+\pgf@matrix@numberofcolumns=\count122
 )
-\tikz@expandcount=\count120
+\tikz@expandcount=\count123
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
 r\tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -1116,12 +1143,12 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.sty
 "
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
-\TX@col@width=\dimen160
-\TX@old@table=\dimen161
-\TX@old@col=\dimen162
-\TX@target=\dimen163
-\TX@delta=\dimen164
-\TX@cols=\count121
+\TX@col@width=\dimen167
+\TX@old@table=\dimen168
+\TX@old@col=\dimen169
+\TX@target=\dimen170
+\TX@delta=\dimen171
+\TX@cols=\count124
 \TX@ftn=\toks37
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
@@ -1129,10 +1156,10 @@ sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enitkv@toks@=\toks38
 \labelindent=\skip46
-\enit@outerparindent=\dimen165
+\enit@outerparindent=\dimen172
 \enit@toks=\toks39
 \enit@inbox=\box41
-\enitdp@description=\count122
+\enitdp@description=\count125
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
 y"
@@ -1149,47 +1176,47 @@ Package: amstext 2000/06/29 v2.01 AMS text
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks40
-\ex@=\dimen166
+\ex@=\dimen173
 ))
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
 "
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen167
+\pmbraise@=\dimen174
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count123
+\inf@bad=\count126
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count124
-\leftroot@=\count125
+\uproot@=\count127
+\leftroot@=\count128
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count126
-\DOTSCASE@=\count127
+\classnum@=\count129
+\DOTSCASE@=\count130
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 \Mathstrutbox@=\box42
 \strutbox@=\box43
-\big@size=\dimen168
+\big@size=\dimen175
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count128
-\c@MaxMatrixCols=\count129
+\macc@depth=\count131
+\c@MaxMatrixCols=\count132
 \dotsspace@=\muskip10
-\c@parentequation=\count130
-\dspbrk@lvl=\count131
+\c@parentequation=\count133
+\dspbrk@lvl=\count134
 \tag@help=\toks41
-\row@=\count132
-\column@=\count133
-\maxfields@=\count134
+\row@=\count135
+\column@=\count136
+\maxfields@=\count137
 \andhelp@=\toks42
-\eqnshift@=\dimen169
-\alignsep@=\dimen170
-\tagshift@=\dimen171
-\tagwidth@=\dimen172
-\totwidth@=\dimen173
-\lineht@=\dimen174
+\eqnshift@=\dimen176
+\alignsep@=\dimen177
+\tagshift@=\dimen178
+\tagwidth@=\dimen179
+\totwidth@=\dimen180
+\lineht@=\dimen181
 \@envbody=\toks43
 \multlinegap=\skip48
 \multlinetaggap=\skip49
@@ -1215,15 +1242,15 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count135
-\calc@Bcount=\count136
-\calc@Adimen=\dimen175
-\calc@Bdimen=\dimen176
+\calc@Acount=\count138
+\calc@Bcount=\count139
+\calc@Adimen=\dimen182
+\calc@Bdimen=\dimen183
 \calc@Askip=\skip53
 \calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count137
+\calc@Ccount=\count140
 \calc@Cskip=\skip55
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mathtools\mhsetup.
@@ -1234,15 +1261,15 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count138
-\l_MT_multwidth_dim=\dimen177
+\g_MT_multlinerow_int=\count141
+\l_MT_multwidth_dim=\dimen184
 \origjot=\skip56
-\l_MT_shortvdotswithinadjustabove_dim=\dimen178
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen179
-\l_MT_above_intertext_sep=\dimen180
-\l_MT_below_intertext_sep=\dimen181
-\l_MT_above_shortintertext_sep=\dimen182
-\l_MT_below_shortintertext_sep=\dimen183
+\l_MT_shortvdotswithinadjustabove_dim=\dimen185
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen186
+\l_MT_above_intertext_sep=\dimen187
+\l_MT_below_intertext_sep=\dimen188
+\l_MT_above_shortintertext_sep=\dimen189
+\l_MT_below_shortintertext_sep=\dimen190
 ) ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty"
 Package: bm 2016/07/07 v1.2b Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup14
@@ -1253,7 +1280,7 @@ LaTeX Info: Redefining \bm on input line 208.
 sty"
 Package: thmtools 2014/04/21 v66
 \thmt@toks=\toks51
-\c@thmt@dummyctr=\count139
+\c@thmt@dummyctr=\count142
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\thmtools\thm-patch
 .sty"
@@ -1322,12 +1349,12 @@ Package thmtools Info: Key `qed' (with value `\color {USred}\marcador ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=demostracion' on input line 172.
-\c@remark=\count140
-\c@corollary=\count141
-\c@proposition=\count142
-\c@lemma=\count143
-\c@theorem=\count144
-\c@definition=\count145
+\c@remark=\count143
+\c@corollary=\count144
+\c@proposition=\count145
+\c@lemma=\count146
+\c@theorem=\count147
+\c@definition=\count148
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
 sty"
@@ -1342,17 +1369,17 @@ sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count146
-\Gm@cntv=\count147
-\c@Gm@tempcnt=\count148
-\Gm@bindingoffset=\dimen184
-\Gm@wd@mp=\dimen185
-\Gm@odd@mp=\dimen186
-\Gm@even@mp=\dimen187
-\Gm@layoutwidth=\dimen188
-\Gm@layoutheight=\dimen189
-\Gm@layouthoffset=\dimen190
-\Gm@layoutvoffset=\dimen191
+\Gm@cnth=\count149
+\Gm@cntv=\count150
+\c@Gm@tempcnt=\count151
+\Gm@bindingoffset=\dimen191
+\Gm@wd@mp=\dimen192
+\Gm@odd@mp=\dimen193
+\Gm@even@mp=\dimen194
+\Gm@layoutwidth=\dimen195
+\Gm@layoutheight=\dimen196
+\Gm@layouthoffset=\dimen197
+\Gm@layoutvoffset=\dimen198
 \Gm@dimlist=\toks54
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
@@ -1363,12 +1390,12 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box44
 \beforetitleunit=\skip57
 \aftertitleunit=\skip58
-\ttl@plus=\dimen192
-\ttl@minus=\dimen193
+\ttl@plus=\dimen199
+\ttl@minus=\dimen256
 \ttl@toksa=\toks55
-\titlewidth=\dimen194
-\titlewidthlast=\dimen195
-\titlewidthfirst=\dimen196
+\titlewidth=\dimen257
+\titlewidthlast=\dimen258
+\titlewidthfirst=\dimen259
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
 sty"
@@ -1440,9 +1467,9 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 .sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen197
-\Hy@linkcounter=\count149
-\Hy@pagecounter=\count150
+\@linkdim=\dimen260
+\Hy@linkcounter=\count152
+\Hy@pagecounter=\count153
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
 f"
@@ -1450,7 +1477,7 @@ File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count151
+\Hy@SavedSpaceFactor=\count154
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
 cfg"
@@ -1464,16 +1491,16 @@ Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
-\c@Hy@tempcnt=\count152
+\c@Hy@tempcnt=\count155
  ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5088.
-\XeTeXLinkMargin=\dimen198
-\Fld@menulength=\count153
-\Field@Width=\dimen199
-\Fld@charsize=\dimen256
+\XeTeXLinkMargin=\dimen261
+\Fld@menulength=\count156
+\Field@Width=\dimen262
+\Fld@charsize=\dimen263
 Package hyperref Info: Hyper figures OFF on input line 6342.
 Package hyperref Info: Link nesting OFF on input line 6347.
 Package hyperref Info: Hyper index ON on input line 6350.
@@ -1483,9 +1510,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6367.
 Package hyperref Info: PDF/A mode OFF on input line 6372.
 LaTeX Info: Redefining \ref on input line 6412.
 LaTeX Info: Redefining \pageref on input line 6416.
-\Hy@abspage=\count154
-\c@Item=\count155
-\c@Hfootnote=\count156
+\Hy@abspage=\count157
+\c@Item=\count158
+\c@Hfootnote=\count159
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -1494,8 +1521,8 @@ Package hyperref Message: Driver (autodetected): hpdftex.
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
 ef"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
-\Fld@listcount=\count157
-\c@bookmark@seq@number=\count158
+\Fld@listcount=\count160
+\c@bookmark@seq@number=\count161
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
 check.sty"
@@ -1504,8 +1531,116 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip68
+) (plantillaTFG.aux
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+
+
+LaTeX Warning: Label `L409' multiply defined.
+
+
+LaTeX Warning: Label `L403' multiply defined.
+
+
+LaTeX Warning: Label `L404' multiply defined.
+
+
+LaTeX Warning: Label `L406' multiply defined.
+
+
+LaTeX Warning: Label `L405' multiply defined.
+
+
+LaTeX Warning: Label `L406' multiply defined.
+
+
+LaTeX Warning: Label `L407' multiply defined.
+
+
+LaTeX Warning: Label `L408' multiply defined.
+
+
+LaTeX Warning: Label `L408' multiply defined.
+
+
+LaTeX Warning: Label `L401' multiply defined.
+
+
+LaTeX Warning: Label `L402' multiply defined.
+
+
+LaTeX Warning: Label `L403' multiply defined.
+
+
+LaTeX Warning: Label `L404' multiply defined.
+
+
+LaTeX Warning: Label `L405' multiply defined.
+
+
+LaTeX Warning: Label `L406' multiply defined.
+
+
+LaTeX Warning: Label `L407' multiply defined.
+
+
+LaTeX Warning: Label `L408' multiply defined.
+
+
+LaTeX Warning: Label `L409' multiply defined.
+
+
+LaTeX Warning: Label `L0421' multiply defined.
+
+
+LaTeX Warning: Label `L0421' multiply defined.
+
+
+LaTeX Warning: Label `L410' multiply defined.
+
+
+LaTeX Warning: Label `L411' multiply defined.
+
+
+LaTeX Warning: Label `L501' multiply defined.
+
+
+LaTeX Warning: Label `L502' multiply defined.
+
+
+LaTeX Warning: Label `L502' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `fig:sfig1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sfig1' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L508' multiply defined.
+
+
+LaTeX Warning: Label `L509' multiply defined.
+
 )
-No file plantillaTFG.aux.
 \openout1 = `plantillaTFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 251.
@@ -1523,14 +1658,13 @@ LaTeX Font Info:    ... okay on input line 251.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 251.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 251.
 
-("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 251.
 LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 251.
 LaTeX Font Info:    Try loading font information for LS1+stix on input line 251
 .
-
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\stix\ls1stix.fd"
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
@@ -1557,22 +1691,22 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 251.
 LaTeX Info: Redefining \. on input line 251.
 LaTeX Info: Redefining \% on input line 251.
-\c@mv@tabular=\count159
-\c@mv@boldtabular=\count160
+\c@mv@tabular=\count162
+\c@mv@boldtabular=\count163
 
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count161
-\scratchdimen=\dimen257
+\scratchcounter=\count164
+\scratchdimen=\dimen264
 \scratchbox=\box45
-\nofMPsegments=\count162
-\nofMParguments=\count163
+\nofMPsegments=\count165
+\nofMParguments=\count166
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count164
-\MPscratchDim=\dimen258
-\MPnumerator=\count165
-\makeMPintoPDFobject=\count166
+\MPscratchCnt=\count167
+\MPscratchDim=\dimen265
+\MPnumerator=\count168
+\makeMPintoPDFobject=\count169
 \everyMPtoPDFconversion=\toks57
 )
 ("C:\Users\migue\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
@@ -1590,7 +1724,10 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count167
+\c@lstlisting=\count170
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1637,11 +1774,12 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count168
+\c@section@level=\count171
 )
 LaTeX Info: Redefining \ref on input line 251.
 LaTeX Info: Redefining \pageref on input line 251.
 LaTeX Info: Redefining \nameref on input line 251.
+ (plantillaTFG.out) (plantillaTFG.out)
 \@outlinefile=\write4
 \openout4 = `plantillaTFG.out'.
 
@@ -1649,7 +1787,8 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 255.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 255.
- <sello.png, id=6, 256.96pt x 256.96pt>
+
+<sello.png, id=194, 256.96pt x 256.96pt>
 File: sello.png Graphic file (type png)
  <use sello.png>
 Package pdftex.def Info: sello.png used on input line 255.
@@ -1658,12 +1797,12 @@ Package pdftex.def Info: sello.png used on input line 255.
 
 
 {C:/Users/migue/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./sello.png
->]
-[2
+>] [2
 
 ]
 File: sello.png Graphic file (type png)
- <use sello.png>
+
+<use sello.png>
 Package pdftex.def Info: sello.png used on input line 255.
 (pdftex.def)             Requested size: 128.03662pt x 128.0374pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
@@ -1762,20 +1901,47 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <24.88> not
 ut line 257.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 257.
+ (plantillaTFG.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 2.
+ [1
+
+]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/sc' will be
+(Font)              scaled to size 12.0pt on input line 43.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 43.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 43.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2])
 \tf@toc=\write5
 \openout5 = `plantillaTFG.toc'.
 
- [1
+LaTeX Info: Redefining \. on input line 259.
+LaTeX Info: Redefining \% on input line 259.
 
-] [2
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3] [4
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 267.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -1830,11 +1996,7 @@ line 315.
 
 [5] [6
 
-]
-
-LaTeX Warning: Citation `surv' on page 7 undefined on input line 328.
-
-<images/requisitos.png, id=83, 761.244pt x 211.992pt>
+] <images/requisitos.png, id=326, 761.244pt x 211.992pt>
 File: images/requisitos.png Graphic file (type png)
 
 <use images/requisitos.png>
@@ -1845,17 +2007,14 @@ Package pdftex.def Info: images/requisitos.png used on input line 331.
  <./images/requisitos.png>] [8
 
 ]
-<images/topologia.png, id=96, 632.3625pt x 447.6725pt>
+<images/topologia.png, id=338, 632.3625pt x 447.6725pt>
 File: images/topologia.png Graphic file (type png)
 
 <use images/topologia.png>
 Package pdftex.def Info: images/topologia.png used on input line 341.
 (pdftex.def)             Requested size: 189.7102pt x 134.30278pt.
  [9 <./images/topologia.png>]
-
-LaTeX Warning: Reference `L402' on page 10 undefined on input line 346.
-
-<images/jerarquia.png, id=105, 833.1125pt x 451.6875pt>
+<images/jerarquia.png, id=346, 833.1125pt x 451.6875pt>
 File: images/jerarquia.png Graphic file (type png)
 
 <use images/jerarquia.png>
@@ -1864,10 +2023,6 @@ Package pdftex.def Info: images/jerarquia.png used on input line 349.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 379.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 379.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1876,28 +2031,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10 <./images/jerarquia.png>]
-
-LaTeX Warning: Reference `L403' on page 11 undefined on input line 379.
-
-
-LaTeX Warning: Reference `table:return_code' on page 11 undefined on input line
- 379.
-
-<images/flujo_tipico.png, id=114, 523.9575pt x 160.80075pt>
+<images/flujo_tipico.png, id=356, 523.9575pt x 160.80075pt>
 File: images/flujo_tipico.png Graphic file (type png)
 
 <use images/flujo_tipico.png>
 Package pdftex.def Info: images/flujo_tipico.png used on input line 382.
 (pdftex.def)             Requested size: 261.9781pt x 80.40016pt.
 
-<images/subscribe_packet.png, id=115, 491.8375pt x 292.09125pt>
+<images/subscribe_packet.png, id=357, 491.8375pt x 292.09125pt>
 File: images/subscribe_packet.png Graphic file (type png)
 
 <use images/subscribe_packet.png>
 Package pdftex.def Info: images/subscribe_packet.png used on input line 404.
 (pdftex.def)             Requested size: 147.55238pt x 87.62804pt.
 
-<images/suback_packet.png, id=116, 491.8375pt x 292.09125pt>
+<images/suback_packet.png, id=358, 491.8375pt x 292.09125pt>
 File: images/suback_packet.png Graphic file (type png)
 
 <use images/suback_packet.png>
@@ -1913,21 +2061,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11 <./images/flujo_tipico.png>]
-<images/flujo_desuscribir.png, id=124, 452.28975pt x 152.36925pt>
+<images/flujo_desuscribir.png, id=369, 452.28975pt x 152.36925pt>
 File: images/flujo_desuscribir.png Graphic file (type png)
 
 <use images/flujo_desuscribir.png>
 Package pdftex.def Info: images/flujo_desuscribir.png used on input line 416.
 (pdftex.def)             Requested size: 226.14432pt x 76.18443pt.
 
-<images/unsubscribe_packet.png, id=125, 491.8375pt x 292.09125pt>
+<images/unsubscribe_packet.png, id=370, 491.8375pt x 292.09125pt>
 File: images/unsubscribe_packet.png Graphic file (type png)
 
 <use images/unsubscribe_packet.png>
 Package pdftex.def Info: images/unsubscribe_packet.png used on input line 421.
 (pdftex.def)             Requested size: 147.55238pt x 87.62804pt.
 
-<images/unsuback_packet.png, id=126, 491.8375pt x 292.09125pt>
+<images/unsuback_packet.png, id=371, 491.8375pt x 292.09125pt>
 File: images/unsuback_packet.png Graphic file (type png)
 
 <use images/unsuback_packet.png>
@@ -1942,25 +2090,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 <./images/subscribe_packet.png> <./images/suback_packet.png> <./images/fluj
 o_desuscribir.png>]
-
-LaTeX Warning: Citation `hive' on page 13 undefined on input line 431.
-
-
-LaTeX Warning: Citation `hive_doc' on page 13 undefined on input line 431.
-
-
-LaTeX Warning: Citation `cloud_mqtt' on page 13 undefined on input line 431.
-
-
-LaTeX Warning: Citation `mosqtt' on page 13 undefined on input line 433.
-
-
 Overfull \hbox (46.7032pt too wide) in paragraph at lines 439--448
  [][] 
  []
 
 
-Underfull \vbox (badness 3724) has occurred while \output is active []
+Underfull \vbox (badness 4872) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 451.
 LaTeX Info: Redefining \% on input line 451.
@@ -1972,7 +2107,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13 <./images/unsubscribe_packet.png> <./images/unsuback_packet.png>]
-<images/mqtt_over_websockets.png, id=147, 309.155pt x 164.11313pt>
+<images/mqtt_over_websockets.png, id=398, 309.155pt x 164.11313pt>
 File: images/mqtt_over_websockets.png Graphic file (type png)
 
 <use images/mqtt_over_websockets.png>
@@ -1980,11 +2115,7 @@ Package pdftex.def Info: images/mqtt_over_websockets.png used on input line 454
 .
 (pdftex.def)             Requested size: 216.40701pt x 114.87839pt.
 
-
-LaTeX Warning: Citation `paho' on page 14 undefined on input line 459.
-
-
-Underfull \vbox (badness 7504) has occurred while \output is active []
+Underfull \vbox (badness 7326) has occurred while \output is active []
 
 
 
@@ -2004,7 +2135,7 @@ LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 472.
- <images/figure4.png, id=155, 366.168pt x 102.98476pt>
+ <images/figure4.png, id=408, 366.168pt x 102.98476pt>
 File: images/figure4.png Graphic file (type png)
 
 <use images/figure4.png>
@@ -2019,13 +2150,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15] <images/figure5.png, id=162, 340.8735pt x 87.32625pt>
+[15] <images/figure5.png, id=413, 340.8735pt x 87.32625pt>
 File: images/figure5.png Graphic file (type png)
 
 <use images/figure5.png>
 Package pdftex.def Info: images/figure5.png used on input line 482.
 (pdftex.def)             Requested size: 170.43633pt x 43.66301pt.
- <images/figure3.png, id=163, 551.1792pt x 361.8318pt>
+ <images/figure3.png, id=414, 551.1792pt x 361.8318pt>
 File: images/figure3.png Graphic file (type png)
 
 <use images/figure3.png>
@@ -2042,7 +2173,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16 <./images/figure4.png> <./images/figure5.png>]
-<images/mqtt_ssl.jpg, id=173, 640.3925pt x 480.79625pt>
+<images/mqtt_ssl.jpg, id=424, 640.3925pt x 480.79625pt>
 File: images/mqtt_ssl.jpg Graphic file (type jpg)
 
 <use images/mqtt_ssl.jpg>
@@ -2052,12 +2183,8 @@ Package pdftex.def Info: images/mqtt_ssl.jpg used on input line 511.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 3068) has occurred while \output is active []
-
 LaTeX Info: Redefining \. on input line 517.
 LaTeX Info: Redefining \% on input line 517.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -2065,19 +2192,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17 <./images/figure3.png>]
-<images/mqtt_clustering.png, id=181, 368.577pt x 215.6055pt>
+<images/mqtt_clustering.png, id=432, 368.577pt x 215.6055pt>
 File: images/mqtt_clustering.png Graphic file (type png)
 
 <use images/mqtt_clustering.png>
 Package pdftex.def Info: images/mqtt_clustering.png used on input line 521.
 (pdftex.def)             Requested size: 110.57394pt x 64.68214pt.
 
-<images/mqtt_availability.png, id=182, 353.32pt x 441.65pt>
+<images/mqtt_availability.png, id=433, 353.32pt x 441.65pt>
 File: images/mqtt_availability.png Graphic file (type png)
 
 <use images/mqtt_availability.png>
 Package pdftex.def Info: images/mqtt_availability.png used on input line 528.
 (pdftex.def)             Requested size: 105.99681pt x 132.49602pt.
+
+Underfull \vbox (badness 1681) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2086,19 +2216,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18 <./images/mqtt_ssl.jpg> <./images/mqtt_clustering.png>]
-<images/qos0.png, id=190, 479.99326pt x 163.20975pt>
+<images/qos0.png, id=441, 479.99326pt x 163.20975pt>
 File: images/qos0.png Graphic file (type png)
  <use images/qos0.png>
 Package pdftex.def Info: images/qos0.png used on input line 538.
 (pdftex.def)             Requested size: 143.99908pt x 48.96329pt.
 
-<images/qos1.png, id=191, 458.31226pt x 160.80075pt>
+<images/qos1.png, id=442, 458.31226pt x 160.80075pt>
 File: images/qos1.png Graphic file (type png)
  <use images/qos1.png>
 Package pdftex.def Info: images/qos1.png used on input line 545.
 (pdftex.def)             Requested size: 137.49474pt x 48.24059pt.
-LaTeX Info: Redefining \. on input line 548.
-LaTeX Info: Redefining \% on input line 548.
+
+<images/qos2.png, id=443, 431.211pt x 176.45924pt>
+File: images/qos2.png Graphic file (type png)
+ <use images/qos2.png>
+Package pdftex.def Info: images/qos2.png used on input line 552.
+(pdftex.def)             Requested size: 129.36429pt x 52.93817pt.
+LaTeX Info: Redefining \. on input line 555.
+LaTeX Info: Redefining \% on input line 555.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2106,13 +2242,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19 <./images/mqtt_availability.png (PNG copy)> <./images/qos0.png>]
-<images/qos2.png, id=200, 431.211pt x 176.45924pt>
-File: images/qos2.png Graphic file (type png)
- <use images/qos2.png>
-Package pdftex.def Info: images/qos2.png used on input line 552.
-(pdftex.def)             Requested size: 129.36429pt x 52.93817pt.
-
+[19 <./images/mqtt_availability.png (PNG copy)> <./images/qos0.png> <./images/q
+os1.png>]
 Overfull \hbox (1.15642pt too wide) in paragraph at lines 566--568
 []\T1/LinuxLibertineT-TLF/m/n/12 Esta ca-rac-te-rís-ti-ca de-pen-de-rá del bro-
 ker a usar, al-gu-nos co-mo Hi-veMQ o Jo-ramMQ,
@@ -2124,23 +2255,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20 <./images/qos1.png> <./images/qos2.png>]
+[20 <./images/qos2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
 
-
-LaTeX Warning: Citation `nodered' on page 21 undefined on input line 579.
-
-
-LaTeX Warning: Citation `mongo' on page 21 undefined on input line 579.
-
-<images/cloud_mqtt1.png, id=211, 894.9435pt x 343.2825pt>
+<images/cloud_mqtt1.png, id=462, 894.9435pt x 343.2825pt>
 File: images/cloud_mqtt1.png Graphic file (type png)
 
 <use images/cloud_mqtt1.png>
 Package pdftex.def Info: images/cloud_mqtt1.png used on input line 582.
 (pdftex.def)             Requested size: 357.97105pt x 137.31056pt.
+
+Underfull \vbox (badness 5446) has occurred while \output is active []
+
 LaTeX Info: Redefining \. on input line 585.
 LaTeX Info: Redefining \% on input line 585.
 
@@ -2172,10 +2300,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
-
-LaTeX Warning: Reference `L411' on page 23 undefined on input line 599.
-
-<images/wsn.png, id=225, 691.58376pt x 230.8625pt>
+<images/wsn.png, id=476, 691.58376pt x 230.8625pt>
 File: images/wsn.png Graphic file (type png)
  <use images/wsn.png>
 Package pdftex.def Info: images/wsn.png used on input line 602.
@@ -2186,10 +2311,7 @@ Underfull \vbox (badness 1867) has occurred while \output is active []
  [23
 
 ]
-
-LaTeX Warning: Reference `L412' on page 24 undefined on input line 610.
-
-<images/mqttsn.png, id=232, 362.5545pt x 231.86626pt>
+<images/mqttsn.png, id=484, 362.5545pt x 231.86626pt>
 File: images/mqttsn.png Graphic file (type png)
  <use images/mqttsn.png>
 Package pdftex.def Info: images/mqttsn.png used on input line 613.
@@ -2223,10 +2345,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
-
-LaTeX Warning: Reference `L400' on page 27 undefined on input line 631.
-
-<images/openiot_platform1.png, id=253, 803.0pt x 709.65125pt>
+<images/openiot_platform1.png, id=501, 803.0pt x 709.65125pt>
 File: images/openiot_platform1.png Graphic file (type png)
 
 <use images/openiot_platform1.png>
@@ -2236,10 +2355,7 @@ Package pdftex.def Info: images/openiot_platform1.png used on input line 634.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27]
-
-LaTeX Warning: Reference `L401' on page 28 undefined on input line 638.
-
-<images/ssn_capture.png, id=260, 522.753pt x 266.79675pt>
+<images/ssn_capture.png, id=507, 522.753pt x 266.79675pt>
 File: images/ssn_capture.png Graphic file (type png)
 
 <use images/ssn_capture.png>
@@ -2257,13 +2373,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [28 <./images/openiot_platform1.png (PNG copy)>]
-
-LaTeX Warning: Reference `L404' on page 29 undefined on input line 644.
-
-
-LaTeX Warning: Reference `L402' on page 29 undefined on input line 645.
-
-<images/metadata_capture.png, id=268, 481.19775pt x 201.75375pt>
+<images/metadata_capture.png, id=515, 481.19775pt x 201.75375pt>
 File: images/metadata_capture.png Graphic file (type png)
 
 <use images/metadata_capture.png>
@@ -2274,13 +2384,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 651--653
 
  []
 
-
-LaTeX Warning: Reference `L403' on page 29 undefined on input line 654.
-
-
-LaTeX Warning: Reference `L404' on page 29 undefined on input line 654.
-
-<images/registration_capture.png, id=269, 404.712pt x 148.75575pt>
+<images/registration_capture.png, id=518, 404.712pt x 148.75575pt>
 File: images/registration_capture.png Graphic file (type png)
 
 <use images/registration_capture.png>
@@ -2297,7 +2401,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [29 <./images/ssn_capture.png> <./images/metadata_capture.png>]
-<images/configuration_capture.png, id=278, 576.35326pt x 370.986pt>
+<images/configuration_capture.png, id=528, 576.35326pt x 370.986pt>
 File: images/configuration_capture.png Graphic file (type png)
 
 <use images/configuration_capture.png>
@@ -2316,15 +2420,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [30 <./images/registration_capture.png> <./images/configuration_capture.png>]
-
-LaTeX Warning: Reference `L405' on page 31 undefined on input line 669.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 669--670
 
  []
 
-<images/mobilebroker_openiot.png, id=287, 256.5585pt x 181.27725pt>
+<images/mobilebroker_openiot.png, id=536, 256.5585pt x 181.27725pt>
 File: images/mobilebroker_openiot.png Graphic file (type png)
 
 <use images/mobilebroker_openiot.png>
@@ -2355,14 +2455,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 683--684
  []
 
 
-LaTeX Warning: Reference `L406' on page 32 undefined on input line 685.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
-<images/cloud_capture.png, id=295, 563.706pt x 369.17924pt>
+<images/cloud_capture.png, id=544, 563.706pt x 369.17924pt>
 File: images/cloud_capture.png Graphic file (type png)
 
 <use images/cloud_capture.png>
@@ -2378,11 +2475,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32]
-
-LaTeX Warning: Reference `L407' on page 33 undefined on input line 696.
-
-<images/requestDefinition.png, id=300, 1505.625pt x 906.38625pt>
+[32] <images/requestDefinition.png, id=551, 1505.625pt x 906.38625pt>
 File: images/requestDefinition.png Graphic file (type png)
 
 <use images/requestDefinition.png>
@@ -2406,13 +2499,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [33 <./images/cloud_capture.png>]
-
-LaTeX Warning: Reference `L408' on page 34 undefined on input line 704.
-
-
-LaTeX Warning: Reference `L409' on page 34 undefined on input line 704.
-
-<images/temperature_definition.png, id=307, 704.6325pt x 348.30125pt>
+<images/temperature_definition.png, id=560, 704.6325pt x 348.30125pt>
 File: images/temperature_definition.png Graphic file (type png)
 
 <use images/temperature_definition.png>
@@ -2424,7 +2511,7 @@ Overfull \hbox (4.04668pt too wide) in paragraph at lines 709--710
  [] 
  []
 
-<images/temperature_presentation.png, id=308, 622.325pt x 468.75125pt>
+<images/temperature_presentation.png, id=561, 622.325pt x 468.75125pt>
 File: images/temperature_presentation.png Graphic file (type png)
 
 <use images/temperature_presentation.png>
@@ -2450,15 +2537,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: Reference `L301' on page 35 undefined on input line 729.
 
-
-LaTeX Warning: Reference `L0420' on page 35 undefined on input line 729.
-
-
-LaTeX Warning: Reference `L0421' on page 35 undefined on input line 734.
-
-
-LaTeX Warning: Reference `L0422' on page 35 undefined on input line 742.
-
 LaTeX Info: Redefining \. on input line 743.
 LaTeX Info: Redefining \% on input line 743.
 
@@ -2468,14 +2546,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [35 <./images/temperature_definition.png> <./images/temperature_presentation.pn
-g>] <images/dataFlow_capture.png, id=324, 545.03625pt x 419.166pt>
+g>] <images/dataFlow_capture.png, id=580, 545.03625pt x 419.166pt>
 File: images/dataFlow_capture.png Graphic file (type png)
 
 <use images/dataFlow_capture.png>
 Package pdftex.def Info: images/dataFlow_capture.png used on input line 746.
 (pdftex.def)             Requested size: 272.51746pt x 209.58249pt.
 
-<images/osd_sdum.png, id=325, 655.85025pt x 408.92775pt>
+<images/osd_sdum.png, id=581, 655.85025pt x 408.92775pt>
 File: images/osd_sdum.png Graphic file (type png)
 
 <use images/osd_sdum.png>
@@ -2492,7 +2570,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [36 <./images/dataFlow_capture.png>]
-<images/sdum_service.png, id=332, 663.6795pt x 261.3765pt>
+<images/sdum_service.png, id=588, 663.6795pt x 261.3765pt>
 File: images/sdum_service.png Graphic file (type png)
 
 <use images/sdum_service.png>
@@ -2522,21 +2600,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 767--768
  []
 
 
-LaTeX Warning: Reference `L0421' on page 38 undefined on input line 769.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 769--770
 
  []
 
-<images/idecore_figure.png, id=342, 1156.32pt x 566.71725pt>
+<images/idecore_figure.png, id=597, 1156.32pt x 566.71725pt>
 File: images/idecore_figure.png Graphic file (type png)
 
 <use images/idecore_figure.png>
 Package pdftex.def Info: images/idecore_figure.png used on input line 774.
 (pdftex.def)             Requested size: 346.89868pt x 170.01648pt.
 
-<images/idecoretools_capture.png, id=343, 760.64175pt x 467.346pt>
+<images/idecoretools_capture.png, id=598, 760.64175pt x 467.346pt>
 File: images/idecoretools_capture.png Graphic file (type png)
 
 <use images/idecoretools_capture.png>
@@ -2575,7 +2650,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 793--794
 
  []
 
-<images/login_capture.png, id=357, 582.37575pt x 261.3765pt>
+<images/login_capture.png, id=610, 582.37575pt x 261.3765pt>
 File: images/login_capture.png Graphic file (type png)
 
 <use images/login_capture.png>
@@ -2619,11 +2694,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
-
-LaTeX Warning: Reference `L411' on page 43 undefined on input line 849.
-
-<images/phenonet_capture.png, id=374, 425.79076pt x 236.68425pt>
+[42] <images/phenonet_capture.png, id=628, 425.79076pt x 236.68425pt>
 File: images/phenonet_capture.png Graphic file (type png)
 
 <use images/phenonet_capture.png>
@@ -2646,30 +2717,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [44]
-
-LaTeX Warning: Citation `kaa' on page 45 undefined on input line 868.
-
-
-LaTeX Warning: Citation `kaa_iot' on page 45 undefined on input line 868.
-
-
-LaTeX Warning: Citation `code' on page 45 undefined on input line 868.
-
-
-LaTeX Warning: Citation `doc' on page 45 undefined on input line 868.
-
-
-LaTeX Warning: Reference `L501' on page 45 undefined on input line 868.
-
-
-LaTeX Warning: Reference `L502' on page 45 undefined on input line 869.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 875--876
 
  []
 
-<images/kaa_platform.png, id=389, 259.56975pt x 386.04225pt>
+<images/kaa_platform.png, id=646, 259.56975pt x 386.04225pt>
 File: images/kaa_platform.png Graphic file (type png)
 
 <use images/kaa_platform.png>
@@ -2681,7 +2733,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [45
 
 ]
-<images/arquitectura_kaa.png, id=396, 483.0045pt x 457.10776pt>
+<images/arquitectura_kaa.png, id=657, 483.0045pt x 457.10776pt>
 File: images/arquitectura_kaa.png Graphic file (type png)
 
 <use images/arquitectura_kaa.png>
@@ -2707,10 +2759,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 892--893
 
  []
 
-
-LaTeX Warning: Reference `L502' on page 47 undefined on input line 899.
-
-<images/kaa_platform1.png, id=403, 640.3925pt x 360.34625pt>
+<images/kaa_platform1.png, id=665, 640.3925pt x 360.34625pt>
 File: images/kaa_platform1.png Graphic file (type png)
 
 <use images/kaa_platform1.png>
@@ -2726,55 +2775,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [47 <./images/arquitectura_kaa.png>]
+<images/deployment1_kaa.png, id=672, 723.45282pt x 406.51875pt>
+File: images/deployment1_kaa.png Graphic file (type png)
 
-LaTeX Warning: Reference `L504' on page 48 undefined on input line 908.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 908--909
-
- []
-
-<images/log_schema_example.png, id=410, 389.65575pt x 423.984pt>
-File: images/log_schema_example.png Graphic file (type png)
-
-<use images/log_schema_example.png>
-Package pdftex.def Info: images/log_schema_example.png used on input line 913.
-(pdftex.def)             Requested size: 194.8274pt x 211.99147pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[48 <./images/kaa_platform1.png>]
-
-LaTeX Warning: Reference `L105' on page 49 undefined on input line 917.
-
-<images/events_schema.png, id=417, 890.1255pt x 262.581pt>
-File: images/events_schema.png Graphic file (type png)
-
-<use images/events_schema.png>
-Package pdftex.def Info: images/events_schema.png used on input line 929.
-(pdftex.def)             Requested size: 445.06166pt x 131.29016pt.
-
-Overfull \hbox (31.82924pt too wide) in paragraph at lines 929--930
- [][] 
- []
-
-LaTeX Info: Redefining \. on input line 931.
-LaTeX Info: Redefining \% on input line 931.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[49 <./images/log_schema_example.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 941--942
-
- []
-
+<use images/deployment1_kaa.png>
+Package pdftex.def Info: images/deployment1_kaa.png used on input line 910.
+(pdftex.def)             Requested size: 289.376pt x 162.60461pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2785,28 +2791,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50 <./images/events_schema.png>]
+[48 <./images/kaa_platform1.png>]
+<images/deployment2.png, id=678, 721.19438pt x 406.51875pt>
+File: images/deployment2.png Graphic file (type png)
 
-LaTeX Warning: Reference `L507' on page 51 undefined on input line 946.
-
-<images/esquema_apache.png, id=435, 544.434pt x 164.41425pt>
-File: images/esquema_apache.png Graphic file (type png)
-
-<use images/esquema_apache.png>
-Package pdftex.def Info: images/esquema_apache.png used on input line 949.
-(pdftex.def)             Requested size: 326.66292pt x 98.64929pt.
-
-<images/endpoint_group.png, id=436, 373.395pt x 237.2865pt>
-File: images/endpoint_group.png Graphic file (type png)
-
-<use images/endpoint_group.png>
-Package pdftex.def Info: images/endpoint_group.png used on input line 957.
-(pdftex.def)             Requested size: 224.03873pt x 142.37299pt.
-
-Underfull \vbox (badness 1418) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 960.
-LaTeX Info: Redefining \% on input line 960.
+<use images/deployment2.png>
+Package pdftex.def Info: images/deployment2.png used on input line 916.
+(pdftex.def)             Requested size: 288.47264pt x 162.60461pt.
+LaTeX Info: Redefining \. on input line 920.
+LaTeX Info: Redefining \% on input line 920.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2814,13 +2807,95 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51 <./images/esquema_apache.png>]
-<images/disponibilidad_captura.png, id=443, 388.45125pt x 322.806pt>
+[49 <./images/deployment1_kaa.png> <./images/deployment2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 926--927
+
+ []
+
+<images/log_schema_example.png, id=686, 389.65575pt x 423.984pt>
+File: images/log_schema_example.png Graphic file (type png)
+
+<use images/log_schema_example.png>
+Package pdftex.def Info: images/log_schema_example.png used on input line 931.
+(pdftex.def)             Requested size: 194.8274pt x 211.99147pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50 <./images/log_schema_example.png>]
+<images/events_schema.png, id=695, 890.1255pt x 262.581pt>
+File: images/events_schema.png Graphic file (type png)
+
+<use images/events_schema.png>
+Package pdftex.def Info: images/events_schema.png used on input line 951.
+(pdftex.def)             Requested size: 445.06166pt x 131.29016pt.
+
+Overfull \hbox (31.82924pt too wide) in paragraph at lines 951--952
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 954.
+LaTeX Info: Redefining \% on input line 954.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 963--964
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52 <./images/events_schema.png>]
+<images/esquema_apache.png, id=707, 544.434pt x 164.41425pt>
+File: images/esquema_apache.png Graphic file (type png)
+
+<use images/esquema_apache.png>
+Package pdftex.def Info: images/esquema_apache.png used on input line 971.
+(pdftex.def)             Requested size: 326.66292pt x 98.64929pt.
+
+<images/endpoint_group.png, id=708, 373.395pt x 237.2865pt>
+File: images/endpoint_group.png Graphic file (type png)
+
+<use images/endpoint_group.png>
+Package pdftex.def Info: images/endpoint_group.png used on input line 979.
+(pdftex.def)             Requested size: 224.03873pt x 142.37299pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 982.
+LaTeX Info: Redefining \% on input line 982.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53 <./images/esquema_apache.png>]
+<images/disponibilidad_captura.png, id=716, 388.45125pt x 322.806pt>
 File: images/disponibilidad_captura.png Graphic file (type png)
 
 <use images/disponibilidad_captura.png>
 Package pdftex.def Info: images/disponibilidad_captura.png used on input line 9
-69.
+91.
 (pdftex.def)             Requested size: 194.22514pt x 161.4026pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2832,18 +2907,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52 <./images/endpoint_group.png>]
-<images/security_capture.png, id=450, 637.1805pt x 396.88275pt>
+[54 <./images/endpoint_group.png>]
+<images/security_capture.png, id=723, 637.1805pt x 396.88275pt>
 File: images/security_capture.png Graphic file (type png)
 
 <use images/security_capture.png>
-Package pdftex.def Info: images/security_capture.png used on input line 977.
+Package pdftex.def Info: images/security_capture.png used on input line 999.
 (pdftex.def)             Requested size: 318.58946pt x 198.44089pt.
 
-Underfull \vbox (badness 2384) has occurred while \output is active []
+Underfull \vbox (badness 3735) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 982.
-LaTeX Info: Redefining \% on input line 982.
+LaTeX Info: Redefining \. on input line 1004.
+LaTeX Info: Redefining \% on input line 1004.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[55 <./images/disponibilidad_captura.png> <./images/security_capture.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[56]
+LaTeX Info: Redefining \. on input line 1054.
+LaTeX Info: Redefining \% on input line 1054.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2851,30 +2943,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53 <./images/disponibilidad_captura.png> <./images/security_capture.png>]
+[57]
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+LaTeX Warning: Reference `L505' on page 58 undefined on input line 1057.
 
-[54]
-
-LaTeX Warning: Reference `L505' on page 55 undefined on input line 1021.
-
-LaTeX Info: Redefining \. on input line 1023.
-LaTeX Info: Redefining \% on input line 1023.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[55]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1023.
+(Font)              scaled to size 10.0pt on input line 1059.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1037--1038
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1074
 
  []
 
@@ -2884,17 +2960,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56] <images/notifications.png, id=500, 422.17725pt x 391.4625pt>
-File: images/notifications.png Graphic file (type png)
-
-<use images/notifications.png>
-Package pdftex.def Info: images/notifications.png used on input line 1087.
-(pdftex.def)             Requested size: 211.0881pt x 195.73076pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 1089.
-LaTeX Info: Redefining \% on input line 1089.
+[58]
+LaTeX Info: Redefining \. on input line 1117.
+LaTeX Info: Redefining \% on input line 1117.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2902,35 +2970,267 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[57] <images/kaa_stack.png, id=530, 1090.0725pt x 612.78937pt>
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1120
+
+ []
+
+<images/filters.png, id=800, 493.845pt x 392.667pt>
+File: images/filters.png Graphic file (type png)
+ <use images/filters.png>
+Package pdftex.def Info: images/filters.png used on input line 1124.
+(pdftex.def)             Requested size: 197.53448pt x 157.06401pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[60 <./images/filters.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1134
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1136.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1136.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1136.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1136.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1136.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1137.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1138.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1139.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1139.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1140.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1140.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1141.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1141.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1143.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1144.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1144.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1145.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1146.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1146.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1147.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1148.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1148.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1149.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1150.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1151.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1152.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1153.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1154.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1154.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1156.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1156.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1156.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1156.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1156.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1157.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1158.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1159.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1159.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1161.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1161.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1162.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1162.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1163.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1164.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1164.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1165.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1166.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1166.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1167.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1168.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1168.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1169.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1169.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1171.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1172.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1173.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1174.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1175.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1176.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1177.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1177.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1179
+
+ []
+
+
+Overfull \hbox (10.82483pt too wide) in paragraph at lines 1181--1182
+[][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1182.
+LaTeX Info: Redefining \% on input line 1182.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[61] <images/notifications.png, id=852, 422.17725pt x 391.4625pt>
+File: images/notifications.png Graphic file (type png)
+
+<use images/notifications.png>
+Package pdftex.def Info: images/notifications.png used on input line 1186.
+(pdftex.def)             Requested size: 211.0881pt x 195.73076pt.
+
+<images/kaa_stack.png, id=853, 1090.0725pt x 612.78937pt>
 File: images/kaa_stack.png Graphic file (type png)
 
 <use images/kaa_stack.png>
-Package pdftex.def Info: images/kaa_stack.png used on input line 1096.
+Package pdftex.def Info: images/kaa_stack.png used on input line 1195.
 (pdftex.def)             Requested size: 436.02127pt x 245.1114pt.
 
-Overfull \hbox (22.78885pt too wide) in paragraph at lines 1096--1097
+Overfull \hbox (22.78885pt too wide) in paragraph at lines 1195--1196
  [][] 
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[58 <./images/notifications.png>]
-LaTeX Info: Redefining \. on input line 1107.
-LaTeX Info: Redefining \% on input line 1107.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[59 <./images/kaa_stack.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3343) has occurred while \output is active []
 
 
 
@@ -2939,18 +3239,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60]
+[62 <./images/notifications.png>]
+Underfull \vbox (badness 3128) has occurred while \output is active []
 
-LaTeX Warning: Reference `sec:grouping' on page 61 undefined on input line 1150
-.
-
-<images/filters.png, id=575, 493.845pt x 392.667pt>
-File: images/filters.png Graphic file (type png)
- <use images/filters.png>
-Package pdftex.def Info: images/filters.png used on input line 1162.
-(pdftex.def)             Requested size: 197.53448pt x 157.06401pt.
-LaTeX Info: Redefining \. on input line 1165.
-LaTeX Info: Redefining \% on input line 1165.
+LaTeX Info: Redefining \. on input line 1205.
+LaTeX Info: Redefining \% on input line 1205.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2958,42 +3251,202 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[61]
+[63 <./images/kaa_stack.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1206.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1207.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1207.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1208.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1208.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1209.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1209.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1210.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1210.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1212.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1212.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1215.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1216.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1218.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1218.
+
+<images/config_demo_4.png, id=866, 1158.3275pt x 835.12pt>
+File: images/config_demo_4.png Graphic file (type png)
+
+<use images/config_demo_4.png>
+Package pdftex.def Info: images/config_demo_4.png used on input line 1224.
+(pdftex.def)             Requested size: 347.50093pt x 250.53793pt.
+
+Overfull \hbox (10.82483pt too wide) in paragraph at lines 1228--1229
+[][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[62 <./images/filters.png>]
-LaTeX Info: Redefining \. on input line 1239.
-LaTeX Info: Redefining \% on input line 1239.
+[64 <./images/config_demo_4.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 1233.
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+Package xcolor Warning: Incompatible color definition on input line 1233.
 
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1252
+
+Package xcolor Warning: Incompatible color definition on input line 1233.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1233.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1233.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1234.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1235.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1235.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1236.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1236.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1237.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1237.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1238.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1238.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1239.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1240.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1240.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1241.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1243.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1244.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1244.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1245.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1246.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1247.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1247.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1248.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1249.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1249.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
 
  []
 
 
-Underfull \vbox (badness 1082) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1253
 
+ []
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[64]
-LaTeX Info: Redefining \. on input line 1303.
-LaTeX Info: Redefining \% on input line 1303.
-
+LaTeX Info: Redefining \. on input line 1260.
+LaTeX Info: Redefining \% on input line 1260.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3001,15 +3454,219 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [65]
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1264
 
-LaTeX Warning: Reference `L508' on page 66 undefined on input line 1331.
+ []
 
-<images/screenshot.png, id=707, 1084.05pt x 1927.2pt>
-File: images/screenshot.png Graphic file (type png)
 
-<use images/screenshot.png>
-Package pdftex.def Info: images/screenshot.png used on input line 1334.
-(pdftex.def)             Requested size: 216.80615pt x 385.43318pt.
+Package xcolor Warning: Incompatible color definition on input line 1266.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1266.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1266.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1266.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1266.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1267.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1268.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1268.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1269.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1269.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1270.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1270.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1271.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1271.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1271.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1273.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1274.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1274.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1274.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1275.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1275.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1276.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1277.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1277.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1277.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1278.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1278.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1279.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1280.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1280.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1281.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1282.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1282.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1285.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1286.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1286.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1287.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1287.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1288.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1288.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1289.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1289.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1289.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1290.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1290.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1291.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1292.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1292.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1292.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1293.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1293.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1294.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1295.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1295.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1295.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1296.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1296.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1297.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1298.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1298.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1299.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1300.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1300.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3017,50 +3674,434 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[66] <images/screenshot1.png, id=732, 1084.05pt x 1927.2pt>
-File: images/screenshot1.png Graphic file (type png)
+[66]
 
-<use images/screenshot1.png>
-Package pdftex.def Info: images/screenshot1.png used on input line 1340.
-(pdftex.def)             Requested size: 216.80615pt x 385.43318pt.
+Package xcolor Warning: Incompatible color definition on input line 1303.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1343.
-LaTeX Info: Redefining \% on input line 1343.
+Package xcolor Warning: Incompatible color definition on input line 1303.
 
+
+Package xcolor Warning: Incompatible color definition on input line 1303.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1303.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1303.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1304.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1305.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1305.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1306.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1306.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1307.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1307.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1308.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1308.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1308.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1309.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1309.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1311.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1313.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1313.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1314.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1314.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1316.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1318.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1318.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1320.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1320.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1321.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1322.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1343--1344
+
+ []
+
+LaTeX Info: Redefining \. on input line 1344.
+LaTeX Info: Redefining \% on input line 1344.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[67 <./images/screenshot.png>]
+[67]
 
-LaTeX Warning: Citation `wsj' on page 68 undefined on input line 1351.
-
-<images/fog_computing.png, id=739, 349.305pt x 248.127pt>
-File: images/fog_computing.png Graphic file (type png)
-
-<use images/fog_computing.png>
-Package pdftex.def Info: images/fog_computing.png used on input line 1355.
-(pdftex.def)             Requested size: 209.58461pt x 148.87733pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package xcolor Warning: Incompatible color definition on input line 1360.
 
 
+Package xcolor Warning: Incompatible color definition on input line 1360.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1360.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1360.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1360.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1361.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1362.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1362.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1363.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1363.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1365.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1365.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1366.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1367.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1367.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1368.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1368.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1369.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1369.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1370.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1371.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1372.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1372.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1373.
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 1374.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[68 <./images/screenshot1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[68]
 
-LaTeX Info: Redefining \. on input line 1358.
-LaTeX Info: Redefining \% on input line 1358.
+Package xcolor Warning: Incompatible color definition on input line 1374.
 
+
+Package xcolor Warning: Incompatible color definition on input line 1374.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1375.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1375.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1376.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1376.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1377.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1377.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1378.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1378.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1379.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1381.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1381.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1382.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1383.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1384.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1385.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1385.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1386.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1386.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1387.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1388.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1389.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1389.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1391.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1392.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1393.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1393.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1394.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1394.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1395.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1395.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1396.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1396.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1397.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1398.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1398.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1399.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1399.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1400.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1400.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1401.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1402.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1403.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1403.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1406.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1406.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1407.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1407.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1408.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1409.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1410.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1411.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1411.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1412.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1412.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1413.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1414.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1415.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1415.
+
+LaTeX Info: Redefining \. on input line 1422.
+LaTeX Info: Redefining \% on input line 1422.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -3068,15 +4109,75 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [69]
+Underfull \hbox (badness 10000) in paragraph at lines 1423--1430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1435--1438
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[70 <./images/fog_computing.png>]
-LaTeX Info: Redefining \. on input line 1373.
-LaTeX Info: Redefining \% on input line 1373.
+[70] <images/response_pig.png, id=1049, 774.4935pt x 174.6525pt>
+File: images/response_pig.png Graphic file (type png)
+
+<use images/response_pig.png>
+Package pdftex.def Info: images/response_pig.png used on input line 1448.
+(pdftex.def)             Requested size: 309.79192pt x 69.85976pt.
+
+Overfull \hbox (103.1757pt too wide) in paragraph at lines 1448--1449
+ [][] 
+ []
+
+<images/capture_difference.png, id=1050, 793.7655pt x 204.16275pt>
+File: images/capture_difference.png Graphic file (type png)
+
+<use images/capture_difference.png>
+Package pdftex.def Info: images/capture_difference.png used on input line 1454.
+
+(pdftex.def)             Requested size: 277.82208pt x 71.45802pt.
+
+Overfull \hbox (71.20587pt too wide) in paragraph at lines 1454--1455
+ [][] 
+ []
+
+<images/capture_android_ping.png, id=1051, 1084.05pt x 1741.50626pt>
+File: images/capture_android_ping.png Graphic file (type png)
+
+<use images/capture_android_ping.png>
+Package pdftex.def Info: images/capture_android_ping.png used on input line 146
+0.
+(pdftex.def)             Requested size: 97.56029pt x 156.72879pt.
+
+Overfull \hbox (2.00041pt too wide) in paragraph at lines 1446--1464
+[]$[]$ $[]$
+ []
+
+
+LaTeX Warning: Reference `' on page 71 undefined on input line 1470.
+
+LaTeX Info: Redefining \. on input line 1471.
+LaTeX Info: Redefining \% on input line 1471.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[71 <./images/response_pig.png> <./images/capture_difference.png> <./images/cap
+ture_android_ping.png>]
+<images/raspberry_example.png, id=1061, 676.32675pt x 375.804pt>
+File: images/raspberry_example.png Graphic file (type png)
+
+<use images/raspberry_example.png>
+Package pdftex.def Info: images/raspberry_example.png used on input line 1475.
+(pdftex.def)             Requested size: 338.16254pt x 187.90154pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3084,70 +4185,373 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[71] [72
+[72 <./images/raspberry_example.png>]
 
-]
-Overfull \hbox (29.78577pt too wide) in paragraph at lines 1381--1382
+Package xcolor Warning: Incompatible color definition on input line 1484.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1484.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1484.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1484.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1484.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1485.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1486.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1486.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1487.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1487.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1488.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1488.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1489.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1489.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1490.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1491.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1491.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1492.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1492.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1493.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1494.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1495.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1496.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1498.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1498.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1502.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1503.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1503.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1504.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1504.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1505.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1505.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1506.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1506.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1507.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1508.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1508.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1509.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1510.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1511.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1512.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1514.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1514.
+
+<images/mongodb.png, id=1068, 424.58624pt x 404.10976pt>
+File: images/mongodb.png Graphic file (type png)
+
+<use images/mongodb.png>
+Package pdftex.def Info: images/mongodb.png used on input line 1518.
+(pdftex.def)             Requested size: 254.75371pt x 242.46771pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 1521.
+LaTeX Info: Redefining \% on input line 1521.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[73]
+
+Package xcolor Warning: Incompatible color definition on input line 1523.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1523.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1523.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1523.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1523.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1524.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1525.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1525.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1526.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1526.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1527.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1527.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1528.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1528.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1528.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1529.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1529.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1530.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1530.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1531.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1531.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1532.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1533.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1534.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1534.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1534.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1535.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1537.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1537.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[74 <./images/mongodb.png>]
+<images/mongo_zeppelin.png, id=1120, 1904.11375pt x 742.775pt>
+File: images/mongo_zeppelin.png Graphic file (type png)
+
+<use images/mongo_zeppelin.png>
+Package pdftex.def Info: images/mongo_zeppelin.png used on input line 1546.
+(pdftex.def)             Requested size: 380.81601pt x 148.55237pt.
+LaTeX Info: Redefining \. on input line 1554.
+LaTeX Info: Redefining \% on input line 1554.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[75 <./images/mongo_zeppelin.png>]
+<images/fog_computing.png, id=1129, 349.305pt x 248.127pt>
+File: images/fog_computing.png Graphic file (type png)
+
+<use images/fog_computing.png>
+Package pdftex.def Info: images/fog_computing.png used on input line 1573.
+(pdftex.def)             Requested size: 174.65207pt x 124.06319pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 1580--1582
+
+ []
+
+LaTeX Info: Redefining \. on input line 1585.
+LaTeX Info: Redefining \% on input line 1585.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[77 <./images/fog_computing.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[78]
+Overfull \hbox (29.78577pt too wide) in paragraph at lines 1605--1606
 []\T1/LinuxLibertineT-TLF/m/n/12 Kaa do-cu-men-ta-tion: http://docs.spring.io/s
 pring/docs/3.0.x/reference/expressions.html 
  []
 
-[73]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1389.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1389.
+[79
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1615.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1615.
  (plantillaTFG.aux
 LaTeX Info: Redefining \. on input line 19.
 LaTeX Info: Redefining \% on input line 19.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1389.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1389.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1615.
 
+Package rerunfilecheck Info: File `plantillaTFG.out' has not changed.
+(rerunfilecheck)             Checksum: FA34B1A7FB6CEB7E1759DAB8CB3271C5;3182.
 
-
-Package rerunfilecheck Warning: File `plantillaTFG.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `plantillaTFG.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D71E03C8420BC7AF1C35E649C6C7C31D;3019.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1389.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1615.
  ) 
 Here is how much of TeX's memory you used:
- 24947 strings out of 493333
- 440768 string characters out of 3130143
- 521492 words of memory out of 3000000
- 27484 multiletter control sequences out of 15000+200000
- 124636 words of font info for 122 fonts, out of 3000000 for 9000
+ 26247 strings out of 493333
+ 464720 string characters out of 3130143
+ 595859 words of memory out of 3000000
+ 28661 multiletter control sequences out of 15000+200000
+ 134299 words of font info for 127 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,54p,975b,2062s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/l
-btn_naooyc.enc}{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/libertine/lbtn_ncsllp.enc} <C:\Users\migue\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ectt1200.pk>{C:/Users/migue/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/migue/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/migue
-/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{C
-:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_
-nh77jq.enc}<C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/libertine/LinBiolinumT.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/migue/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/migue
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTB.
-pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libert
-ine/LinLibertineTI.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/stix/stix-mathit.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/migue/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on plantillaTFG.pdf (79 pages, 5594241 bytes).
+ 61i,13n,94p,1022b,2062s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\migue\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ectt0900.pk>{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
+ibertine/lbtn_naooyc.enc} <C:\Users\migue\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ectt1200.pk>{C:/Users/migue/AppData/Local/Programs/MiKTe
+X 2.9/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/migue/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/migue/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{C:/U
+sers/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_tlu
+kpt.enc}{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/liber
+tine/lbtn_76gpa5.enc}{C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/libertine/lbtn_nh77jq.enc}<C:/Users/migue/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/migue/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/
+migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLiberti
+neT.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/li
+bertine/LinLibertineTB.pfb><C:/Users/migue/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/migue/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/migue/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/m
+igue/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on plantillaTFG.pdf (87 pages, 5973370 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 408 named destinations out of 1000 (max. 500000)
- 288 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1356 PDF objects out of 1440 (max. 8388607)
+ 503 named destinations out of 1000 (max. 500000)
+ 699 words of extra memory for PDF output out of 10000 (max. 10000000)
 
