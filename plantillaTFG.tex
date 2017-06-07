@@ -268,56 +268,6 @@ En este trabajo se han analizado diferentes soluciones de middleware open-source
 
 
 \chapter*{Agradecimientos}
-\chapter{Los enunciados}
-
-\section{Teoremas y demostraciones}
-
-
-\begin{theorem}[Euclides]\label{thm:th1}
-    Esto es un Teorema. Se numeran a partir del 1 en cada capítulo. Como son importantes, tienen un cuadrado rojo al principio. Llevan letra cursiva.
-\end{theorem}
-
-\begin{proof}
-    Esto es la demostración. Al final de la demostración se puede ver un cuadrado rojo similar al de los teoremas. Las demostraciones no llevan letra cursiva.
-\end{proof}
-
-
-\begin{definition}\label{def:1}
-    Esto es una definición. Las definiciones son importantes; también llevan un cuadradito rojo.
-\end{definition}
-
-
-\subsection{Otros enunciados}
-
-
-\begin{remark}
-    Esto es una observación, que dice que $e=mc^{2}$. Como las observaciones no son importantes, no llevan cuadrado rojo, y el tipo de letra no es cursiva.
-\end{remark}
-
-
-\begin{proof}
-    Si la demostración acaba en una fórmula, para poner el cuadrado rojo a la altura de la última formula, hay que usar la orden \verb|\qedhere|, como en este caso:
-    \[
-        e=mc^{2}.\qedhere
-    \]
-
-\end{proof}
-
-
-\begin{corollary}\label{cor:1}
-    Esto es un corolario.
-\end{corollary}
-
-\begin{proposition}\label{pro:1}
-    Esto es una proposición.
-\end{proposition}
-
-\begin{lemma}[Gauss]\label{lem:1}
-    Esto es un lema.
-\end{lemma}
-
-
-\backmatter
 
 \bibliographystyle{acm}
 % \biliography{miarchivo} % -> lee miarchivo.bib
@@ -331,10 +281,34 @@ El análisis de cada uno de los middleware IoT, se hará siguiendo los requisito
 \includegraphics[scale=0.5]{images/requisitos}
 \caption{Requisitos de un middleware IoT.}\label{L105}
 \end{figure}
+\chapter{IoT}
+En la última década ha surgido un nuevo concepto en el mundo tecnológico: el Internet de las Cosas (Internet of Things (IoT), en inglés). Su nombre hace hincapié en la interconexión digital de objetos cotidianos con internet. Un frigorífico que avise de la fecha de caducidad de los alimentos, unas zapatillas de deporte que registren en la nube las estadísticas de la velocidad y distancia a la que corres, un inodoro que analice su orina para que recomiende una dieta u otra, en definitiva, que cualquier cosa u objeto tenga conexión a Internet. \\
+Según la empresa Gartner (//////link/////), en 2020 habrá en el mundo unos 26 mil millones de dispositivos con un sistema de conexión al internet de las cosas. Los mencionados objetos se valen por un sistema embebido que permite dotar de inteligencia al objeto conectado, ayudándose de sensores para captar información; esta es otra de las características de IoT, el denominado Big Data: datos, datos y más datos.
+IoT puede controlar desde aplicaciones domésticas como las mencionadas anteriormente, a aplicaciones profesionales. Un cultivo en el que cada planta tenga su propio sensor y el agricultor sea capaz en todo momento de recibir información sobre ellas conociendo cómo crecen y si existen problemas en algunas de ellas. \\
+El coste que podría tener monitorizar el sistema anterior en el que cada planta tenga un sensor enviando información a ciertos nodos para su procesamiento, podría ser elevado. Por ello se buscan hardware de bajo coste. El uso de sistemas de menor procesamiento hace que se busque nuevas tecnologías o, como mínimo, complementarias a las que existen. Las tecnologías existentes para Internet requieren de hardware con procesamiento elevado. No tiene ningún sentido enviar la información captada por un sensor de humedad (en el que la información recibida es ínfima) mediante HTTP.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/iot}
+\caption{Internet de las cosas.}\label{L105}
+\end{figure}
+\section{Barreras en el crecimiento de IoT}
+Existen algunos inconvenientes que impiden el avance de IoT. Uno de ellos es el problema de direccionamiento, bien es cierto que ya existe una propuesta firme para cambiar a IPV6. Otro de los principales problemas que impiden el crecimiento de IoT es la seguridad y privacidad. El hecho de compartir información privada en la nube nos hace mucho más vulnerables a los ataques por parte de hackers. Existen casos preocupantes que hacen que la interconexión de todo con todo aún tenga que esperar. \\En 2013, Hugo Teso, un experto en seguridad, demostró, en una maqueta, que era posible tomar el control de un avión desde un dispositivo Android (entre otras cosas), haciéndose valer de información compartida por los aviones para determinar su posición. \\En 2015 un grupo de investigadores descubrió que era relativamente sencillo manipular remotamente la aceleración y el sistema de frenado en los coches autónomos. Ejemplos que nos hacen pensar en la importancia de un sistema de seguridad en IoT y por qué aún no ha dado ese paso definitivo para su expansión. Estos problemas será cuestión de tiempo que se solucionen para que IoT acabe siendo una realidad.
+\section{Impacto social}
+El internet de las cosas podría cambiar, de hecho lo está haciendo, la vida tal y como la conocemos hoy en día, pues el hecho de que cualquier objeto pueda ser monitoreado nos ayudaría a administrar mejor los recursos. 
+
+\section{Conclusiones}
+El IoT se presenta como un nuevo paradigma que parece predestinado a cambiar por completo el escenario socioeconómico tal y como hoy lo conocemos. Estas nuevas tecnologías están permitiendo la obtención de mayores cantidades de información e incluso la obtención de datos sobre elementos de los que antes ni tan siquiera se podía pensar que fuera posible o sobre los que se pudiera influir.\\
+Aún con el gran abanico de posibilidades que se abre gracias a la utilización de estas nuevas tecnologías, este nuevo paradigma no se encuentra exento de problemas. Uno de ellos, sino el más
+grave, lo constituye su seguridad, en sus múltiples vertientes. Así, según los expertos, la seguridad es un asunto de especial trascendencia, ya que la mayoría de las medidas de seguridad tradicionales no pueden aplicarse al IoT debido principalmente a las restricciones y/o características que comporta su diseño: bajo procesamiento, entornos propensos a ataques malintencionados...\\
+Por ello, cuando se superen estos problemas, en los que ya grandes empresas están investigando, IoT dejará de ser usado para entornos en concreto a ser una realidad en nuestras vidas.
+\chapter{Middleware en IoT}
+\section{Introducción}
+Como se ha visto, la esencia de IoT es conectar y comunicar cualquier cosa sobre internet. ////Para conseguir una heterogeneidad entre diferentes componentes o dispositivos, se hace uso de middleware. ////Un middleware es una solución para esa arquitectura IoT, el cual puede proporcionar desde conectividad en las capas más bajas a servicios que aseguren una correcta comunicación a nivel software. 
+
 \chapter{MQTT}
-\section{MQTT}
-MQTT(Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda además de que no requiere de mucho software para implementar un cliente, lo cual es perfecto para dispositivos como Arduino. MQTT se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
-Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación publish/subscribe hace uso "broker" o servidor centralizado para la gestión de los paquetes.
+\section{Introducción}
+MQTT (Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda además de que no requiere de mucho software para implementar un cliente, lo cual es perfecto para dispositivos como Arduino. MQTT se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
+Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación publish/subscribe hace uso de un "broker" o servidor centralizado para la gestión de los paquetes.
 
 \begin{figure}[h!]
 \centering
@@ -427,10 +401,10 @@ Por otro lado, si el cliente quiere desuscribirse a un topic deberá enviar un p
 \caption{Paquete UNSUBACK.}\label{L408}
 \end{figure}
 \subsection*{Brokers}
-Son los encargados de transmitir los mensajes. El broker recibe los mensajes por parte de los clientes y se encarga de procesar y enviar el mensaje a los subscriptores de ese topic. La gestión de la red es otra de las funcionalidades del broker. Los clientes envían periódicamente un paquete (PINGREQ) y esperan la respuesta del broker (PINGRESP) para mantener activo el canal.\\
+Es el servidor de MQTT. El broker recibe los mensajes por parte de los clientes y se encarga de procesar y enviar el mensaje a los subscriptores de ese topic. La gestión de la red es otra de las funcionalidades del broker. Los clientes envían periódicamente un paquete (PINGREQ) y esperan la respuesta del broker (PINGRESP) para mantener activo el canal.\\
 Existen varias empresas como HiveMQ \cite{hive}\cite{hive_doc} que comercializan un broker MQTT diseñado por ellos mismos. Otro broker comercial es CloudMQTT \cite{cloud_mqtt}, propiedad de Amazon.
 
-En este trabajo se trabajará con el broker Mosquitto \cite{mosqtt}, el cual es de código abierto y es uno de los más usados y completos que existen.
+En este documento se trabajará con el broker Mosquitto \cite{mosqtt}, el cual es de código abierto y es uno de los más usados y completos que existen.
 
 En la siguiente tabla se muestra una comparación entre alguno de los brokers más usados.
 \begin{table}[H]
@@ -457,6 +431,46 @@ MQTT Websocket surge para usar MQTT sobre HTTPy poder usar un cliente MQTT en un
 \subsection*{Clientes}
 Se encargan de enviar al broker la información recibida, normalmente por parte de sensores. Los clientes también reciben mensajes de los topics subscritos.
 Al igual que los brokers, hay muchos tipos de clientes MQTT. El cliente Open-Source más usado es Eclipse Paho Java Client \cite{paho}
+\section{MQTT-SN}
+\subsection{Redes de sensores inalámbricas}
+Las redes de sensores o Wireless Sensor Networks (WSN) en inglés, se han incrementado en los últimos años. Estas redes tienen diferentes aplicaciones, como puede ser la vigilancia y seguridadd, medicina, domótica o aplicaciones militares. Una red de sensores está formada por sensores y gateway para conectar con una red de datos. En estas redes es importante la comunicación de forma inalambrica entre sensores, puesto que el número de nodos (sensores, actuadores...) es muy grande, y una infraestructura cableada tendría un coste muy elevado. Las características de estas redes son:
+\begin{itemize}
+\item[•]Tolerancia a fallos\\
+\item[•]Coste\\
+\item[•]Ausencia de infraestructura de red\\
+\item[•]Bajo consumo
+\end{itemize} 
+A diferencia de las redes convencionales, los nodos no tienen conocimiento de la topología de la red, por lo que el enrutamiento cambia con respecto a éstas. Aquí es el nodo el que se informa de los nuevos nodos a su alcance y de la manera de encaminarse hacia ellos. En la figura \ref{L411} se puede ver la estructura de una red de este tipo.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/wsn}
+\caption{Multi level}\label{L411}
+\end{figure}
+ 
+\subsection{MQTT-SN}
+MQTT es un protocolo usado sobre redes donde el ancho de banda sea limitado, sin embargo MQTT requiere del protocolo TCP/IP, útil para redes con dispositivos de aceptable procesamiento, puesto que ofrece una entrega correcta de los paquetes pero es demasiado complejo como para ser usado en redes de sensores, en las que los dispositivos son de poca memoria y de bajo procesamiento.\\
+Es por ello donde surge MQTT-SN, un protocolo pub/sub específico para redes de sensores. 
+\subsection{Arquitectura MQTT-SN}
+La arquitectura MQTT-SN se muestra en la figura \ref{L412}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/mqttsn}
+\caption{Arquitectura MQTT-SN}\label{L412}
+\end{figure}
+Hay 2 componentes: MQTT-SN clientes y MQTT-SN gateways. Los MQTT-SN clientes son los nodos en la red WSN. La comunicación entre clientes se hace a través del Gateway mediante el protocolo MQTT-SN. Los clientes realizan la comunicación pub/sub con un broker, localizado en una red tradicional, a través del Gateway. La comunicación entre el broker y el MQTT-Gateway se hace mediante el protocolo MQTT.
+\subsection{Funcionamiento}  
+\subsection{MQTT vs MQTT-SN}
+MQTT-SN se diferencia en MQTT en varios aspectos. A nivel de red, no funciona sobre TCP pero necesita de Gateways para su funcionamiento.
+MQTT-SN soporta ID de topics en lugar de nombres, siempre es menos costoso enviar el ID en cada mensaje que no el nombre completo ("home/livingroom/socket2/meter"). \\
+El descubrimiento es una de las mayores ventajas de MQTT-SN. Los clientes no necesitan saber la dirección IP o DNS del broker. El anunciamiento ayudará a descubrir los nodos. Los gateways de la red envían paquetes cada cierto periodo de tiempo advirtiendo de su presencia. Los clientes tienen que guardar una lista de los gateways activos junto con su dirección de red. Esta lista se forma a partir de los paquetes ADVERTISE y GWINFO enviados por los gateways. El cliente puede usar esta lista para conocer la disponibilidad de los gateways. Por ejemplo, si no recibe el mensaje ADVERTISE durante un tiempo determinado puede considerar que está caído y actualizar la lista. Conociendo la dirección de red del gateway el cliente puede conectarse mediante el envío de paquetes, como se hace en MQTT, aunque en este caso el paquete CONNECT, se divide en varios paquetes.\\
+%Se puede integrar MQTT y MQTT-SN preparando el gateway para establecer una comunicación con un broker MQTT. Esto es útil cuando exista una red de sensores a bajo nivel pero se quiera un mayor procesamiento a niveles más altos. También es útil si se buscan los requisitos que ofrece MQTT-SN como pueda ser el descubrimiento de recursos.
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.4]{images/mqtt_mqttsn}
+%\caption{Arquitectura MQTT-SN.}\label{L4015}
+%\end{figure}
+
+
 \section{Requisitos}
 MQTT como middleware IoT, necesita cumplir una serie de requisitos. En el escenario que se plantea hay algunos que no son indispensables y otro que sí lo son, como pueda ser la seguridad. Aquí se definen algunos de los requisitos.
 \subsection{Requisitos funcionales}
@@ -555,6 +569,11 @@ Este nivel de calidad asegura que el paquete llega una y solo una vez. Para ello
 \end{itemize}
 \subsubsection*{Tiempo real}
 Si tiempo real lo definimos en microsegundos, MQTT no cumple este requisito ya que una de las principales características de MQTT es que funciona sobre TCP. En el escenario que se plantea, estos microsegundos no son necesarios por lo que no es un requisito indispensable.
+
+\subsubsection*{Fácil de desplegar}
+MQTT es un protocolo que destaca por su sencillez
+\subsubsection*{Popularidad}
+MQTT es un middleware muy usado debido a su consumo y facilidad de uso. Tiene un gran soporte así como empresas que comercializan sus propios brokers añadiéndole mejoras y usándolo en aplicaciones IoT.
 \subsection{Requisitos arquitectónicos}
 \subsubsection*{Abstracción de la programación}
 
@@ -568,7 +587,9 @@ El broker Open-Source Mosquitto no cumple con este requisito.
 \subsubsection*{Orientado a servicio}
 
 \subsubsection*{Ligero}
-El bajo consumo de MQTT es una de las claves de su uso extendido. MQTT está diseñado para trabajar con dispositivos de bajo procesamiento como sensores o dispositivos móviles. Además, el consumo de ancho de banda que realiza en la red es mínimo. 
+El bajo consumo de MQTT es una de las claves de su uso extendido en IoT. MQTT está diseñado para trabajar con dispositivos de bajo procesamiento como sensores o dispositivos móviles. Además, el consumo de ancho de banda que realiza en la red es mínimo. 
+
+\subsubsection*{Adaptativo}
 
 \subsection{Documentación}
 MQTT es un middleware de código abierto perfectamente
@@ -576,56 +597,27 @@ MQTT es un middleware de código abierto perfectamente
 
  
 \section{Cloud Computing}
-En IoT se busca un procesamiento en la nube. MQTT nos ofrece el envío de datos y pequeños controles sobre los mismos pero para obtener una solución IoT completa se necesita de servidores y bases de datos. Algunos de los escenarios típicos con MQTT son el uso de herramientas como Node-RED\cite{nodered} junto con MongoDB\cite{mongo}. MQTT se encargaría del envío de datos (como se ha explicado más arriba) y éstos se enviarían al servidor, donde Node-RED recopilaría esos datos y los almacenaría en MongoDB. Se pueden usar herramientas como Google Chart para analizar los datos y poder llevar un control en tiempo real sobre los mismos. 
+En IoT se busca un procesamiento en la nube. MQTT nos ofrece el envío de datos y pequeños controles sobre los mismos pero para obtener una solución IoT completa se necesita de servidores y bases de datos. Algunos de los escenarios típicos con MQTT hacen uso de herramientas como Node-RED\cite{nodered} junto con MongoDB\cite{mongo}. MQTT se encargaría del envío de datos (como se ha explicado más arriba) y éstos se enviarían al servidor, donde Node-RED recopilaría esos datos y los almacenaría en MongoDB. Se pueden usar herramientas como Google Chart para analizar los datos y poder llevar un control en tiempo real sobre los mismos. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/cloud_mqtt1}
 \caption{Cloud Computing haciendo uso de MQTT}\label{L408}
 \end{figure}
 
-\section{Problemas}
-MQTT como middleware IoT, puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero no nos ofrece una solución completa. Por ello hemos optado por buscar más plataformas Open-Source que nos ofrezca una solución más completa.Es decir, un middleware que unifique almacenamiento en la nube, procesamiento y análisis de datos...
 
 
-\chapter{MQTT-SN}
-\section{Redes de sensores inalámbricas}
-Las redes de sensores o Wireless Sensor Networks (WSN) en inglés, se han incrementado en los últimos años. Estas redes tienen diferentes aplicaciones, como puede ser la vigilancia y seguridadd, medicina, domótica o aplicaciones militares. Una red de sensores está formada por sensores y gateway para conectar con una red de datos. En estas redes es importante la comunicación de forma inalambrica entre sensores, puesto que el número de nodos (sensores, actuadores...) es muy grande, y una infraestructura cableada tendría un coste muy elevado. Las características de estas redes son:
-\begin{itemize}
-\item[•]Tolerancia a fallos\\
-\item[•]Coste\\
-\item[•]Ausencia de infraestructura de red\\
-\item[•]Bajo consumo
-\end{itemize} 
-A diferencia de las redes convencionales, los nodos no tienen conocimiento de la topología de la red, por lo que el enrutamiento cambia con respecto a éstas. Aquí es el nodo el que se informa de los nuevos nodos a su alcance y de la manera de encaminarse hacia ellos. En la figura \ref{L411} se puede ver la estructura de una red de este tipo.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{images/wsn}
-\caption{Multi level}\label{L411}
-\end{figure}
- 
-\section{MQTT-SN}
-MQTT es un protocolo usado sobre redes donde el ancho de banda sea limitado, sin embargo MQTT requiere del protocolo TCP/IP, útil para redes con dispositivos de aceptable procesamiento, puesto que ofrece una entrega correcta de los paquetes pero es demasiado complejo como para ser usado en redes de sensores, en las que los dispositivos son de poca memoria y de bajo procesamiento.\\
-Es por ello donde surge MQTT-SN, un protocolo pub/sub específico para redes de sensores. 
-\section{Arquitectura MQTT-SN}
-La arquitectura MQTT-SN se muestra en la figura \ref{L412}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{images/mqttsn}
-\caption{Arquitectura MQTT-SN}\label{L412}
-\end{figure}
-Hay 2 componentes: MQTT-SN clientes y MQTT-SN gateways. Los MQTT-SN clientes son los nodos en la red WSN. La comunicación entre clientes se hace a través del Gateway mediante el protocolo MQTT-SN. Los clientes realizan la comunicación pub/sub con un broker, localizado en una red tradicional, a través del Gateway. La comunicación entre el broker y el MQTT-Gateway se hace mediante el protocolo MQTT.
-\section{Funcionamiento}  
-\section{MQTT vs MQTT-SN}
-MQTT-SN se diferencia en MQTT en varios aspectos. A nivel de red, no funciona sobre TCP pero por contra necesita de Gateways para...... //////////.
-MQTT-SN soporta ID de topics en lugar de nombres, siempre es menos costoso enviar el ID en cada mensaje que no el nombre completo ("home/livingroom/socket2/meter"). \\
-El descubrimineto es una de las mayores ventajas de MQTT-SN. Los clientes no necesitan saber la dirección IP o DNS del broker. El anunciamiento ayudará a descubrir los nodos. Los gateways de la red envían paquetes cada cierto periodo de tiempo advirtiendo de su presencia. Los clientes tienen que guardar una lista de los gateways activos junto con su dirección de red. Esta lista se forma a partir de los paquetes ADVERTISE y GWINFO enviados por los gateways. El cliente puede usar esta lista para conocer la disponibilidad de los gateways. Por ejemplo, si no recibe el mensaje ADVERTISE durante un tiempo determinado puede considerar que está caído y actualizar la lista. Conociendo la dirección de red del gateway el cliente puede conectarse mediante el envío de paquetes, como se hace en MQTT, aunque en este caso el paquete CONNECT, se divide en varios paquetes.
+\section{Conclusiones}
+MQTT como middleware IoT, puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero no nos ofrece una solución completa. Por ello hemos optado por buscar plataformas-middleware Open-Source que nos ofrezca una solución más completa.Es decir, un middleware que unifique almacenamiento en la nube, procesamiento y análisis de datos...
+
+\chapter{Plataformas IoT}
+
 \chapter{OpenIoT}
 \section{Introducción}
 A pesar de la expansión de las aplicaciones IoT en la nube, la ausencia de una semántica que proporcione una interoperabilidad entre las diferentes aplicaciones es una de las principales limitaciones de IoT. Esta ausencia de una unificación se refleja en los diferentes vocabularios y formas para describir las cosas/objetos físicos. No existe un modelo a seguir para integrar todos los servicios, como sí existe en redes IP. \\
 
-OpenIoT surge como un proyecto europeo que busca la unificación de esas soluciones. Se trata de una plataforma de código abierto que proporciona una convergencia entre los diversos sistemas IoT. Mezcla el concepto Cloud-Computing con el concepto de redes de sensores de IoT.\\ 
+OpenIoT\cite{openiot}\cite{openiot_git}\cite{openiot_pdf} surge como un proyecto europeo que busca la unificación de esas soluciones. Se trata de una plataforma de código abierto que proporciona una convergencia entre los diversos sistemas IoT. Mezcla el concepto Cloud-Computing con el concepto de redes de sensores de IoT.\\ 
 
-OpenIoT se basa en SSN como el modelo para la unificación de los diferentes sistemas IoT y flujo de datos. OpenIoT ofrece una infraestructura versátil para coleccionar datos de cualquier sensor disponible. Se hace uso del concepto "datos enlazados", Linked Data en inglés. En el que los datos de los sensores se vinculan entre sí, para que puedan ser compartidos y entenderse entre ellos, ampliando así la información. OpenIoT incluye también un middleware que facilita la recolección de datos de cualquier sensor disponible.
+OpenIoT se basa en SSN como el modelo para la unificación de los diferentes sistemas IoT y flujo de datos. OpenIoT ofrece una infraestructura versátil para coleccionar datos de cualquier sensor disponible. Se hace uso del concepto "datos enlazados", Linked Data, en inglés. En el que los datos de los sensores se vinculan entre sí, para que puedan ser compartidos y entenderse entre ellos, ampliando así la información. OpenIoT incluye también un middleware que facilita la recolección de datos de cualquier sensor disponible.
 \section{Plataforma}
 \subsection{Arquitectura}
 La arquitectura de la plataforma se puede ver en la figura \ref{L400} 
@@ -642,16 +634,13 @@ En el plano físico se encuentran los sensores. En OpenIoT se usa X-GSN como mid
 \caption{Semántica de SSN.}\label{L401}
 \end{figure}
 En X-GSN se configuran los sensores usando una descripción en XML, en la que se definen los campos de los sensores. Estos campos están asociados a la semántica SSN. En la figura \ref{L404} se puede ver un ejemplo de esta descripción. \\
-Para realizar el registro de sensores en la plataforma OpenIoT, es necesario que cada sensor tenga una instancia del mismo almacenada en la nube. Este registro se realiza mediante el envío a la plataforma LSM de un archivo de los metadatos del sensor, en el que se definen las propiedades del mismo. Un ejemplo de este archivo se puede ver en la figura \ref{L402}.
+Para realizar el registro de sensores en la plataforma OpenIoT, es necesario que cada sensor tenga una instancia del mismo almacenada en la nube. Por ello se envía a la plataforma LSM un archivo con los metadatos del sensor, en el que se definen las propiedades del mismo. Este archivo describe los datos definidos en el archivo de configuración XML. Un ejemplo del archivo de metadatos se puede ver en la figura \ref{L402}.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/metadata_capture}
 \caption{Metadatos de un sensor.}\label{L402}
 \end{figure}
-mediante un archivo XML enviado a la plataforma LSM. En este XML se usa una descripción en formato RDF
-Los sensores, situados en el plano físico, envían una instancia de sus datos (situación geográfica, memoria...) a la nube. Estos metadatos se envían en formato RDF, una semántica usada en la Web enlazada ("Linked Web", en inglés) y así pueden conectar con LSM.\\
-
-En la figura \ref{L403} se puede ver el proceso para el registro de un sensor en OpenIoT. Inicialmente se crea y se configura el sensor, mediante la descripción XML. Un ejemplo de esta descripción se puede ver en la figura \ref{L404}. Posteriormente se envía un archivo a la plataforma LSM en la nube conteniendo las propiedades del sensor. Éste se transforma en una descripción RDF, una descripción usada en la Web Semántica, que permite una representación de datos enlazados, lo que facilita el descubrimiento de recursos.
+En la figura \ref{L403} se puede ver el proceso para el registro de un sensor en OpenIoT. Inicialmente se crea y se configura el sensor (definición de campos, configuración del tiempo de subida ...), mediante la descripción XML (figura \ref{L404}). Posteriormente, se envía un archivo a la plataforma LSM en la nube conteniendo las propiedades del sensor. Éste se transforma en una descripción RDF, una descripción usada en la Web Semántica, que permite una representación de datos enlazados mediante la identificación de objetos (URIs), lo que facilita el descubrimiento de recursos.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/registration_capture}
@@ -662,7 +651,16 @@ En la figura \ref{L403} se puede ver el proceso para el registro de un sensor en
 \includegraphics[scale=0.5]{images/configuration_capture}
 \caption{Configuración de un sensor.}\label{L404}
 \end{figure}
-OpenIoT ofrece soporte para el descubrimiento y recoleccioón de datos por parte de sensores móviles tales como pulseras, gafas, relojes, en definitiva, sensores incluidos en dispositivos móviles. Todo esto se realiza a través de un middleware publish/subscribe para IoT llamado CUPUS (CloUd-based PUblish/Subscribe middleware). \\
+
+
+La colección de datos por parte de los sensores se basa en "wrappers" que coleccionan datos a través de distintos protocolos, como UDP, puerto serie, HTTP. Esto permite al usuario desarrollar y configurar el protocolo que quiera usar, lo que hace a la plataforma agnóstica respecto al hardware. Los datos se representan como flujos de listas de datos.\\
+El registro de sensores en la plataforma para su posterior descubrimiento, así como la recolección de datos y su posterior almacenamiento en LSM, se hace con unos pocos archivos XML, lo que permite al desarrollador crear grandes soluciones IoT con poco esfuerzo. En la figura \ref{wrappers} se puede ver el proceso de colección y envío de datos para su almacenamiento.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/wrappers_openiot}
+\caption{Envío de datos en OpenIoT.}\label{wrappers}
+\end{figure}
+Por otro lado, OpenIoT ofrece también soporte para el descubrimiento y recolección de datos por parte de sensores móviles tales como pulseras, gafas, relojes y, en definitiva, sensores incluidos en dispositivos móviles. Todo esto se realiza a través de un middleware publish/subscribe para IoT llamado CUPUS (CloUd-based PUblish/Subscribe middleware). \\
 CUPUS tiene dos componentes principales: 1) un agente (mobile broker, de ahora en adelante) ejecutándose en un dispositivo móvil y 2) un motor de procesado en la nube basado en publish/subscribe (cloud broker, de ahora en adelante), que se encarga del procesamiento de los datos recopilados por los sensores. CUPUS soporta el contenido basado en publish/subscribe.\\
 En la arquitectura OpenIoT, los datos recopilados por los dispositivos móviles se anotan y almacenan en la nube, a través de X-GSN, de la misma forma que con los sensores estacionarios. \\
 
@@ -676,16 +674,16 @@ El cloud broker puede enviar una notificación al mobile broker. Por otro lado, 
 \caption{Arquitectura publish/subscribe}\label{L405}
 \end{figure}
 \subsubsection*{Plano Virtual}
-El plano virtual está compuesto por el almacenamiento en la nube (LSM-Light), el Scheduler y el servicio de entrega. \\
+El plano virtual está compuesto por el almacenamiento en la nube (LSM-Light), el Scheduler y el servicio de entrega (SD\&UM). \\
 
-LSM-Light (Linked Sensor Middleware Light) es el componente principal de OpenIoT. Es la infraestructura de almacenamiento en la nube. Esta infraestructura, además de almacenar datos y metadatos, también es capaz de ofrecer computación en la nube (software) como por ejemplo Scheduler y SD\&UM.\\ LSM considera los sensores como fuentes de entrada de datos. Los datos provenientes de los sensores se transforman en una representación de datos enlazados, como por ejemplo, RDF. Existen dos formas de importar datos en LSM, pull y push. Una es la fuente de datos (X-GSN,CoAP...) la que se encarga de enviar los datos y la otra es el propio LSM quien obtiene los datos periódicamente. LSM está compuesto por dos módulos, LSM-Client y LSM-Server\\
+LSM-Light (Linked Sensor Middleware Light) es el componente principal de OpenIoT. Es la infraestructura de almacenamiento en la nube. Esta infraestructura, además de almacenar datos y metadatos, también es capaz de ofrecer computación en la nube (software) como por ejemplo Scheduler y SD\&UM.\\ LSM considera los sensores como fuentes de entrada de datos. Los datos provenientes de los sensores se transforman en una representación de datos enlazados, como por ejemplo, RDF. Existen dos formas de importar datos en LSM: pull y push. Una es la fuente de datos (X-GSN,CoAP...) la que se encarga de enviar los datos y la otra es el propio LSM quien obtiene los datos periódicamente. LSM está compuesto por dos módulos, LSM-Client y LSM-Server. LSM ofrece funcionalidades como wrappers para la colección y visualización de datos en tiempo real, un lenguaje SPARQL para las peticiones.\\
 
 OpenIoT usa Virtuoso, un middleware y motor de almacenamiento, que combina RDF, XML y base de datos virtuales en un solo sistema. Es el corazón de LSM-Light. \\
 
 El scheduler se encarga de formular las peticiones realizadas por los usuarios y de acuerdo con ellas interactúa con la plataforma OpenIoT a través de la base de datos en la nube. El Scheduler tiene dos funciones prncipales: descubrir sensores y controlar los servicios. Todo esto se realiza mediante peticiones a la BBDD. Las peticiones se realizan en lenguaje SPARQL, un lenguaje usado en la web semántica para consulta de sentencias RDF. En la figura \ref{L406} se observa la Cloud DB junto con cada uno de los servicios que realiza peticiones. Request presentation y Request Definition realizan las peticiones a través de otros servicios (Scheduler y SD\&UM).\\
 
-El servicio Request Definition es quien realiza las peticiones al Scheduler para que éste las procese. La forma que tiene de enviar las peticiones es mediante una API, especificada en la documentación.\\
-El SD\&UM (Service Delivery \& Utility Manager), al igual que el Scheduler, realiza peticiones a la Cloud DB mediante una API.
+El Scheduler recibe las peticiones del servicio Request Definition, situado en el plano de utilidad. El Scheduler las procesa, y envía la respuesta de vuelta al plano de utilidad.\\
+El SD\&UM (Service Delivery \& Utility Manager), al igual que el Scheduler, también recibe y procesa peticiones del plano de utilidad pero en este caso del servicio Request Presentation, para la presentación de los datos. Las peticiones del Scheduler y SD\&UM se realizan a la Cloud DB mediante una API.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/cloud_capture}
@@ -693,7 +691,7 @@ El SD\&UM (Service Delivery \& Utility Manager), al igual que el Scheduler, real
 \end{figure}
 \subsubsection*{Plano de utilidad}
 En este plano se sitúan las interfaces de usuario. 
-Request Definition es una aplicación que permite a los usuarios visualizar sus servicios de OpenIoT usando una interfaz basada en nodos. Cada modelo de grafos se divide en aplicaciones, siendo cada una de estas aplicaciones un conjunto de servicios que describen a la aplicación. Esto le permite al usuario controlar diferentes aplicaciones desde un solo punto. Todos estos servicios se almacenan en el Scheduler y se cargan automáticamente cuando el usuario accede a la web. Un ejemplo de esta interfaz se muestra en la figura \ref{L407}
+Request Definition es una aplicación que permite a los usuarios visualizar sus servicios de OpenIoT usando una interfaz basada en nodos. Cada modelo de grafos se divide en aplicaciones, siendo cada una de estas aplicaciones un conjunto de servicios que describen a la aplicación. Esto le permite al usuario controlar diferentes aplicaciones desde un solo punto. Todos estos servicios se cargan automáticamente (mediante peticiones) cuando el usuario accede a la web. Un ejemplo de esta interfaz se muestra en la figura \ref{L407}
 
 \begin{figure}[H]
 \centering
@@ -760,13 +758,13 @@ El resultado se envía al SD\&UM (paso 15) en formato SparqlResultsDoc\\El SD\&U
 \end{figure}
 
 \subsubsection*{Ventajas}
-En IoT cualquier cosa u objeto (TV,Smartphone...) genera una gran cantidad de eventos. Cada uno de estos objetos usa tecnologías diferentes y, desarrollar aplicaciones y servicios para controlar todo esto puede llegar a ser una tarea muy complicada. Por ello, se usan middlewares con el fin facilitar el desarrollo proporcionando una integración entre la comunicación y la computación de los dispositivos. Entre los middleware se encuentra MAPS, TinyDB o MQTT, mencionado anteriormente.\\
+En IoT cualquier cosa u objeto (TV,Smartphone...) genera una gran cantidad de eventos. Cada uno de estos objetos usa tecnologías diferentes y, desarrollar aplicaciones y servicios para controlar todo esto puede llegar a ser una tarea muy complicada. Por ello, se usan middlewares con el fin facilitar el desarrollo, proporcionando una integración entre la comunicación y la computación de los dispositivos. Entre los middleware se encuentra MAPS, TinyDB o MQTT, mencionado en el capítulo anterior.\\
 
-A pesar de que con los middleware se facilita el desarrollo de aplicaciones en IoT, cada middleware cumple una serie de requisitos que puede que no sirvan para una determinada aplicación. Por ejemplo, en este caso, MQTT no cumplía alguno de los requisitos exigidos. No hay un middleware que reúna todas necesidades exigidas. Es aquí donde aparece OpenIoT, que permite reunir los servicios en una única plataforma.\\
+A pesar de que con los middleware se facilita el desarrollo de aplicaciones en IoT, cada middleware cumple una serie de requisitos que puede que no sirvan para una determinada aplicación. Por ejemplo, en este caso, MQTT no cumplía alguno de los requisitos exigidos. No hay un middleware que reúna todas necesidades exigidas. Es aquí donde aparece OpenIoT, que permite reunir un conjunto de servicios en una única plataforma.\\
 
 La principal ventaja de OpenIoT es la unificación de los diferentes sistemas o servicios IoT, así como el envío de datos.\\
 
-A través de la herramienta IDE (Integrated Development Environment) Core (figura \ref{L0421} ) que ofrece OpenIoT, se puede controlar las aplicaciones IoT. Esta herramienta integra muchas de las herramientas de OpenIoT en una. Permite configurar los sensores para su integración en X-GSN (Schema Editor), monitorización del estado de los servicios IoT (SDUM) o definir los servicios IoT (Request Definition). Esto permite el desarrollo de aplicaciones IoT de una manera más rápida y sencilla.\\
+A través de la herramienta IDE (Integrated Development Environment) Core (figura \ref{L0421} ) que ofrece OpenIoT, se puede controlar las aplicaciones IoT. Esta herramienta integra muchas de las herramientas de OpenIoT en una. Permite configurar los sensores para su integración en X-GSN (Schema Editor), monitorización del estado de los servicios IoT (SD\&UM) o definir los servicios IoT (Request Definition). Esto permite el desarrollo de aplicaciones IoT de una manera más rápida y sencilla.\\
 
 
 \begin{figure}[H]
@@ -781,8 +779,22 @@ A través de la herramienta IDE (Integrated Development Environment) Core (figur
 \caption{Servicios integrados en IDE}\label{L0421}
 \end{figure}
 
-\subsection{Requisitos}
+\section{Requisitos}
 Las aplicaciones IoT deben cumplir una serie de requisitos, algunos de ellos necesarios en un entorno IoT. Algunos de estos requisitos son:
+
+
+\subsection{Requisitos funcionales}
+\subsubsection*{Descubrimiento de recursos}
+Una de las características principales de OpenIoT es el descubrimiento de recursos. Una vez que los sensores envían su configuración a la nube a través de X-GSN, OpenIoT mediante el Scheduler, haciendo uso de la semántica SSN, es capaz de descubrir nuevos sensores o nodos.
+\subsubsection*{Control de datos y recursos}
+OpenIoT, a través de la herramienta SDUM, permite llevar una constante monitorización sobre los recursos. Esto permite, además de la recopilación y visualización de los datos, llevar un control sobre ellos.
+
+\subsubsection*{Control de eventos}
+
+\subsubsection*{Control de código}
+
+
+\subsection{Requisitos no funcionales}
 
 \subsubsection*{Escalabilidad}
 OpenIoT es una plataforma totalmente escalable debido a la característica de descubrimiento de recursos que posee. Se pueden añadir nuevos nodos tan solo configurando el sensor y enviando la información sobre sus datos (metadatos) al almacenamiento en la nube. Una vez registrado el sensor, el usuario puede acceder al nuevo nodo (sensor).
@@ -804,18 +816,32 @@ La seguridad en OpenIoT se divide en 3 módulos:
 \item[•] \textbf{Security Client:} Este modulo proporciona control de acceso y autenticación. Se puede usar en aplicaciones web que interactuan con los usuarios.  
 \item[•] \textbf{Security Management:} Se trata de un módulo que se usa para llevar un control sobre servicios, usuarios y permisos.
 \end{itemize}
-\subsubsection*{Descubrimiento de recursos}
-Una de las características principales de OpenIoT es el descubrimiento de recursos. Una vez que los sensores envían su configuración a la nube a través de X-GSN, OpenIoT mediante el Scheduler, haciendo uso de la semántica SSN, es capaz de descubrir nuevos sensores o nodos.
-\subsubsection*{Control de recursos}
-OpenIoT, a través de la herramienta SDUM, permite llevar una constante monitorización sobre los recursos. Esto permite, además de la recopilación y visualización de los datos, llevar un control de los recursos.  
+  
 \subsubsection*{Tiempo real}
 OpenIoT proporciona un servicio en tiempo real. El usuario a través de las interfaces de usuario puede realizar un seguimiento en tiempo real de los datos recopilados por los sensores.
-\subsubsection*{Interoperabilidad}
-La interoperabilidad de los servicios IoT es la idea fundamental por la que surgió OpenIoT. Se buscaba unificar distintos servicios en una única plataforma. En OpenIoT se unifica todo lo relacionado con redes de sensores (Middleware...) y lo relacionado con el Cloud Computing (base de datos, herramientas de procesamiento...).
-\subsubsection*{Distribuido}
- \cmark 
-\xmark
 
+\subsubsection*{Facilidad de despliegue}
+Un middleware IoT debe ser fácilmente desplegable por parte del usuario. OpenIoT llegó a estar entre los 10 mejores proyectos europeos open-source del año 2013. Esta popularidad debe ayudar a mantener la plataforma totalmente actualizada por parte de la comunidad de desarrolladores e investigadores. Sin embargo, OpenIoT no cumple con este requisito ya que es una plataforma con bastantes problemas a la hora de su despliegue y además no tiene el soporte que debería para dar solución a esos problemas.
+
+\subsection{Requisitos arquitectónicos}
+\subsubsection*{Interoperabilidad}
+Un middleware IoT debería funcionar en distintos dispositivos y con diferentes tecnologías. OpenIoT es una plataforma agnóstica respecto al hardware: los sensores pueden funcionar en cualquier hardware, tan solo es necesario describir los archivos de configuración y registrar los sensores en la plataforma mediante el envío de sus metadatos.  
+
+\subsubsection*{Distribuido}
+
+
+
+
+
+
+\subsubsection*{Orientado a servicio}
+
+
+\subsubsection*{Adaptativo}
+
+\subsubsection*{Abstracción de la programación}
+
+\section{OpenIoT en la práctica}
 
 \subsection{Casos de éxito con la plataforma}
 Entre quién ha desplegado la plataforma con éxito se encuentra:
@@ -827,7 +853,7 @@ Entre quién ha desplegado la plataforma con éxito se encuentra:
 \item[•] Universidad de Estambul
 \end{itemize}
 \subsubsection{OpenIoT en la industria}
-Cada vez más, en la industria se instalan un gran número de sensores para controlar el proceso de producción de una planta. Estos sensores generan un gran volumen de datos por lo que es necesario una solución para capturar, almacenar y procesar esos datos. SENSAP S.A (www.sensap.eu) ha desarrollado una solución basada en OpenIoT para la monitorización y seguimiento del flujo de materiales en un proceso de producción. Le permite definir y visualizar dinámicamente los KPIs (indicadores de rendimiento en la industria). En este entorno, los KPIs son el flujo de datos necesarios, los cuales son: A)recopilados por sensores físicos situados en la planta, B)transformados en el modelo de datos EPC-IS, un estándar usado en la industria, C) transmitidos al middleware X-GSN que asegura una anotación semántica de estos datos y su posterior publicación a la nube OpenIoT. Los sensores virtuales son capaces de calcular entre otros: \\
+Cada vez más, en la industria se instalan un gran número de sensores para controlar el proceso de producción de una planta. Estos sensores generan un gran volumen de datos por lo que es necesario una solución para capturar, almacenar y procesar esos datos. SENSAP S.A (www.sensap.eu) ha desarrollado una solución basada en OpenIoT para la monitorización y seguimiento del flujo de materiales en un proceso de producción. Le permite definir y visualizar dinámicamente los KPIs (indicadores de rendimiento en la industria). En este entorno, los KPIs son el flujo de datos necesarios, los cuales son: A) recopilados por sensores físicos situados en la planta, B) transformados en el modelo de datos EPC-IS, un estándar usado en la industria, y C) transmitidos al middleware X-GSN que asegura una anotación semántica de estos datos y su posterior publicación a la nube OpenIoT. Los sensores virtuales son capaces de calcular entre otros: \\
 \begin{itemize}
 \item[•] Tasa de operación para un proceso específico
 \item[•] Métricas de utilización de las maquinas
@@ -862,102 +888,127 @@ En el campo ('field') se sitúan los sensores para medir temperatura, humedad o 
 \end{itemize}
 
 \section{Problemas}
-Tras un tiempo intentando desplegar sin éxito la plataforma, se ha optado por descartarla. OpenIoT es una plataforma reciente y con un potencial alto pero inexplicablemente no tiene ningún tipo de soporte. Han sido muchos los problemas que se han dado a la hora de la instalación sin llegar en ningún momento a hacerla funcionar correctamente y, navegando por la red, nos damos cuenta que son problemas comunes que no tienen solución. Esto nos ha llevado a descartar la plataforma y buscar otra solución para el problema que planteamos.
+Tras un tiempo intentando desplegar sin éxito la plataforma, se ha optado por descartarla. OpenIoT es una plataforma reciente y con un potencial alto pero inexplicablemente no tiene ningún tipo de soporte. Han sido muchos los problemas que se han dado a la hora de la instalación sin llegar en ningún momento a ser 100\% funcional. Tras investigar por la red nos damos cuenta que son problemas comunes que no tienen solución. Esto nos ha llevado a descartar la plataforma y buscar otra solución para el problema que planteamos.
 \chapter{KAA}
+\section{Introducción}
+Kaa \cite{kaa}\cite{kaa_iot}\cite{code}\cite{doc} es una plataforma middleware de código abierto que, al igual que OpenIoT, busca un control e integración de las aplicaciones IoT. Se trata de un middleware que trabaja entre el hardware y las aplicaciones, ofreciendo una gran comunicación, control e interoperación entre los dispositivos conectados. Recibe soporte de la empresa KaaIoT\cite{kaa_iot}, ésta se encarga de crear soluciones haciendo uso de la plataforma, algunas de ellas muy completas y con un grado de dificultad bastante alto.
 \section{Arquitectura}
-Kaa \cite{kaa}\cite{kaa_iot}\cite{code}\cite{doc} es un middleware de código abierto que, al igual que OpenIoT, busca un control e integración de las aplicaciones IoT. Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un entorno IoT. Kaa soporta múltiples plataformas en el lado del cliente, mediante puntos finales (SDKs), en diferentes lenguajes de programación. El SDK es una librería 'empotrada' en el dispositivo conectado. Esto, junto con un lenguaje de definición de datos ("data schema"), hace que Kaa sea una plataforma muy rápida y flexible. Kaa ha sido diseñada como una plataforma robusta y fácil de usar.\\ En la figura \ref{L501} se puede ver su arquitectura.\\
-Un cluster Kaa representa un número de nodos (Kaa server) interconectados. La figura \ref{L502} muestra un flujo de datos común, donde se puede ver un cluster Kaa, formado por un kaa server.  
-
-
-
-\textbf{Nota: Se ha analizado la versión 0.10, la última hasta la fecha de publicación de este documento.}
-
-/////////////////Palabras clave: CLUSTER,SDK,NODE,SCHEMA,LOG////////////\\
-
-Hay empresas como \MYhref{https://www.kaaiot.io/solutions}{Kaaiot} que se dedican a crear soluciones haciendo uso de Kaa. Todas ellas son soluciones muy completas y con un grado de dificultad bastante alto.
+Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un entorno IoT. Kaa soporta múltiples plataformas en el lado del cliente, mediante puntos finales (SDKs), en diferentes lenguajes de programación. El SDK es una librería embebida en el dispositivo conectado. Esto, junto con un lenguaje de definición de datos ("data schema"), hace que Kaa sea una plataforma muy rápida y flexible. Kaa ha sido diseñada como una plataforma robusta y fácil de usar. La figura \ref{L501} muestra su arquitectura:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{images/kaa_platform}
+\includegraphics[scale=0.4]{images/kaa_platform}
 \caption{Arquitectura Kaa}\label{L501}
 \end{figure}
-Un conjunto de nodos interconectados representa un Cluster Kaa. Un Cluster requiere bases de datos SQL y NoSQL para almacenar los datos y metadatos de los endpoints. El servidor Kaa usa Apache Zookeeper para coordinar los servicios.
+
+\subsection*{Despliegue de la plataforma}
+Kaa ofrece 2 formas de despliegue, que se pueden ver en las figuras \ref{deployment1} y \ref{deployment2}.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{images/arquitectura_kaa}
-\caption{Cluster Kaa}\label{L501}
-\end{figure}
+\includegraphics[scale=0.4]{images/deployment1_kaa}
+\caption{Despliegue típico de Kaa}\label{deployment1}
+\end{figure} 
+En esta arquitectura cada uno de los endpoints tiene un SDK embebido y se comunican directamente con el servidor. Es la forma más "natural" para la que ha sido diseñada Kaa.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/deployment2}
+\caption{Otro despliegue con Kaa}\label{deployment2}
+\end{figure} 
+En esta arquitectura, uno o varios gateways o nodos centrales son los que tienen el SDK embebido. Los endpoints se comunican con el gateway a través de protocolos de transporte como Bluetooth, ZigBee o MQTT. Esta arquitectura es útil cuando no se puedan instalar el SDK en los endpoints por diferentes cuestiones (compatibilidad,bajas prestaciones...) o también cuando se quiere usar un protocolo específico de transporte. El gateway se presenta a la nube como una representación virtual del endpoint. Para versiones posteriores se plantea la inclusión de algún \MYhref{http://jira.kaaproject.org/browse/KAA-752}{framework} para simplificar la integración con Kaa en dispositivos en los que no se pueda ejecutar el SDK. Esta arquitectura tiene algunas ventajas como se verá más adelante.
+
+
+\subsection*{Cluster Kaa}
+El servidor Kaa se puede desplegar en un entorno de nodo único o multinodo. Cuando se habla de entorno multinodo, cada nodo representa un servidor Kaa y el conjunto de nodos interconectados representa un cluster Kaa. Por defecto, Kaa está formado por un cluster ejecutando un servidor Kaa.\\
+
+Un Cluster requiere bases de datos SQL y NoSQL para almacenar los datos y metadatos de los endpoints. Las bases de datos relacionales se usan  las aplicaciones o grupos de endpoints y también para los metadatos. Las no relacionales almacenan todo la información relacionada con los endpoints. Kaa usa Apache Thrift\cite{apache_thrift} para la comunicación entre nodos. Cada  nodo sube información sobre la conexión, servicios activados.. y otros nodos pueden usar esta información. Para la coordinación entre ellos, Kaa usa Apache Zookeeper\cite{zookeeper}.\\
+
 Un nodo en un cluster está ejecutando una combinación de servicios de control, operaciones y bootstrap.
 \begin{itemize}
 \item[•] \textbf{Servicio de control: }Es el encargado del sistema de datos, procesa llamadas de las APIs y envía notificaciones. Recibe continuamente información de Zookeeper. Para conseguir una alta disponibilidad, un Cluster Kaa tiene que incluir al menos dos nodos con el servicio de control activado. En el modo de alta disponibilidad, uno de ellos estará activo y el otro en standby, siendo zooekeeper quien se encargue de su control y activación.\\
 \item[•]\textbf{Servicio de operaciones: }Es el encargado de procesar y enviar peticiones a los endpoints.\\
 \item[•]\textbf{Servicio bootstrap: } Es el encargado de establecer la conexión con los endpoints. Envía información a los endpoints sobre los parámetros de conexión que pueden ser dirección IP, puerto, protocolos...
 \end{itemize}
+La figura \ref{cluster:kaa} representa un cluster formado por 3 nodos o servidores.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{images/arquitectura_kaa}
+\caption{Cluster Kaa}\label{cluster:kaa}
+\end{figure}
+
+Kaa proporciona una versión preconfigurada formada por un único nodo pudiéndose desplegar en local haciendo uso de VirtualBox. Otras opciones son exportarla a Amazon Web Services o instalar manualmente un servidor Kaa, pudiéndolo hacer en un entorno de un solo nodo o multinodo.\\
+
+Kaa es multi-entidad (Tenant) y un cluster puede soportar varias de ellas. Una aplicación en Kaa tiene que pertenecer a un Tenant y los endpoints se registran en las aplicaciones. Para distinguir los endpoints se usan perfiles de endpoints además de un identificador único. Con los perfiles de endpoints se pueden crear grupos de endpoints como se verá más adelante.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/tenants}
+\caption{Entidades y grupos de endpoints en Kaa}\label{tenant:kaa}
+\end{figure}
 
 
-
+\textbf{Nota: Se ha analizado la versión 0.10, la última hasta la fecha de publicación de este documento.}
 \section{Funcionamiento}
-La figura \ref{L502} muestra un flujo de datos en Kaa. Los sensores recogen datos y, a través del SDK, se envían al servidor. El SDK dependerá de la plataforma y del lenguaje de programación. El envío de datos al servidor desde el SDK se realiza en un formato común, previamente definido en el Servidor mediante los "Log Schemas". \\
-Como plataforma Cloud-IoT que es, almacena esos datos para que puedan ser procesados y analizados posteriormente. Kaa no ofrece un análisis de los datos como sí ofrecía OpenIoT, si no que tan solo ofrece una persistencia de los datos. Kaa ofrece tanto bases de datos relacionales como no-relacionales para el almacenamiento. MariaDB y MongoDB , relacional y no-relacional respectivamente, son las bases de datos por defecto usadas por Kaa.\\
-La plataforma se organiza en cluster conectados entre sí, siendo cada cluster un nodo o servidor. Por defecto, está formada por un único cluster. 
+La figura \ref{flujo_kaa} muestra un flujo de datos en Kaa. Los endpoints recogen datos y, a través del SDK, se envían al servidor. El SDK dependerá de la plataforma y del lenguaje de programación. El envío de datos al servidor desde el SDK se realiza en un formato común, cuyo contenido se define previamente en el servidor mediante los "Log Schemas". \\
+Kaa, como plataforma Cloud-IoT que es, almacena esos datos para que puedan ser procesados y analizados posteriormente. Kaa no ofrece un análisis de los datos como sí ofrecía OpenIoT, si no que tan solo ofrece una persistencia de los datos, sin embargo es posible integrarla con otros sistemas (p. ej. Spark o Zeppelin) para realizar un análisis de los datos. Kaa ofrece tanto bases de datos relacionales como no-relacionales para el almacenamiento. MariaDB y MongoDB , relacional y no-relacional respectivamente, son las bases de datos por defecto usadas por Kaa. Algunas funciones como las notificaciones no se les puede aplicar una persistencia de datos. En su lugar se define el tiempo de vida (TTL) y así los dispositivos pueden recibirla en caso de que estén offline en el momento del envío. Una vez pasado ese TTL, se elimina. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{images/kaa_platform1}
-\caption{Flujo de datos en Kaa}\label{deployment1}
+\caption{Flujo de datos en Kaa}\label{flujo_kaa}
 \end{figure} 
-La forma más común de despliegue de la plataforma se muestra en la siguiente figura:
+\subsection*{Roles}
+En Kaa existen 3 roles diferentes que son asignados a los usuarios:
+\begin{itemize}
+\item[•] \textbf{Kaa administrador:} Es el administrador más alto en Kaa. Tiene derechos para crear, editar y eliminar Tenant administradores.
+\item[•] \textbf{Tenant administrador:} Usuario con permisos para configurar las aplicaciones, usuarios y familias de clases de eventos dentro de una entidad Tenant.
+\item[•] \textbf{Tenant desarrollador:} Usuario que crea y controla perfiles de aplicaciones. Los usuarios con rol de Tenant desarrollador pueden crear y configurar esquemas, grupos de endpoints y notificaciones. Es quien crea el SDK.
+\end{itemize}
+La versión preconfigurada de VirtualBox ofrece unos credenciales por defecto para cada usuario.
+\subsection*{Registro de endpoints}
+Para funcionar en un cluster Kaa, todos los endpoints tienen que registrarse haciendo uso de credenciales de seguridad y el perfil endpoint. En el proceso de registro, los endpoints primero se comunican con los servicios bootstrap para obtener una lista de servicios de operaciones. Una vez recibida, se comunica con el servicio de operación en concreto para enviar los datos del endpoint (esto es, ID y perfil de endpoint). El proceso de registro se muestra en la figura \ref{registration}:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{images/deployment1_kaa}
-\caption{Despliegue típico de Kaa}\label{deployment2}
+\includegraphics[scale=0.25]{images/registration}
+\caption{Proceso de registro de endpoint en Kaa.}\label{registration}
 \end{figure} 
-En esta arquitectura cada uno de los endpoints tiene un SDK embebido y se comunican directamente con el servidor. Es la forma más "natural" para la que ha sido diseñada Kaa. Sin embargo, existe otro despliegue posible con la arquitectura y es el siguiente:
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{images/deployment2}
-\caption{Otro despliegue con Kaa}\label{L502}
-\end{figure} 
-En esta arquitectura, uno o varios gateways o nodos centrales son los que tienen el SDK embebido. Los endpoints se comunican con el gateway a través de protocolos de transporte como Bluetooth, ZigBee o MQTT. Esta arquitectura es útil cuando no se puedan instalar el SDK en los endpoints por diferentes cuestiones (compatibilidad,bajas prestaciones...) o también cuando se quiere usar un protocolo específico de transporte. El gateway se presenta a la nube como una representación virtual del endpoint. Kaa no ofrece implementación para los gateways, como sí la ofrece para los endpoints, por tanto tiene que ser el desarrollador quien la implemente. Para versiones posteriores se plantea la inclusión de algún \MYhref{framework}{http://jira.kaaproject.org/browse/KAA-752} para simplificar la integración con Kaa en dispositivos en los que no se pueda ejecutar el SDK  o bien se busque este tipo de arquitectura ya que tiene algunos beneficios como se verá más adelante.
 
+El identificador del endpoint dentro de una aplicación es el Hash de su clave pública, generada automáticamente en el primer registro. Si los credenciales no son válidos, Kaa no iniciará la sesión. Al crear la aplicación, ésta se asigna a un credencial de servicio. Estos credenciales son:
+\begin{itemize}
+\item[•] \textbf{Trustful:} Implementación por defecto y permite a cualquier endpoint registrarse y conectarse al cluster. 
+\item[•] \textbf{Internal:} Solo permite conectarse al cluster a una lista de endpoints en concreto, previamente suministrada al servidor. 
+\end{itemize}
+Kaa también permite crear credenciales de servicio personalizados.
 
-
-
-
-\subsection*{Esquemas de datos}
-Los datos se recolectan desde los endpoints y se envían al servidor en el formato definido por el 'log schema', previamente creado por el desarrollador para la aplicación en concreto. Log Schema usa un formato compatible con Apache Avro. En la figura \ref{L504} se muestra un ejemplo de un esquema de datos. El desarrollador define cómo quiere que se envíe y almacenen los datos mediante estos esquemas, lo que hace a la plataforma muy flexible, facilitando la integración entre los diferentes servicios.\\
- 
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{images/log_schema_example}
-\caption{Ejemplo de Log Schema}\label{L504}
-\end{figure} 
+\subsection*{Esquemas en Kaa}
+Kaa ha sido diseñada para ser una plataforma sencilla de usar, por ello la configuración en el lado del servidor se realiza mediante esquemas, basados en Apache Avro\cite{avro}. El desarrollador (esto es, tenant desarrollador) es el encargado de definir estos esquemas. Son usados para la configuración de notificaciones, eventos, colección de datos ... Un ejemplo de estos esquemas es:
+\begin{lstlisting}[language=json]
+{ 
+    "type":"record",
+    "name":"ExampleNotification",
+    "namespace":"org.kaaproject.kaa.schema.sample.notification",
+    "fields":[ 
+        { 
+            "name":"message",
+            "type":"string"
+        }
+    ]
+}
+\end{lstlisting}
 \section{Qué ofrece Kaa}
 Evaluando a Kaa como middleware IoT, se puede decir que cumple con una gran cantidad de requisitos esenciales. Se va a evaluar como el resto de middleware analizados, es decir, mediante la evaluación de los requisitos presentes en la tabla de la figura \ref{L105} 
  
 \subsection{Requisitos funcionales}
-
-\subsection{Requisitos no funcionales}
-
-\subsection{Requisitos arquitectónicos}
-
 \subsubsection*{Descubrimiento de recursos}
-Kaa desplegada como la arquitectura mostrada en la figura ////figura del desplieuge 2//// permite un descubrimiento ¿automático? de nuevos dispositivos a través del Gateway. El Gateway es un dispositivo actuando como puente entre los endpoint y la nube, siendo el gateway quien tiene el SDK embebido. El Gateway se puede diseñar para que avise a Kaa cuando se conecte a él un nuevo dispositivo. 
+Kaa desplegada como la arquitectura mostrada en la figura \ref{deployment2} permite un descubrimiento de nuevos dispositivos a través del Gateway. El Gateway es un dispositivo que actúa como puente entre los endpoint y la nube, siendo el gateway quien tiene el SDK embebido. El Gateway se puede diseñar para que avise a Kaa cuando se conecte a él un nuevo dispositivo. 
 
 
-Kaa, con la arquitectura típica, no ofrece un descubrimiento de recursos como tal, pero mediante el sistema de eventos se puede conseguir tal propósito
-////Kaa ofrece un sistema de eventos que permite enviarlos a los diferentes endpoints.//// Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, los eventos se definen mediante esquemas. La siguiente figura muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
+Kaa, con la arquitectura típica, no ofrece un descubrimiento de recursos como tal, pero mediante el sistema de eventos se puede conseguir tal propósito. Estos eventos se generan en los endpoints y, al igual que el almacenamiento de datos, se definen mediante esquemas. La figura \ref{L506} muestra un diagrama de cómo se generan y procesan los eventos. Haciendo uso de ellos, se puede avisar al resto de endpoints de la aparición de un nuevo recurso (endpoint).
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/events_schema}
 \caption{Diagrama de eventos en Kaa}\label{L506}
 \end{figure} 
-
-
 \subsubsection*{Control de recursos}
 En IoT se busca que los recursos puedan ser controlados para que, por ejemplo, se pueda reaccionar ante un fallo de éstos. Kaa no ofrece un control de recursos como tal, pero haciendo uso de los eventos y notificaciones se puede conseguir tal propósito. Por ejemplo, una solución sencilla podría ser que un endpoint guarde cada 5/10 min un valor característico, como su timestamp y, mediante un sistema de análisis, analizar los datos y, en caso de fallo, enviar un evento o notificación a un endpoint en concreto, que será el encargado de reaccionar ante tal efecto.\\
 Otro ejemplo podría ser implementar en un SDK una función 'ping' a la que, haciendo uso del sistema de eventos de kaa, tengan que responder todos los endpoints en un determinado tiempo, si no lo hacen se podría considerar como endpoint caído y actuar ante tal efecto.\\
 Por tanto, el sistema de eventos y notificaciones es un sistema completo con el que se pueden realizar muchas funciones. Toda funcionalidad tendrá que ser implementada en los endpoints, donde podrán ser conectados a servidores para realizar funciones más complejas. El motivo por el cual se usa Kaa es, sin duda, su robustez y heterogeneidad con distintas plataformas así como su facilidad de uso. 
-
 
 \subsubsection*{Control de datos}
 Los datos son la principal característica de las aplicaciones IoT, cuando se habla de datos se hace referencia principalmente a los recopilados por los sensores. Un procesamiento, almacenamiento así como una monitorización o filtrado de datos es fundamental para poder desarrollar una aplicación IoT. \\ 
@@ -971,21 +1022,25 @@ En la figura \ref{L507} se puede ver un esquema de uso con Apache Storm.
 \includegraphics[scale=0.6]{images/esquema_apache}
 \caption{Esquema de uso para la monitorización de datos con Apache Storm}\label{L507}
 \end{figure} 
-
+\subsubsection*{Control de eventos}
+-------------
+\subsubsection*{Control de código}
+-------------
+//////////////////////////////////Una de las principales características de Kaa es que es Open Source con todo lo que ello implica. El código es totalmente transparente al usuario.
+\subsection{Requisitos no funcionales}
 \subsubsection*{Escalabilidad}
-La plataforma Kaa ha sido diseñada para ser escalable horizontalmente. Se pueden añadir miles de endpoints al mismo nivel, es decir no puede haber varios niveles en la jerarquía. Para poder agrupar distintos endpoints se puede hacer uso de los grupos de endpoints (endpoint group).
+La plataforma Kaa ha sido diseñada para ser escalable horizontalmente. Se pueden añadir miles de endpoints al mismo nivel, es decir, no puede haber varios niveles en la jerarquía. Para poder agrupar distintos endpoints se puede hacer uso de los grupos de endpoints (endpoint group). 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{images/endpoint_group.png}
 \caption{Grupos de Endpoints}\label{L508}
 \end{figure}
-
 \subsubsection*{Tiempo real}
-Kaa es un sistema en tiempo real, entendiendo tiempo real como unos ms de retraso. Ya que Kaa usa HTTP sobre TCP para la comunicación entre SDK y Cluster, por tanto, por definición, es un servicio con retardos, aunque despreciables para el escenario que se plantea.
+Kaa es un sistema en tiempo real, entendiendo tiempo real como unos ms de retraso. Ya que Kaa, por defecto, usa HTTP sobre TCP para la comunicación entre SDK y Cluster, por tanto, por definición, es un servicio con retardos, aunque despreciables para el escenario que se plantea.\\  Kaa es agnóstica respecto al transporte, para un mismo endpoint se pueden usar diferentes protocolos de transporte. Para escenarios en los que la característica de tiempo real pueda marcar la diferencia entre éxito y fracaso, se puede usar UDP como protocolo de transporte.
 
 
 \subsubsection*{Disponibilidad}
-Kaa es un sistema con una alta disponibilidad. Está formado por clusters, donde cada cluster representa un servidor. Estos clusters están interconectados mejorando así la disponibilidad en caso de fallo de alguno de ellos. Para la coordinación entre los diferentes nodos, Kaa usa Apache Zooekeeper. Además, los datos de los endpoints se almacenan en bases de datos tolerantes a fallos.
+La arquitectura horizonal y lineal de Kaa hace que no cuente con ningún punto de fallo. Esto junto con la conexión entre los cluster, dota al sistema con una alta disponibilidad.  Además, los datos de los endpoints se almacenan en bases de datos tolerantes a fallos. Esta interconexión entre los nodos, hace que sea necesario un balanceo de carga para no sobrecargar la red. Kaa usa un balanceo activo para redireccionar el tráfico entre los distintos nodos según el tráfico de de cada uno de ellos. Para la coordinación entre los diferentes nodos se usa Apache Zooekeeper.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/disponibilidad_captura}
@@ -993,19 +1048,20 @@ Kaa es un sistema con una alta disponibilidad. Está formado por clusters, donde
 \end{figure} 
 
 \subsubsection*{Seguridad y privacidad}
-Por defecto, en la comunicación entre Kaa y el SDK se usa una encriptación con RSA y AES. Kaa también asegura un almacenamiento de datos seguro en la base de datos así como la autenticación en la plataforma. Kaa usa el hash SHA-1 de la clave pública como identificador del endpoint en el sistema.
+Por defecto, en la comunicación entre Kaa y el SDK se usa una encriptación con 2048-bit RSA y AES-256. Kaa también asegura un almacenamiento de datos seguro en la base de datos así como la autenticación en la plataforma. Cada vez que se inicia una nueva sesión, cada endpoint envía una clave AES generada de forma aleatoria y encriptada con la clave pública del nodo Kaa que gestiona la sesión. 
+Esta clave está firmada digitalmente con la clave privada del endpoint. Kaa usa el hash SHA-1 de la clave pública como identificador del endpoint en el sistema.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/security_capture}
 \caption{Seguridad en Kaa}\label{L510}
 \end{figure} 
+\subsubsection*{Facilidad para su despliegue} 
+Kaa es un middleware que ofrece facilidades para su desarrollo. Dispone de una versión en una maquina virtual ya preconfigurada con aplicaciones y ejemplos de uso de la plataforma. El uso de SDKs facilita la interoperabilidad de diferentes plataformas sin la intervención del usuario. Con Kaa se consigue que el desarrollador se 'olvide' de la parte del servidor.
 \subsubsection*{Popularidad}
 Kaa es un middleware reciente y con mucho soporte y documentación, lo que facilita su despliegue.
-\subsubsection*{Facilidad para su despliegue} 
-Kaa es un middleware que ofrece facilidades para su desarrollo. Dispone de una versión en una maquina virtual ya preconfigurada con aplicaciones y ejemplos de uso de la plataforma. El uso de SDKs facilita la interoperabilidad de diferentes plataformas sin la intervención del usuario. Con Kaa se consigue que el desarrollador se 'olvide' de la parte del servidor. 
-
+\subsection{Requisitos arquitectónicos}
 \subsubsection*{Interoperabilidad}
-La interoperabilidad de distintas plataformas es una de las características de Kaa, en la que una misma aplicación puede ser desarrollada para diferentes plataformas, tan solo descargando el SDK generado por el servidor. Esto hace que sea una plataforma totalmente heterogénea en cuanto a plataformas se refiere. Un endpoint puede ser ejecutado en distintos dispositivos, desde un teléfono móvil a una raspberry o arduino.
+La interoperabilidad entre distintas plataformas es una de las características de Kaa, en la que una misma aplicación puede ser desarrollada para diferentes plataformas, tan solo descargando el SDK generado por el servidor. Para conectar un endpoint a la plataforma será necesario compilar este SDK en el dispositivo junto a la aplicación desarrollada. Esto hace que sea una plataforma totalmente heterogénea en cuanto a plataformas se refiere. Un endpoint puede ser ejecutado en distintos dispositivos, desde un teléfono móvil a una raspberry o arduino, debido al bajo procesamiento que requiere (10KB de RAM y 40KB de ROM para el caso de C). 
 \begin{table}[H]
 \centering
 \caption{Compatibilidad entre SDKs y plataformas}
@@ -1033,24 +1089,16 @@ Kaa proporciona una interfaz al desarrollador, posibilitando una sencillez a la 
 \subsubsection*{Basado en servicio}
 -----
 
+\subsubsection*{Autónomo}
+
 \subsubsection*{Adaptativo}
-----
-Kaa soporta virtualmente cualquier protocolo de red, endpoint o almacenamiento de datos, lo que hace a la plataforma tolerante a cambios.
----
+Un middleware IoT debe adaptarse a los cambios que se produzcan en su entorno, como pueda ser el cambio en la red.\\Kaa soporta virtualmente cualquier protocolo de red, endpoint o almacenamiento de datos, lo que hace a la plataforma tolerante a cambios.
 
-
-\subsubsection*{Control de eventos}
--------------
-
-
-
-\subsubsection*{Control de código}
-Una de las principales características de Kaa es que es Open Source con todo lo que ello implica. El código es totalmente transparente al usuario.
 
 
 \section{Uso de la plataforma}
 \subsection{Instalación}
-Para instalar la plataforma hay 2 formas, o bien usar la maquina virtual que ya viene preconfigurada y con unos ejemplos de uso (SandBox)o bien, construir un servidor Kaa propio mediante el código fuente. Todo esto está perfectamente documentado.
+Como se ha comentado, existen 2 formas de instalar la plataforma, bien desplegar en local la plataforma haciendo uso de la versión ya preconfigurada para VirtualBox y la que incluye algunos ejemplos, o bien, construir un servidor propio haciendo uso del código fuente disponible en el GIT de Kaa. También se puede desplegar la versión preconfigurada en Amazon Web Services. Todo esto está perfectamente documentado en la web de Kaa.
 \subsection{Partes de la plataforma}
 Las características de Kaa son:
 \subsubsection*{Eventos}
@@ -1188,11 +1236,27 @@ Kaa dispone de un sistema de notificaciones para la entrega de mensajes desde el
 \end{figure}
 \subsubsection*{Distribución de datos}
 La distribución de datos es una de las principales características de Kaa ya que los desarrolladores pueden definir cualquier tipo de datos mediante los esquemas de Kaa.
+\subsubsection*{Propiedad de los Endpoints}
+En Kaa, los usuarios pueden asociar Endpoints a propietarios. Estos propietarios pueden ser personas, grupos de personas o organizaciones. Para capturar o añadir un endpoint a un propietario se puede hacer bien mediante el token de acceso o bien a través de un endpoint ya añadido a un propietario.\\
+La figura \ref{owner_token} muestra el proceso para añadir un endpoint a un usuario. El endpoint obtiene su token usando el sistema de autenticación y lo envía al cluster Kaa. El cluster verifica el token y añade el endpoint al propietario. \\
+Para la verificación existen los verificadores de propietarios. Kaa incorpora 3///4 verificadores por defecto. El verificador Trustful, el cual acepta cualquier ID y token y los otros 2 verificadores son los verificadores de Facebook y Google +. Útiles cuando las aplicaciones estén integradas con Facebook o Google, ya que están implementados para verificar sus cuentas. El usuario puede crear sus propios verificadores (http://kaaproject.github.io/kaa/docs/v0.10.0/Customization-guide/Owner-verifiers/).\\
+La figura \ref{owner_endpoint} muestra el proceso para añadir un endpoint a un propietario mediante otro endpoint previamente añadido a ese propietario. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/owner_token}
+\caption{Verificación usando el token de acceso}\label{owner_token}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/owner_endpoint}
+\caption{Verificación mediante un endpoint previamente añadido al propietario}\label{owner_endpoint}
+\end{figure}
+Para ciertas funciones como son los eventos en Kaa, es necesario añadir el Endpoint a un usuario. 
 \subsubsection*{Abstracción en la capa de transporte}
 Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transporte de datos. Además se pueden usar diferentes protocolos en un mismo endpoint, por ejemplo las notificaciones mediante SMS y la configuración y datos mediante TCP. /////////explicar virtualmente e incluirlo si consigo usar MQTT como protocolo de transporte////////////
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{images/kaa_stack}
+\includegraphics[scale=0.3]{images/kaa_stack}
 \caption{Pila de protocolos de Kaa}\label{L508}
 \end{figure}
 
@@ -1559,11 +1623,9 @@ Una vez recibida en la Raspberry, ésta encenderá el LED. En este sencillo ejem
 \textbf{Requisitos comprobados: } Control de datos, tiempo real, abstracción de la programación
 
 
-
-
 \subsection{Edge analytics}
 \subsubsection*{Fog-Computing y Edge-Computing}
-Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su "motor" de procesamiento está en la nube. Los Endpoint, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
+Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su motor de procesamiento está en la nube. Los endpoints, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
 Pero desde la proliferación del Internet de las cosas, cada vez hay más dispositivos conectados a Internet, y según algunas predicciones, se estima que para 2030, la cantidad de datos disponibles en Internet crecerá a 1 Yottabyte (1 seguido de 24 ceros) con un tráfico diario de 2GB por usuario. Seguramente IoT sea uno de los promotores de este crecimiento. \\
 El uso de miles de millones de dispositivos enviando gran cantidad de datos, hace que aparezca problemas de latencia y ancho de banda de la red. A la vista de esto, el uso de Cloud-Computing no parece muy eficiente.\\ %'De la nube a la niebla'\\
 Uno de los primeros artículos sobre este problema fue publicado por Christopher Mims, titulado Forget 'the Cloud'; 'the Fog' Is Tech's Future\cite{wsj}. En él aparecen los conceptos de 'Fog Computing' y 'Edge Computing', que hacen referencia al lugar donde se sitúa el procesamiento de datos.\\
@@ -1583,15 +1645,34 @@ Desplegando Kaa como la arquitectura mostrada en la figura \ref{deployment1}, se
 Con la forma más "natural" de despliegue de Kaa también se podría conseguir esta funcionalidad pero sería cada endpoint quien analice los datos y envíe a la nube. Esto implica una mayor latencia de red además de realizar un buen uso de los grupos de endpoints. De hecho, Kaa no habla de Edge Analytics con este despliegue (\MYhref{https://www.kaaproject.org/platform/\#gate}{enlace})\\
 Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis de datos provenientes de los endpoints para su posterior envío al servidor, añadiendo así un nivel de jerarquía en la estructura de Kaa.
 
+\section{Caso de estudio final}
+Como caso de estudio final llevamos a la práctica el uso de Kaa al escenario agrícola planteado. Para la monitorización del terreno agícola habrá sensores de humedad, temperatura.. Estos datos se subirán a la plataforma para ser almacenados y analizados; y en función de los resultados se enviarán notificaciones a nodos actuadores para, por ejemplo, abrir o cerrar válvulas. \\
+Para no extender en el tiempo este trabajo fin de grado y hacerlo lo más funcional posible, resumimos el escenario al de la siguiente figura:\\
 
-\subsubsection*{Tareas a realizar}
-- Hacer funcionar eventos y documentarlo
-- Comprobar el control de recursos. Crear una función Ping de forma que cada endpoint tenga que responder de forma periodica (Crear primero en Java) y si no responden, enviar notificación. 
-- Almacenar tan solo alarmas o datos analizados para demostrar el uso de Edge Analytics
+En él las válvulas serán LEDs, los sensores un potenciómetro o sensor de temperatura. 
+\subsubsection*{Tareas }
+-----> El HASH de la clave pública de un endpoint identifica al endpoint en el cluster Kaa. Por defecto Kaa genera una clave pública en cada endpoint registrado. Están presentes en el archivo public.key\\
 
 
------> El HASH de la clave pública de un endpoint identifica al endpoint en el cluster Kaa. Por defecto Kaa genera una clave pública en cada endpoint registrado. Están presentes en el archivo public.key
-\section{Conclusiones}
+-Capítulo introductorio a IoT (4-5 páginas)\\
+- Capitulo Introductorio a Middleware IoT y elección de MQTT (introducción a middleware Iot(qué es, para qué sirve. 1-2 pag), explicación por encima de 2-3 middleware más usado en MQTT (2-3 pag) y explicación de elección MQTT) \\
+- Capítulo MQTT\\
+-Capítulo introductorio a plataformas IoT (8-10 páginas)\\
+-Capítulo OpenIoT\\
+-Capítulo Kaa y al final decir que ha sido la elegida\\
+- Capítulo de Caso práctico con Kaa debido a su elección
+
+
+-----En el escenario práctico: ------\\
+-conexión entre nodos y subir datos a la plataforma\\
+-Uno de ellos por ejemplo, que envíe los datos de los sensores a todos al iniciarse, haciendo uso de los eventos.\\
+-2 Raspberry y 1 PC. Uno de ellos (raspi 2) será el principal: función ping, recibir eventos de todos....\\
+-1 que suba datos cada hora y el otro, al ser más necesario, cada 15 min.\\
+-Si uno de esos datos supera un cierto umbral, enviar alarma a un dispositivo móvil y a 1 raspberry para encender el LED.
+
+
+\chapter*{Conclusiones}
+Se han analizado 3 middleware IoT ...\\
 Kaa es una plataforma con una curva de aprendizaje bastante alta
 Con Kaa el programador se olvida de la parte del servidor
 \begin{thebibliography}{X}
@@ -1602,7 +1683,7 @@ Con Kaa el programador se olvida de la parte del servidor
 \bibitem{kaa}{Kaa Official Website: https://www.kaaproject.org}
 \bibitem{kaa_iot}{KaaIoT Website: https://www.kaaiot.io}
 \bibitem{code}{Source code: https://github.com/kaaproject}
-\bibitem{doc}{Kaa documentation: http://docs.spring.io/spring/docs/3.0.x/reference/expressions.html}
+\bibitem{doc}{Kaa documentation: http://kaaproject.github.io/kaa/docs/v0.10.0/Welcome/}
 \bibitem{mosqtt}{https://mosquitto.org/}
 \bibitem{nodered}{https://nodered.org/}
 \bibitem{mongo}{https://www.mongodb.com}
@@ -1610,6 +1691,12 @@ Con Kaa el programador se olvida de la parte del servidor
 \bibitem{paho}{https://eclipse.org/paho/clients/java/}
 \bibitem{cloud_mqtt}{https://www.cloudmqtt.com/}
 \bibitem{edge_kaa}{https://www.kaaproject.org/platform/\#gate}
+\bibitem{apache_thrift}{https://thrift.apache.org/}
+\bibitem{zookeeper}{https://zookeeper.apache.org/}
+\bibitem{avro}{http://avro.apache.org/}
+\bibitem{openiot}{http://www.openiot.eu/}
+\bibitem{openiot_git}{GIT OpenIoT}
+\bibitem{openiot_pdf}{PDF OpenIoT: http://cordis.europa.eu/docs/projects/cnect/5/287305/080/deliverables/001-OpenIoTD431Draft.pdf}
 \end{thebibliography}
 
 \end{document}
