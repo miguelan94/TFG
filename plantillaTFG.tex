@@ -260,8 +260,8 @@
 
 
 \chapter*{Abstract}
-\addcontentsline{toc}{chapter}{English Abstract}
-\markright{English Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\markright{Abstract}
 En este trabajo se han analizado diferentes soluciones de middleware open-source para el Internet de las Cosas (IoT). Se plantea un escenario teleo-reactivo y se pretende dar respuesta a qué middleware open-source es el más idóneo. El análisis se ha realizado comprobando si satisface determinados requisitos y dando respuesta a cómo suplirlos en caso de que no cumpla alguno de ellos.\\
 
 \textbf{Keywords:} Internet de las cosas (IoT); MQTT; OpenIoT; Kaa
@@ -272,17 +272,28 @@ En este trabajo se han analizado diferentes soluciones de middleware open-source
 \bibliographystyle{acm}
 % \biliography{miarchivo} % -> lee miarchivo.bib
 
-\chapter{Introducción}
-Planteamos el siguiente escenario para obtener la automatización de una finca agrícola. Para tal propósito disponemos de Raspberry y Arduino.
-////////////////Foto//////////
-El análisis de cada uno de los middleware IoT, se hará siguiendo los requisitos presentes en la siguiente figura. Esta tabla de requisitos está presente en un artículo de 2016 \cite{surv} en el que se analizan diferentes middleware para IoT.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{images/requisitos}
-\caption{Requisitos de un middleware IoT.}\label{L105}
-\end{figure}
+%\chapter{Introducción}
+%Planteamos el siguiente escenario para obtener la automatización de una finca agrícola. Para tal propósito disponemos de Raspberry y Arduino.
+%////////////////Foto//////////
+%El análisis de cada uno de los middleware IoT, se hará siguiendo los requisitos presentes en la siguiente figura. Esta tabla de requisitos está presente en un artículo de 2016 \cite{surv} en el que se analizan diferentes middleware para IoT.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.5]{images/requisitos}
+%\caption{Requisitos de un middleware IoT.}\label{L105}
+%\end{figure}
+
+
+
+
+
+
+
+
+
 \chapter{IoT}
-En la última década ha surgido un nuevo concepto en el mundo tecnológico: el Internet de las Cosas (Internet of Things (IoT), en inglés). Su nombre hace hincapié en la interconexión digital de objetos cotidianos con internet. Un frigorífico que avise de la fecha de caducidad de los alimentos, unas zapatillas de deporte que registren en la nube las estadísticas de la velocidad y distancia a la que corres, un inodoro que analice su orina para que recomiende una dieta u otra, en definitiva, que cualquier cosa u objeto tenga conexión a Internet. \\
+La primera vez que se propuso el concepto del Internet de las Cosas fue en 1999 por Kevin Ashton, en el Auto-ID Center del MIT, donde se presentó un sistema de sensores e identificadores de radiofrecuencia (RFID)\\
+El nombre de Internet de las cosas (Internet of Things (IoT), en inglés) hace hincapié en la interconexión digital de objetos cotidianos con internet.\\
+Un frigorífico que avise de la fecha de caducidad de los alimentos, unas zapatillas de deporte que registren en la nube las estadísticas de la velocidad y distancia a la que corres, un inodoro que analice su orina para que recomiende una dieta u otra, en definitiva, que cualquier cosa u objeto tenga conexión a Internet. \\
 Según la empresa Gartner (//////link/////), en 2020 habrá en el mundo unos 26 mil millones de dispositivos con un sistema de conexión al internet de las cosas. Los mencionados objetos se valen por un sistema embebido que permite dotar de inteligencia al objeto conectado, ayudándose de sensores para captar información; esta es otra de las características de IoT, el denominado Big Data: datos, datos y más datos.
 IoT puede controlar desde aplicaciones domésticas como las mencionadas anteriormente, a aplicaciones profesionales. Un cultivo en el que cada planta tenga su propio sensor y el agricultor sea capaz en todo momento de recibir información sobre ellas conociendo cómo crecen y si existen problemas en algunas de ellas. \\
 El coste que podría tener monitorizar el sistema anterior en el que cada planta tenga un sensor enviando información a ciertos nodos para su procesamiento, podría ser elevado. Por ello se buscan hardware de bajo coste. El uso de sistemas de menor procesamiento hace que se busque nuevas tecnologías o, como mínimo, complementarias a las que existen. Las tecnologías existentes para Internet requieren de hardware con procesamiento elevado. No tiene ningún sentido enviar la información captada por un sensor de humedad (en el que la información recibida es ínfima) mediante HTTP.\\
@@ -303,8 +314,36 @@ grave, lo constituye su seguridad, en sus múltiples vertientes. Así, según lo
 Por ello, cuando se superen estos problemas, en los que ya grandes empresas están investigando, IoT dejará de ser usado para entornos en concreto a ser una realidad en nuestras vidas.
 \chapter{Middleware en IoT}
 \section{Introducción}
-Como se ha visto, la esencia de IoT es conectar y comunicar cualquier cosa sobre internet. ////Para conseguir una heterogeneidad entre diferentes componentes o dispositivos, se hace uso de middleware. ////Un middleware es una solución para esa arquitectura IoT, el cual puede proporcionar desde conectividad en las capas más bajas a servicios que aseguren una correcta comunicación a nivel software. 
+Como se ha visto, la esencia de IoT es conectar y comunicar cualquier cosa sobre internet. Conseguir interconectar millones de dispositivos diferentes, trabajando a niveles de red diferentes y generando una gran cantidad de eventos no es una tarea sencilla. Un middleware IoT facilita la integración entre la comunicación de los dispositivos, además de soportar una interoperabilidad dentro de los diferentes servicios y aplicaciones.\\El desarrollo de middleware en IoT es un área activa de investigación. Las líneas de investigación en middleware han ido por las redes de sensores inalámbricas (WSN) /////surveys////, por las comunicaciones máquina a máquina (M2M)////surveys//// o también por etiquetas de identificación de radio frecuencia (RFID) ///surveys///, componentes esenciales en el IoT. En este trabajo se hablará de algunos middleware IoT y finalmente qué middleware es el elegido para su análisis.
 
+\section{CoAP}
+CoAP es un protocolo-middleware que trabaja en el dominio de las redes de sensores (WSN) y comunicación M2M. Estas redes requieren de protocolos de transmisión de datos con un ancho de banda reducido y con un consumo muy bajo de energía. CoAP se ha diseñado como una "traducción" sencilla de HTTP para simplificar la integración con la web con requisitos especiales como baja carga, bajo consumo o simplicidad. CoAP implementa el modelo REST de HTTP funcionando sobre UDP y con mecanismos de seguridad específicos para ser usados en este tipo de redes. \\
+CoAP es muy usado en IoT, permite descubrimiento de recursos, seguridad, soporte IPv6. En definitiva, un protocolo moderno y con muchos beneficios.
+\section{UbiROAD}
+UbiROAD es un middleware inteligente conocedor del contexto, esto es, capaz de decidir por él mismo ofreciendo al usuario los servicios necesarios. Se usa en vehículos para el control de tráfico inteligente. 
+
+\section{Agilla}
+Agilla\cite{agilla} es un middleware basado en agente diseñado para aplicaciones auto-adaptables en redes de sensores. Las redes de sensores están expuestas a un mundo dinámico, muchas de sus aplicaciones tienen que adaptarse a los cambios en el ambiente. Por ejemplo, una red WSN usada por un robot, tiene que adaptarse a los cambios del robot. En definitiva, se necesitan middleware y nuevos modelos de programación para soportar la auto-adaptabilidad de las redes de sensores. Para tal fin, se desarrolló Agilla\\
+La estructura de Agilla está basada en agentes. Un agente no es más que un nodo dotado de inteligencia. Un agente puede clonarse desde un nodo a otro manteniendo su estado y así poder coordinar con otros agentes. La estructura de Agilla se muestra en la figura \ref{agilla}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/agilla}
+\caption{Modelo Agilla.}\label{agilla}
+\end{figure}
+Agilla funciona sobre TinyOS, un sistema operativo para WSN. Un tuplespace es una memoria compartida usada por los agentes para clonarse.
+\section{TinySOA}
+TinySOA es un middleware usado en redes de sensores. Proporciona un conjunto de servicios Web que facilita el envío y recepción de información por parte de los sensores. La arquitectura se puede ver en la figura \ref{tinysoa}. Está formado por cuatro partes principales: Nodos,gateway,registro y servidor. \\
+El nodo reúne toda la información de un nodo sensor. Tiene algunos servicios como el descubrimiento de recursos o la comunicación con el gateway. El gateway en las redes WSN, tiene la función de conectar la red WSN con la red externa, es decir con Internet. Entre otras funcionalidades, usa la información del nodo sensor para registrarlo en el servicio de registro.  Una vez registrados, el gateway se subscribe a los servicios proporcionados por el sensor. El servidor es otra de las partes principales de este middleware, y su función es usar el servicio de registro para establecer un servicio web
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/tinysoa}
+\caption{Arquitectura de TinySOA.}\label{tinysoa}
+\end{figure}
+\section{MQTT}
+El Transporte de telemetría de cola de mensajes (MQTT) es un protocolo de código abierto que se desarrolló y optimizó para dispositivos restringidos y redes de bajo ancho de banda, alta latencia o poco confiables. Es un transporte de mensajería de publicación/suscripción que es extremadamente ligero e ideal para conectar dispositivos pequeños a redes con ancho de banda mínimo. MQTT es eficiente en términos de ancho de banda, independiente de los datos y tiene reconocimiento de sesión continua, porque usa TCP. Tiene la finalidad de minimizar los requerimientos de recursos del dispositivo y, a la vez, tratar de asegurar la confiabilidad y cierto grado de seguridad de entrega con calidad del servicio.
+
+\section{Conclusión}
+Con la cantidad de dispositivos existentes y diferentes entre ellos, conectarlos sobre internet es una tarea complicada. Por ello, es necesario un software que facilite la interconexión entre ellos, es aquí donde entra en juego el uso de un middleware. Tras presentar algunos de ellos, se ha optado por elegir MQTT como middleware para ser analizado en mayor profundidad y, en caso de éxito, ser usado en el escenario que planteamos.
 \chapter{MQTT}
 \section{Introducción}
 MQTT (Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda además de que no requiere de mucho software para implementar un cliente, lo cual es perfecto para dispositivos como Arduino. MQTT se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
@@ -478,8 +517,7 @@ MQTT como middleware IoT, necesita cumplir una serie de requisitos. En el escena
 En MQTT no hay un mecanismo para el descubrimiento de recursos. El cliente se tiene que conectar al broker para su comunicación. Con MQTT-SN, una extensión de MQTT para redes de sensores, sí que hay un mecanismo de descubrimiento de nuevos dispositivos.
 \subsubsection*{Control de recursos}
 MQTT realiza un control básico a nivel de red. Si el broker percibe (mediante el temporizador "keep alive" en el envío de PINGREQ) una desconexión inesperada del cliente, el broker publica un mensaje "Last Will and Testament" (LWT) a todos los subscriptores de ese topic. Los clientes cuando se conectan al broker, tienen la opción de definir este mensaje y  pedir al broker que lo almacene.\\
-/////////////////////////////////////////////////
-Existen herramientas que realizan un control y monitorización más avanzados como por ejemplo MQTTSpy. MQTTSpy se ejecuta sobre Java y proporciona estadísticas . Esta herramienta se conectaría con el broker MQTT ////////////////////////////////////////////////////////////////////
+Existen herramientas que realizan un control y monitorización más avanzados como MQTTSpy. MQTTSpy se ejecuta sobre Java y se pueden obtener estadísticas sobre los tópicos.
 \subsubsection*{Control de datos}
 MQTT proporciona un control de datos como son el almacenamiento o el filtrado. De todo ello se encarga el broker. El broker puede almacenar los paquetes de un tópico mientras el cliente, subscrito a dicho tópico, esté offline. El broker también puede aplicar un filtrado en los tópicos, para que se aplique a un nivel o a todos los niveles de ese tópico:
 \begin{itemize}
@@ -603,14 +641,52 @@ En IoT se busca un procesamiento en la nube. MQTT nos ofrece el envío de datos 
 \includegraphics[scale=0.4]{images/cloud_mqtt1}
 \caption{Cloud Computing haciendo uso de MQTT}\label{L408}
 \end{figure}
-
-
-
 \section{Conclusiones}
 MQTT como middleware IoT, puede dar solución a múltiples problemas. MQTT cumple con lo que buscamos en cuanto a requisitos se refiere pero no nos ofrece una solución completa. Por ello hemos optado por buscar plataformas-middleware Open-Source que nos ofrezca una solución más completa.Es decir, un middleware que unifique almacenamiento en la nube, procesamiento y análisis de datos...
 
 \chapter{Plataformas IoT}
+\section{Introducción}
+Hoy en día, se ha incrementado el número de soluciones middleware para IoT que proporciona una interconexión entre los dispositivos y los datos. Estas soluciones middleware se aplican a escenarios en concreto, como el caso de MQTT que se aplica a nivel de transporte para facilitar la comunicación M2M o, el caso de Agilla para redes de sensores en las que se busca un ambiente de auto-adaptación. Es decir, no existe un middleware que ofrezca una solución completa, desde el control de dispositivos  y la recolección de datos hasta el procesamiento y visualización de los mismos. Es aquí donde surge la idea de una plataforma-middleware IoT\cite{platform_gap} que integre esos servicios. Este panorama, como cualquier concepto de IoT, inexistente hace unos años, es complejo y cambiante de manera rápida. Estas plataformas residen en la nube y permiten al usuario reunir los datos de sensores y actuadores y procesarlos, bien para almacenarlos, bien para visualizarlos o bien para analizarlos y extraer información útil de ellos.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/platforms_iot}
+\caption{Plataformas IoT}\label{platforms_iot}
+\end{figure}
+\section{Características}
+La estructura de IoT se muestra en la figura \ref{stack_iot}, el objetivo de una plataforma IoT es facilitar la integración de esos niveles: conectividad, servicios y nube, aplicaciones y análisis.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/iot_stack}
+\caption{Pila de tecnologías en IoT}\label{stack_iot}
+\end{figure}
+Algunas características que poseen las plataformas son:
+\subsubsection*{Seguridad y privacidad}
+Un criterio fundamental para las plataformas IoT es el uso de mecanismos eficientes de seguridad y privacidad
+\subsubsection*{Basada en nube}
+Una plataforma IoT es una solución que "vive" en la nube. Pueden ser controladas y accesibles desde cualquier lado.
+\subsubsection*{Integración de tecnologías}
+La heterogeneidad de diferentes tecnologías es la esencia de las plataformas IoT. Una plataforma ideal, ofrecería un conjunto de protocolos de comunicación donde el usuario elige el protocolo apropiado.
+\subsubsection*{Propiedad de los datos}
+Esta es una de las preocupaciones de las plataformas IoT, pues en un entorno en el que se envía enormes volúmenes de datos a la nube, es difícil garantizar la propiedad total de los datos. Solo soluciones donde propiedad alamacenan los datos localmente son las que ofrecen una completa privacidad de los datos. El desarrollo de algoritmos y mecanismos que garanticen esta propiedad es una de las tareas pendientes de las plataformas IoT.
+\subsubsection*{Análisis de datos}
+El análisis de datos es una de las características principales de las plataformas IoT. Una vez subidos los datos a la nube se analizan bien con herramientas propias de la plataforma o bien con herramientas de análisis de datos externas a ella.
+\subsection{Plataformas}
+Existen cientos de plataformas IoT tanto Open-Source como con licencia comercial. Algunas empresas buscan hacerse un hueco en el mercado IoT con el desarrollo de estas plataformas. 
+\begin{itemize}
+\item[•]\textbf{Amazon Web Services: }Amazon domina el mercado de la nube. Fueron los primeros en traer el Cloud-Computing allá por el 2004. Su plataforma es extremadamente escalable soportando millones de interacciones entre los dispositivos y el servidor. Usa sus propios servicios para el funcionamiento de la plataforma. 
+\item[•]\textbf{IBM Watson: }IBM es otro gigante IT que ha fijado su objetivo en el IoT. Su plataforma busca la facilidad para acceder a sus servicios en la nube. Se puede, entre otros, almacenar datos por un periodo de tiempo definido u obtener información de los dispositivos conectados.  
+\item[•]\textbf{Salesforce: } Salesforce es una plataforma impulsada por Thunder, la cual se basa en alta velocidad y tiempo real en las decisiones en la nube.
+\end{itemize}
 
+
+En la siguiente tabla\cite{platform_gap} se muestran las características de algunas plataformas IoT.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/platforms}
+\caption{Caracterísitcas de algunas plataformas IoT.}\label{L400}
+\end{figure}
+\section{Conclusiones}
+El rápido y cambiante mundo de IoT necesita de plataformas software que ayuden a disminuir la separación existente entre hardware y software, integrando varios servicios como: recolección de datos, seguridad, análisis en tiempo real, en una única plataforma-middleware IoT. En este capítulo se han descrito algunas características de las plataformas IoT. No existe la plataforma perfecta, cada una ofrece ciertos servicios y es el usuario quien tiene que decidir cuál usar. En los siguientes capítulos se analizarán OpenIoT y Kaa como plataformas IoT Open-Source en mayor profundidad. Se elegirá, según nuestro criterio, la más adecuada para desplegar el escenario planteado al inicio de este documento.
 \chapter{OpenIoT}
 \section{Introducción}
 A pesar de la expansión de las aplicaciones IoT en la nube, la ausencia de una semántica que proporcione una interoperabilidad entre las diferentes aplicaciones es una de las principales limitaciones de IoT. Esta ausencia de una unificación se refleja en los diferentes vocabularios y formas para describir las cosas/objetos físicos. No existe un modelo a seguir para integrar todos los servicios, como sí existe en redes IP. \\
@@ -1486,13 +1562,6 @@ La app envía un mensaje, como un evento Kaa, a todos los endpoints unidos al mi
 \subsubsection*{Descubrimiento de recursos en Kaa haciendo uso de los eventos}
 Haciendo uso del ejemplo anterior, se va a crear una sencilla aplicación para demostrar el requisito de descubrimiento de recursos en Kaa. En este escenario se envía un evento a todos los endpoints cuando cada uno de ellos inicie la aplicación, mostrando así su presencia al resto de endpoints.\\
 Al iniciar la aplicación, se envía un evento a todos los endpoints, mostrándose como una notificación en Android. Este mecanismo puede ser utilizado por los endpoints para enviar su configuración o información sobre qué servicios ofrecen y ser capturado por el resto de endpoints.\\
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.2]{images/capture_android.png}
-%\caption{Recepción de evento}\label{L510}
-%\end{figure}
-
-
 \textbf{Requisitos comprobados: } Descubrimiento de recursos.
 
 \subsubsection*{Detección de la caída de un nodo haciendo uso de los eventos}
@@ -1621,8 +1690,6 @@ Donde el archivo notification.json tiene los datos a enviar en la notificación.
 Una vez recibida en la Raspberry, ésta encenderá el LED. En este sencillo ejemplo se demuestra el uso de las notificaciones en Kaa, así como el almacenamiento y análisis de datos en herramientas externas.
 
 \textbf{Requisitos comprobados: } Control de datos, tiempo real, abstracción de la programación
-
-
 \subsection{Edge analytics}
 \subsubsection*{Fog-Computing y Edge-Computing}
 Desde hace unos años el almacenamiento y procesamiento en la nube (en inglés, Cloud Computing) ha ido usándose cada vez más, hasta tal punto que muchas de las tareas se realizan en la nube, quitándoles así protagonismo a los dispositivos y haciéndolos tan solo emisores y receptores de datos. Kaa, como muchas otras, es una plataforma en la que su motor de procesamiento está en la nube. Los endpoints, a vista de Kaa, son dispositivos cuya función es únicamente enviar datos a la nube (servidor Kaa). \\
@@ -1635,7 +1702,6 @@ El concepto de Edge/Fog Computing reducirá el ancho de banda, puesto que el pro
 \includegraphics[scale=0.5]{images/fog_computing}
 \caption{Fog Computing}\label{L509}
 \end{figure}
-
 El concepto Edge/Fog aunque es parecido, hay una diferencia y está en que Fog deja el procesamiento en manos de un nodo o servidor dentro de la red, mientras que Edge hace que cada dispositivo en la red juegue su propio papel de procesamiento, de forma que cada dispositivo de manera independiente elige qué información guardar y cuál subir a la nube. Edge tiene la ventaja de que hay menos puntos de fallo en la red, mientras que Fog es más escalable al tener un servidor centralizado.
 
 \subsubsection*{Edge Computing en Kaa}
@@ -1645,8 +1711,10 @@ Desplegando Kaa como la arquitectura mostrada en la figura \ref{deployment1}, se
 Con la forma más "natural" de despliegue de Kaa también se podría conseguir esta funcionalidad pero sería cada endpoint quien analice los datos y envíe a la nube. Esto implica una mayor latencia de red además de realizar un buen uso de los grupos de endpoints. De hecho, Kaa no habla de Edge Analytics con este despliegue (\MYhref{https://www.kaaproject.org/platform/\#gate}{enlace})\\
 Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis de datos provenientes de los endpoints para su posterior envío al servidor, añadiendo así un nivel de jerarquía en la estructura de Kaa.
 
-\section{Caso de estudio final}
-Como caso de estudio final llevamos a la práctica el uso de Kaa al escenario agrícola planteado. Para la monitorización del terreno agícola habrá sensores de humedad, temperatura.. Estos datos se subirán a la plataforma para ser almacenados y analizados; y en función de los resultados se enviarán notificaciones a nodos actuadores para, por ejemplo, abrir o cerrar válvulas. \\
+\section{Conclusiones}
+Tras el análisis de MQTT como middleware, y OpenIoT y Kaa como plataformas, hemos optado por elegir Kaa como plataforma para desplegar el caso de estudio planteado. Aunque se planteó al inicio la posibilidad de crear una jerarquía a distintos niveles, hemos optado por eliminar esa jerarquía ya que Kaa no ofrece ese soporte, pero por contra, ofrece requisitos muy interesantes como la interoperabilidad entre dispositivos, o el uso de mecanismos de transporte de menor consumo para dispositivos con un nivel de procesamiento menor. \\ 
+\chapter{Caso de estudio}
+Como caso de estudio final llevamos a la práctica el uso de Kaa al escenario agrícola planteado. Para la monitorización del terreno agrícola habrá sensores de humedad, temperatura.. Estos datos se subirán a la plataforma para ser almacenados y analizados; y en función de los resultados se enviarán notificaciones a nodos actuadores para, por ejemplo, abrir o cerrar válvulas. \\
 Para no extender en el tiempo este trabajo fin de grado y hacerlo lo más funcional posible, resumimos el escenario al de la siguiente figura:\\
 
 En él las válvulas serán LEDs, los sensores un potenciómetro o sensor de temperatura. 
@@ -1671,10 +1739,12 @@ En él las válvulas serán LEDs, los sensores un potenciómetro o sensor de tem
 -Si uno de esos datos supera un cierto umbral, enviar alarma a un dispositivo móvil y a 1 raspberry para encender el LED.
 
 
-\chapter*{Conclusiones}
+\chapter{Conclusiones y trabajos futuros}
+\section{Conclusiones}
 Se han analizado 3 middleware IoT ...\\
 Kaa es una plataforma con una curva de aprendizaje bastante alta
 Con Kaa el programador se olvida de la parte del servidor
+\section{Trabajos futuros}
 \begin{thebibliography}{X}
 \bibitem{hive} {http://www.hivemq.com/}
 \bibitem{hive_doc}{HiveMQ. MQTT doc:http://www.hivemq.com/mqtt/}
@@ -1697,6 +1767,9 @@ Con Kaa el programador se olvida de la parte del servidor
 \bibitem{openiot}{http://www.openiot.eu/}
 \bibitem{openiot_git}{GIT OpenIoT}
 \bibitem{openiot_pdf}{PDF OpenIoT: http://cordis.europa.eu/docs/projects/cnect/5/287305/080/deliverables/001-OpenIoTD431Draft.pdf}
+\bibitem{agilla}{Chien-Liang Fok, Gruia-Catalin Roman y Chenyang Lug. "Agilla: A Mobile Agent Middleware for
+Self-Adaptive Wireless Sensor Networks"}
+\bibitem{platform_gap}{A gap analysis of Internet-of-Things platforms. Julien Mineraud, Oleksiy Mazhelis, Xiang Su, Sasu Tarkoma, March 2016}
 \end{thebibliography}
 
 \end{document}
