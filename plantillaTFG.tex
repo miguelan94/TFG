@@ -35,7 +35,11 @@
 % =====================
 % hay que rellenar estos datos y luego
 % ir a \begin{document}
-
+\addto\captionsspanish{
+  \renewcommand\appendixname{Anexo}
+  \renewcommand\appendixpagename{Anexos}
+  \renewcommand\bibname{Referencias}
+}
 \title{Desarrollo de proyectos IoT utilizando Raspberry Pi como plataforma}
 \author{Miguel Ángel Martínez Sánchez}
 \date{\today}
@@ -248,6 +252,7 @@
 % =============================
 % = El documento empieza aquí =
 % =============================
+\raggedbottom 
 \begin{document}
  
 
@@ -262,12 +267,21 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \markright{Abstract}
-En este trabajo se han analizado diferentes soluciones de middleware open-source para el Internet de las Cosas (IoT). Se plantea un escenario teleo-reactivo y se pretende dar respuesta a qué middleware open-source es el más idóneo. El análisis se ha realizado comprobando si satisface determinados requisitos y dando respuesta a cómo suplirlos en caso de que no cumpla alguno de ellos.\\
+En este trabajo se han analizado diferentes soluciones de middleware open-source para el Internet de las Cosas (IoT). Se plantea un escenario teleo-reactivo y se pretende dar respuesta a qué middleware open-source es el más idóneo.\\
+
+//imagen escenario planteado\\
+
+ El análisis se ha realizado comprobando si satisface determinados requisitos y dando respuesta a cómo suplirlos en caso de que no cumpla alguno de ellos. Para la comprobación de estos requisitos nos hemos basado en la tabla de la figura \ref{main_table}, presente en un artículo de 2016\cite{surv} en el que se analizan diferentes middlewares para IoT.\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/requisitos}
+\caption{Requisitos para un middleware IoT.}\label{main_table}
+\end{figure}
 
 \textbf{Keywords:} Internet de las cosas (IoT); MQTT; OpenIoT; Kaa
 
 
-\chapter*{Agradecimientos}
+%\chapter*{Agradecimientos}
 
 \bibliographystyle{acm}
 % \biliography{miarchivo} % -> lee miarchivo.bib
@@ -282,19 +296,11 @@ En este trabajo se han analizado diferentes soluciones de middleware open-source
 %\caption{Requisitos de un middleware IoT.}\label{L105}
 %\end{figure}
 
-
-
-
-
-
-
-
-
 \chapter{IoT}
 La primera vez que se propuso el concepto del Internet de las Cosas fue en 1999 por Kevin Ashton, en el Auto-ID Center del MIT, donde se presentó un sistema de sensores e identificadores de radiofrecuencia (RFID)\\
-El nombre de Internet de las cosas (Internet of Things (IoT), en inglés) hace hincapié en la interconexión digital de objetos cotidianos con internet.\\
-Un frigorífico que avise de la fecha de caducidad de los alimentos, unas zapatillas de deporte que registren en la nube las estadísticas de la velocidad y distancia a la que corres, un inodoro que analice su orina para que recomiende una dieta u otra, en definitiva, que cualquier cosa u objeto tenga conexión a Internet. \\
-Según la empresa Gartner (//////link/////), en 2020 habrá en el mundo unos 26 mil millones de dispositivos con un sistema de conexión al internet de las cosas. Los mencionados objetos se valen por un sistema embebido que permite dotar de inteligencia al objeto conectado, ayudándose de sensores para captar información; esta es otra de las características de IoT, el denominado Big Data: datos, datos y más datos.
+El nombre de Internet de las cosas (Internet of Things (IoT), en inglés)\cite{iot}\cite{iot_book} hace hincapié en la interconexión digital de objetos cotidianos con internet.\\
+Un frigorífico que avise de la fecha de caducidad de los alimentos, unas zapatillas de deporte que registren en la nube las estadísticas de la velocidad y distancia a la que corres, un inodoro que analice la orina para que recomiende una dieta u otra, en definitiva, que cualquier cosa u objeto tenga conexión a Internet. \\
+Según la empresa Gartner (\MYhref{http://www.gartner.com/newsroom/id/3598917}{link}), en 2020 habrá en el mundo más de 20 mil millones de dispositivos con un sistema de conexión al internet de las cosas. Los mencionados objetos se valen por un sistema embebido que permite dotar de inteligencia al objeto conectado, ayudándose de sensores para captar información; esta es otra de las características de IoT, el denominado Big Data: datos, datos y más datos.
 IoT puede controlar desde aplicaciones domésticas como las mencionadas anteriormente, a aplicaciones profesionales. Un cultivo en el que cada planta tenga su propio sensor y el agricultor sea capaz en todo momento de recibir información sobre ellas conociendo cómo crecen y si existen problemas en algunas de ellas. \\
 El coste que podría tener monitorizar el sistema anterior en el que cada planta tenga un sensor enviando información a ciertos nodos para su procesamiento, podría ser elevado. Por ello se buscan hardware de bajo coste. El uso de sistemas de menor procesamiento hace que se busque nuevas tecnologías o, como mínimo, complementarias a las que existen. Las tecnologías existentes para Internet requieren de hardware con procesamiento elevado. No tiene ningún sentido enviar la información captada por un sensor de humedad (en el que la información recibida es ínfima) mediante HTTP.\\
 \begin{figure}[H]
@@ -304,24 +310,62 @@ El coste que podría tener monitorizar el sistema anterior en el que cada planta
 \end{figure}
 \section{Barreras en el crecimiento de IoT}
 Existen algunos inconvenientes que impiden el avance de IoT. Uno de ellos es el problema de direccionamiento, bien es cierto que ya existe una propuesta firme para cambiar a IPV6. Otro de los principales problemas que impiden el crecimiento de IoT es la seguridad y privacidad. El hecho de compartir información privada en la nube nos hace mucho más vulnerables a los ataques por parte de hackers. Existen casos preocupantes que hacen que la interconexión de todo con todo aún tenga que esperar. \\En 2013, Hugo Teso, un experto en seguridad, demostró, en una maqueta, que era posible tomar el control de un avión desde un dispositivo Android (entre otras cosas), haciéndose valer de información compartida por los aviones para determinar su posición. \\En 2015 un grupo de investigadores descubrió que era relativamente sencillo manipular remotamente la aceleración y el sistema de frenado en los coches autónomos. Ejemplos que nos hacen pensar en la importancia de un sistema de seguridad en IoT y por qué aún no ha dado ese paso definitivo para su expansión. Estos problemas será cuestión de tiempo que se solucionen para que IoT acabe siendo una realidad.
-\section{Impacto social}
-El internet de las cosas podría cambiar, de hecho lo está haciendo, la vida tal y como la conocemos hoy en día, pues el hecho de que cualquier objeto pueda ser monitoreado nos ayudaría a administrar mejor los recursos. 
-
+\section{Características}
+IoT no es solo una tecnología, más bien es un concepto que integra varias tecnologías.
+Los sensores y actuadores son dispositivos que ayudan a interactuar con el medio físico. Los datos recopilados por los sensores, esto es, cualquier dispositivos capaz de proporcionar información sobre el medio físico, se tienen que almacenar y procesar. Esta información se suele enviar a un servidor para que la procese.
+\subsection{Arquitectura}
+Existe un gran conjunto de tecnologías de comunicación que necesitan ser adaptadas para las aplicaciones IoT, como la eficiencia energética, seguridad o confidencialidad.
+Al contrario que ocurre con TCP/IP, en IoT no hay un consenso en una única arquitectura. Se han propuesto varias arquitecturas. En la figura \ref{layered} se puede ver una arquitectura de IoT.  
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/iot_layered}
+\caption{Arquitectura de IoT. \cite{iot_book}}\label{layered}
+\end{figure}
+Con IoT se pasa del modelo tradicional y centralizado a un modelo distribuido y de interconexión de todo con todo.
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/model_iot}
+\caption{Modelo de IoT. \cite{iot_book}}\label{model}
+\end{figure}
+\subsection{Áreas de aplicación}
+Las aplicaciones de IoT son muchas y muy diversas. El IERC ( European Research Cluster on the Internet of Things ) ha identificado las principales áreas de aplicación en IoT: Smart energy, smart heatlh, smart buildings, smart transport, smart industry and smart city. Esto es, energía, salud, construcción, transporte, industria y ciudades inteligentes.
+\subsubsection*{Smart cities} 
+Es un concepto emergente que aún no tiene una definición aceptada. Su objetivo es integrar el uso de tecnologías para proporcionar servicios a sus ciudadanos y mejorar su estancia en las ciudades.
+\subsubsection*{Smart Transport} 
+La conexión de los vehículos a internet hará el trasporte más fácil y seguro. Sus objetivos son, entre otros, reducir el consumo y emisiones de vehículos, proporcionar soluciones de parking inteligentes que identifiquen los espacios disponibles y se lo hagan saber al usuario, mejorar la seguridad en motoristas, viandantes y ciclistas o, reducir la congestión del tráfico y actuar, por ejemplo, con el control de semáforos. 
+\subsubsection*{Smart Home}
+La inteligencia en las casas nos facilitará mucho más la vida. Poder controlar las tareas de casa desde cualquier punto es el objetivo principal de un sistema Smart Home. Este es, posiblemente, uno de los sectores de mayor crecimiento en IoT en los últimos años.
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/smart_home}
+\caption{Smart Home con IoT.}\label{smart_home}
+\end{figure}
+\subsubsection*{Smart Health}
+La salud es otra de las posibles aplicaciones que puede tener IoT. Los sistemas Smart Health proporcionan servicios relacionados con la salud usando la red como conexiones entre agentes. Estos agentes pueden ser teléfonos móviles, pulseras de actividad deportiva, dispositivos de medición de la actividad cerebral... Entre sus objetivos está conectar múltiples agentes, recopilar diferentes datos y tomar acciones. Por ejemplo, un monitor de bebés que mida ciertos parámetros que puedan avisar si ha dejado de respirar durante la noche. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/smart_health}
+\caption{Smart Health con IoT.}\label{smart_health}
+\end{figure}
 \section{Conclusiones}
-El IoT se presenta como un nuevo paradigma que parece predestinado a cambiar por completo el escenario socioeconómico tal y como hoy lo conocemos. Estas nuevas tecnologías están permitiendo la obtención de mayores cantidades de información e incluso la obtención de datos sobre elementos de los que antes ni tan siquiera se podía pensar que fuera posible o sobre los que se pudiera influir.\\
+El IoT se presenta como un nuevo paradigma que parece predestinado a cambiar por completo el escenario socioeconómico tal y como hoy lo conocemos hoy en día, pues el hecho de que cualquier objeto pueda ser monitorizado nos ayudaría a administrar mejor los recursos. Estas nuevas tecnologías están permitiendo la obtención de mayores cantidades de información e incluso la obtención de datos sobre elementos de los que antes ni tan siquiera se podía pensar que fuera posible o sobre los que se pudiera influir.\\
 Aún con el gran abanico de posibilidades que se abre gracias a la utilización de estas nuevas tecnologías, este nuevo paradigma no se encuentra exento de problemas. Uno de ellos, sino el más
 grave, lo constituye su seguridad, en sus múltiples vertientes. Así, según los expertos, la seguridad es un asunto de especial trascendencia, ya que la mayoría de las medidas de seguridad tradicionales no pueden aplicarse al IoT debido principalmente a las restricciones y/o características que comporta su diseño: bajo procesamiento, entornos propensos a ataques malintencionados...\\
 Por ello, cuando se superen estos problemas, en los que ya grandes empresas están investigando, IoT dejará de ser usado para entornos en concreto a ser una realidad en nuestras vidas.
 \chapter{Middleware en IoT}
 \section{Introducción}
-Como se ha visto, la esencia de IoT es conectar y comunicar cualquier cosa sobre internet. Conseguir interconectar millones de dispositivos diferentes, trabajando a niveles de red diferentes y generando una gran cantidad de eventos no es una tarea sencilla. Un middleware IoT facilita la integración entre la comunicación de los dispositivos, además de soportar una interoperabilidad dentro de los diferentes servicios y aplicaciones.\\El desarrollo de middleware en IoT es un área activa de investigación. Las líneas de investigación en middleware han ido por las redes de sensores inalámbricas (WSN) /////surveys////, por las comunicaciones máquina a máquina (M2M)////surveys//// o también por etiquetas de identificación de radio frecuencia (RFID) ///surveys///, componentes esenciales en el IoT. En este trabajo se hablará de algunos middleware IoT y finalmente qué middleware es el elegido para su análisis.
+Como se ha visto, la esencia de IoT es conectar y comunicar cualquier cosa sobre internet. Conseguir interconectar millones de dispositivos diferentes, trabajando a niveles de red diferentes y generando una gran cantidad de eventos no es una tarea sencilla. Un middleware IoT facilita la integración entre la comunicación de los dispositivos, además de soportar una interoperabilidad dentro de los diferentes servicios y aplicaciones.\\El desarrollo de middleware en IoT es un área activa de investigación. Las líneas de investigación en middleware han ido por las redes de sensores inalámbricas (WSN) , por las comunicaciones máquina a máquina (M2M) o también por etiquetas de identificación de radio frecuencia (RFID), componentes esenciales en el IoT. En este trabajo se hablará de algunos middleware IoT y finalmente qué middleware es el elegido para su análisis.
 
 \section{CoAP}
 CoAP es un protocolo-middleware que trabaja en el dominio de las redes de sensores (WSN) y comunicación M2M. Estas redes requieren de protocolos de transmisión de datos con un ancho de banda reducido y con un consumo muy bajo de energía. CoAP se ha diseñado como una "traducción" sencilla de HTTP para simplificar la integración con la web con requisitos especiales como baja carga, bajo consumo o simplicidad. CoAP implementa el modelo REST de HTTP funcionando sobre UDP y con mecanismos de seguridad específicos para ser usados en este tipo de redes. \\
 CoAP es muy usado en IoT, permite descubrimiento de recursos, seguridad, soporte IPv6. En definitiva, un protocolo moderno y con muchos beneficios.
 \section{UbiROAD}
-UbiROAD es un middleware inteligente conocedor del contexto, esto es, capaz de decidir por él mismo ofreciendo al usuario los servicios necesarios. Se usa en vehículos para el control de tráfico inteligente. 
-
+UbiROAD es una propuesta de middleware inteligente conocedor del contexto, esto es, capaz de decidir por él mismo ofreciendo al usuario los servicios necesarios. Se usa en vehículos para el control de tráfico inteligente. 
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{images/ubiroad}
+\caption{Middleware UbiROAD.}\label{ubiroad}
+\end{figure}
 \section{Agilla}
 Agilla\cite{agilla} es un middleware basado en agente diseñado para aplicaciones auto-adaptables en redes de sensores. Las redes de sensores están expuestas a un mundo dinámico, muchas de sus aplicaciones tienen que adaptarse a los cambios en el ambiente. Por ejemplo, una red WSN usada por un robot, tiene que adaptarse a los cambios del robot. En definitiva, se necesitan middleware y nuevos modelos de programación para soportar la auto-adaptabilidad de las redes de sensores. Para tal fin, se desarrolló Agilla\\
 La estructura de Agilla está basada en agentes. Un agente no es más que un nodo dotado de inteligencia. Un agente puede clonarse desde un nodo a otro manteniendo su estado y así poder coordinar con otros agentes. La estructura de Agilla se muestra en la figura \ref{agilla}
@@ -341,14 +385,12 @@ El nodo reúne toda la información de un nodo sensor. Tiene algunos servicios c
 \end{figure}
 \section{MQTT}
 El Transporte de telemetría de cola de mensajes (MQTT) es un protocolo de código abierto que se desarrolló y optimizó para dispositivos restringidos y redes de bajo ancho de banda, alta latencia o poco confiables. Es un transporte de mensajería de publicación/suscripción que es extremadamente ligero e ideal para conectar dispositivos pequeños a redes con ancho de banda mínimo. MQTT es eficiente en términos de ancho de banda, independiente de los datos y tiene reconocimiento de sesión continua, porque usa TCP. Tiene la finalidad de minimizar los requerimientos de recursos del dispositivo y, a la vez, tratar de asegurar la confiabilidad y cierto grado de seguridad de entrega con calidad del servicio.
-
 \section{Conclusión}
-Con la cantidad de dispositivos existentes y diferentes entre ellos, conectarlos sobre internet es una tarea complicada. Por ello, es necesario un software que facilite la interconexión entre ellos, es aquí donde entra en juego el uso de un middleware. Tras presentar algunos de ellos, se ha optado por elegir MQTT como middleware para ser analizado en mayor profundidad y, en caso de éxito, ser usado en el escenario que planteamos.
+Con la cantidad de dispositivos existentes y diferentes entre ellos, conectarlos sobre internet es una tarea complicada. Por ello, es necesario un software que facilite la interconexión entre ellos, es aquí donde entra en juego el uso de un middleware. Tras presentar algunos de ellos, se ha optado por elegir MQTT como middleware IoT para ser analizado en mayor profundidad y, en caso de éxito, ser usado en el escenario que planteamos.
 \chapter{MQTT}
 \section{Introducción}
 MQTT (Message Queue Telemetry Transport) es un protocolo usado para la comunicación M2M (Machine to machine) en el internet de las cosas. Fue creado por IBM en 1999. Está orientado a las redes de dispositivos pequeños, como sensores, debido a que consume muy poco ancho de banda además de que no requiere de mucho software para implementar un cliente, lo cual es perfecto para dispositivos como Arduino. MQTT se ha convertido en un protocolo muy usado en IoT, aunque también es ideal para aplicaciones móviles por su envío eficiente. Un ejemplo de uso es Facebook Messenger para iPhone y Android.\\
 Se basa en el estandar publish/subscribe usado sobre TCP/IP. Esta comunicación publish/subscribe hace uso de un "broker" o servidor centralizado para la gestión de los paquetes.
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/topologia.png}
@@ -393,7 +435,7 @@ Una vez realizada la conexión a nivel de red entre cliente y broker mediante el
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/flujo_tipico.png}
-\caption{Envío de paquetes en MQTT.}\label{L403}
+\caption{Envío de paquetes en MQTT.\cite{hive}}\label{L403}
 \end{figure}
 \begin{table}[htbp]
 \begin{center}
@@ -410,34 +452,32 @@ Return Code & Return Code response \\
 \label{table:return_code}
 \end{center}
 \end{table}
-
-
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/subscribe_packet.png}
-\caption{Paquete SUBSCRIBE.}\label{L404}
+\caption{Paquete SUBSCRIBE.\cite{hive}}\label{L404}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/suback_packet.png}
-\caption{Paquete SUBACK.}\label{L405}
+\caption{Paquete SUBACK.\cite{hive}}\label{L405}
 \end{figure}
 
 Por otro lado, si el cliente quiere desuscribirse a un topic deberá enviar un paquete "UNSUBSCRIBE" y esperar la confirmación por parte del broker mediante el paquete "UNSUBACK"
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/flujo_desuscribir.png}
-\caption{Envío de paquetes para desuscribirse de un topic.}\label{L406}
+\caption{Envío de paquetes para desuscribirse de un topic.\cite{hive}}\label{L406}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/unsubscribe_packet.png}
-\caption{Paquete UNSUBSCRIBE.}\label{L407}
+\caption{Paquete UNSUBSCRIBE.\cite{hive}}\label{L407}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/unsuback_packet.png}
-\caption{Paquete UNSUBACK.}\label{L408}
+\caption{Paquete UNSUBACK.\cite{hive}}\label{L408}
 \end{figure}
 \subsection*{Brokers}
 Es el servidor de MQTT. El broker recibe los mensajes por parte de los clientes y se encarga de procesar y enviar el mensaje a los subscriptores de ese topic. La gestión de la red es otra de las funcionalidades del broker. Los clientes envían periódicamente un paquete (PINGREQ) y esperan la respuesta del broker (PINGRESP) para mantener activo el canal.\\
@@ -483,7 +523,7 @@ A diferencia de las redes convencionales, los nodos no tienen conocimiento de la
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{images/wsn}
-\caption{Multi level}\label{L411}
+\caption{Arquitectura de las redes WSN}\label{L411}
 \end{figure}
  
 \subsection{MQTT-SN}
@@ -508,8 +548,6 @@ El descubrimiento es una de las mayores ventajas de MQTT-SN. Los clientes no nec
 %\includegraphics[scale=0.4]{images/mqtt_mqttsn}
 %\caption{Arquitectura MQTT-SN.}\label{L4015}
 %\end{figure}
-
-
 \section{Requisitos}
 MQTT como middleware IoT, necesita cumplir una serie de requisitos. En el escenario que se plantea hay algunos que no son indispensables y otro que sí lo son, como pueda ser la seguridad. Aquí se definen algunos de los requisitos.
 \subsection{Requisitos funcionales}
@@ -543,10 +581,6 @@ Los tópicos que empiecen por el símbolo \$ están reservados para las estadís
 \item[•]\$SYS/broker/messages/sent
 \end{itemize}
 \end{itemize}
-\subsubsection*{Control de eventos}
-
-\subsubsection*{Control de código}
-
 \subsection{Requisitos no funcionales}
 \subsubsection*{Escalabilidad}
 MQTT tiene, en general, una alta escalabilidad, que va a depender en gran medida de la calidad de los nodos y de la topología que se use. La existencia de uno o más brokers dota al sistema de gran escalabilidad ya que la solución puede crecer solo con aumentar recursos en un único elemento.
@@ -588,28 +622,28 @@ El mensaje PUBLISH se envía y el broker no manda ningún reconocimiento. El men
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/qos0}
-\caption{QoS 0}\label{L406}
+\caption{QoS 0.\cite{hive}}\label{L406}
 \end{figure}
 \item[•]\textbf{QoS 1: Al menos una vez}\\
 Este nivel de calidad de servicio asegura que llega al broker al menos una vez. El broker tiene que reconocer la recepción con un paquete PUBACK. Si no recibe un acuse de recibo se vuelve a enviar de nuevo el mensaje PUBLISH con otro identificador distinto hasta que se reciba el reconocimiento. En este nivel no se garantiza que los paquetes no lleguen duplicados.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/qos1}
-\caption{QoS 1}\label{L407}
+\caption{QoS 1.\cite{hive}}\label{L407}
 \end{figure}
 \item[•] \textbf{QoS 2: Exactamente una vez}\\
 Este nivel de calidad asegura que el paquete llega una y solo una vez. Para ello se deben enviar además los paquetes PUBREC y PUBREL.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/qos2}
-\caption{QoS 2}\label{L408}
+\caption{QoS 2.\cite{hive}}\label{L408}
 \end{figure}
 \end{itemize}
 \subsubsection*{Tiempo real}
 Si tiempo real lo definimos en microsegundos, MQTT no cumple este requisito ya que una de las principales características de MQTT es que funciona sobre TCP. En el escenario que se plantea, estos microsegundos no son necesarios por lo que no es un requisito indispensable.
 
 \subsubsection*{Fácil de desplegar}
-MQTT es un protocolo que destaca por su sencillez
+MQTT es un protocolo que destaca por su sencillez a la hora de su despliegue.
 \subsubsection*{Popularidad}
 MQTT es un middleware muy usado debido a su consumo y facilidad de uso. Tiene un gran soporte así como empresas que comercializan sus propios brokers añadiéndole mejoras y usándolo en aplicaciones IoT.
 \subsection{Requisitos arquitectónicos}
@@ -617,17 +651,13 @@ MQTT es un middleware muy usado debido a su consumo y facilidad de uso. Tiene un
 
 \subsubsection*{Interoperabilidad}
 MQTT es un protocolo heterogéneo en cuanto a dispositivos y tecnologías se refiere. Puede funcionar prácticamente en cualquier dispositivo ya que es un protocolo muy sencillo que requiere poco procesamiento. Puede funcionar en un dispositivo móvil, PC, Raspberry…
-\subsubsection*{Autónomo}
 
 \subsubsection*{Distribuido}
 Esta característica dependerá del broker a usar, algunos como HiveMQ o JoramMQ, pueden actuar como sistemas distribuidos, en los que se interpreta un cluster de brokers como un único broker.
 El broker Open-Source Mosquitto no cumple con este requisito.
-\subsubsection*{Orientado a servicio}
 
 \subsubsection*{Ligero}
 El bajo consumo de MQTT es una de las claves de su uso extendido en IoT. MQTT está diseñado para trabajar con dispositivos de bajo procesamiento como sensores o dispositivos móviles. Además, el consumo de ancho de banda que realiza en la red es mínimo. 
-
-\subsubsection*{Adaptativo}
 
 \subsection{Documentación}
 MQTT es un middleware de código abierto perfectamente
@@ -653,10 +683,11 @@ Hoy en día, se ha incrementado el número de soluciones middleware para IoT que
 \caption{Plataformas IoT}\label{platforms_iot}
 \end{figure}
 \section{Características}
+Las plataformas IoT son componentes claves para conectar dispositivos, coleccionar y procesar datos, y hacer uso de interfaces web. Controlan un gran número de dispositivos mientras ofrecen servicios de seguridad y privacidad, además de solventar problemas de interoperabilidad.\\ 
 La estructura de IoT se muestra en la figura \ref{stack_iot}, el objetivo de una plataforma IoT es facilitar la integración de esos niveles: conectividad, servicios y nube, aplicaciones y análisis.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{images/iot_stack}
+\includegraphics[scale=0.37]{images/iot_stack}
 \caption{Pila de tecnologías en IoT}\label{stack_iot}
 \end{figure}
 Algunas características que poseen las plataformas son:
@@ -677,13 +708,11 @@ Existen cientos de plataformas IoT tanto Open-Source como con licencia comercial
 \item[•]\textbf{IBM Watson: }IBM es otro gigante IT que ha fijado su objetivo en el IoT. Su plataforma busca la facilidad para acceder a sus servicios en la nube. Se puede, entre otros, almacenar datos por un periodo de tiempo definido u obtener información de los dispositivos conectados.  
 \item[•]\textbf{Salesforce: } Salesforce es una plataforma impulsada por Thunder, la cual se basa en alta velocidad y tiempo real en las decisiones en la nube.
 \end{itemize}
-
-
-En la siguiente tabla\cite{platform_gap} se muestran las características de algunas plataformas IoT.
+En la siguiente tabla se muestran las características de algunas plataformas IoT.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.7]{images/platforms}
-\caption{Caracterísitcas de algunas plataformas IoT.}\label{L400}
+\caption{Caracterísitcas de algunas plataformas IoT\cite{platform_gap}.}\label{L400}
 \end{figure}
 \section{Conclusiones}
 El rápido y cambiante mundo de IoT necesita de plataformas software que ayuden a disminuir la separación existente entre hardware y software, integrando varios servicios como: recolección de datos, seguridad, análisis en tiempo real, en una única plataforma-middleware IoT. En este capítulo se han descrito algunas características de las plataformas IoT. No existe la plataforma perfecta, cada una ofrece ciertos servicios y es el usuario quien tiene que decidir cuál usar. En los siguientes capítulos se analizarán OpenIoT y Kaa como plataformas IoT Open-Source en mayor profundidad. Se elegirá, según nuestro criterio, la más adecuada para desplegar el escenario planteado al inicio de este documento.
@@ -865,10 +894,6 @@ Una de las características principales de OpenIoT es el descubrimiento de recur
 \subsubsection*{Control de datos y recursos}
 OpenIoT, a través de la herramienta SDUM, permite llevar una constante monitorización sobre los recursos. Esto permite, además de la recopilación y visualización de los datos, llevar un control sobre ellos.
 
-\subsubsection*{Control de eventos}
-
-\subsubsection*{Control de código}
-
 
 \subsection{Requisitos no funcionales}
 
@@ -904,10 +929,6 @@ Un middleware IoT debe ser fácilmente desplegable por parte del usuario. OpenIo
 Un middleware IoT debería funcionar en distintos dispositivos y con diferentes tecnologías. OpenIoT es una plataforma agnóstica respecto al hardware: los sensores pueden funcionar en cualquier hardware, tan solo es necesario describir los archivos de configuración y registrar los sensores en la plataforma mediante el envío de sus metadatos.  
 
 \subsubsection*{Distribuido}
-
-
-
-
 
 
 \subsubsection*{Orientado a servicio}
@@ -975,7 +996,6 @@ Kaa tiene un poderoso back-end que facilita el desarrollo de aplicaciones en un 
 \includegraphics[scale=0.4]{images/kaa_platform}
 \caption{Arquitectura Kaa}\label{L501}
 \end{figure}
-
 \subsection*{Despliegue de la plataforma}
 Kaa ofrece 2 formas de despliegue, que se pueden ver en las figuras \ref{deployment1} y \ref{deployment2}.
 \begin{figure}[H]
@@ -1009,7 +1029,6 @@ La figura \ref{cluster:kaa} representa un cluster formado por 3 nodos o servidor
 \includegraphics[scale=0.6]{images/arquitectura_kaa}
 \caption{Cluster Kaa}\label{cluster:kaa}
 \end{figure}
-
 Kaa proporciona una versión preconfigurada formada por un único nodo pudiéndose desplegar en local haciendo uso de VirtualBox. Otras opciones son exportarla a Amazon Web Services o instalar manualmente un servidor Kaa, pudiéndolo hacer en un entorno de un solo nodo o multinodo.\\
 
 Kaa es multi-entidad (Tenant) y un cluster puede soportar varias de ellas. Una aplicación en Kaa tiene que pertenecer a un Tenant y los endpoints se registran en las aplicaciones. Para distinguir los endpoints se usan perfiles de endpoints además de un identificador único. Con los perfiles de endpoints se pueden crear grupos de endpoints como se verá más adelante.
@@ -1018,8 +1037,6 @@ Kaa es multi-entidad (Tenant) y un cluster puede soportar varias de ellas. Una a
 \includegraphics[scale=0.3]{images/tenants}
 \caption{Entidades y grupos de endpoints en Kaa}\label{tenant:kaa}
 \end{figure}
-
-
 \textbf{Nota: Se ha analizado la versión 0.10, la última hasta la fecha de publicación de este documento.}
 \section{Funcionamiento}
 La figura \ref{flujo_kaa} muestra un flujo de datos en Kaa. Los endpoints recogen datos y, a través del SDK, se envían al servidor. El SDK dependerá de la plataforma y del lenguaje de programación. El envío de datos al servidor desde el SDK se realiza en un formato común, cuyo contenido se define previamente en el servidor mediante los "Log Schemas". \\
@@ -1098,11 +1115,8 @@ En la figura \ref{L507} se puede ver un esquema de uso con Apache Storm.
 \includegraphics[scale=0.6]{images/esquema_apache}
 \caption{Esquema de uso para la monitorización de datos con Apache Storm}\label{L507}
 \end{figure} 
-\subsubsection*{Control de eventos}
--------------
 \subsubsection*{Control de código}
--------------
-//////////////////////////////////Una de las principales características de Kaa es que es Open Source con todo lo que ello implica. El código es totalmente transparente al usuario.
+Kaa es una plataforma Open Source con todo lo que ello implica. El código es accesible por el usuario,  pudiendo desplegar su propio clúster Kaa.
 \subsection{Requisitos no funcionales}
 \subsubsection*{Escalabilidad}
 La plataforma Kaa ha sido diseñada para ser escalable horizontalmente. Se pueden añadir miles de endpoints al mismo nivel, es decir, no puede haber varios niveles en la jerarquía. Para poder agrupar distintos endpoints se puede hacer uso de los grupos de endpoints (endpoint group). 
@@ -1113,8 +1127,6 @@ La plataforma Kaa ha sido diseñada para ser escalable horizontalmente. Se puede
 \end{figure}
 \subsubsection*{Tiempo real}
 Kaa es un sistema en tiempo real, entendiendo tiempo real como unos ms de retraso. Ya que Kaa, por defecto, usa HTTP sobre TCP para la comunicación entre SDK y Cluster, por tanto, por definición, es un servicio con retardos, aunque despreciables para el escenario que se plantea.\\  Kaa es agnóstica respecto al transporte, para un mismo endpoint se pueden usar diferentes protocolos de transporte. Para escenarios en los que la característica de tiempo real pueda marcar la diferencia entre éxito y fracaso, se puede usar UDP como protocolo de transporte.
-
-
 \subsubsection*{Disponibilidad}
 La arquitectura horizonal y lineal de Kaa hace que no cuente con ningún punto de fallo. Esto junto con la conexión entre los cluster, dota al sistema con una alta disponibilidad.  Además, los datos de los endpoints se almacenan en bases de datos tolerantes a fallos. Esta interconexión entre los nodos, hace que sea necesario un balanceo de carga para no sobrecargar la red. Kaa usa un balanceo activo para redireccionar el tráfico entre los distintos nodos según el tráfico de de cada uno de ellos. Para la coordinación entre los diferentes nodos se usa Apache Zooekeeper.
 \begin{figure}[H]
@@ -1157,15 +1169,8 @@ La interoperabilidad entre distintas plataformas es una de las características 
 \subsubsection*{Distribuido}
 Kaa es una plataforma distribuida, que se organiza en clusters donde cada uno de ellos puede ejecutar una determinada funcionalidad que será controlada como un único sistema. Por defecto, Kaa está formada por un único cluster ejecutando el servidor Kaa. 
 
-
-
-
 \subsubsection*{Abstracción de la programación}
 Kaa proporciona una interfaz al desarrollador, posibilitando una sencillez a la hora de crear las aplicaciones. El desarrollador tan solo tiene que crear los esquemas de datos, pues la plataforma se encarga de generar el código. Además de la interfaz, Kaa proporciona una API que permite realizar, mediante llamadas a la misma, todas las funciones que se pueden llevar a cabo a través de la interfaz y así, pueden ser los endpoints quienes realicen una determinada tarea.
-\subsubsection*{Basado en servicio}
------
-
-\subsubsection*{Autónomo}
 
 \subsubsection*{Adaptativo}
 Un middleware IoT debe adaptarse a los cambios que se produzcan en su entorno, como pueda ser el cambio en la red.\\Kaa soporta virtualmente cualquier protocolo de red, endpoint o almacenamiento de datos, lo que hace a la plataforma tolerante a cambios.
@@ -1180,7 +1185,7 @@ Las características de Kaa son:
 \subsubsection*{Eventos}
 Kaa proporciona un mecanismo para la entrega de eventos (mensajes) a través de los endpoints. Los eventos pueden ser unicast o multicast, eligiendo así el/los destinatario/s. Los endpoints generan los eventos y los envían al Kaa server, éste se encarga de enviarlos a los endpoints acorde al esquema de eventos, previamente configurado por el desarrollador. La figura \ref{L505} muestra el proceso de envío y recepción de eventos.\\
 En el siguiente ejemplo se muestra la definición de un esquema de eventos. El formato está basado en \MYhref{http://avro.apache.org/docs/current/spec.html}{Avro Schema}.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 
 {
     "namespace": "com.company.project",
@@ -1194,10 +1199,10 @@ En el siguiente ejemplo se muestra la definición de un esquema de eventos. El f
 }
 
 \end{lstlisting}
-Cada evento se basa en una clase en concreto (EC), definida en el esquema de eventos. Una EC se identifica mediante su nombre completo, en el ejemplo de arriba sería: " com.company.project.SimpleEvent2". El identificador es único y no puede haber 2 ECs con el mismo nombre en el mismo tenat ////////////////////////explicar tenat///////////.\\
+Cada evento se basa en una clase en concreto (EC), definida en el esquema de eventos. Una EC se identifica mediante su nombre completo, en el ejemplo de arriba sería: " com.company.project.SimpleEvent2". El identificador es único y no puede haber 2 ECs con el mismo nombre en el mismo tenat.\\
 
 Por otra parte, las clases de eventos (ECs) se agrupan en familias de clases de eventos (ECFs). Un ECF se identifica por su nombre y/o nombre de clase, por lo que no puede haber 2 ECFs con el mismo nombre o nombre de clase en un mismo tenat. El siguiente esquema muestra un ejemplo de definición de ECF:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 [
     {
         "namespace": "com.company.project.family1",
@@ -1220,7 +1225,7 @@ Por otra parte, las clases de eventos (ECs) se agrupan en familias de clases de 
 \end{lstlisting}
 \subsubsection*{Colección de datos}
 Los endpoints almacenan datos recopilados ("log") siguiendo una estructura predefinida. El SDK implementa la subida de 'logs' desde los endpoints al servidor. El servidor lo almacena en bases de datos. En el siguiente ejemplo se muestra un simple esquema de almacenamiento de datos (log schemas), compatible con \MYhref{http://avro.apache.org/docs/current/spec.html}{Avro Schema}:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
     "name": "LogData",
     "namespace": "org.kaaproject.sample",
@@ -1329,7 +1334,7 @@ La figura \ref{owner_endpoint} muestra el proceso para añadir un endpoint a un 
 \end{figure}
 Para ciertas funciones como son los eventos en Kaa, es necesario añadir el Endpoint a un usuario. 
 \subsubsection*{Abstracción en la capa de transporte}
-Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transporte de datos. Además se pueden usar diferentes protocolos en un mismo endpoint, por ejemplo las notificaciones mediante SMS y la configuración y datos mediante TCP. /////////explicar virtualmente e incluirlo si consigo usar MQTT como protocolo de transporte////////////
+Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transporte de datos. Además se pueden usar diferentes protocolos en un mismo endpoint, por ejemplo las notificaciones mediante SMS y la configuración y datos mediante TCP.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{images/kaa_stack}
@@ -1338,7 +1343,7 @@ Kaa ha sido diseñada para soportar virtualmente cualquier protocolo de transpor
 
 
 \section{Ejemplos prácticos}
-Además de diferentes escenarios planteados, se van a probar los ejemplos  presentes en la versión de VirtualBox preconfigurada, así como los presentes en el \MYhref{https://github.com/kaaproject/sample-apps}{GIT} de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa en mayor profundidad, además de comprobar varios de los requisitos que se plantean en este documento para un middleware IoT. 
+Se van a probar los ejemplos  presentes en la versión de VirtualBox preconfigurada de Kaa. Estos ejemplos me han ayudado a comprender el funcionamiento de Kaa en mayor profundidad, además de comprobar varios de los requisitos que se plantean en este documento para un middleware IoT. 
 
 \subsection{Configuración de datos}
 En este ejemplo se muestra el funcionamiento de la configuración de datos en Kaa. El esquema de configuración para este ejemplo queda así:
@@ -1553,7 +1558,6 @@ Message envía un evento con el nombre del chat y el mensaje.
 	"classType": "event"
   }
 \end{lstlisting}
-
 Estos pasos previos se hacen desde la interfaz con el usuario con rol de administrador. Una vez creadas las familias de clases de eventos, se necesita asignarlas a la aplicación. Esto se hace mediante la opción "Event family mapping" de la interfaz (con rol de desarrollador). \\
 Por último, hay que añadir 	un verificador de usuario para comprobar los credenciales de los usuarios. Los endpoints pueden intercambiar mensajes entre aquellos que pertenezcan al mismo usuario. Por defecto, se usa un verificador de tipo 'Trustful', que acepta cualquier credencial de usuario. Se pueden añadir varios verificadores a la misma aplicación. Cuando se genera el SDK, se elige el verificador requerido. \\
 La app envía un mensaje, como un evento Kaa, a todos los endpoints unidos al mismo chat.
@@ -1653,6 +1657,7 @@ Se va a usar Cassandra como base de datos. Para el almacenamiento en las bases d
 \end{figure}
 
 Por otro lado, para el uso de las notificaciones se tienen que definir un esquema para tal fin. El esquema definido para este ejemplo es el siguiente:
+\begin{lstfloat}
 \begin{lstlisting}[language=json]
 {
   "type" : "record",
@@ -1668,8 +1673,9 @@ Por otro lado, para el uso de las notificaciones se tienen que definir un esquem
 }
  
 \end{lstlisting}
+\end{lstfloat}
 \subsubsection*{Enviar datos desde la raspberry a Kaa}
-Una vez configurado el lado del servidor y generado el SDK, se necesita programar el endpoint. El lenguaje del SDK generado será C, al ser un lenguaje compatible con la plataforma (Ver tabla \ref{table:platform_supported}).\\
+Una vez configurado el lado del servidor y generado el SDK, se necesita programar el endpoint. El lenguaje del SDK generado será C, un lenguaje compatible con la plataforma (Ver tabla \ref{table:platform_supported}).\\
 El endpoint se programa para crear el cliente SDK, cargar la configuración definida en el servidor y poder recibir notificaciones. También hay que añadir la parte de código para encender un Led en la Raspberry y recibir información de parte del sensor de temperatura. Esto último se ha realizado generando datos de forma aleatoria, simulando un sensor real. 
 \subsubsection*{Analizar datos con Apache Zeppelin}
 Una vez enviados los datos a la plataforma, se tienen que analizar de manera externa a ella con herramientas de análisis de datos. Para ello, se ha instalado Apache Zeppelin\cite{zeppelin} en el servidor ya preconfigurado. Zeppelin estará escuchando conexiones por uno de los puertos. Zeppelin está formado por diferentes intérpretes, cada uno de los cuales ejecutar el código en el lenguaje de dicho intérprete. MongoDB no es un intérprete por defecto de Zeppelin pero se puede añadir mediante un \MYhref{https://github.com/bbonnin/zeppelin-mongodb-interpreter}{plugin}. Una vez añadido el intérprete, se envía una petición a través de la cual se conecta y obtiene los datos almacenados.
@@ -1715,61 +1721,987 @@ Se plantea para versiones posteriores de Kaa el uso de herramientas de análisis
 Tras el análisis de MQTT como middleware, y OpenIoT y Kaa como plataformas, hemos optado por elegir Kaa como plataforma para desplegar el caso de estudio planteado. Aunque se planteó al inicio la posibilidad de crear una jerarquía a distintos niveles, hemos optado por eliminar esa jerarquía ya que Kaa no ofrece ese soporte, pero por contra, ofrece requisitos muy interesantes como la interoperabilidad entre dispositivos, o el uso de mecanismos de transporte de menor consumo para dispositivos con un nivel de procesamiento menor. \\ 
 \chapter{Caso de estudio}
 Como caso de estudio final llevamos a la práctica el uso de Kaa al escenario agrícola planteado. Para la monitorización del terreno agrícola habrá sensores de humedad, temperatura.. Estos datos se subirán a la plataforma para ser almacenados y analizados; y en función de los resultados se enviarán notificaciones a nodos actuadores para, por ejemplo, abrir o cerrar válvulas. \\
-Para no extender en el tiempo este trabajo fin de grado y hacerlo lo más funcional posible, resumimos el escenario al de la siguiente figura:\\
+Para no extender en el tiempo este trabajo fin de grado y hacerlo lo más funcional posible, resumimos el escenario al de la figura \ref{finalProject}. En él las válvulas serán LEDs, y los sensores serán de luz, temperatura y humedad. \\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/finalProject}
+\caption{Escenario planteado.}\label{finalProject}
+\end{figure}
+A nivel más bajo, se sitúan 2 Raspberry y un PC que actuará como endpoint al no disponer de más Raspberry. Los endpoints se han agrupado en 2 grupos, uno conteniendo a la Raspberry más principal y el otro a los 2 endpoints restantes. La raspberry del grupo 1 lee datos de los sensores de luz, temperatura y humedad. La raspberry restante tan solo recopila datos de un sensor de luz. El PC simula la lectura de datos de un sensor de luz.\\Los datos del endpoint del grupo 1 se suben a Kaa para ser almacenados, en un intervalo de tiempo diferente a los del grupo 2. Este intervalo se define para cada grupo en el servidor. Los endpoints del grupo 2, al iniciar, envía información sobre ellos y datos recopilados por sus sensores a la raspberry del grupo 1. Además, esta raspberry envía cada cierto tiempo un evento a los endpoints restantes para que éstos respondan en un determinado tiempo. Si no lo hacen, se considerarán como endpoints caídos y así poder actuar ante ello. Esta función también se usa como descubrimiento de nuevos dispositivos por parte de la raspberry del grupo 1.\\
 
-En él las válvulas serán LEDs, los sensores un potenciómetro o sensor de temperatura. 
-\subsubsection*{Tareas }
------> El HASH de la clave pública de un endpoint identifica al endpoint en el cluster Kaa. Por defecto Kaa genera una clave pública en cada endpoint registrado. Están presentes en el archivo public.key\\
+En el lado del servidor, se definen los esquemas para la configuración, notificaciones, eventos y almacenamiento de datos. La configuración del lado del servidor se puede ver en el anexo \ref{anexo_a}. Como base de datos se ha elegido MongoDB para el almacenamiento de datos. Se usa Apache Zeppelin para la visualización de datos y nodejs para el análisis de datos. En nodejs se ejecuta un script que, cada cierto tiempo, obtiene los datos de MongoDB y analiza si un determinado valor, en este caso, los leídos por los sensores de luz, supera un umbral. En caso de que lo supere, se envía una notificación vía REST a Kaa para que la reciba la raspberry del grupo 1. Cuando la reciba, encenderá un LED y enviará un correo para avisar del problema. \\
+Como lenguajes de programación se han usado Java para los endpoints, Python para obtener los datos de los sensores en la raspberry y nodejs para la conexión con la base de datos y su posterior procesado de los datos. En el anexo 2 se puede ver algunas porciones de código usadas para desplegar toda la arquitectura, tanto en el lado del cliente (SDKs) como en el lado del servidor (nodejs, zeppelin). 
 
-
--Capítulo introductorio a IoT (4-5 páginas)\\
-- Capitulo Introductorio a Middleware IoT y elección de MQTT (introducción a middleware Iot(qué es, para qué sirve. 1-2 pag), explicación por encima de 2-3 middleware más usado en MQTT (2-3 pag) y explicación de elección MQTT) \\
-- Capítulo MQTT\\
--Capítulo introductorio a plataformas IoT (8-10 páginas)\\
--Capítulo OpenIoT\\
--Capítulo Kaa y al final decir que ha sido la elegida\\
-- Capítulo de Caso práctico con Kaa debido a su elección
-
-
------En el escenario práctico: ------\\
--conexión entre nodos y subir datos a la plataforma\\
--Uno de ellos por ejemplo, que envíe los datos de los sensores a todos al iniciarse, haciendo uso de los eventos.\\
--2 Raspberry y 1 PC. Uno de ellos (raspi 2) será el principal: función ping, recibir eventos de todos....\\
--1 que suba datos cada hora y el otro, al ser más necesario, cada 15 min.\\
--Si uno de esos datos supera un cierto umbral, enviar alarma a un dispositivo móvil y a 1 raspberry para encender el LED.
 
 
 \chapter{Conclusiones y trabajos futuros}
 \section{Conclusiones}
-Se han analizado 3 middleware IoT ...\\
-Kaa es una plataforma con una curva de aprendizaje bastante alta
-Con Kaa el programador se olvida de la parte del servidor
+En este trabajo se ha planteado un escenario agrícola y se ha buscado cuál es la solución IoT más óptima, según nuestro criterio, que se puede desplegar para este escenario, buscando siempre soluciones Open-Source.\\
+Se comenzó analizando MQTT como middleware IoT pero se llegó a la conclusión que un middleware IoT no nos ofrecía la solución completa que buscábamos. Con MQTT y la ayuda de otras herramientas se puede obtener una solución para un entorno IoT pero es el desarrollador quien tiene que crear esa solución y no una plataforma que integre varios servicios, con todo lo que ello conlleva; empresas líderes en el ámbito de las telecomunicaciones están trabajando para desarrollar soluciones completas y siempre será más eficiente (seguridad, facilidad, menor tiempo de desarrollo...) que si es el propio desarrollador quien tiene que crearla.\\En este punto, se comenzaron a analizar algunas plataformas-middleware IoT para obtener cuál sería la que más se adapta a nuestro caso. Tras analizar OpenIoT y Kaa, se llegó a la conclusión de que Kaa nos podría ofrecer una mejor solución, debido a las interesantes y potentes características que posee.\\ 
+
+Kaa es una plataforma con una curva de aprendizaje bastante alta pero con características que la hacen una plataforma a tener en cuenta en el IoT. Con Kaa, el programador se olvida de la parte del servidor centrándose solo  en la parte del cliente, facilitándole así el proceso. Kaa cuenta con un gran soporte y actualización; a fecha de publicación de este documento hay disponible una versión release de Kaa 1.0.0 con nuevas características y que estará disponible en un futuro próximo.
 \section{Trabajos futuros}
+Como continuación de este trabajo existen algunas líneas de desarrollo que quedan abiertas y en las que es posible continuar trabajando. \\
+Por un lado, siguiendo con el análisis de otras plataformas Open-Source, comprobando los requisitos que cumplen para diferentes escenarios IoT.\\Por otro lado, siguiendo con Kaa,  realizar una integración con servicios Web, de tal modo que sea más sencillo para el usuario analizar el sistema, desde un punto de vista gráfico. También, desplegando Kaa con gateways, para redes con un mayor número de endpoints, pudiendo así usar protocolos de menor consumo como MQTT u, obtener funcionalidades como el descubrimiento de recursos....
+
+
+\begin{appendices}
+\chapter{Configuración en el lado del servidor}\label{anexo_a}
+Este anexo presenta la configuración llevada a cabo en el lado del servidor para el caso de estudio. Se describirán todos los esquemas así como el proceso de configuración del server.
+\section{Esquema de configuración}
+Este esquema se usa para determinar el periodo con el que se obtienen y se suben al servidor los datos de los sensores. Cambia dependiendo del grupo de endpoints. Por defecto es 60.
+
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "configuration",
+  "namespace" : "org.farming.simulation.configuration.sample",
+  "fields" : [ {
+    "name" : "sample",
+    "type" : "int",
+    "by_default" : 60
+  } ],
+  "version" : 1,
+  "dependencies" : [ ],
+  "displayName" : "SamplePeriod"
+}
+\end{lstlisting}
+
+\section{Esquema de datos}
+Este esquema se usa para la colección de datos en una estructura definida. En este caso se ha usado un campo de tipo "Union" que contiene el tipo de datos de temperatura, humedad y luz, que será usado por los endpoints para enviar sus datos. Con esta definición, se permite a cada endpoint, elegir qué datos subir. El otro campo es "status", usado por nodejs para el análisis de los datos.
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "MeasurementsData",
+  "namespace" : "org.farming.simulation.sensors.measurements",
+  "fields" : [ {
+    "name" : "Measurements",
+    "type" : [ {
+      "type" : "record",
+      "name" : "TemperatureData",
+      "fields" : [ {
+        "name" : "temperature",
+        "type" : "long"
+      } ],
+      "displayName" : "TemperatureData",
+      "description" : "Measurements from temperature sensor"
+    }, {
+      "type" : "record",
+      "name" : "HumidityData",
+      "fields" : [ {
+        "name" : "humidity",
+        "type" : "long"
+      } ],
+      "displayName" : "HumidityData",
+      "description" : "Measurements from humidity sensor"
+    },{
+      "type" : "record",
+      "name" : "LightingData",
+      "fields" : [ {
+        "name" : "sunlight",
+        "type" : "long"
+      } ],
+      "displayName" : "LightlingData",
+      "description" : "Measurements from light sensor"
+    } ],
+    "displayName" : "Measurements"
+  }
+  ],
+  "displayName" : "MeasurementsData",
+  "description" : "Measurements from sensors"
+}
+\end{lstlisting}
+\section{Esquema de notificaciones}
+Esquema usado para definir los campos de las notificaciones.
+\begin{lstlisting}[language=json]
+{ 
+    "type":"record",
+    "name":"NotificationSchema",
+    "namespace":"org.farming.simulation.notifications",
+    "fields":[ 
+        { 
+            "name":"message",
+            "type":"string"
+        },
+		{
+			"name":"endpointHash",
+            "type":"string"
+		}
+    ],
+	"displayName" : "NotificationsSchema"
+}
+\end{lstlisting}
+Una vez definido el esquema, se deben crear los tópicos para las notificaciones y así recibir notificaciones de un determinado tópico.
+\section{Esquema del lado del cliente}
+Este esquema se usa para el agrupamiento de endpoints. Con este esquema se define el perfil a usar en el lado del cliente y, posteriormente, se define cada grupo mediante el filtro de perfil. Los grupos se hacen simulando parcelas de cultivo. 
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "ClientProfile",
+  "namespace" : "org.farming.simulation.profile.client",
+  "fields" : [ {
+    "name" : "plot",
+    "type" : {
+      "type" : "string"
+    },
+    "displayName" : "Parcel of land"
+  } ]
+}
+\end{lstlisting}
+\section{Esquemas de eventos}
+En este caso se definen 2 esquemas de familias de eventos, uno para una función "ping" a la que tienen que responder el resto de endpoints, y el otro, para enviar información recopilada por los sensores y del sistema, al iniciar el endpoint por primera vez.
+\lstset{
+caption=Esquema de eventos de la clase Ping
+}
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "PingEvent",
+  "namespace" : "org.farming.simulation.event.ping",
+  "fields" : [ {
+    "name" : "currentTime",
+    "type" : "double"
+  }, {
+    "name" : "hashEndpoint",
+    "type" : {
+      "type" : "string"
+    }
+  }, {
+    "name" : "message",
+    "type" : [ {
+      "type" : "string"
+    }, "null" ]
+  } ],
+  "displayName" : "Ping"
+}
+\end{lstlisting}
+\lstset{
+caption=Esquema de eventos de la clase SystemInformation
+}
+\begin{lstlisting}[language=json]
+{
+  "type" : "record",
+  "name" : "SystemInformation",
+  "namespace" : "org.farming.simulation.event.systemInformation",
+  "fields" : [ {
+    "name" : "systemInformation",
+    "type" : {
+      "type" : "string"
+    },
+    "displayName" : "",
+    "displayPrompt" : ""
+  }, {
+    "name" : "dataSensor",
+    "type" : [ {
+      "type" : "array",
+      "items" : "long"
+    }, "null" ]
+  } ]
+  "displayName" : "System Information Event"
+}
+\end{lstlisting}
+\section{Grupos de endpoint}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/endpoint_groups.jpg}
+\caption{Grupos de endpoint.}\label{finalProject}
+\end{figure}
+Una vez definido el esquema de perfil de endpoint en el lado del cliente, se pueden aplicar filtros para cada grupo y así asignar el endpoint a un grupo. El filtro, acorde al esquema, para el grupo 1 es: "\#cp.plot=='1'" y para el grupo 2 :  "\#cp.plot=='1'" \\En el grupo 1 se establece a 60 el periodo de muestreo y a 30 para el grupo 2. También se añade el tópico de notificación al grupo 1.
+\section{Mapeo de familias de eventos y verificador de usuario}
+Una vez creadas las familias de clases de eventos, es necesario añadirlas a la aplicación, mediante la opción "Event family mapping". También es necesario añadir un verificador de usuario. En este caso se ha añadido un verificador de tipo "trustful verifier", el cual acepta conexiones de cualquier endpoint.
+\section{NodeJS}
+En NodeJS se ejecuta un script que, cada cierto tiempo, obtiene los valores de MongoDB y comprueba si el campo de temperatura supera un umbral. Si lo hace, envía una notificación vía REST a Kaa.
+\lstset{
+language=JavaScript,
+extendedchars=true,
+basicstyle=\footnotesize\ttfamily,
+showstringspaces=false,
+showspaces=false,
+tabsize=2,
+breaklines=true,
+showtabs=false,
+captionpos=b
+}
+\begin{lstlisting}[language=JavaScript]
+function main() {
+    var MongoClient = require('mongodb').MongoClient;
+    var ObjectId = require('mongodb').ObjectID;
+    var http = require("http");
+    var time_min = 1000 * 60;
+    var records = [];
+
+    var fs = require('fs');
+    var fileName = './notification.json';
+    var file = require(fileName);
+
+    MongoClient.connect("mongodb://192.168.0.108:27017/kaa_farming", function (err, db) {
+        console.log("in");
+        if (err) {
+            return console.dir(err);
+        } else {
+            function getData() {
+                db.collection('logs_18803672284284806737').find({
+                    "event.Measurements.org.farming.simulation.sensors.measurements.LightingData.sunlight": 179213382
+                }).toArray(function (err, doc) {
+                    console.log(doc);
+
+                    if (err) {
+                        console.log(err);
+                    }
+                    if (doc.length > 0) {
+                        if (doc[0].event.status.string !== 'in progress') {
+                            var n = doc[0].event.Measurements;
+                            var keys = Object.keys(n);
+                            var data = n[keys].sunlight
+
+                            // console.log("lenght: " + doc.length);
+                            var endpoint = doc[0].header.endpointKeyHash.string;
+                            console.log("endpoint: " + endpoint);
+
+                            var myquery = {
+                                "event.Measurements.org.farming.simulation.sensors.measurements.LightingData.sunlight": data
+                            };
+                            var newvalues = {
+                                $set: {
+                                    "event.status.string": "in progress"
+                                }
+                            };
+                            db.collection("logs_18803672284284806737").update(myquery, newvalues, function (err, res) {
+                                if (err) throw err;
+                                console.log(res.result.nModified + " record updated");
+                                db.close();
+                            });
+
+                            file.endpointHash = new String(endpoint);;
+                            fs.writeFile(fileName, JSON.stringify(file), function (err) {
+                                if (err) return console.log(err);
+                                console.log(JSON.stringify(file));
+                                console.log('writing to ' + fileName);
+                                requestGet(function () {});
+                            });
+                           
+                        }
+                    }
+
+
+                });
+            }
+
+            setInterval(getData,time_min);            
+        }
+
+    });
+
+}
+main(function () {});
+
+function requestGet() {
+    console.log("innn");
+    var fs = require('fs');
+    var request = require('request');
+    var crypto = require('crypto');
+
+    var CRLF = "\r\n";
+    var md5 = crypto.createHash('md5');
+
+    function multipartRequestBodyBuilder(fields, boundary) {
+        var requestBody = '';
+        for (var name in fields) {
+            var field = fields[name];
+            var data = field.data;
+            var fileName = field.fileName ? '; filename="' + field.fileName + '"' : '';
+            var type = field.type ? 'Content-Type:' + field.type + CRLF : '';
+            requestBody += "--" + boundary + CRLF +
+                "Content-Disposition: form-data; name=\"" + name + "\"" + fileName + CRLF +
+                type + CRLF +
+                data + CRLF;
+        }
+        requestBody += '--' + boundary + '--' + CRLF
+        return requestBody;
+    }
+
+    function getBoundary() {
+        md5.update(new Date() + getRandomArbitrary(1, 65536));
+        return md5.digest('hex');
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    var notificationValue = {
+        "applicationId": "131072",
+        "schemaId": "262146",
+        "topicId": "32768",
+        "type": "USER"
+    };
+
+
+    var postData = {
+        notification: {
+            data: JSON.stringify(notificationValue),
+            type: "application/json"
+        },
+        file: {
+            data: fs.readFileSync("notification.json"),
+            fileName: 'notification.json',
+            type: 'application/octet-stream'
+        }
+    }
+
+    var boundary = getBoundary();
+
+    var opts = {
+        url: 'http://192.168.0.108:8080/kaaAdmin/rest/api/sendNotification',
+        method: 'POST',
+        auth: {
+            user: 'devuser',
+            password: 'devuser123'
+        },
+        headers: {
+            'content-type': 'multipart/form-data; boundary=' + boundary
+        },
+        body: multipartRequestBodyBuilder(postData, boundary)
+    };
+
+    request(opts, function (err, resp, body) {
+        if (err) {
+            console.log("Error: " + err);
+        } else {
+            console.log("Satus code: " + resp.statusCode + "\n");
+            console.log("Result: " + body);
+        }
+    });
+
+    function data() {
+
+    }
+
+}
+
+\end{lstlisting}
+\chapter{Configuración en el lado del cliente}
+En este anexo se presentará la configuración realizada en los SDKs (lado del cliente). Se describirá la configuración para la raspberry principal del grupo 1 y para los endpoints del grupo 2, cuya configuración es idéntica.
+\section{Endpoints del grupo 1}
+La raspberry del grupo 1, se considera como el endpoint principal, el cual recibe información del resto de endpoints y la respuesta de una función ping cada cierto tiempo por parte del resto de endpoints.\\
+\lstset{language=Java,
+breaklines=true,
+basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
+\begin{lstlisting}
+public class SmartFarming {
+	private static final long DEFAULT_START_DELAY = 1000L;
+	private static final Logger LOG = LoggerFactory.getLogger(SmartFarming.class);
+	private PingClassFamily pcf;
+	private SystemInformationEventClassFamily siecf;
+	private HashMap<String, Double> check_time = new HashMap<>();
+	private static KaaClient kaaClient;
+	private String hashMainEndpoint = "";
+	private String userId = "token";
+	private String userToken = "token";
+	private BasicNotificationListener specificListener;
+	private static ScheduledFuture<?> scheduledFuture;
+	private static ScheduledExecutorService scheduledExecutorService;
+	private static ClientProfile cp = new ClientProfile("1");
+
+	public void init() {
+		LOG.info(SmartFarming.class.getSimpleName() + " app starting!");
+
+		scheduledExecutorService = Executors.newScheduledThreadPool(3);
+
+		// Create the Kaa desktop context for the application.
+		DesktopKaaPlatformContext desktopKaaPlatformContext = new DesktopKaaPlatformContext();
+		kaaClient = Kaa.newClient(desktopKaaPlatformContext, new FirstKaaClientStateListener(), true);
+		RecordCountLogUploadStrategy strategy = new RecordCountLogUploadStrategy(1);
+		strategy.setMaxParallelUploads(1);
+		kaaClient.setLogUploadStrategy(strategy);
+		kaaClient
+				.setConfigurationStorage(new SimpleConfigurationStorage(desktopKaaPlatformContext, "saved_config.cfg"));
+		kaaClient.setProfileContainer(new ProfileContainer() {
+
+			@Override
+			public ClientProfile getProfile() {
+				// TODO Auto-generated method stub
+				return cp;
+
+			}
+		});
+		kaaClient.addConfigurationListener(new ConfigurationListener() {
+			@Override
+			public void onConfigurationUpdate(configuration configuration) {
+
+				LOG.info("Received configuration data:", configuration.getSample());
+				onChangedConfiguration(TimeUnit.MINUTES.toMillis(configuration.getSample()));
+			}
+		});
+
+		specificListener = new BasicNotificationListener();
+		kaaClient.addNotificationListener(specificListener);
+
+		// Start the Kaa client and connect it to the Kaa server.
+		kaaClient.start();
+		Long id = (long) 32768;
+		try {
+			kaaClient.subscribeToTopic(id, true);
+		} catch (UnavailableTopicException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		EventFamilyFactory eventFamilyFactory = kaaClient.getEventFamilyFactory();
+
+		pcf = eventFamilyFactory.getPingClassFamily();
+		siecf = eventFamilyFactory.getSystemInformationEventClassFamily();
+		kaaClient.attachUser(userId, userToken, new UserAttachCallback() {
+			@Override
+			public void onAttachResult(UserAttachResponse response) {
+				System.out.println("Attach to user result: " + response.getResult());
+			}
+		});
+
+		pcf.addListener(new PingClassFamily.Listener() {
+			@Override
+			public void onEvent(PingEvent event, String source) {
+				System.out.println("event ping response: " + event.getMessage());
+				if (event.getMessage().equalsIgnoreCase("response")) {
+					check_time.put(event.getHashEndpoint(), event.getCurrentTime());
+
+				}
+
+			}
+		});
+
+		siecf.addListener(new SystemInformationEventClassFamily.Listener() {
+
+			@Override
+			public void onEvent(SystemInformation event, String source) {
+				System.out.println("source: " + source);
+				System.out.println("System Information: " + event.getSystemInformation());
+				List<Long> dataSensors = event.getDataSensor();
+				for (Long lg : dataSensors) {
+					System.out.println("data: " + lg);
+				}
+			}
+		});
+
+		List<String> FQNs = new LinkedList<>();
+		FQNs.add(SystemInformation.class.getName());
+		FQNs.add(PingEvent.class.getName());
+		kaaClient.findEventListeners(FQNs, new FindEventListenersCallback() {
+			@Override
+			public void onEventListenersReceived(List<String> eventListeners) {
+				for (String s : eventListeners) {
+					System.out.println("endpoint: " + s);
+				}
+			}
+
+			@Override
+			public void onRequestFailed() {
+				System.out.println("searching error");
+				;
+			}
+		});
+
+		kaaClient.addNotificationListener(specificListener);
+
+		List<Topic> topics = kaaClient.getTopics();
+		for (Topic topic : topics) {
+			System.out.println("Id:" + topic.getId() + " name:  " + topic.getName());
+		}
+		System.out.println("topics size: " + topics.size());
+
+		LOG.info("--= Press any key to exit =--");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			LOG.error("IOException has occurred: {}", e.getMessage());
+		}
+		LOG.info("Stopping...");
+		scheduledExecutorService.shutdown();
+		kaaClient.stop();
+	}
+
+	private void onKaaStarted(long time) {
+		System.out.println("time: " + time);
+		if (time <= 0) {
+			LOG.error("Wrong time is used. Please, check your configuration!");
+			kaaClient.stop();
+			System.exit(0);
+		}
+
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+
+				long data[] = getTemperatureAndHumidity();
+				long temperature = data[0];
+				long humidity = data[1];
+				long lighting = getLighting();
+				LOG.info("Sampled temperature: {}", temperature);
+				LOG.info("Sampled humidity: {}", humidity);
+				LOG.info("sampled lighting: " + lighting);
+				TemperatureData td = new TemperatureData(temperature);
+				HumidityData hd = new HumidityData(humidity);
+				LightingData ld = new LightingData(lighting);
+				kaaClient.addLogRecord(new MeasurementsData2(td, ""));
+				kaaClient.addLogRecord(new MeasurementsData2(hd, ""));
+				kaaClient.addLogRecord(new MeasurementsData2(ld, ""));
+
+			}
+		}, 0, time, TimeUnit.MILLISECONDS);
+
+		////// ping request
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+
+			@Override
+			public void run() {
+				pcf.sendEventToAll(
+						new PingEvent((double) System.currentTimeMillis(), kaaClient.getEndpointKeyHash(), "request"));
+
+			}
+		}, 0, 10, TimeUnit.SECONDS);
+
+		//// check time//////
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+
+			@Override
+			public void run() {
+
+				double difference;
+				for (HashMap.Entry<String, Double> entry : check_time.entrySet()) {
+					difference = System.currentTimeMillis() - entry.getValue();
+					System.out.println("difference: " + difference);
+					if (difference > 20000) {
+						System.out.println("endpoint not working: ");
+
+					}
+
+				}
+			}
+		}, 0, 30, TimeUnit.SECONDS);
+	}
+
+	private void onChangedConfiguration(long time) {
+		if (time == 0) {
+			time = DEFAULT_START_DELAY;
+		}
+		scheduledFuture.cancel(false);
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+				long data[] = getTemperatureAndHumidity();
+				long temperature = data[0];
+				long humidity = data[1];
+				long lighting = getLighting();
+				LOG.info("Sampled temperature: {}", temperature);
+				LOG.info("Sampled humidity: {}", humidity);
+				LOG.info("sampled lighting: " + lighting);
+				TemperatureData td = new TemperatureData(temperature);
+				HumidityData hd = new HumidityData(humidity);
+				LightingData ld = new LightingData(lighting);
+				kaaClient.addLogRecord(new MeasurementsData2(td, ""));
+				kaaClient.addLogRecord(new MeasurementsData2(hd, ""));
+				kaaClient.addLogRecord(new MeasurementsData2(ld, ""));
+			}
+		}, 0, time, TimeUnit.MILLISECONDS);
+	}
+
+	public class BasicNotificationListener implements NotificationListener {
+
+		@Override
+		public void onNotification(long topicId, NotificationSchema notification) {
+
+			System.out.println("notification received. topicID: " + topicId);
+			if (topicId == 32768) {
+				sendEmail();
+				turnOnLed();
+
+			}
+
+		}
+
+	}
+
+	private long[] getTemperatureAndHumidity() {
+		String line;
+		String[] data;
+		long humidity = 0;
+		long temperature = 0;
+		Runtime rt = Runtime.getRuntime();
+		Process p = null;
+		try {
+			p = rt.exec("python /home/pi/Desktop/DHT11_Python/dht.py");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
+		try {
+			while ((line = bri.readLine()) != null) {
+				System.out.println("data: " + line);
+				data = line.split(",");
+
+				if (data[0].contains("humidity")) {
+
+					humidity = Long.parseLong(data[1].substring(1, 3));
+				}
+				if (data[0].contains("temperature")) {
+					temperature = Long.parseLong(data[1].substring(1, 3));
+				}
+
+			}
+		} catch (NumberFormatException | IOException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			bri.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		long[] array = new long[2];
+		array[0] = temperature;
+		array[1] = humidity;
+		System.out.println("Temperature is : " + temperature + " C and Humidity is :" + humidity + " RH");
+
+		return array;
+	}
+
+	private void turnOnLed() {
+		final GpioController gpio = GpioFactory.getInstance();
+		final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.HIGH);
+		System.out.println("light is: ON");
+		try {
+			Thread.sleep(60000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		pin.low();
+
+	}
+
+	private long getLighting() {
+
+		String line;
+		long lighting = 0;
+		Runtime rt = Runtime.getRuntime();
+		Process p = null;
+		try {
+			p = rt.exec("python /home/pi/Desktop/lighting.py");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("exception: " + e);
+			e.printStackTrace();
+		}
+		BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
+		try {
+			while ((line = bri.readLine()) != null) {
+				System.out.println("data: " + line);
+				lighting = Long.parseLong(line);
+
+			}
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			bri.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return lighting;
+
+	}
+
+	private class FirstKaaClientStateListener extends SimpleKaaClientStateListener {
+
+		@Override
+		public void onStarted() {
+			super.onStarted();
+			LOG.info("Kaa client started");
+			configuration configuration = kaaClient.getConfiguration();
+			LOG.info("Default sample period: {}", configuration.getSample());
+
+			onKaaStarted(TimeUnit.MINUTES.toMillis(configuration.getSample()));
+		}
+
+		@Override
+		public void onStopped() {
+			super.onStopped();
+			LOG.info("Kaa client stopped");
+		}
+	}
+
+	public static void main(String[] args) {
+
+		SmartFarming sf = new SmartFarming();
+		sf.init();
+
+	}
+
+}
+\end{lstlisting}
+\section{Endpoints del grupo 2}
+Tanto la raspberry como el PC pertenecen a este grupo y tienen la misma configuración. 
+\lstset{language=Java,
+breaklines=true,
+basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+tabsize=4,
+showspaces=false,
+showstringspaces=false}
+\begin{lstlisting} 
+public class SmartFarming{
+	private static final long DEFAULT_START_DELAY = 1000L;
+	private static final Logger LOG = LoggerFactory.getLogger(SmartFarming.class);
+	private PingClassFamily pcf;
+	private SystemInformationEventClassFamily siecf;
+	private static KaaClient kaaClient;
+	private String hashMainEndpoint = "1Ov5ZCtHspZ3UwySlaFuLDuYLck=";
+	private String userId = "token";
+	private String userToken = "token";
+	private static ScheduledFuture<?> scheduledFuture;
+	private static ScheduledExecutorService scheduledExecutorService;
+	private static ClientProfile cp = new ClientProfile("2");
+
+	public void init() {
+		LOG.info(SmartFarming.class.getSimpleName() + " app starting!");
+
+		scheduledExecutorService = Executors.newScheduledThreadPool(1);
+		DesktopKaaPlatformContext desktopKaaPlatformContext = new DesktopKaaPlatformContext();
+		kaaClient = Kaa.newClient(desktopKaaPlatformContext, new FirstKaaClientStateListener(), true);
+
+		RecordCountLogUploadStrategy strategy = new RecordCountLogUploadStrategy(1);
+		strategy.setMaxParallelUploads(1);
+		kaaClient.setLogUploadStrategy(strategy);
+
+		kaaClient.setConfigurationStorage(new SimpleConfigurationStorage(desktopKaaPlatformContext, "saved_config.cfg"));
+		kaaClient.setProfileContainer(new ProfileContainer() {
+
+			@Override
+			public ClientProfile getProfile() {
+				// TODO Auto-generated method stub
+				return cp;
+
+			}
+		});
+
+		kaaClient.addConfigurationListener(new ConfigurationListener() {
+			@Override
+			public void onConfigurationUpdate(configuration configuration) {
+
+				LOG.info("Received configuration data:", configuration.getSample());
+				onChangedConfiguration(TimeUnit.MINUTES.toMillis(configuration.getSample()));
+			}
+		});
+
+		// Start the Kaa client and connect it to the Kaa server.
+		kaaClient.start();
+
+		EventFamilyFactory eventFamilyFactory = kaaClient.getEventFamilyFactory();
+
+		pcf = eventFamilyFactory.getPingClassFamily();
+		siecf = eventFamilyFactory.getSystemInformationEventClassFamily();
+		kaaClient.attachUser(userId, userToken, new UserAttachCallback() {
+
+			@Override
+			public void onAttachResult(UserAttachResponse response) {
+				// TODO Auto-generated method stub
+				System.out.println("Attach to user result: " + response.getResult());
+			}
+		});
+
+		pcf.addListener(new PingClassFamily.Listener() {
+			@Override
+			public void onEvent(PingEvent event, String source) {
+				System.out.println("event ping request: " + event.getMessage());
+				if (event.getMessage().equalsIgnoreCase("request")) {
+					pcf.sendEvent(new PingEvent((double) System.currentTimeMillis(), kaaClient.getEndpointKeyHash(),
+							"response"), source);
+				}
+
+			}
+		});
+
+		List<String> FQNs = new LinkedList<>();
+		FQNs.add(SystemInformation.class.getName());
+		FQNs.add(PingEvent.class.getName());
+		kaaClient.findEventListeners(FQNs, new FindEventListenersCallback() {
+			@Override
+			public void onEventListenersReceived(List<String> eventListeners) {
+				for (String s : eventListeners) {
+					System.out.println("endpint: " + s);
+				}
+			}
+
+			@Override
+			public void onRequestFailed() {
+				// Some code
+				System.out.println("searching error");
+				;
+			}
+		});
+
+
+		LOG.info("--= Press any key to exit =--");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			LOG.error("IOException has occurred: {}", e.getMessage());
+		}
+		LOG.info("Stopping...");
+		scheduledExecutorService.shutdown();
+		kaaClient.stop();
+	}
+
+	private void onKaaStarted(long time) {
+		System.out.println("time: " + time);
+		if (time <= 0) {
+			LOG.error("Wrong time is used. Please, check your configuration!");
+			kaaClient.stop();
+			System.exit(0);
+		}
+
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+				long lighting = getLighting();
+				LOG.info("Sampled Lighting: {}", lighting);
+				LightingData td = new LightingData(lighting);
+				kaaClient.addLogRecord(new MeasurementsData2(td, ""));
+
+			}
+		}, 0, time, TimeUnit.MILLISECONDS);
+
+	}
+
+	private void onChangedConfiguration(long time) {
+		if (time == 0) {
+			time = DEFAULT_START_DELAY;
+		}
+		scheduledFuture.cancel(false);
+
+		scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+				long lighting = getLighting();
+				LOG.info("Sampled Lighting: {}", lighting);
+				LightingData td = new LightingData(lighting);
+				kaaClient.addLogRecord(new MeasurementsData2(td, ""));
+			}
+		}, 0, time, TimeUnit.MILLISECONDS);
+	}
+
+
+	private long getLighting() {
+
+		
+		  String line; long lighting = 0;; Runtime rt= Runtime.getRuntime();
+		  Process p = null; try { p =
+		  rt.exec("python /home/pi/Desktop/lighting.py"); } catch
+		  (IOException e) { // TODO Auto-generated catch block
+		  e.printStackTrace(); } BufferedReader bri = new BufferedReader(new
+		  InputStreamReader(p.getInputStream())); try { while((line =
+		  bri.readLine()) != null){
+		  
+		  lighting = Long.parseLong(line);
+		  
+		  } } catch (NumberFormatException | IOException e) { // TODO
+		  Auto-generated catch block e.printStackTrace(); }
+		  
+		  try { bri.close(); } catch (IOException e) { // TODO Auto-generated
+		  catch block e.printStackTrace(); }
+		 
+		  return lighting;
+
+
+	}
+
+	private class FirstKaaClientStateListener extends SimpleKaaClientStateListener {
+
+		@Override
+		public void onStarted() {
+			super.onStarted();
+			LOG.info("Kaa client started");
+			configuration configuration = kaaClient.getConfiguration();
+			LOG.info("Default sample period: {}", configuration.getSample());
+
+			LOG.info("sending system information....");
+			ArrayList<Long> dataSensor = new ArrayList<>();
+			dataSensor.add(getLighting());
+
+			siecf.sendEvent(new SystemInformation("Raspi2", dataSensor), hashMainEndpoint); // evento
+			onKaaStarted(TimeUnit.MINUTES.toMillis(configuration.getSample()));
+		}
+
+		@Override
+		public void onStopped() {
+			super.onStopped();
+			LOG.info("Kaa client stopped");
+		}
+	}
+
+	public static void main(String[] args) {
+
+		SmartFarming sf = new SmartFarming();
+		sf.init();
+
+	}
+
+}
+\end{lstlisting}
+\section{Librerías}
+Se ha usado DHT11\cite{python_library_dht11} como librería de python para la recopilación de datos por parte del sensor de temperatura y humedad.\\
+También se ha usado la libreria pi4j\cite{pi4j} de java para encender un LED desde java en la raspberry. Y por último, la libería java mail\cite{javamail} para el envío de correos en java.
+\end{appendices}
+
 \begin{thebibliography}{X}
+\bibitem{surv} {Middleware for Internet of Things, VOL.3, No.1, February 2016.}
+\bibitem{iot}{Seguridad en el Internet de las Cosas. UPM. Noviembre 2014.}
+\bibitem{iot_book}{Internet of Things –
+From Research and Innovation to
+Market Deployment. June 2014}
+\bibitem{iot_article}{Internet of Things: Architectures, Protocols, and Applications. Pallavi Sethi and Smruti R. Sarangi. 26 January 2017}
+\bibitem{agilla}{Chien-Liang Fok, Gruia-Catalin Roman y Chenyang Lug. "Agilla: A Mobile Agent Middleware for
+Self-Adaptive Wireless Sensor Networks"}
+
 \bibitem{hive} {http://www.hivemq.com/}
 \bibitem{hive_doc}{HiveMQ. MQTT doc:http://www.hivemq.com/mqtt/}
-\bibitem{surv} {Middleware for Internet of Things, VOL.3, No.1, February 2016.}
-\bibitem{wsj} {Forget 'the Cloud'; 'the Fog' Is Tech's Future, Christopher Mims, 2014.}
+\bibitem{cloud_mqtt}{https://www.cloudmqtt.com/}
+\bibitem{mosqtt}{https://mosquitto.org/}
+\bibitem{paho}{https://eclipse.org/paho/clients/java/}
+\bibitem{nodered}{https://nodered.org/}
+\bibitem{mongo}{https://www.mongodb.com}
+\bibitem{platform_gap}{A gap analysis of Internet-of-Things platforms. Julien Mineraud, Oleksiy Mazhelis, Xiang Su, Sasu Tarkoma, March 2016}
+\bibitem{openiot}{http://www.openiot.eu/}
+\bibitem{openiot_git}{GIT OpenIoT}
+\bibitem{openiot_pdf}{PDF OpenIoT: http://cordis.europa.eu/docs/projects/cnect/5/287305/080/deliverables/001-OpenIoTD431Draft.pdf}
 \bibitem{kaa}{Kaa Official Website: https://www.kaaproject.org}
 \bibitem{kaa_iot}{KaaIoT Website: https://www.kaaiot.io}
 \bibitem{code}{Source code: https://github.com/kaaproject}
 \bibitem{doc}{Kaa documentation: http://kaaproject.github.io/kaa/docs/v0.10.0/Welcome/}
-\bibitem{mosqtt}{https://mosquitto.org/}
-\bibitem{nodered}{https://nodered.org/}
-\bibitem{mongo}{https://www.mongodb.com}
-\bibitem{zeppelin}{https://zeppelin.apache.org/}
-\bibitem{paho}{https://eclipse.org/paho/clients/java/}
-\bibitem{cloud_mqtt}{https://www.cloudmqtt.com/}
-\bibitem{edge_kaa}{https://www.kaaproject.org/platform/\#gate}
 \bibitem{apache_thrift}{https://thrift.apache.org/}
 \bibitem{zookeeper}{https://zookeeper.apache.org/}
 \bibitem{avro}{http://avro.apache.org/}
-\bibitem{openiot}{http://www.openiot.eu/}
-\bibitem{openiot_git}{GIT OpenIoT}
-\bibitem{openiot_pdf}{PDF OpenIoT: http://cordis.europa.eu/docs/projects/cnect/5/287305/080/deliverables/001-OpenIoTD431Draft.pdf}
-\bibitem{agilla}{Chien-Liang Fok, Gruia-Catalin Roman y Chenyang Lug. "Agilla: A Mobile Agent Middleware for
-Self-Adaptive Wireless Sensor Networks"}
-\bibitem{platform_gap}{A gap analysis of Internet-of-Things platforms. Julien Mineraud, Oleksiy Mazhelis, Xiang Su, Sasu Tarkoma, March 2016}
+\bibitem{zeppelin}{https://zeppelin.apache.org/}
+\bibitem{wsj} {Forget 'the Cloud'; 'the Fog' Is Tech's Future, Christopher Mims, 2014.}
+%\bibitem{edge_kaa}{https://www.kaaproject.org/platform/\#gate}
+\bibitem{python_library_dht11}{https://github.com/szazo/DHT11\_Python}
+\bibitem{pi4j}{https://github.com/Pi4J/pi4j}
+\bibitem{javamail}{https://mvnrepository.com/artifact/javax.mail/mail/1.4.7}
 \end{thebibliography}
 
 \end{document}
